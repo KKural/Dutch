@@ -5009,6 +5009,13 @@ for _s in SESSIONS:
             )
         _s["grammar_letop"] = "\n".join(_parts)
 
+    # --- 4. grammar_quick: convert list[str] → HTML string ---
+    _gq = _s.get("grammar_quick", "")
+    if isinstance(_gq, list):
+        _s["grammar_quick"] = "<ul>\n" + "\n".join(
+            f"  <li>{_item}</li>" for _item in _gq
+        ) + "\n</ul>"
+
 # Clean up temporary names
 del _rnd, _s, _raw_vocab, _fixed_vocab, _v, _d, _rev, _cards, _sample, _item
-del _letop, _parts, _w, _r, _e
+del _letop, _parts, _w, _r, _e, _gq

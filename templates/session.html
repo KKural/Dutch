@@ -29,8 +29,8 @@
     <p class="hint">Click each card to reveal the answer. Try to answer in your head first!</p>
     {% for r in s.review %}
     <div class="review-card" onclick="this.classList.toggle('show')">
-        <div class="review-q">{{ loop.index }}. {{ r.q }}</div>
-        <div class="review-a">{{ r.a }}</div>
+        <div class="review-q">{{ loop.index }}. {{ r.q|safe }}</div>
+        <div class="review-a">{{ r.a|safe }}</div>
     </div>
     {% endfor %}
     {% else %}
