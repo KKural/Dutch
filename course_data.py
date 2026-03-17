@@ -4947,3 +4947,68 @@ de nadelen. Daarom vind ik dat iedereen minstens twee keer per week moet sporten
                       "☐ Heb ik vaste voorzetsels correct gebruikt?",
     },
 ]
+
+# ---------------------------------------------------------------------------
+# DATA NORMALISATION — ensure every session has consistent field formats
+# ---------------------------------------------------------------------------
+
+import random as _rnd
+
+for _s in SESSIONS:
+    # --- 1. vocabulary: convert tuples → dicts, rename "example" → "ex" ---
+    _raw_vocab = _s.get("vocabulary", [])
+    _fixed_vocab = []
+    for _v in _raw_vocab:
+        if isinstance(_v, (list, tuple)):
+            _fixed_vocab.append({"nl": _v[0], "en": _v[1],
+                                 "ex": _v[2] if len(_v) > 2 else ""})
+        elif isinstance(_v, dict):
+            _d = dict(_v)
+            if "example" in _d and "ex" not in _d:
+                _d["ex"] = _d.pop("example")
+            if "ex" not in _d:
+                _d["ex"] = ""
+            _fixed_vocab.append(_d)
+        else:
+            _fixed_vocab.append({"nl": str(_v), "en": "", "ex": ""})
+    _s["vocabulary"] = _fixed_vocab
+
+    # --- 2. review: convert string → list[{q, a}] ---
+    _rev = _s.get("review", [])
+    if isinstance(_rev, str) and _rev.strip():
+        _cards = [{"q": "📖 What is this session about?", "a": _rev}]
+        # Generate vocab-based review cards
+        if _fixed_vocab:
+            _rnd.seed(_s.get("id", 0))  # reproducible
+            _sample = _fixed_vocab[:]
+            _rnd.shuffle(_sample)
+            for _item in _sample[:4]:
+                _cards.append({
+                    "q": f"Hoe zeg je '{_item['en']}' in het Nederlands?",
+                    "a": f"<b>{_item['nl']}</b>"
+                         + (f" — {_item['ex']}" if _item.get("ex") else ""),
+                })
+        _s["review"] = _cards
+    elif not isinstance(_rev, list):
+        _s["review"] = []
+
+    # --- 3. grammar_letop: convert list[dict] → HTML string ---
+    _letop = _s.get("grammar_letop", "")
+    if isinstance(_letop, list) and _letop and isinstance(_letop[0], dict):
+        _parts = []
+        for _item in _letop:
+            _w = _item.get("wrong", "")
+            _r = _item.get("right", "")
+            _e = _item.get("explain", "")
+            _parts.append(
+                f'<div class="letop-item">'
+                f'<span class="wrong">✗ {_w}</span><br>'
+                f'<span class="right">✓ {_r}</span><br>'
+                f'<span class="explain">→ {_e}</span>'
+                f'</div>'
+            )
+        _s["grammar_letop"] = "\n".join(_parts)
+
+# Clean up temporary names
+del _rnd, _s, _raw_vocab, _fixed_vocab, _v, _d, _rev, _cards, _sample, _item
+del _letop, _parts, _w, _r, _e
