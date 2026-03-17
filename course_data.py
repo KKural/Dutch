@@ -4953,6 +4953,210 @@ de nadelen. Daarom vind ik dat iedereen minstens twee keer per week moet sporten
 # DATA NORMALISATION — ensure every session has consistent field formats
 # ---------------------------------------------------------------------------
 
+# Proper content-based review Q&A for sessions 6-25
+# Each session reviews the PREVIOUS session's grammar/content
+_REVIEW_QA = {
+    6: [  # Reviews S5: Om…te…
+        {"q": "How do you say 'in order to learn Dutch'?",
+         "a": "<b>om Nederlands te leren</b>"},
+        {"q": "Where does 'te' go in a separable verb? (e.g. opbellen)",
+         "a": "Between the prefix and verb: <b>om op te bellen</b>"},
+        {"q": "Complete: Ik fiets elke dag ___ gezond ___ blijven.",
+         "a": "<b>om … te</b> — Ik fiets elke dag om gezond te blijven."},
+        {"q": "'Om te' or 'dat'? Ik vind het leuk … Nederlands te leren.",
+         "a": "<b>om</b> — Ik vind het leuk om Nederlands te leren."},
+    ],
+    7: [  # Reviews S6: Omdat/Want/Daarom
+        {"q": "What happens to the verb after 'omdat'?",
+         "a": "The verb goes to the <b>end</b> (bijzin): omdat ik in Gent <b>woon</b>."},
+        {"q": "'Want' or 'omdat'? The word order is normal (SVO).",
+         "a": "<b>Want</b> — want ik woon in Gent. (normal SVO)"},
+        {"q": "What word order follows 'daarom'?",
+         "a": "<b>Inversie</b> (verb before subject): Daarom <b>fiets ik</b> elke dag."},
+        {"q": "Translate: 'I eat healthy because I want to lose weight.'",
+         "a": "Ik eet gezond <b>omdat</b> ik wil afvallen. / …<b>want</b> ik wil afvallen."},
+    ],
+    8: [  # Reviews S7: Als (if/when)
+        {"q": "What happens to the verb in an 'als'-clause?",
+         "a": "Verb goes to the <b>end</b>: Als je ziek <b>bent</b>, moet je rusten."},
+        {"q": "What happens in the main clause when 'als' comes first?",
+         "a": "<b>Inversie</b>: Als je ziek bent, <b>moet je</b> rusten."},
+        {"q": "Translate: 'If you have a headache, you should take a paracetamol.'",
+         "a": "Als je hoofdpijn <b>hebt</b>, <b>moet</b> je een paracetamol nemen."},
+        {"q": "'Als' = bijzin connector, just like 'omdat'. True or false?",
+         "a": "<b>True</b> — both send the verb to the end of their clause."},
+    ],
+    9: [  # Reviews S8: Bij de dokter
+        {"q": "How do you say 'I have a headache'?",
+         "a": "Ik heb <b>hoofdpijn</b>."},
+        {"q": "What is a reflexive verb? Give an example.",
+         "a": "A verb with 'zich': <b>zich voelen</b> — Ik voel <b>me</b> niet lekker."},
+        {"q": "Translate: 'My throat hurts and I have a fever.'",
+         "a": "Ik heb <b>keelpijn</b> en ik heb <b>koorts</b>."},
+        {"q": "How do you say 'You should rest' using moeten?",
+         "a": "Je <b>moet</b> rusten."},
+    ],
+    10: [  # Reviews S9: Comparatives & Superlatives
+        {"q": "How do you form the comparative in Dutch? (e.g. groot)",
+         "a": "Add <b>-er</b>: groot → <b>groter</b>. Gent is groter dan Brugge."},
+        {"q": "How do you form the superlative? (e.g. mooi)",
+         "a": "Add <b>-st(e)</b>: mooi → <b>het mooist</b> / de <b>mooiste</b> stad."},
+        {"q": "What are the irregular forms of 'goed' and 'veel'?",
+         "a": "goed → <b>beter</b> → <b>best</b>. veel → <b>meer</b> → <b>meest</b>."},
+        {"q": "Complete: Gent is ___ (levendig) ___ Brussel.",
+         "a": "Gent is <b>levendiger dan</b> Brussel."},
+    ],
+    11: [  # Reviews S10: Future tense
+        {"q": "How do you express the future with 'gaan'?",
+         "a": "<b>gaan + infinitive</b>: Ik <b>ga</b> morgen studeren."},
+        {"q": "When do you use 'zullen' instead of 'gaan'?",
+         "a": "For promises, predictions, proposals: Ik <b>zal</b> je helpen. Zullen we gaan?"},
+        {"q": "Translate: 'We are going to travel to Spain.'",
+         "a": "We <b>gaan</b> naar Spanje reizen."},
+        {"q": "What is the most common future tense in spoken Dutch?",
+         "a": "<b>Present tense + time word</b>: Morgen werk ik. / Also gaan + inf."},
+    ],
+    12: [  # Reviews S11: Perfectum
+        {"q": "What are the two parts of the perfectum?",
+         "a": "<b>hebben/zijn</b> + <b>voltooid deelwoord</b> (past participle)."},
+        {"q": "When do you use 'zijn' instead of 'hebben' in the perfectum?",
+         "a": "With movement A→B verbs, change of state, zijn/blijven: Ik <b>ben</b> gegaan."},
+        {"q": "How do you form the past participle of 'werken'?",
+         "a": "<b>ge-werk-t</b> (regular, k is in 't kofschip → -t)."},
+        {"q": "What is the participle of 'schrijven'?",
+         "a": "<b>geschreven</b> (strong/irregular verb)."},
+    ],
+    13: [  # Reviews S12: Perfectum vs Imperfectum
+        {"q": "When do you use perfectum vs imperfectum?",
+         "a": "<b>Perfectum</b>: conversation, results. <b>Imperfectum</b>: stories, background, habits."},
+        {"q": "Which tense for zijn/hebben in speech: 'I was tired'?",
+         "a": "<b>Imperfectum</b>: Ik <b>was</b> moe. (not 'Ik ben moe geweest')"},
+        {"q": "Modals (kunnen, moeten, willen) usually use which past tense?",
+         "a": "<b>Imperfectum</b>: Ik <b>kon</b>, ik <b>moest</b>, ik <b>wilde</b>."},
+        {"q": "Can you mix perfectum and imperfectum in one text?",
+         "a": "<b>Yes!</b> Background = imperfectum, events/results = perfectum."},
+    ],
+    14: [  # Reviews S13: Als vs Toen
+        {"q": "When do you use 'als' and when 'toen'?",
+         "a": "<b>Als</b> = present/future/repeated past. <b>Toen</b> = one-time past event."},
+        {"q": "Translate: 'When I was a child, I played outside.'",
+         "a": "<b>Toen</b> ik een kind was, speelde ik buiten."},
+        {"q": "'When it rains, I take the bus.' — als or toen?",
+         "a": "<b>Als</b> — Als het regent, neem ik de bus. (repeated/general)"},
+        {"q": "What tense follows 'toen'?",
+         "a": "Always <b>imperfectum</b>: Toen ik <b>aankwam</b>, regende het."},
+    ],
+    15: [  # Reviews S14: Connectors overview
+        {"q": "Name the three groups of connectors and their word order.",
+         "a": "<b>Nevenschikkend</b> (en/maar/want/of): normal. <b>Onderschikkend</b> (omdat/als/dat): V-end. <b>Bijwoord</b> (daarom/toch/dus): inversie."},
+        {"q": "Complete: Ik ben moe, ___ ga ik toch sporten. (toch/hoewel)",
+         "a": "<b>toch</b> — … toch ga ik sporten. (bijwoord → inversie)"},
+        {"q": "What does 'hoewel' mean and what word order follows?",
+         "a": "<b>Although</b> — bijzin connector: Hoewel het regent, ga ik fietsen. (V-end)"},
+        {"q": "'Dus' or 'daarom'? Both mean 'therefore'. What's the difference?",
+         "a": "Both cause <b>inversie</b>. <b>Dus</b> = so/therefore. <b>Daarom</b> = that's why. Nearly interchangeable."},
+    ],
+    16: [  # Reviews S15: ER (part 1)
+        {"q": "What does 'er' mean in 'Er is een park'?",
+         "a": "<b>There</b> — Er is/Er zijn = there is/there are."},
+        {"q": "How do you combine 'er' with a preposition? (e.g. over)",
+         "a": "er + preposition = <b>erover</b>, erop, eraan, erin, etc."},
+        {"q": "Rewrite: 'Ik denk over het probleem.' using er+prep.",
+         "a": "Ik denk <b>erover</b>."},
+        {"q": "Why can't you say 'Ik hou van het'?",
+         "a": "Use <b>ervan</b> instead: Ik hou <b>ervan</b>. ('het' with prepositions → er+prep)"},
+    ],
+    17: [  # Reviews S16: ER (part 2)
+        {"q": "What does 'er' mean in 'Ik heb er drie'?",
+         "a": "<b>Quantity</b> — er replaces the noun: Ik heb er drie (= drie boeken)."},
+        {"q": "'Er wordt veel gefietst.' — what kind of 'er' is this?",
+         "a": "<b>Passive er</b> — used with passive constructions (er + worden)."},
+        {"q": "'Ken je Gent? Ik woon er.' — what kind of 'er'?",
+         "a": "<b>Place er</b> — er = daar (there). Ik woon er = Ik woon daar."},
+        {"q": "How many uses of 'er' are there?",
+         "a": "<b>Five</b>: er+zijn, er+preposition, quantity, place, passive."},
+    ],
+    18: [  # Reviews S17: Voordat/Nadat
+        {"q": "What happens to the verb after 'voordat'?",
+         "a": "Verb goes to the <b>end</b>: Voordat ik vertrek, eet ik. (bijzin)"},
+        {"q": "What tense often follows 'nadat'?",
+         "a": "<b>Plusquamperfectum</b> (had + vd): Nadat ik <b>had gegeten</b>, ging ik weg."},
+        {"q": "Complete: ___ ik ga slapen, poets ik mijn tanden. (voordat/nadat)",
+         "a": "<b>Voordat</b> ik ga slapen, poets ik mijn tanden."},
+        {"q": "When voordat/nadat comes first, what happens in the main clause?",
+         "a": "<b>Inversie</b>: Nadat ik had gegeten, <b>ging ik</b> weg."},
+    ],
+    19: [  # Reviews S18: Pronouns
+        {"q": "What are the subject, object, and stressed forms of 'ik'?",
+         "a": "Subject: <b>ik</b>. Object: <b>me/mij</b>. Stressed: <b>mij</b>."},
+        {"q": "'Ik geef ___ het boek.' (him) — which pronoun?",
+         "a": "<b>hem</b> — Ik geef hem het boek."},
+        {"q": "What is the difference between 'hun' and 'hen'?",
+         "a": "Formal: <b>hun</b> = indirect object, <b>hen</b> = direct. In practice: both → <b>ze</b>."},
+        {"q": "When do you use 'zich' vs 'me/je'?",
+         "a": "<b>Zich</b> = hij/zij/u/zij(plural). Me/je = ik/jij: Ik was <b>me</b>. Hij wast <b>zich</b>."},
+    ],
+    20: [  # Reviews S19: Fixed prepositions (verbs)
+        {"q": "Which preposition goes with 'wachten'?",
+         "a": "wachten <b>op</b> — Ik wacht op de bus."},
+        {"q": "Which preposition goes with 'dromen'?",
+         "a": "dromen <b>van</b> — Ik droom van vakantie."},
+        {"q": "Complete: Ik ben gewend ___ het weer in België.",
+         "a": "gewend <b>aan</b> — Ik ben gewend aan het weer."},
+        {"q": "How do you say 'to depend on'?",
+         "a": "<b>afhangen van</b> — Het hangt ervan af."},
+    ],
+    21: [  # Reviews S20: Fixed prepositions (adjectives)
+        {"q": "Which preposition: 'trots ___ mijn resultaat'?",
+         "a": "trots <b>op</b> — Ik ben trots op mijn resultaat."},
+        {"q": "Which preposition: 'bang ___ spinnen'?",
+         "a": "bang <b>voor</b> — Ik ben bang voor spinnen."},
+        {"q": "'Goed in' or 'goed op'? Ik ben goed ___ koken.",
+         "a": "goed <b>in</b> — Ik ben goed in koken."},
+        {"q": "Which preposition: 'benieuwd ___ het resultaat'?",
+         "a": "benieuwd <b>naar</b> — Ik ben benieuwd naar het resultaat."},
+    ],
+    22: [  # Reviews S21: Uiterlijk
+        {"q": "Which pattern: 'Ik ___ lang.' — zijn or hebben?",
+         "a": "<b>zijn</b> + eigenschap: Ik <b>ben</b> lang."},
+        {"q": "Which pattern: 'Ik ___ bruine ogen.' — zijn or hebben?",
+         "a": "<b>hebben</b> + lichaamsdeel: Ik <b>heb</b> bruine ogen."},
+        {"q": "What is the correct order for hair description?",
+         "a": "<b>lengte + kleur + stijl</b>: Ik heb <b>lang bruin krullend</b> haar."},
+        {"q": "'Zij heeft lang.' — correct or not?",
+         "a": "<b>Fout!</b> Zij <b>is</b> lang. (zijn + adj, not hebben)"},
+    ],
+    23: [  # Reviews S22: Waarom Nederlands
+        {"q": "Complete: Ik leer Nederlands ___ ik in Gent woon. (omdat/want)",
+         "a": "Both work! <b>omdat</b> ik in Gent <b>woon</b> (V-end) / <b>want</b> ik <b>woon</b> in Gent (normal)."},
+        {"q": "How do you say 'Moreover, I need Dutch for my job'?",
+         "a": "<b>Bovendien</b> heb ik Nederlands nodig voor mijn werk. (inversie!)"},
+        {"q": "Make a sentence with 'om…te': learning Dutch + living in Flanders.",
+         "a": "Ik leer Nederlands <b>om</b> in Vlaanderen <b>te</b> kunnen leven."},
+        {"q": "Translate: 'In my opinion, Dutch is useful.'",
+         "a": "<b>Volgens mij</b> is Nederlands nuttig. / Ik vind dat Nederlands nuttig is."},
+    ],
+    24: [  # Reviews S23: Vroeger vertellen
+        {"q": "Which tense for background/habits in the past?",
+         "a": "<b>Imperfectum</b>: Vroeger <b>woonde</b> ik in India."},
+        {"q": "Which tense for one-time past events in a conversation?",
+         "a": "<b>Perfectum</b>: Ik <b>ben</b> naar België <b>verhuisd</b>."},
+        {"q": "Translate: 'As a child I always played cricket.'",
+         "a": "Als kind <b>speelde</b> ik altijd cricket. (gewoonte → imperfectum)"},
+        {"q": "Complete: Toen ik ___ (afstuderen), was ik trots.",
+         "a": "Toen ik <b>afstudeerde</b>, was ik trots. (toen → imperfectum)"},
+    ],
+    25: [  # Reviews S24: Spreken oefenen
+        {"q": "What are the two main tasks on the NT2 speaking exam?",
+         "a": "<b>1.</b> Jezelf voorstellen. <b>2.</b> Een foto/situatie beschrijven + mening geven."},
+        {"q": "How do you start giving your opinion?",
+         "a": "<b>Ik vind dat…</b> / <b>Volgens mij…</b> / <b>Naar mijn mening…</b>"},
+        {"q": "Translate: 'Compared to India, Belgium is smaller.'",
+         "a": "<b>Vergeleken met</b> India is België kleiner."},
+        {"q": "How do you say 'On the other hand…'?",
+         "a": "<b>Aan de andere kant…</b> / <b>Maar toch…</b>"},
+    ],
+}
 
 for _s in SESSIONS:
     # --- 1. vocabulary: convert tuples → dicts, rename "example" → "ex" ---
@@ -4973,22 +5177,13 @@ for _s in SESSIONS:
             _fixed_vocab.append({"nl": str(_v), "en": "", "ex": ""})
     _s["vocabulary"] = _fixed_vocab
 
-    # --- 2. review: convert string → list[{q, a}] ---
+    # --- 2. review: use proper content-based Q&A ---
+    _sid = _s.get("id", 0)
     _rev = _s.get("review", [])
-    if isinstance(_rev, str) and _rev.strip():
-        _cards = [{"q": "📖 What is this session about?", "a": _rev}]
-        # Generate vocab-based review cards
-        if _fixed_vocab:
-            _rnd.seed(_s.get("id", 0))  # reproducible
-            _sample = _fixed_vocab[:]
-            _rnd.shuffle(_sample)
-            for _item in _sample[:4]:
-                _cards.append({
-                    "q": f"Hoe zeg je '{_item['en']}' in het Nederlands?",
-                    "a": f"<b>{_item['nl']}</b>"
-                    + (f" — {_item['ex']}" if _item.get("ex") else ""),
-                })
-        _s["review"] = _cards
+    if _sid in _REVIEW_QA:
+        _s["review"] = _REVIEW_QA[_sid]
+    elif isinstance(_rev, str) and _rev.strip():
+        _s["review"] = [{"q": "📖 What is this session about?", "a": _rev}]
     elif not isinstance(_rev, list):
         _s["review"] = []
 
@@ -5017,5 +5212,5 @@ for _s in SESSIONS:
         ) + "\n</ul>"
 
 # Clean up temporary names
-del _rnd, _s, _raw_vocab, _fixed_vocab, _v, _d, _rev, _cards, _sample, _item
-del _letop, _parts, _w, _r, _e, _gq
+del _s, _raw_vocab, _fixed_vocab, _v, _d, _rev, _sid
+del _letop, _parts, _item, _w, _r, _e, _gq, _REVIEW_QA

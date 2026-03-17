@@ -814,9 +814,56 @@ footer {
 }
 
 /* ===== RESPONSIVE ===== */
+
+/* Prevent ANY horizontal overflow */
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+/* Tables: scroll horizontally inside their container */
+.grammar-content table,
+.letop-box table,
+.quick-ref-box table,
+.examples-box table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+}
+
+/* Long words / formulas don't break layout */
+.grammar-content,
+.letop-box,
+.quick-ref-box,
+.examples-box,
+.review-a,
+.review-q,
+.writing-prompt,
+.quiz-item label,
+.info-box {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Formula cards */
+.formula-card {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
 @media (max-width: 600px) {
+    .container {
+        padding: 1rem 0.5rem;
+    }
+
     .hero h1 {
         font-size: 1.3rem;
+    }
+
+    .session-header h1 {
+        font-size: 1.15rem;
     }
 
     .session-grid {
@@ -825,10 +872,16 @@ footer {
 
     .flashcard {
         height: 200px;
+        max-width: 100%;
     }
 
     .fc-word {
         font-size: 1.3rem;
+    }
+
+    .fc-front,
+    .fc-back {
+        padding: 1rem;
     }
 
     .tabs {
@@ -836,7 +889,74 @@ footer {
     }
 
     .tab {
+        padding: .5rem .6rem;
+        font-size: .75rem;
+    }
+
+    /* Grammar content */
+    .grammar-content {
+        padding: 1rem .75rem;
+        font-size: .92rem;
+    }
+
+    .grammar-content th,
+    .grammar-content td {
+        padding: .35rem .5rem;
+        font-size: .82rem;
+    }
+
+    /* Quiz */
+    .quiz-input {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .quiz-input-wide {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .quiz-input-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .quiz-choices,
+    .quiz-tf {
+        flex-direction: column;
+    }
+
+    .btn-choice {
+        width: 100%;
+        text-align: left;
+    }
+
+    /* Letop / Quick-ref */
+    .letop-box,
+    .quick-ref-box,
+    .info-box {
+        padding: .75rem;
+    }
+
+    /* Writing */
+    .writing-prompt {
+        padding: .75rem;
+        font-size: .9rem;
+    }
+
+    /* Reorder words */
+    .reorder-words {
+        font-size: .95rem;
         padding: .5rem .75rem;
-        font-size: .8rem;
+    }
+
+    /* Session navigation */
+    .session-nav {
+        flex-wrap: wrap;
+    }
+
+    /* Review cards */
+    .review-card {
+        padding: .75rem;
     }
 }
