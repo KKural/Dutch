@@ -8,6 +8,7 @@ Enhanced version with:
 - Modelled on Net-box / NT2 Threshold 2 style
 """
 
+import random as _rnd
 CHAPTERS = [
     {"id": 1, "name": "Vrije Tijd", "icon": "🎉",
         "desc": "Free Time & Hobbies", "pages": "p. 3–8", "sessions": [1, 2, 3]},
@@ -4952,7 +4953,6 @@ de nadelen. Daarom vind ik dat iedereen minstens twee keer per week moet sporten
 # DATA NORMALISATION — ensure every session has consistent field formats
 # ---------------------------------------------------------------------------
 
-import random as _rnd
 
 for _s in SESSIONS:
     # --- 1. vocabulary: convert tuples → dicts, rename "example" → "ex" ---
@@ -4986,7 +4986,7 @@ for _s in SESSIONS:
                 _cards.append({
                     "q": f"Hoe zeg je '{_item['en']}' in het Nederlands?",
                     "a": f"<b>{_item['nl']}</b>"
-                         + (f" — {_item['ex']}" if _item.get("ex") else ""),
+                    + (f" — {_item['ex']}" if _item.get("ex") else ""),
                 })
         _s["review"] = _cards
     elif not isinstance(_rev, list):
