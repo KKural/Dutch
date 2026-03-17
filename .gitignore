@@ -13,7 +13,3 @@ progress.json
 # OS files
 Thumbs.db
 .DS_Store
-
-# IDE
-.vscode/
-*.code-workspace
