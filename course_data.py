@@ -637,7 +637,56 @@ But Dutch spelling is more systematic with the -te/-de distinction.</p>
 """,
 
         "grammar_extra": """
-<p><strong>Practice conjugations — complete the table:</strong></p>
+<h4>Onregelmatige imperfectumvormen (Irregular — MUST memorise!)</h4>
+<p>De 't kofschip-regel geldt alleen voor <b>regelmatige werkwoorden</b>. Veel veelgebruikte werkwoorden zijn <b>onregelmatig</b>:</p>
+<table>
+<tr><th>Infinitief</th><th>Ik (imperf.)</th><th>Wij (imperf.)</th><th>English</th></tr>
+<tr><td><b>zijn</b></td><td><b>was</b></td><td><b>waren</b></td><td>to be</td></tr>
+<tr><td><b>hebben</b></td><td><b>had</b></td><td><b>hadden</b></td><td>to have</td></tr>
+<tr><td>gaan</td><td>ging</td><td>gingen</td><td>to go</td></tr>
+<tr><td>komen</td><td>kwam</td><td>kwamen</td><td>to come</td></tr>
+<tr><td>doen</td><td>deed</td><td>deden</td><td>to do</td></tr>
+<tr><td>zien</td><td>zag</td><td>zagen</td><td>to see</td></tr>
+<tr><td>eten</td><td>at</td><td>aten</td><td>to eat</td></tr>
+<tr><td>drinken</td><td>dronk</td><td>dronken</td><td>to drink</td></tr>
+<tr><td>lezen</td><td>las</td><td>lazen</td><td>to read</td></tr>
+<tr><td>schrijven</td><td>schreef</td><td>schreven</td><td>to write</td></tr>
+<tr><td>nemen</td><td>nam</td><td>namen</td><td>to take</td></tr>
+<tr><td>lopen</td><td>liep</td><td>liepen</td><td>to walk</td></tr>
+<tr><td>slapen</td><td>sliep</td><td>sliepen</td><td>to sleep</td></tr>
+<tr><td>rijden</td><td>reed</td><td>reden</td><td>to drive</td></tr>
+<tr><td>vinden</td><td>vond</td><td>vonden</td><td>to find</td></tr>
+<tr><td>staan</td><td>stond</td><td>stonden</td><td>to stand</td></tr>
+<tr><td>zitten</td><td>zat</td><td>zaten</td><td>to sit</td></tr>
+</table>
+
+<h4>Vervoeging van zijn (imperfectum)</h4>
+<table>
+<tr><td>ik</td><td><b>was</b></td><td>wij</td><td><b>waren</b></td></tr>
+<tr><td>jij</td><td><b>was</b></td><td>jullie</td><td><b>waren</b></td></tr>
+<tr><td>hij/zij/het</td><td><b>was</b></td><td>zij (pl.)</td><td><b>waren</b></td></tr>
+</table>
+
+<h4>Vervoeging van hebben (imperfectum)</h4>
+<table>
+<tr><td>ik</td><td><b>had</b></td><td>wij</td><td><b>hadden</b></td></tr>
+<tr><td>jij</td><td><b>had</b></td><td>jullie</td><td><b>hadden</b></td></tr>
+<tr><td>hij/zij/het</td><td><b>had</b></td><td>zij (pl.)</td><td><b>hadden</b></td></tr>
+</table>
+
+<h4>Was vs Had — wanneer welke?</h4>
+<table>
+<tr><th>Gebruik <b>was/waren</b> (= to be)</th><th>Gebruik <b>had/hadden</b> (= to have)</th></tr>
+<tr><td>Ik <b>was</b> moe.</td><td>Ik <b>had</b> honger.</td></tr>
+<tr><td>Het <b>was</b> koud.</td><td>Ik <b>had</b> geen tijd.</td></tr>
+<tr><td>Zij <b>was</b> ziek.</td><td>Wij <b>hadden</b> een hond.</td></tr>
+<tr><td>We <b>waren</b> op vakantie.</td><td>Hij <b>had</b> veel werk.</td></tr>
+<tr><td>Het <b>was</b> 10 uur.</td><td>Ze <b>hadden</b> drie kinderen.</td></tr>
+</table>
+<p><b>Regel:</b> Denk aan het presens → <em>Ik <b>ben</b> moe → Ik <b>was</b> moe. Ik <b>heb</b> honger → Ik <b>had</b> honger.</em></p>
+
+<hr>
+<p><strong>Regelmatige imperfectum — oefentabel:</strong></p>
 <table>
 <tr><th>Infinitief</th><th>Stem</th><th>Kofschip?</th><th>Ik (imperfectum)</th><th>Wij (imperfectum)</th></tr>
 <tr><td>koken</td><td>kook</td><td>k = YES</td><td>kookte</td><td>kookten</td></tr>
@@ -666,6 +715,7 @@ But Dutch spelling is more systematic with the -te/-de distinction.</p>
 <li>Stem ends in other letter → <strong>-de / -den</strong></li>
 <li>Exception: v→f and z→s stems always use <strong>-de / -den</strong></li>
 <li>Singular: -te/-de · Plural: -ten/-den</li>
+<li><strong>zijn → was/waren</strong> · <strong>hebben → had/hadden</strong> (onregelmatig!)</li>
 <li>Used for stories, habitual past, descriptions</li>
 </ul>
 """,
@@ -1813,12 +1863,41 @@ Dutch <b>zullen</b> is more like a prediction or promise — Tamil equivalent wo
   leven → stem: leef (f!) → ge-leef-<b>t</b> → <b>geleefd</b> ← wait, f → -t? Yes!
 </pre>
 
-<h4>4. Hebben or Zijn?</h4>
+<h4>4. Hebben or Zijn? — Complete overzicht</h4>
 <table>
-  <tr><th>Auxiliary</th><th>When</th><th>Common verbs</th></tr>
-  <tr><td><b>hebben</b></td><td>Most verbs (transitive, activities)</td><td>werken, eten, drinken, kopen, maken, bellen</td></tr>
-  <tr><td><b>zijn</b></td><td>Movement A→B, state change, zijn/blijven/worden</td><td>gaan, komen, vertrekken, verhuizen, worden, zijn, blijven, gebeuren</td></tr>
+  <tr><th>Hulpwerkwoord</th><th>Wanneer</th><th>Veelgebruikte werkwoorden</th></tr>
+  <tr><td><b>hebben</b></td><td>De meeste werkwoorden (transitief, activiteiten)</td><td>werken, eten, drinken, kopen, maken, bellen, lezen, schrijven, koken, studeren</td></tr>
+  <tr><td><b>zijn</b></td><td>Beweging A→B, verandering van toestand, zijn/blijven/worden</td><td>gaan, komen, vertrekken, verhuizen, vallen, rijden, vliegen, worden, zijn, blijven, gebeuren, beginnen, stoppen, opstaan, groeien, sterven, slagen, zakken, genezen, trouwen</td></tr>
 </table>
+
+<h4>📋 Complete lijst: zijn-werkwoorden (ben/is/zijn + voltooid deelwoord)</h4>
+<table>
+  <tr><th>Werkwoord</th><th>Perfectum</th><th>Categorie</th></tr>
+  <tr><td>gaan</td><td>ik <b>ben</b> gegaan</td><td>🚶 Beweging A→B</td></tr>
+  <tr><td>komen</td><td>ik <b>ben</b> gekomen</td><td>🚶 Beweging A→B</td></tr>
+  <tr><td>vertrekken</td><td>ik <b>ben</b> vertrokken</td><td>🚶 Beweging A→B</td></tr>
+  <tr><td>verhuizen</td><td>ik <b>ben</b> verhuisd</td><td>🚶 Beweging A→B</td></tr>
+  <tr><td>rijden</td><td>ik <b>ben</b> gereden</td><td>🚶 Beweging A→B</td></tr>
+  <tr><td>vliegen</td><td>ik <b>ben</b> gevlogen</td><td>🚶 Beweging A→B</td></tr>
+  <tr><td>lopen</td><td>ik <b>ben</b> gelopen</td><td>🚶 Beweging A→B</td></tr>
+  <tr><td>fietsen</td><td>ik <b>ben</b> gefietst</td><td>🚶 Beweging A→B</td></tr>
+  <tr><td>vallen</td><td>ik <b>ben</b> gevallen</td><td>🚶 Beweging A→B</td></tr>
+  <tr><td>opstaan</td><td>ik <b>ben</b> opgestaan</td><td>🚶 Beweging A→B</td></tr>
+  <tr><td>worden</td><td>ik <b>ben</b> geworden</td><td>🔄 Verandering</td></tr>
+  <tr><td>groeien</td><td>ik <b>ben</b> gegroeid</td><td>🔄 Verandering</td></tr>
+  <tr><td>sterven</td><td>hij <b>is</b> gestorven</td><td>🔄 Verandering</td></tr>
+  <tr><td>beginnen</td><td>ik <b>ben</b> begonnen</td><td>🔄 Verandering</td></tr>
+  <tr><td>stoppen</td><td>ik <b>ben</b> gestopt</td><td>🔄 Verandering</td></tr>
+  <tr><td>genezen</td><td>ik <b>ben</b> genezen</td><td>🔄 Verandering</td></tr>
+  <tr><td>slagen</td><td>ik <b>ben</b> geslaagd</td><td>🔄 Verandering</td></tr>
+  <tr><td>zakken</td><td>ik <b>ben</b> gezakt</td><td>🔄 Verandering</td></tr>
+  <tr><td>trouwen</td><td>ik <b>ben</b> getrouwd</td><td>🔄 Verandering</td></tr>
+  <tr><td>zijn</td><td>ik <b>ben</b> geweest</td><td>⭐ Speciaal</td></tr>
+  <tr><td>blijven</td><td>ik <b>ben</b> gebleven</td><td>⭐ Speciaal</td></tr>
+  <tr><td>gebeuren</td><td>het <b>is</b> gebeurd</td><td>⭐ Speciaal</td></tr>
+</table>
+<p><b>Ezelsbruggetje:</b> Als je kunt vragen "waarheen?" of "waarnaar?" → gebruik <b>zijn</b>.<br>
+Ik ben naar Gent <b>gegaan</b> (waarheen? → zijn). Ik heb in het park <b>gewandeld</b> (geen richting → hebben).</p>
 
 <h4>5. Tamil comparison</h4>
 <p>Tamil perfect: "நான் சாப்பிட்டேன் (nāṉ cāppiṭṭēṉ)" = I ate/have eaten. Tamil merges past tenses into one.
@@ -2035,16 +2114,37 @@ Dutch has TWO past tenses. The perfectum (heb gegeten) is for <b>conversation</b
 
 <h4>Imperfectum of common irregular verbs (review)</h4>
 <table>
-  <tr><th>Infinitive</th><th>Imperfectum (ik)</th><th>Imperfectum (wij)</th></tr>
+  <tr><th>Infinitief</th><th>Imperfectum (ik)</th><th>Imperfectum (wij)</th></tr>
+  <tr style="background:#fff3cd"><td><b>zijn</b></td><td><b>was</b></td><td><b>waren</b></td></tr>
+  <tr style="background:#fff3cd"><td><b>hebben</b></td><td><b>had</b></td><td><b>hadden</b></td></tr>
   <tr><td>gaan</td><td>ging</td><td>gingen</td></tr>
   <tr><td>komen</td><td>kwam</td><td>kwamen</td></tr>
   <tr><td>zien</td><td>zag</td><td>zagen</td></tr>
+  <tr><td>doen</td><td>deed</td><td>deden</td></tr>
   <tr><td>eten</td><td>at</td><td>aten</td></tr>
   <tr><td>drinken</td><td>dronk</td><td>dronken</td></tr>
   <tr><td>lezen</td><td>las</td><td>lazen</td></tr>
   <tr><td>schrijven</td><td>schreef</td><td>schreven</td></tr>
   <tr><td>nemen</td><td>nam</td><td>namen</td></tr>
+  <tr style="background:#e8f4fd"><td><b>kunnen</b> (modaal)</td><td><b>kon</b></td><td><b>konden</b></td></tr>
+  <tr style="background:#e8f4fd"><td><b>moeten</b> (modaal)</td><td><b>moest</b></td><td><b>moesten</b></td></tr>
+  <tr style="background:#e8f4fd"><td><b>willen</b> (modaal)</td><td><b>wilde/wou</b></td><td><b>wilden/wouden</b></td></tr>
+  <tr style="background:#e8f4fd"><td><b>mogen</b> (modaal)</td><td><b>mocht</b></td><td><b>mochten</b></td></tr>
 </table>
+<p>⚠️ <b>zijn, hebben en modale werkwoorden</b> gebruik je bijna <b>ALTIJD</b> in het imperfectum, ook in gesproken Nederlands:<br>
+Ik <b>was</b> moe. Ik <b>had</b> honger. Ik <b>kon</b> niet komen. Ik <b>moest</b> werken.</p>
+
+<h4>Plusquamperfectum met zijn (was/waren + voltooid deelwoord)</h4>
+<p>Net als het perfectum met zijn (ben + vd), bestaat ook het plusquamperfectum met zijn:</p>
+<table>
+  <tr><th>Perfectum (nu relevant)</th><th>Plusquamperfectum (eerder in het verleden)</th></tr>
+  <tr><td>Ik <b>ben</b> aangekomen.</td><td>Ik <b>was</b> al aangekomen (toen jij belde).</td></tr>
+  <tr><td>Hij <b>is</b> vertrokken.</td><td>Hij <b>was</b> al vertrokken (toen ik kwam).</td></tr>
+  <tr><td>Wij <b>zijn</b> verhuisd.</td><td>Wij <b>waren</b> al verhuisd (voor de zomer).</td></tr>
+  <tr><td>Ze <b>is</b> gestorven.</td><td>Ze <b>was</b> al gestorven (toen de dokter kwam).</td></tr>
+</table>
+<p><b>Regel:</b> Perfectum met <b>zijn</b> → Plusquamperfectum ook met <b>zijn</b> (was/waren + vd).<br>
+Perfectum met <b>hebben</b> → Plusquamperfectum ook met <b>hebben</b> (had/hadden + vd).</p>
 """,
 
         "grammar_quick": """
