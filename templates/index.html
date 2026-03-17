@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Dutch B1 — Dashboard{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>Dutch B1 · Part 2 of 4</h1>
+    <p class="subtitle">25 sessions · 15 min/day · Flashcards + Quizzes</p>
+    <div class="progress-bar-wrap">
+        <div class="progress-bar" style="width:{{ pct }}%"></div>
+    </div>
+    <p class="progress-text">{{ done }} / {{ total }} sessions completed ({{ pct }}%)</p>
+</section>
+
+{% for ch in chapters %}
+<section class="chapter-card">
+    <h2>{{ ch.icon }} {{ ch.name }} <small>{{ ch.desc }}</small></h2>
+    <p class="book-ref">📖 {{ ch.pages }}</p>
+    <div class="session-grid">
+        {% for sid in ch.sessions %}
+        {% set s = sessions[sid] %}
+        {% set is_done = sid in progress.completed %}
+        {% set score = progress.scores.get(sid|string, None) %}
+        <a href="{{ url_for('session_view', sid=sid) }}" class="session-tile {{ 'done' if is_done else '' }}">
+            <span class="session-num">{{ sid }}</span>
+            <span class="session-title">{{ s.title }}</span>
+            {% if is_done %}
+            <span class="badge done-badge">✓</span>
+            {% endif %}
+            {% if score is not none %}
+            <span class="badge score-badge">{{ score }}%</span>
+            {% endif %}
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endfor %}
+
+<div class="reset-wrap">
+    <button id="resetBtn" class="btn btn-danger">Reset All Progress</button>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.getElementById('resetBtn').addEventListener('click', function () {
+        if (confirm('Reset all progress? This cannot be undone.')) {
+            fetch('/api/progress/reset', { method: 'POST' })
+                .then(() => location.reload());
+        }
+    });
+</script>
+{% endblock %}

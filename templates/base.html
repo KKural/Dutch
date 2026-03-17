@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Dutch B1 Course{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    <nav class="topnav">
+        <a href="{{ url_for('index') }}" class="logo">🇳🇱 Dutch B1 · Part 2</a>
+        <span class="nav-sub">Interactive Course — UGent / Gent</span>
+    </nav>
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>NT2 Threshold 2 · CVO GEMT · Exam target: June 2026</p>
+    </footer>
+    {% block scripts %}{% endblock %}
+</body>
+
+</html>

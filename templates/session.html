@@ -1,0 +1,389 @@
+{% extends "base.html" %}
+{% block title %}Session {{ s.id }} — {{ s.title }}{% endblock %}
+
+{% block content %}
+<div class="session-header">
+    <div class="session-nav">
+        {% if prev_id %}<a href="{{ url_for('session_view', sid=prev_id) }}" class="btn btn-sm">← Previous</a>{% endif
+        %}
+        <a href="{{ url_for('index') }}" class="btn btn-sm">Dashboard</a>
+        {% if next_id %}<a href="{{ url_for('session_view', sid=next_id) }}" class="btn btn-sm">Next →</a>{% endif %}
+    </div>
+    <h1>Session {{ s.id }}: {{ s.title }}</h1>
+    <p class="meta">{{ s.chapter }} · {{ s.book_page }}</p>
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+    <button class="tab active" data-tab="review">Review</button>
+    <button class="tab" data-tab="vocab">Flashcards</button>
+    <button class="tab" data-tab="grammar">Grammar</button>
+    <button class="tab" data-tab="exercises">Quiz</button>
+    <button class="tab" data-tab="writing">Your Turn</button>
+</div>
+
+<!-- ======== REVIEW TAB ======== -->
+<div class="tab-panel active" id="panel-review">
+    {% if s.review %}
+    <h2>Quick Review</h2>
+    <p class="hint">Click each card to reveal the answer. Try to answer in your head first!</p>
+    {% for r in s.review %}
+    <div class="review-card" onclick="this.classList.toggle('show')">
+        <div class="review-q">{{ loop.index }}. {{ r.q }}</div>
+        <div class="review-a">{{ r.a }}</div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p class="empty-msg">This is your first session — no review yet! Start with the Flashcards tab →</p>
+    {% endif %}
+</div>
+
+<!-- ======== FLASHCARDS TAB ======== -->
+<div class="tab-panel" id="panel-vocab">
+    <h2>Vocabulary Flashcards</h2>
+    {% if s.vocabulary %}
+    <div class="info-box">
+        <strong>How to use:</strong> Click the card (or press Space) to flip it. Use ← → arrow keys or buttons to
+        navigate.
+        Mark words you know — aim to master all words before moving to the Quiz!
+    </div>
+    <div class="flashcard-area">
+        <div class="flashcard" id="flashcard" onclick="flipCard()">
+            <div class="fc-front">
+                <span class="fc-lang">Nederlands</span>
+                <span class="fc-word" id="fc-nl"></span>
+            </div>
+            <div class="fc-back">
+                <span class="fc-lang">English</span>
+                <span class="fc-word" id="fc-en"></span>
+                <span class="fc-example" id="fc-ex"></span>
+            </div>
+        </div>
+        <div class="fc-controls">
+            <button class="btn" onclick="prevCard()">← Prev</button>
+            <span class="fc-counter" id="fc-counter">1 / 1</span>
+            <button class="btn" onclick="nextCard()">Next →</button>
+        </div>
+        <div class="fc-controls">
+            <button class="btn btn-success" onclick="markKnown()">✓ I know this</button>
+            <button class="btn btn-warn" onclick="nextCard()">✗ Still learning</button>
+        </div>
+        <div class="fc-progress" id="fc-progress"></div>
+    </div>
+    {% else %}
+    <p class="empty-msg">No vocabulary for this session — it's a review session!</p>
+    {% endif %}
+</div>
+
+<!-- ======== GRAMMAR TAB ======== -->
+<div class="tab-panel" id="panel-grammar">
+    <h2>📖 {{ s.grammar_title }}</h2>
+
+    <!-- Main Theory -->
+    <div class="grammar-section">
+        <h3 class="grammar-section-title">📝 Theory</h3>
+        <div class="grammar-content">
+            {{ s.grammar_html|safe }}
+        </div>
+    </div>
+
+    <!-- Let op! / Common Mistakes -->
+    {% if s.grammar_letop %}
+    <div class="letop-box">
+        <h3>⚠️ Let op! (Watch out!)</h3>
+        {{ s.grammar_letop|safe }}
+    </div>
+    {% endif %}
+
+    <!-- Extra Examples -->
+    {% if s.grammar_extra %}
+    <div class="grammar-section">
+        <h3 class="grammar-section-title">🔍 More Examples & Practice Sentences</h3>
+        <div class="grammar-content examples-box">
+            {{ s.grammar_extra|safe }}
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Quick Reference -->
+    {% if s.grammar_quick %}
+    <div class="quick-ref-box">
+        <h3>📌 Quick Reference</h3>
+        {{ s.grammar_quick|safe }}
+    </div>
+    {% endif %}
+</div>
+
+<!-- ======== EXERCISES TAB ======== -->
+<div class="tab-panel" id="panel-exercises">
+    <h2>🎯 Practice Exercises</h2>
+
+    <div class="info-box">
+        <strong>Instructions:</strong><br>
+        • <strong>Fill-in:</strong> Type the missing Dutch word(s). Spelling counts! Press Enter or click Check.<br>
+        • <strong>Multiple Choice:</strong> Click the correct option. Think carefully — you only get one try!<br>
+        • <strong>True / False:</strong> Decide if the Dutch sentence is grammatically correct.<br>
+        • <strong>Translate:</strong> Write the full Dutch translation of the English sentence.<br>
+        • <strong>Reorder:</strong> Put the scrambled Dutch words in the correct order.<br>
+        💡 Click the <em>hint</em> button if you need help before answering.
+    </div>
+
+    <form id="quizForm" onsubmit="return false;">
+        {% for ex in s.exercises %}
+        <div class="quiz-item" data-idx="{{ loop.index0 }}">
+            {% if ex.type == 'fill' %}
+            <label>{{ loop.index }}. {{ ex.q }}</label>
+            {% if ex.tip %}<button type="button" class="btn-hint"
+                onclick="this.nextElementSibling.classList.toggle('show')">💡 Hint</button>
+            <div class="tip-box">{{ ex.tip }}</div>{% endif %}
+            <div class="quiz-input-row">
+                <input type="text" class="quiz-input" data-answer="{{ ex.a }}" autocomplete="off"
+                    onkeydown="if(event.key==='Enter'){checkOne(this.parentElement.parentElement)}">
+                <button type="button" class="btn btn-sm"
+                    onclick="checkOne(this.parentElement.parentElement)">Check</button>
+                <span class="quiz-feedback"></span>
+            </div>
+
+            {% elif ex.type == 'choice' %}
+            <label>{{ loop.index }}. {{ ex.q }}</label>
+            {% if ex.tip %}<button type="button" class="btn-hint"
+                onclick="this.nextElementSibling.classList.toggle('show')">💡 Hint</button>
+            <div class="tip-box">{{ ex.tip }}</div>{% endif %}
+            <div class="quiz-choices" data-correct="{{ ex.a }}">
+                {% for opt in ex.options %}
+                <button type="button" class="btn btn-choice" onclick="checkChoice(this)">{{ opt }}</button>
+                {% endfor %}
+            </div>
+
+            {% elif ex.type == 'tf' %}
+            <label>{{ loop.index }}. True or False? <em>{{ ex.q }}</em></label>
+            {% if ex.tip %}<button type="button" class="btn-hint"
+                onclick="this.nextElementSibling.classList.toggle('show')">💡 Hint</button>
+            <div class="tip-box">{{ ex.tip }}</div>{% endif %}
+            <div class="quiz-tf" data-correct="{{ ex.a|lower }}"
+                data-correction="{{ ex.correction|default('', true) }}">
+                <button type="button" class="btn btn-choice" onclick="checkTF(this, true)">True ✓</button>
+                <button type="button" class="btn btn-choice" onclick="checkTF(this, false)">False ✗</button>
+            </div>
+            <div class="quiz-feedback tf-feedback"></div>
+
+            {% elif ex.type == 'translate' %}
+            <label>{{ loop.index }}. 🔄 Translate to Dutch: <em>{{ ex.q }}</em></label>
+            {% if ex.tip %}<button type="button" class="btn-hint"
+                onclick="this.nextElementSibling.classList.toggle('show')">💡 Hint</button>
+            <div class="tip-box">{{ ex.tip }}</div>{% endif %}
+            <div class="quiz-input-row">
+                <input type="text" class="quiz-input quiz-input-wide" data-answer="{{ ex.a }}" autocomplete="off"
+                    onkeydown="if(event.key==='Enter'){checkOne(this.parentElement.parentElement)}">
+                <button type="button" class="btn btn-sm"
+                    onclick="checkOne(this.parentElement.parentElement)">Check</button>
+                <span class="quiz-feedback"></span>
+            </div>
+
+            {% elif ex.type == 'reorder' %}
+            <label>{{ loop.index }}. 🔀 Put these words in the correct order:</label>
+            <div class="reorder-words">{{ ex.q }}</div>
+            {% if ex.tip %}<button type="button" class="btn-hint"
+                onclick="this.nextElementSibling.classList.toggle('show')">💡 Hint</button>
+            <div class="tip-box">{{ ex.tip }}</div>{% endif %}
+            <div class="quiz-input-row">
+                <input type="text" class="quiz-input quiz-input-wide" data-answer="{{ ex.a }}" autocomplete="off"
+                    placeholder="Type the sentence in correct order…"
+                    onkeydown="if(event.key==='Enter'){checkOne(this.parentElement.parentElement)}">
+                <button type="button" class="btn btn-sm"
+                    onclick="checkOne(this.parentElement.parentElement)">Check</button>
+                <span class="quiz-feedback"></span>
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </form>
+
+    <div class="quiz-summary" id="quizSummary" style="display:none">
+        <h3>Score: <span id="quizScore"></span></h3>
+        <p id="quizMessage"></p>
+    </div>
+    <button class="btn btn-success" onclick="showScore()" style="margin-top:1rem">Show Score</button>
+</div>
+
+<!-- ======== YOUR TURN TAB ======== -->
+<div class="tab-panel" id="panel-writing">
+    <h2>✍️ Jouw Beurt (Your Turn)</h2>
+    <div class="info-box">
+        <strong>What to do:</strong> Write freely in Dutch using the grammar and vocabulary from this session.
+        Don't worry about perfection — the goal is to practise actively. After writing, re-read your text
+        and check it against the grammar rules you just learned.
+    </div>
+    <div class="writing-prompt">{{ s.jouw_beurt|replace('\n','<br>')|safe }}</div>
+    <textarea class="writing-area" placeholder="Write your answer here in Dutch…" rows="8"></textarea>
+    <div class="writing-checklist">
+        <h4>Self-check after writing:</h4>
+        <label><input type="checkbox"> I used vocabulary from this session</label>
+        <label><input type="checkbox"> I applied the grammar rule correctly</label>
+        <label><input type="checkbox"> I checked verb positions (V2, bijzin)</label>
+        <label><input type="checkbox"> I re-read my text at least once</label>
+    </div>
+</div>
+
+<!-- COMPLETE SESSION BUTTON -->
+<div class="complete-wrap">
+    <button class="btn btn-success btn-lg" id="completeBtn" onclick="completeSession()">
+        {% if s.id in progress.completed %}Session Completed ✓{% else %}Mark Session Complete{% endif %}
+    </button>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // === TAB SWITCHING ===
+    document.querySelectorAll('.tab').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+        });
+    });
+
+    // === FLASHCARDS ===
+    const vocab = {{ s.vocabulary| tojson }};
+    let cardIdx = 0;
+    let flipped = false;
+    let known = new Set();
+
+    function updateCard() {
+        if (!vocab.length) return;
+        const c = vocab[cardIdx];
+        document.getElementById('fc-nl').textContent = c.nl;
+        document.getElementById('fc-en').textContent = c.en;
+        document.getElementById('fc-ex').textContent = c.ex || '';
+        document.getElementById('fc-counter').textContent = (cardIdx + 1) + ' / ' + vocab.length;
+        document.getElementById('flashcard').classList.toggle('flipped', flipped);
+        document.getElementById('fc-progress').textContent =
+            'Mastered: ' + known.size + ' / ' + vocab.length;
+    }
+    function flipCard() { flipped = !flipped; updateCard(); }
+    function nextCard() { cardIdx = (cardIdx + 1) % vocab.length; flipped = false; updateCard(); }
+    function prevCard() { cardIdx = (cardIdx - 1 + vocab.length) % vocab.length; flipped = false; updateCard(); }
+    function markKnown() { known.add(cardIdx); nextCard(); }
+    if (vocab.length) updateCard();
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', e => {
+        const active = document.querySelector('.tab-panel.active');
+        if (active && active.id === 'panel-vocab') {
+            if (e.key === ' ' || e.key === 'Spacebar') { e.preventDefault(); flipCard(); }
+            if (e.key === 'ArrowRight') nextCard();
+            if (e.key === 'ArrowLeft') prevCard();
+        }
+    });
+
+    // === QUIZ ===
+    let answered = {};
+
+    function normalize(s) {
+        return s.trim().toLowerCase()
+            .replace(/[.,!?;:'"()]/g, '')
+            .replace(/\s+/g, ' ');
+    }
+
+    function checkOne(item) {
+        const input = item.querySelector('.quiz-input');
+        const fb = item.querySelector('.quiz-feedback');
+        const expected = input.dataset.answer;
+        const given = input.value;
+        const idx = item.dataset.idx;
+
+        if (normalize(given) === normalize(expected)) {
+            fb.textContent = '✓ Correct!';
+            fb.className = 'quiz-feedback correct';
+            input.classList.add('correct');
+            answered[idx] = true;
+        } else {
+            fb.innerHTML = '✗ Correct answer: <strong>' + expected + '</strong>';
+            fb.className = 'quiz-feedback incorrect';
+            input.classList.add('incorrect');
+            answered[idx] = false;
+        }
+    }
+
+    function checkChoice(btn) {
+        const parent = btn.parentElement;
+        const correct = parent.dataset.correct;
+        const buttons = parent.querySelectorAll('.btn-choice');
+        const clickedIdx = Array.from(buttons).indexOf(btn);
+        const item = parent.closest('.quiz-item');
+        const idx = item.dataset.idx;
+
+        let correctIdx = parseInt(correct);
+        if (isNaN(correctIdx)) {
+            correctIdx = Array.from(buttons).findIndex(b => b.textContent.trim() === correct.trim());
+        }
+
+        buttons.forEach((b, i) => {
+            b.disabled = true;
+            if (i === correctIdx) b.classList.add('correct');
+            else if (i === clickedIdx) b.classList.add('incorrect');
+        });
+        answered[idx] = (clickedIdx === correctIdx);
+    }
+
+    function checkTF(btn, value) {
+        const parent = btn.parentElement;
+        const correctRaw = parent.dataset.correct;
+        const correct = (correctRaw === 'true' || correctRaw === 'ja');
+        const correction = parent.dataset.correction || '';
+        const item = parent.closest('.quiz-item');
+        const idx = item.dataset.idx;
+        const fb = item.querySelector('.tf-feedback');
+        const buttons = parent.querySelectorAll('.btn-choice');
+
+        buttons.forEach(b => b.disabled = true);
+
+        if (value === correct) {
+            btn.classList.add('correct');
+            fb.textContent = correction ? '✓ ' + correction : '✓ Correct!';
+            fb.className = 'quiz-feedback tf-feedback correct';
+            answered[idx] = true;
+        } else {
+            btn.classList.add('incorrect');
+            fb.textContent = correction ? '✗ ' + correction : '✗ Incorrect.';
+            fb.className = 'quiz-feedback tf-feedback incorrect';
+            answered[idx] = false;
+        }
+    }
+
+    function showScore() {
+        const total = {{ s.exercises| length
+    }};
+    const right = Object.values(answered).filter(v => v).length;
+    const pct = total ? Math.round(right / total * 100) : 0;
+    document.getElementById('quizScore').textContent = right + '/' + total + ' (' + pct + '%)';
+    document.getElementById('quizSummary').style.display = 'block';
+
+    const msg = document.getElementById('quizMessage');
+    if (pct === 100) msg.textContent = '🎉 Perfect score! Uitstekend!';
+    else if (pct >= 80) msg.textContent = '👏 Great job! Almost perfect!';
+    else if (pct >= 60) msg.textContent = '👍 Good effort! Review the grammar and try again.';
+    else msg.textContent = '📖 Keep practising! Re-read the Grammar tab and try once more.';
+
+    fetch('/api/progress', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ session_id: {{ s.id }}, score: pct})
+    });
+}
+
+    function completeSession() {
+        fetch('/api/progress', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ session_id: {{ s.id }}, completed: true})
+    }).then(() => {
+                const btn = document.getElementById('completeBtn');
+                btn.textContent = 'Session Completed ✓';
+                btn.classList.add('completed');
+            });
+}
+</script>
+{% endblock %}
