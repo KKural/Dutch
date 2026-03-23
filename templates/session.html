@@ -305,7 +305,7 @@
         if (!vocab.length) return;
         const c = vocab[cardIdx];
         document.getElementById('fc-nl').textContent = c.nl || '—';
-        document.getElementById('fc-en').textContent = c.en || '(geen vertaling)';
+        document.getElementById('fc-en').textContent = c.en || '';
         document.getElementById('fc-ex').textContent = c.ex || '';
         document.getElementById('fc-counter').textContent = (cardIdx + 1) + ' / ' + vocab.length;
         document.getElementById('flashcard').classList.toggle('flipped', flipped);
