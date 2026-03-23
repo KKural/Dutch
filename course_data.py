@@ -26,6 +26,10 @@ CHAPTERS = [
         "pages": "p. 42–79", "sessions": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]},
     {"id": 8, "name": "Examenvoorbereiding", "icon": "🎯",
         "desc": "Exam Preparation", "pages": "—", "sessions": [21, 22, 23, 24, 25]},
+    {"id": 9, "name": "Examentopics Oefenen", "icon": "📋",
+        "desc": "Net zo Box + NT2 Taalmenu stijl — alle 4 vaardigheden", "pages": "CVO GEMT 3.2", "sessions": [26, 27, 28, 29, 30, 31, 32, 33, 34]},
+    {"id": 10, "name": "Grammatica Referentie", "icon": "📚",
+        "desc": "Modale werkwoorden + volledige werkwoordtabel", "pages": "—", "sessions": [35, 36]},
 ]
 
 SESSIONS = [
@@ -5100,6 +5104,2324 @@ de nadelen. Daarom vind ik dat iedereen minstens twee keer per week moet sporten
                       "☐ Heb ik perfectum en imperfectum correct gebruikt?\n"
                       "☐ Heb ik vaste voorzetsels correct gebruikt?",
     },
+
+    # =====================================================================
+    # SESSION 26 — SCHRIJVEN: Uiterlijk beschrijven (Net zo Box stijl)
+    # =====================================================================
+    {
+        "id": 26,
+        "title": "Schrijven: Uiterlijk beschrijven",
+        "chapter": "Examentopics Oefenen",
+        "book_page": "CVO GEMT 3.2 — Net zo Box schrijfvaardigheid",
+        "review": [
+            {"q": "Hoe zeg je 'She has long blonde hair'?",
+             "a": "Zij heeft lang blond haar. (geen -e: haar = het-woord, geen lidwoord)"},
+            {"q": "Welk werkwoord gebruik je voor ogen / neus / haar?",
+             "a": "HEBBEN: Ik heb bruine ogen. Niet: ik ben bruine ogen!"},
+            {"q": "Welk werkwoord gebruik je voor bril / hoofddoek / oorbellen?",
+             "a": "DRAGEN: Ik draag een bril. Hij draagt geen oorbellen."},
+            {"q": "'Hij heeft een ___ neus.' (groot — neus = de-woord + een)",
+             "a": "grote — de-woord + een → WEL -e: een grote neus."},
+        ],
+        "vocabulary": [
+            {"nl": "het uiterlijk", "en": "appearance / looks",
+                "ex": "Beschrijf je uiterlijk in 6 zinnen."},
+            {"nl": "gespierd gebouwd", "en": "muscularly built",
+                "ex": "Hij is gespierd gebouwd."},
+            {"nl": "slank", "en": "slim / slender", "ex": "Zij is slank."},
+            {"nl": "mollig", "en": "chubby / plump",
+                "ex": "Hij is een beetje mollig."},
+            {"nl": "de sproeten", "en": "freckles",
+                "ex": "Ze heeft sproeten op haar wangen."},
+            {"nl": "de moedervlek", "en": "mole / birthmark",
+                "ex": "Ik heb een moedervlek op mijn wang."},
+            {"nl": "de stoppelbaard", "en": "stubble",
+                "ex": "Hij heeft een stoppelbaard."},
+            {"nl": "de volle baard", "en": "full beard",
+                "ex": "Mijn vader heeft een volle baard."},
+            {"nl": "halflang", "en": "medium-length (hair)",
+                "ex": "Ze heeft halflang bruin haar."},
+            {"nl": "krullend", "en": "curly", "ex": "Zij heeft krullend haar."},
+            {"nl": "ovaal", "en": "oval", "ex": "Mijn gezicht is ovaal."},
+            {"nl": "de gelaatskleur", "en": "skin / complexion",
+                "ex": "Hij heeft een lichte gelaatskleur."},
+        ],
+        "grammar_title": "Het adjectief bij uiterlijk — zijn / hebben / dragen",
+        "grammar_html": """
+<h4>3 basiswerkwoorden voor uiterlijk</h4>
+<table>
+<tr><th>Werkwoord</th><th>Gebruik voor…</th><th>Voorbeelden</th></tr>
+<tr><td><b>zijn</b></td><td>Eigenschappen &amp; afmetingen</td><td><em>Hij is groot. Zij is slank. Hij is 1m80.</em></td></tr>
+<tr><td><b>hebben</b></td><td>Lichaamsdelen + haar</td><td><em>Ik heb bruine ogen. Zij heeft kort haar. Hij heeft een grote neus.</em></td></tr>
+<tr><td><b>dragen</b></td><td>Accessoires &amp; kleding (+/- hoofd)</td><td><em>Hij draagt een bril. Ze draagt een hoofddoek.</em></td></tr>
+</table>
+
+<h4>Adjectief -e regel — snelle referentie</h4>
+<table>
+<tr><th>Situatie</th><th>-e?</th><th>Voorbeeld</th></tr>
+<tr><td>Na zijn / hebben (predicatief)</td><td>NOOIT -e</td><td><em>Hij is groot.</em></td></tr>
+<tr><td><b>het</b>-woord + een / geen / mijn (onbepaald / bezittelijk)</td><td>GEEN -e</td><td><em>een groot hoofd / groot haar / mijn blond haar</em></td></tr>
+<tr><td><b>het</b>-woord + het / dit / dat</td><td>WEL -e</td><td><em>het grote hoofd / dat blauwe oog</em></td></tr>
+<tr><td><b>de</b>-woord + een / de / geen / mijn…</td><td>WEL -e</td><td><em>een grote neus / de blauwe ogen</em></td></tr>
+<tr><td>Meervoud altijd</td><td>WEL -e</td><td><em>bruine ogen / grote handen</em></td></tr>
+</table>
+
+<h4>Net zo Box schrijfmodel — 6-zinnen template</h4>
+<ol>
+<li><b>Naam + leeftijd:</b> <em>Mijn collega Ravi is 35 jaar oud.</em></li>
+<li><b>Lengte + bouw:</b> <em>Hij is 1 meter 80 en hij is gespierd gebouwd.</em></li>
+<li><b>Haar:</b> <em>Hij heeft kort zwart haar.</em></li>
+<li><b>Gezicht + ogen + neus:</b> <em>Hij heeft een ovaal gezicht, donkere ogen en een rechte neus.</em></li>
+<li><b>Bijzonder kenmerk:</b> <em>Hij heeft een kleine tatoeage op zijn arm en hij draagt geen bril.</em></li>
+<li><b>Gelaatskleur:</b> <em>Hij heeft een donkere huid.</em></li>
+</ol>
+""",
+        "grammar_letop": """
+<ul>
+<li><span class="wrong">Zij is bruine ogen.</span> → <span class="right">Zij heeft bruine ogen.</span><br>
+   Lichaamsdelen (ogen, neus, haar) → altijd <b>hebben</b>, niet zijn!</li>
+<li><span class="wrong">Zij heeft een grote haar.</span> → <span class="right">Zij heeft groot haar.</span><br>
+   haar = het-woord, geen lidwoord → <b>geen -e</b>: groot haar, lang blond haar.</li>
+<li><span class="wrong">Hij heeft een groot hoofd en groot ogen.</span> → <span class="right">Hij heeft een groot hoofd en grote ogen.</span><br>
+   hoofd = het-woord + een → geen -e. ogen = meervoud → altijd -e!</li>
+<li><span class="wrong">Ze draagt oorbellen groot.</span> → <span class="right">Ze draagt grote oorbellen.</span><br>
+   Bijvoeglijk naamwoord staat <b>vóór</b> het zelfstandig naamwoord.</li>
+</ul>
+""",
+        "grammar_extra": """
+<h4>Handige uitdrukkingen voor foto beschrijven (Net zo Box spreektaak)</h4>
+<ul>
+<li><em>Op de foto zie ik een man/vrouw van ongeveer … jaar.</em></li>
+<li><em>Het lijkt alsof hij/zij … is.</em></li>
+<li><em>In de achtergrond zie ik …</em></li>
+<li><em>Wat mij opvalt is dat …</em> (What strikes me is that…)</li>
+<li><em>Hij/zij ziet er … uit.</em> (He/she looks …)</li>
+</ul>
+
+<h4>Veelvoorkomende de-woorden vs het-woorden (uiterlijk)</h4>
+<table>
+<tr><th>de-woord (+ -e)</th><th>het-woord (geen -e na een)</th></tr>
+<tr><td>de neus, de mond, de kin, de ogen (mv), de wangen, de oren, de handen</td><td>het haar, het hoofd, het gezicht, het oog (enkelvoud), het kind</td></tr>
+</table>
+""",
+        "grammar_quick": """
+<ul>
+<li><b>zijn</b> + eigenschap: hij is groot, slank, gespierd</li>
+<li><b>hebben</b> + lichaamsdeel: ze heeft bruine ogen, kort haar, een rechte neus</li>
+<li><b>dragen</b> + accessoire: hij draagt een bril, oorbellen, een hoofddoek</li>
+<li>het-woord + een → <b>geen -e</b>: een groot hoofd, een blond kind, groot haar</li>
+<li>de-woord + een → <b>WEL -e</b>: een grote neus, een blauwe mond</li>
+<li>Na zijn: <b>NOOIT -e</b>: hij is groot (niet: grote)</li>
+<li>Meervoud: <b>ALTIJD -e</b>: bruine ogen, grote handen</li>
+</ul>
+""",
+        "exercises": [
+            {"type": "choice",
+             "q": "Net zo Box-stijl: 'Ze heeft ___ haar.' (blond — haar = het-woord, geen lidwoord)",
+             "options": ["blonde haar", "blond haar", "het blonde haar", "een blond haar"],
+             "a": "blond haar",
+             "tip": "haar = het-woord zonder lidwoord → GEEN -e. Blond haar (niet blonde!)."},
+            {"type": "choice",
+             "q": "'Hij heeft een ___ neus.' (recht — neus = de-woord + een)",
+             "options": ["rechte neus", "recht neus", "rechten neus", "rechts neus"],
+             "a": "rechte neus",
+             "tip": "neus = de-woord + een → WEL -e: een rechte neus."},
+            {"type": "fill",
+             "q": "Hij is 1 meter 78. Hij ___ gespierd gebouwd. (welk werkwoord?)",
+             "a": "is",
+             "tip": "Bouw (gespierd, slank, mollig) = eigenschap → ZIJN: hij is gespierd gebouwd."},
+            {"type": "fill",
+             "q": "Op de foto: Zij ___ donkere ogen en een kleine neus.",
+             "a": "heeft",
+             "tip": "Lichaamsdelen (ogen, neus) → altijd HEBBEN."},
+            {"type": "fill",
+             "q": "Mijn nicht draagt geen ___. Ze draagt lenzen. (glasses)",
+             "a": "bril",
+             "tip": "dragen + accessoire. Een bril = glasses."},
+            {"type": "fill",
+             "q": "Hij heeft ___ ___ haar. (short + black — het-woord, geen lidwoord)",
+             "a": "kort zwart",
+             "tip": "haar = het-woord, geen lidwoord → geen -e op beide: kort zwart haar."},
+            {"type": "tf",
+             "q": "'Zij heeft een ovale gezicht' is correct.",
+             "a": False,
+             "correction": "gezicht = het-woord + een → GEEN -e: een ovaal gezicht.",
+             "tip": "het gezicht = het-woord + een → geen -e: een ovaal gezicht."},
+            {"type": "tf",
+             "q": "'Hij is een gespierde man' is correct.",
+             "a": True,
+             "correction": "man = de-woord + een → WEL -e: een gespierde man. ✓",
+             "tip": "man = de-woord → met een: een gespierde man."},
+            {"type": "tf",
+             "q": "'Op de foto zie ik een vrouw. Ze is blauwe ogen.' is correct.",
+             "a": False,
+             "correction": "Ogen → HEBBEN: Ze heeft blauwe ogen.",
+             "tip": "Lichaamsdelen = hebben, niet zijn!"},
+            {"type": "translate",
+             "q": "She has medium-length curly brown hair.",
+             "a": "Zij heeft halflang krullend bruin haar.",
+             "tip": "haar = het-woord, geen lidwoord → geen -e op alle bijv.nw.: halflang krullend bruin haar."},
+            {"type": "translate",
+             "q": "He is muscularly built and has a full beard.",
+             "a": "Hij is gespierd gebouwd en hij heeft een volle baard.",
+             "tip": "Eigenschap → is gespierd. Lichaamsdeel/haar → heeft een volle baard. baard = de-woord + een → -e: volle."},
+            {"type": "reorder",
+             "q": "halflang / heeft / zij / haar / blond",
+             "a": "Zij heeft halflang blond haar.",
+             "tip": "Volgorde: hebben + lengte-adj (halflang) + kleur-adj (blond) + haar. Geen -e (het-woord, geen lidwoord)."},
+            {"type": "reorder",
+             "q": "een / heeft / hij / rechte / neus",
+             "a": "Hij heeft een rechte neus.",
+             "tip": "neus = de-woord + een → -e al gegeven: rechte. Hij heeft een rechte neus."},
+        ],
+        "jouw_beurt": "📝 SCHRIJFTAAK — Net zo Box stijl\n\n"
+                      "Beschrijf het uiterlijk van een vriend, familielid of collega in 6–8 zinnen.\n\n"
+                      "Gebruik het schrijfmodel:\n"
+                      "1. Naam + leeftijd\n"
+                      "2. Lengte + bouw (zijn)\n"
+                      "3. Haar (hebben + adj + haar)\n"
+                      "4. Gezicht + ogen + neus (hebben)\n"
+                      "5. Bijzonder kenmerk (dragen / hebben)\n"
+                      "6. Gelaatskleur / huid (hebben)\n\n"
+                      "✅ Zelfcheck:\n"
+                      "☐ zijn voor eigenschappen (groot, slank, gespierd)?\n"
+                      "☐ hebben voor lichaamsdelen (ogen, haar, neus)?\n"
+                      "☐ dragen voor accessoires (bril, oorbellen)?\n"
+                      "☐ geen -e bij het-woord + geen lidwoord (groot haar)?\n"
+                      "☐ wel -e bij de-woord + een (een grote neus)?",
+    },
+
+    # =====================================================================
+    # SESSION 27 — SCHRIJVEN: Mening geven (Net zo Box stijl)
+    # =====================================================================
+    {
+        "id": 27,
+        "title": "Schrijven: Mening geven",
+        "chapter": "Examentopics Oefenen",
+        "book_page": "CVO GEMT 3.2 — Net zo Box schrijfvaardigheid",
+        "review": [
+            {"q": "Geef 3 manieren om 'I think that…' te zeggen.",
+             "a": "Ik denk dat… / Ik vind dat… / Volgens mij… (inversie na 'Volgens mij'!)"},
+            {"q": "Verschil tussen 'omdat' en 'want'?",
+             "a": "<b>omdat</b>: bijzin → werkwoord naar einde. <b>want</b>: hoofdzin → normale volgorde."},
+            {"q": "Hoe gebruik je 'bovendien'?",
+             "a": "Bovendien = Furthermore/Moreover. Verbindt twee argumenten. → Bovendien <b>is</b> het…"},
+            {"q": "Hoe geef je advies met 'zou'?",
+             "a": "Je zou meer moeten bewegen. / Je zou kunnen sporten. (zou + infinitief)"},
+        ],
+        "vocabulary": [
+            {"nl": "de stelling", "en": "the statement / thesis",
+                "ex": "De stelling is: sociale media zijn gevaarlijk."},
+            {"nl": "een standpunt innemen", "en": "to take a position",
+                "ex": "Ik neem een duidelijk standpunt in."},
+            {"nl": "het argument", "en": "the argument",
+                "ex": "Ik heb drie argumenten."},
+            {"nl": "voorstander van", "en": "in favour of",
+                "ex": "Ik ben voorstander van meer sport op school."},
+            {"nl": "tegenstander van", "en": "against / opposed to",
+                "ex": "Zij is tegenstander van sociale media."},
+            {"nl": "bovendien", "en": "moreover / furthermore",
+                "ex": "Ik sport graag. Bovendien is het gezond."},
+            {"nl": "enerzijds … anderzijds", "en": "on the one hand … on the other hand",
+                "ex": "Enerzijds is het goedkoop, anderzijds is het ongezond."},
+            {"nl": "ten slotte", "en": "finally / in conclusion",
+                "ex": "Ten slotte wil ik zeggen dat…"},
+            {"nl": "bewerken / beweren", "en": "to claim / assert",
+                "ex": "Sommigen beweren dat alcohol niet gevaarlijk is."},
+            {"nl": "het bewijs", "en": "the proof / evidence",
+                "ex": "Wetenschappers hebben bewijs gevonden."},
+            {"nl": "het nadeel", "en": "the disadvantage",
+                "ex": "Een groot nadeel van sociale media is verslaving."},
+            {"nl": "het voordeel", "en": "the advantage",
+                "ex": "Een voordeel is dat je mensen kunt bereiken."},
+        ],
+        "grammar_title": "Mening schrijven — structuur + connectoren",
+        "grammar_html": """
+<h4>Net zo Box — examenstijl meningtekst (5-zinnen model)</h4>
+<ol>
+<li><b>Stelling + jouw standpunt:</b><br>
+   <em>Ik ben (geen) voorstander van … omdat …</em><br>
+   <em>Ik vind dat … , want …</em></li>
+<li><b>Argument 1:</b><br>
+   <em>Ten eerste denk ik dat … omdat …</em><br>
+   <em>Bovendien is het feit dat …</em></li>
+<li><b>Argument 2:</b><br>
+   <em>Ten tweede vind ik dat …</em><br>
+   <em>Enerzijds … anderzijds …</em></li>
+<li><b>Tegenargument erkennen (optioneel):</b><br>
+   <em>Sommigen beweren dat … , maar toch …</em><br>
+   <em>Ik begrijp dat … , echter …</em></li>
+<li><b>Conclusie:</b><br>
+   <em>Ten slotte wil ik zeggen dat …</em><br>
+   <em>Kortom, ik denk dat …</em></li>
+</ol>
+
+<h4>Connectors — 3 groepen</h4>
+<table>
+<tr><th>Groep</th><th>Woorden</th><th>Woordvolgorde</th></tr>
+<tr><td>Nevenschikkend</td><td>want, maar, en, of, dus</td><td>Normaal (S+V)</td></tr>
+<tr><td>Onderschikkend</td><td>omdat, dat, als, toen, terwijl, voordat, nadat</td><td><b>Werkwoord naar einde!</b></td></tr>
+<tr><td>Bijwoord</td><td>daarom, toch, dus, bovendien, ten slotte, enerzijds</td><td><b>Inversie</b> (V-S)</td></tr>
+</table>
+
+<h4>Veel gebruikte stellingen op CVO GEMT 3.2</h4>
+<ul>
+<li>Sociale media zijn (on)gevaarlijk voor jongeren.</li>
+<li>Het is belangrijk om gezond te eten.</li>
+<li>Nederlanders leren is nuttig als je in Vlaanderen woont.</li>
+<li>Werken en gezin combineren is moeilijk.</li>
+<li>Meer sport op school is een goed idee.</li>
+</ul>
+""",
+        "grammar_letop": """
+<ul>
+<li><span class="wrong">Ik vind dat sociale media zijn gevaarlijk.</span> →
+   <span class="right">Ik vind dat sociale media gevaarlijk zijn.</span><br>
+   Dat-bijzin → werkwoord naar het <b>einde</b>!</li>
+<li><span class="wrong">Bovendien het is goedkoop.</span> →
+   <span class="right">Bovendien is het goedkoop.</span><br>
+   Bovendien = bijwoord → <b>inversie</b>: bovendien IS HET.</li>
+<li><span class="wrong">Ik ben voorstander voor sociale media.</span> →
+   <span class="right">Ik ben voorstander <b>van</b> sociale media.</span><br>
+   Vast voorzetsel: voorstander <b>van</b> / tegenstander <b>van</b>.</li>
+<li><span class="wrong">Ten slotte, ik denk dat het nuttig.</span> →
+   <span class="right">Ten slotte <b>denk ik</b> dat het nuttig <b>is</b>.</span><br>
+   Inversie na 'Ten slotte'. En: werkwoord niet vergeten aan het einde van de bijzin!</li>
+</ul>
+""",
+        "grammar_extra": """
+<h4>Woordenschat voor elke mening — verbindingswoorden</h4>
+<table>
+<tr><th>Nederlands</th><th>English</th><th>Positie</th></tr>
+<tr><td>Ten eerste / Ten tweede / Ten derde</td><td>Firstly / Secondly / Thirdly</td><td>Bijwoord → inversie</td></tr>
+<tr><td>Bovendien</td><td>Moreover / Furthermore</td><td>Bijwoord → inversie</td></tr>
+<tr><td>Echter / Toch</td><td>However / Yet</td><td>Bijwoord → inversie</td></tr>
+<tr><td>Enerzijds … anderzijds</td><td>On the one hand … on the other</td><td>Bijwoord → inversie</td></tr>
+<tr><td>Ten slotte / Kortom</td><td>Finally / In short</td><td>Bijwoord → inversie</td></tr>
+<tr><td>Omdat</td><td>Because</td><td>Onderschikkend → V-einde</td></tr>
+<tr><td>Want</td><td>Because (coordinate)</td><td>Nevenschikkend → S+V</td></tr>
+</table>
+""",
+        "grammar_quick": """
+<ul>
+<li>Ik vind dat … → werkwoord naar <b>einde</b></li>
+<li>Volgens mij … → <b>inversie</b> (Volgens mij IS het …)</li>
+<li>omdat → V-einde | want → S+V | daarom/bovendien → inversie</li>
+<li>voorstander <b>van</b> / tegenstander <b>van</b></li>
+<li>Stijlstructuur: standpunt → argument 1 → argument 2 → conclusie</li>
+</ul>
+""",
+        "exercises": [
+            {"type": "fill",
+             "q": "Vul het juiste voegwoord in: 'Ik eet gezond ___ ik fit wil blijven.' (because — bijzin)",
+             "a": "omdat",
+             "tip": "Because + bijzin (V-einde) = omdat. Niet 'want' als het werkwoord naar einde gaat."},
+            {"type": "fill",
+             "q": "'Ik hou van Gent. ___ is het een mooie stad.' (Moreover — inversie)",
+             "a": "Bovendien",
+             "tip": "Bovendien = moreover. Bijwoord → inversie: Bovendien IS het …"},
+            {"type": "fill",
+             "q": "Schrijf de connector: 'On the one hand it is cheap, on the other it is unhealthy.' → ___ is het goedkoop, ___ is het ongezond.",
+             "a": "Enerzijds / anderzijds",
+             "tip": "Enerzijds … anderzijds = on the one hand … on the other. Beide zijn bijwoorden → inversie."},
+            {"type": "choice",
+             "q": "Welke zin gebruikt 'omdat' correct?",
+             "options": [
+                 "Ik sport graag omdat ik ben fit.",
+                 "Ik sport graag omdat ik fit ben.",
+                 "Ik sport graag omdat ben ik fit.",
+                 "Ik sport graag, omdat ik fit.",
+             ],
+             "a": "Ik sport graag omdat ik fit ben.",
+             "tip": "Omdat-bijzin → werkwoord naar EINDE: omdat ik fit BEN."},
+            {"type": "choice",
+             "q": "Welke zin is correct?",
+             "options": [
+                 "Ik vind dat sociale media zijn gevaarlijk.",
+                 "Ik vind dat zijn sociale media gevaarlijk.",
+                 "Ik vind dat sociale media gevaarlijk zijn.",
+                 "Ik vind sociale media dat gevaarlijk zijn.",
+             ],
+             "a": "Ik vind dat sociale media gevaarlijk zijn.",
+             "tip": "Dat-bijzin → werkwoord helemaal naar einde: … gevaarlijk ZIJN."},
+            {"type": "choice",
+             "q": "Wat is het verschil: 'Ik eet gezond WANT ik wil fit zijn' vs 'Ik eet gezond OMDAT ik fit wil zijn'?",
+             "options": [
+                 "Geen verschil — beide zijn correct.",
+                 "Want = normale volgorde; omdat = werkwoord naar einde.",
+                 "Want = werkwoord naar einde; omdat = normale volgorde.",
+                 "Alleen 'omdat' is correct Nederlands.",
+             ],
+             "a": "Want = normale volgorde; omdat = werkwoord naar einde.",
+             "tip": "want = nevenschikkend (S+V). omdat = onderschikkend (V-einde)."},
+            {"type": "tf",
+             "q": "'Ten slotte ik denk dat het nuttig is.' is correct.",
+             "a": False,
+             "correction": "Ten slotte = bijwoord → inversie: Ten slotte DENK IK dat het nuttig is.",
+             "tip": "Na een bijwoord aan het begin → inversie (V-S)."},
+            {"type": "tf",
+             "q": "'Ik ben voorstander van meer sport op school.' is correct.",
+             "a": True,
+             "correction": "Correct! voorstander VAN = vaste voorzetsel. ✓",
+             "tip": "voorstander van / tegenstander van — vast voorzetsel."},
+            {"type": "tf",
+             "q": "'Bovendien het internet is nuttig.' is correct.",
+             "a": False,
+             "correction": "Bovendien = bijwoord → inversie: Bovendien IS HET internet nuttig.",
+             "tip": "Bijwoord aan het begin → V-S inversie."},
+            {"type": "translate",
+             "q": "In my opinion, learning Dutch is useful because I live in Ghent.",
+             "a": "Volgens mij is Nederlands leren nuttig omdat ik in Gent woon.",
+             "tip": "Volgens mij → inversie (IS). omdat → bijzin V-einde (woon)."},
+            {"type": "translate",
+             "q": "I am in favour of healthy food, but I understand that it is sometimes difficult.",
+             "a": "Ik ben voorstander van gezond eten, maar ik begrijp dat het soms moeilijk is.",
+             "tip": "voorstander VAN. maar = nevenschikkend → normal word order. dat → bijzin V-einde."},
+            {"type": "reorder",
+             "q": "vind / ik / dat / een / Gent / stad / is / mooie",
+             "a": "Ik vind dat Gent een mooie stad is.",
+             "tip": "Ik vind + dat-bijzin: dat Gent een mooie stad IS (V-einde)."},
+            {"type": "reorder",
+             "q": "ten / wil / ik / slotte / zeggen / dat / goed / is / het",
+             "a": "Ten slotte wil ik zeggen dat het goed is.",
+             "tip": "Ten slotte → inversie: wil ik. dat-bijzin → V-einde: het goed IS."},
+        ],
+        "jouw_beurt": "📝 SCHRIJFTAAK — Net zo Box mening (examentypisch)\n\n"
+                      "Kies één stelling en schrijf een meningtekst van 5–7 zinnen:\n\n"
+                      "A) 'Sociale media zijn gevaarlijk voor jongeren.'\n"
+                      "B) 'Het is belangrijk om elke dag te bewegen.'\n"
+                      "C) 'Nederlanders leren is nuttig als je in België woont.'\n\n"
+                      "Gebruik het 5-zinnen model:\n"
+                      "1. Standpunt: Ik ben (geen) voorstander van … omdat …\n"
+                      "2. Argument 1: Ten eerste vind ik dat …\n"
+                      "3. Argument 2: Bovendien …\n"
+                      "4. Tegenargument: Sommigen zeggen dat …, maar toch …\n"
+                      "5. Conclusie: Ten slotte denk ik dat …\n\n"
+                      "✅ Zelfcheck:\n"
+                      "☐ omdat → werkwoord naar einde?\n"
+                      "☐ bovendien/ten slotte → inversie?\n"
+                      "☐ Ik vind dat … → werkwoord naar einde?\n"
+                      "☐ voorstander/tegenstander VAN (niet voor)?",
+    },
+
+    # =====================================================================
+    # SESSION 28 — SCHRIJVEN: Formele e-mail / brief (Net zo Box stijl)
+    # =====================================================================
+    {
+        "id": 28,
+        "title": "Schrijven: Formele e-mail / brief",
+        "chapter": "Examentopics Oefenen",
+        "book_page": "CVO GEMT 3.2 — Net zo Box schrijfvaardigheid",
+        "review": [
+            {"q": "Hoe begin je een formele e-mail in het Nederlands?",
+             "a": "Geachte mevrouw / meneer [naam], (Formal letter) of Beste [naam], (semi-formal)"},
+            {"q": "Hoe sluit je een formele e-mail af?",
+             "a": "Met vriendelijke groeten, / Hoogachtend, / Met vriendelijke groet, [naam]"},
+            {"q": "Hoe zeg je 'I would like to make an appointment'?",
+             "a": "Ik zou graag een afspraak willen maken. (zou + infinitief = polite)"},
+            {"q": "Hoe zeg je 'I am writing to ask about…'?",
+             "a": "Ik schrijf u/je om te vragen over … / Hierbij schrijf ik u om …"},
+        ],
+        "vocabulary": [
+            {"nl": "Geachte mevrouw/meneer", "en": "Dear Mrs/Mr (formal)",
+                "ex": "Geachte mevrouw Peeters,"},
+            {"nl": "Hierbij", "en": "Hereby / Attached / With this",
+                "ex": "Hierbij stuur ik u mijn cv."},
+            {"nl": "Met vriendelijke groeten", "en": "Kind regards",
+                "ex": "Met vriendelijke groeten, Kumar"},
+            {"nl": "Hoogachtend", "en": "Yours faithfully (very formal)",
+                "ex": "Hoogachtend, Dr. Kumar"},
+            {"nl": "de afspraak", "en": "the appointment",
+                "ex": "Ik wil een afspraak maken."},
+            {"nl": "verzetten / afzeggen", "en": "to reschedule / cancel",
+                "ex": "Ik moet de afspraak verzetten."},
+            {"nl": "gelieve", "en": "please (formal written)",
+                "ex": "Gelieve mij terug te bellen."},
+            {"nl": "zou graag willen", "en": "would like to",
+                "ex": "Ik zou graag een afspraak willen maken."},
+            {"nl": "in de bijlage", "en": "in the attachment",
+                "ex": "U vindt mijn documenten in de bijlage."},
+            {"nl": "de klacht indienen", "en": "to file a complaint",
+                "ex": "Ik wil een klacht indienen over de levering."},
+            {"nl": "informeren naar", "en": "to inquire about",
+                "ex": "Ik wil informeren naar de cursus."},
+            {"nl": "bevestigen", "en": "to confirm",
+                "ex": "Kunt u de afspraak bevestigen?"},
+        ],
+        "grammar_title": "Formele e-mail — structuur + beleefde constructies",
+        "grammar_html": """
+<h4>Structuur van een formele e-mail (Net zo Box template)</h4>
+<table>
+<tr><th>Deel</th><th>Formule</th></tr>
+<tr><td><b>Aanspreking</b></td><td>Geachte mevrouw/meneer [naam], <br>Beste [naam], (minder formeel)</td></tr>
+<tr><td><b>Opening</b></td><td>Ik schrijf u om te vragen over… <br>Hierbij contacteer ik u omdat… <br>Naar aanleiding van uw advertentie…</td></tr>
+<tr><td><b>Kern</b></td><td>Ik zou graag… + infinitief <br>Kunt u mij informeren over…? <br>Gelieve mij te laten weten of…</td></tr>
+<tr><td><b>Afsluiting</b></td><td>Ik zie uw antwoord met belangstelling tegemoet. <br>Bij voorbaat dank.</td></tr>
+<tr><td><b>Groet</b></td><td>Met vriendelijke groeten, <br>Hoogachtend, [naam]</td></tr>
+</table>
+
+<h4>Beleefde constructies met 'zou'</h4>
+<table>
+<tr><th>Formule</th><th>Gebruik</th><th>Voorbeeld</th></tr>
+<tr><td>Ik zou graag … willen</td><td>Polite request</td><td><em>Ik zou graag een afspraak willen maken.</em></td></tr>
+<tr><td>Zou u kunnen … ?</td><td>Polite question</td><td><em>Zou u mij kunnen helpen?</em></td></tr>
+<tr><td>Kunt u … ?</td><td>Direct but polite</td><td><em>Kunt u mij terugbellen?</em></td></tr>
+<tr><td>Gelieve te …</td><td>Formal instruction</td><td><em>Gelieve dit formulier in te vullen.</em></td></tr>
+</table>
+
+<h4>4 veelvoorkomende e-mailtypes op CVO GEMT 3.2</h4>
+<ol>
+<li><b>Afspraak maken bij dokter / tandarts:</b> datum, tijd, reden</li>
+<li><b>Afspraak verzetten of afzeggen:</b> reden + nieuw voorstel</li>
+<li><b>Informatie vragen over een cursus / product</b></li>
+<li><b>Klacht indienen</b> (over levering, kamer, service)</li>
+</ol>
+""",
+        "grammar_letop": """
+<ul>
+<li><span class="wrong">Beste mevrouw, Ik wil een afspraak. Groeten.</span> →
+   <span class="right">Geachte mevrouw Peeters, Ik zou graag een afspraak willen maken. Met vriendelijke groeten, Kumar.</span><br>
+   In een formele e-mail gebruik je <b>Geachte</b> (niet 'Beste') en je sluit af met <b>Met vriendelijke groeten</b>.</li>
+<li><span class="wrong">Gelieve mij terugbellen.</span> →
+   <span class="right">Gelieve mij terug te bellen.</span><br>
+   Gelieve + scheidbaar werkwoord → <b>te</b> komt tussen prefix en werkwoord: terug <b>te</b> bellen.</li>
+<li><span class="wrong">Ik zou willen graag vragen over de cursus.</span> →
+   <span class="right">Ik zou graag willen vragen over de cursus.</span><br>
+   Volgorde: zou + graag + (object +) willen + infinitief.</li>
+</ul>
+""",
+        "grammar_extra": """
+<h4>Handige formules per e-mailtype</h4>
+<table>
+<tr><th>E-mailtype</th><th>Formule</th></tr>
+<tr><td>Afspraak maken</td><td><em>Ik zou graag een afspraak willen maken voor [dag] om [tijd].</em></td></tr>
+<tr><td>Afspraak verzetten</td><td><em>Helaas moet ik onze afspraak van [datum] verzetten. Zou [nieuwe datum] mogelijk zijn?</em></td></tr>
+<tr><td>Afzeggen</td><td><em>Tot mijn spijt moet ik de afspraak afzeggen omdat ik ziek ben.</em></td></tr>
+<tr><td>Informatie vragen</td><td><em>Ik zou graag meer informatie willen over [onderwerp]. Kunt u mij laten weten…?</em></td></tr>
+<tr><td>Klacht</td><td><em>Ik schrijf u om een klacht in te dienen over [probleem]. Ik verwacht een oplossing voor [datum].</em></td></tr>
+</table>
+""",
+        "grammar_quick": """
+<ul>
+<li>Aanspreking formeel: <b>Geachte mevrouw/meneer [achternaam],</b></li>
+<li>Afsluiting: <b>Met vriendelijke groeten,</b></li>
+<li>Beleefd vragen: <b>Ik zou graag … willen</b> / <b>Zou u … kunnen?</b></li>
+<li>Formele instructie: <b>Gelieve + te + infinitief</b></li>
+<li>Reden geven: <b>omdat</b> + V-einde / <b>want</b> + S+V</li>
+</ul>
+""",
+        "exercises": [
+            {"type": "choice",
+             "q": "Je schrijft een formele e-mail naar je huisarts. Welke aanspreking gebruik je?",
+             "options": ["Hey dokter!", "Hoi mevrouw Claes,",
+                         "Geachte mevrouw Claes,", "Beste vriend,"],
+             "a": "Geachte mevrouw Claes,",
+             "tip": "Formele e-mail → Geachte mevrouw/meneer + achternaam + komma."},
+            {"type": "choice",
+             "q": "Welke afsluiting is het meest formeel?",
+             "options": ["Tot ziens!", "Doei!", "Met vriendelijke groeten,", "Ciao,"],
+             "a": "Met vriendelijke groeten,",
+             "tip": "Formele afsluiting: Met vriendelijke groeten, / Hoogachtend,"},
+            {"type": "fill",
+             "q": "Beleefde aanvraag: 'Ik ___ graag een afspraak willen maken.' (conditional of zijn)",
+             "a": "zou",
+             "tip": "Zou + graag + willen + infinitief = beleefde aanvraag."},
+            {"type": "fill",
+             "q": "Formele instructie: '___ dit formulier in te vullen.' (Please — formal)",
+             "a": "Gelieve",
+             "tip": "Gelieve + te + infinitief = please (formal written Dutch)."},
+            {"type": "fill",
+             "q": "Je verzet een afspraak: 'Tot mijn spijt moet ik de afspraak ___.' (afzeggen of verzetten — you want a new date)",
+             "a": "verzetten",
+             "tip": "Verzetten = to reschedule (je wil een nieuwe datum). Afzeggen = to cancel (helemaal niet meer)."},
+            {"type": "tf",
+             "q": "'Gelieve mij terugbellen.' is correct formeel Nederlands.",
+             "a": False,
+             "correction": "Gelieve + scheidbaar werkwoord: Gelieve mij TERUG TE bellen.",
+             "tip": "Scheidbare werkwoorden (terugbellen) krijgen 'te' tussen prefix en stam: terug te bellen."},
+            {"type": "tf",
+             "q": "'Ik zou graag meer informatie willen over de cursus.' is correct.",
+             "a": True,
+             "correction": "Correct! zou + graag + willen + over = beleefd informeren. ✓",
+             "tip": "Volgorde: zou + graag + willen + infinitief/voorzetsel."},
+            {"type": "tf",
+             "q": "'Beste Dr. Kumar, Ik ben ziek. Groeten.' is een goede formele e-mail.",
+             "a": False,
+             "correction": "Niet formeel genoeg: gebruik Geachte, geef een reden, sluit af met Met vriendelijke groeten.",
+             "tip": "Een formele e-mail heeft: aanspreking + opening + kern + afsluiting + groet."},
+            {"type": "translate",
+             "q": "I would like to cancel my appointment of Monday because I am ill.",
+             "a": "Ik zou graag mijn afspraak van maandag willen afzeggen omdat ik ziek ben.",
+             "tip": "zou graag willen + infinitief (afzeggen). omdat-bijzin → V-einde (ziek ben)."},
+            {"type": "translate",
+             "q": "Could you please confirm the appointment?",
+             "a": "Zou u de afspraak kunnen bevestigen?",
+             "tip": "Zou u + kunnen + infinitief = polite question. bevestigen = to confirm."},
+            {"type": "reorder",
+             "q": "zou / ik / willen / graag / een / maken / afspraak",
+             "a": "Ik zou graag een afspraak willen maken.",
+             "tip": "Volgorde: Ik + zou + graag + object + willen + infinitief."},
+            {"type": "reorder",
+             "q": "vriendelijke / met / groeten / Kumar",
+             "a": "Met vriendelijke groeten, Kumar.",
+             "tip": "Standaard afsluiting: Met vriendelijke groeten, [naam]."},
+        ],
+        "jouw_beurt": "📝 SCHRIJFTAAK — Formele e-mail (Net zo Box examentypisch)\n\n"
+                      "Kies één situatie en schrijf een formele e-mail van 5–7 zinnen:\n\n"
+                      "A) Je maakt een afspraak bij de huisarts voor rugpijn.\n"
+                      "B) Je wilt je taallessen afzeggen omdat je op reis moet.\n"
+                      "C) Je vraagt informatie over een nieuwe cursus aan je talencentrum.\n\n"
+                      "Gebruik de structuur:\n"
+                      "1. Geachte [naam],\n"
+                      "2. Ik schrijf u om … / Hierbij …\n"
+                      "3. Ik zou graag … willen …\n"
+                      "4. Kunt u mij laten weten of …?\n"
+                      "5. Ik zie uw antwoord tegemoet.\n"
+                      "6. Met vriendelijke groeten, [jouw naam]\n\n"
+                      "✅ Zelfcheck:\n"
+                      "☐ Geachte (niet 'Beste' of 'Hoi') gebruikt?\n"
+                      "☐ zou + graag + willen voor beleefde aanvragen?\n"
+                      "☐ Gelieve + te + infinitief als formele instructie?\n"
+                      "☐ Met vriendelijke groeten als afsluiting?",
+    },
+
+    # =====================================================================
+    # SESSION 29 — LEZEN: Leestekst begrip (Net zo Box stijl)
+    # =====================================================================
+    {
+        "id": 29,
+        "title": "Lezen: Tekst begrip — Werk en gezondheid",
+        "chapter": "Examentopics Oefenen",
+        "book_page": "CVO GEMT 3.2 — Net zo Box leesvaardigheid",
+        "review": [
+            {"q": "Net zo Box leesstrategie: wat doe je VOOR het lezen?",
+             "a": "Lees de vragen eerst! Onderstreep de sleutelwoorden. Kijk naar de titel en tussenkopjes."},
+            {"q": "Net zo Box: wat is een 'juist/fout' vraag?",
+             "a": "Je leest een bewering en beslist: is dit waar (juist) of niet waar (fout) op basis van de tekst."},
+            {"q": "Hoe raad je de betekenis van een onbekend woord?",
+             "a": "Kijk naar de context: welk woord past in de zin? Zoek verbanden met andere woorden."},
+            {"q": "Wat betekent 'naar aanleiding van'?",
+             "a": "As a result of / following (formeel). Naar aanleiding van uw e-mail…"},
+        ],
+        "vocabulary": [
+            {"nl": "de werkstress", "en": "work stress / occupational stress",
+                "ex": "Werkstress is een groot probleem in België."},
+            {"nl": "bewegen", "en": "to exercise / move",
+                "ex": "Het is gezond om elke dag te bewegen."},
+            {"nl": "de levensstijl", "en": "the lifestyle",
+                "ex": "Een gezonde levensstijl is belangrijk."},
+            {"nl": "verminderen", "en": "to reduce / decrease",
+                "ex": "Je kunt stress verminderen door te sporten."},
+            {"nl": "gemiddeld", "en": "on average",
+                "ex": "In België werken mensen gemiddeld 38 uur."},
+            {"nl": "de werknemer", "en": "the employee",
+                "ex": "Veel werknemers zijn gestrest."},
+            {"nl": "aanbevelen / aanraden", "en": "to recommend",
+                "ex": "Artsen bevelen aan om meer te slapen."},
+            {"nl": "de pauze nemen", "en": "to take a break",
+                "ex": "Neem een pauze van tien minuten."},
+            {"nl": "volwassenen", "en": "adults",
+                "ex": "Volwassenen hebben 7 tot 9 uur slaap nodig."},
+            {"nl": "een rol spelen", "en": "to play a role",
+                "ex": "Gezond eten speelt een grote rol."},
+            {"nl": "zich concentreren", "en": "to concentrate",
+                "ex": "Na een pauze kun je je beter concentreren."},
+            {"nl": "de overheid", "en": "the government / authority",
+                "ex": "De Vlaamse overheid geeft advies over gezondheid."},
+        ],
+        "grammar_title": "📖 Leestekst — Lees goed en los de vragen op in het Quiz-tabblad",
+        "grammar_html": """
+<div class="info-box">
+<strong>Net zo Box leesinstructie:</strong><br>
+1. Lees eerst de vragen in het <b>Quiz-tabblad</b>.<br>
+2. Kom terug en lees de tekst.<br>
+3. Onderstreep sleutelzinnen die de antwoorden bevatten.<br>
+4. Beantwoord de vragen — alle antwoorden staan in de tekst.
+</div>
+
+<h4>Tekst: Werk en gezondheid in België</h4>
+<div style="background:#f9f9f9;border-left:4px solid #4a90d9;padding:1rem 1.5rem;border-radius:6px;line-height:1.8">
+<p>In België werken mensen gemiddeld 38 uur per week. Veel werknemers vinden het moeilijk om werk en privéleven te combineren. Werkstress is een groot probleem: bijna één op drie werknemers heeft last van stress op het werk.</p>
+
+<p>Er zijn verschillende manieren om stress te verminderen. <b>Ten eerste</b> is het belangrijk om regelmatig te bewegen. Onderzoekers zeggen dat mensen die drie keer per week sporten, zich beter voelen. <b>Ten tweede</b> helpt het om voldoende te slapen: volwassenen hebben 7 tot 9 uur slaap per nacht nodig.</p>
+
+<p>Ook gezond eten speelt een grote rol. Mensen die veel groenten en fruit eten, zijn minder vaak ziek. De Vlaamse overheid raadt aan om elke dag twee stuks fruit te eten en minstens een half uur te bewegen.</p>
+
+<p><b>Ten slotte</b> is het goed om regelmatig een korte pauze te nemen tijdens het werk. Een wandeling van tien minuten kan al helpen om je beter te concentreren. Een gezonde levensstijl is niet altijd makkelijk, maar kleine veranderingen kunnen al een groot verschil maken.</p>
+</div>
+
+<h4>Nuttige leesstrategie — signaalwoorden</h4>
+<table>
+<tr><th>Signaalwoord</th><th>Functie</th></tr>
+<tr><td>ten eerste / ten tweede / ten slotte</td><td>Structuur — nieuw punt</td></tr>
+<tr><td>ook / bovendien</td><td>Extra/bijkomend punt</td></tr>
+<tr><td>maar / echter / toch</td><td>Tegengesteld punt</td></tr>
+<tr><td>omdat / want / doordat</td><td>Reden / oorzaak</td></tr>
+<tr><td>dus / daarom / daardoor</td><td>Gevolg / resultaat</td></tr>
+</table>
+""",
+        "grammar_letop": """
+<ul>
+<li>Lees nooit een tekst woord voor woord — zoek naar <b>informatie</b> die de vragen beantwoordt.</li>
+<li>Bij Juist/Fout: een bewering is <b>fout</b> als ook maar één detail niet klopt.</li>
+<li>Let op <b>quantifiers</b>: 'sommige', 'alle', 'bijna', 'nooit' — ze veranderen de betekenis.</li>
+<li>Als een woord onbekend is: lees de hele zin en kijk wat logisch is.</li>
+</ul>
+""",
+        "grammar_extra": """
+<h4>Veelvoorkomende leestekstthema's op CVO GEMT 3.2</h4>
+<ul>
+<li>Werk en privéleven / werkstress</li>
+<li>Gezonde levensstijl (eten, bewegen, slapen)</li>
+<li>Leven in België / Gent (kultuur, gebruiken)</li>
+<li>Milieu en duurzaamheid</li>
+<li>Onderwijs en taalonderwijs</li>
+<li>Technologie en sociale media</li>
+</ul>
+<h4>Vraagtypen op het examen</h4>
+<table>
+<tr><th>Type</th><th>Aanpak</th></tr>
+<tr><td>Juist / Fout</td><td>Zoek de exacte zin in de tekst. Vergelijk nauwkeurig.</td></tr>
+<tr><td>Multiple choice</td><td>Elimineer duidelijk verkeerde antwoorden. Zoek bewijs in tekst.</td></tr>
+<tr><td>Woordbetekenis</td><td>Lees de hele zin rondom het woord. Welk synoniem past?</td></tr>
+<tr><td>Samenvatten</td><td>Schrijf de hoofdgedachte van elke alinea in één zin.</td></tr>
+</table>
+""",
+        "grammar_quick": """
+<ul>
+<li>Stap 1: Lees de vragen EERST</li>
+<li>Stap 2: Lees de tekst, onderstreep relevante zinnen</li>
+<li>Stap 3: Beantwoord elke vraag — gebruik bewijs uit de tekst</li>
+<li>Juist/Fout: één fout detail = de bewering is FOUT</li>
+<li>Let op quantifiers: sommige ≠ alle, bijna ≠ altijd</li>
+</ul>
+""",
+        "exercises": [
+            {"type": "tf",
+             "q": "Juist of Fout? Mensen in België werken gemiddeld meer dan 40 uur per week.",
+             "a": False,
+             "correction": "Fout. De tekst zegt: gemiddeld 38 uur per week.",
+             "tip": "Zoek het getal in de tekst: '38 uur per week'."},
+            {"type": "tf",
+             "q": "Juist of Fout? Bijna één op drie werknemers heeft last van werkstress.",
+             "a": True,
+             "correction": "Juist. De tekst zegt: 'bijna één op drie werknemers heeft last van stress op het werk.'",
+             "tip": "Lees de tweede zin van alinea 1 goed."},
+            {"type": "tf",
+             "q": "Juist of Fout? De tekst zegt dat je vijf keer per week moet sporten.",
+             "a": False,
+             "correction": "Fout. De tekst zegt: drie keer per week sporten.",
+             "tip": "Let op getallen: drie keer (niet vijf keer)."},
+            {"type": "tf",
+             "q": "Juist of Fout? Volwassenen hebben volgens de tekst 7 tot 9 uur slaap nodig.",
+             "a": True,
+             "correction": "Juist. '…volwassenen hebben 7 tot 9 uur slaap per nacht nodig.'",
+             "tip": "Alinea 2, tweede zin."},
+            {"type": "choice",
+             "q": "Hoeveel stuks fruit raadt de Vlaamse overheid aan per dag?",
+             "options": ["één stuk", "twee stuks", "drie stuks", "de tekst zegt het niet"],
+             "a": "twee stuks",
+             "tip": "Zoek 'Vlaamse overheid' in de tekst. Alinea 3."},
+            {"type": "choice",
+             "q": "Wat helpt je beter concentreren, volgens de tekst?",
+             "options": ["meer koffie drinken", "een wandeling van tien minuten maken",
+                         "meer fruit eten", "7 uur slapen"],
+             "a": "een wandeling van tien minuten maken",
+             "tip": "Alinea 4: 'Een wandeling van tien minuten kan al helpen om je beter te concentreren.'"},
+            {"type": "choice",
+             "q": "Wat betekent 'verminderen' in de context van de tekst?",
+             "options": ["to increase", "to reduce", "to ignore", "to measure"],
+             "a": "to reduce",
+             "tip": "Context: 'om stress te verminderen' — stress wordt kleiner/minder. = to reduce."},
+            {"type": "choice",
+             "q": "Welke vier strategieën noemt de tekst om stress te verminderen?",
+             "options": [
+                 "sporten, slapen, meer werken, pauze nemen",
+                 "sporten, slapen, gezond eten, pauze nemen tijdens werk",
+                 "slapen, pauze nemen, vakantie nemen, minder werken",
+                 "eten, drinken, bewegen, mediteren",
+             ],
+             "a": "sporten, slapen, gezond eten, pauze nemen tijdens werk",
+             "tip": "De tekst geeft 3 alinea's met strategieën: ten eerste (sport), ten tweede (slaap), ook (eten), ten slotte (pauze)."},
+            {"type": "fill",
+             "q": "Vul in: mensen die drie keer per week sporten, voelen zich ___ (better).",
+             "a": "beter",
+             "tip": "Alinea 2: '…mensen die drie keer per week sporten, zich beter voelen.'"},
+            {"type": "fill",
+             "q": "Vul in: Een gezonde levensstijl is niet altijd ___, maar kleine veranderingen kunnen een groot verschil maken. (easy)",
+             "a": "makkelijk",
+             "tip": "Laatste zin van de tekst: 'Een gezonde levensstijl is niet altijd makkelijk…'"},
+            {"type": "translate",
+             "q": "What does 'werkstress' mean?",
+             "a": "work stress / occupational stress",
+             "tip": "werk = work, stress = stress. Werkstress = the stress caused by work."},
+            {"type": "translate",
+             "q": "What does 'aanbevelen' mean?",
+             "a": "to recommend",
+             "tip": "aanraden / aanbevelen = to recommend / advise."},
+            {"type": "reorder",
+             "q": "pauze / nemen / is / tijdens / het / werk / goed",
+             "a": "Het is goed om een pauze te nemen tijdens het werk.",
+             "tip": "Om…te … constructie: Het is goed + om + pauze te nemen + tijdens het werk."},
+        ],
+        "jouw_beurt": "📝 LEESOPDRACHT — Net zo Box stijl\n\n"
+                      "Beantwoord deze open vragen op basis van de leestekst (in het Grammar-tabblad):\n\n"
+                      "1. Wat is het grootste gezondheidsprobleem in België, volgens de tekst?\n"
+                      "2. Hoeveel uur slaap hebben volwassenen nodig?\n"
+                      "3. Wat raadt de tekst aan om beter te concentreren op het werk?\n"
+                      "4. Wat is jouw mening: is een gezonde levensstijl makkelijk of moeilijk? Waarom?\n"
+                      "   → Schrijf 3 zinnen met: Ik vind dat … / Volgens mij … / omdat …\n\n"
+                      "✅ Leesstrategie:\n"
+                      "☐ Heb je de vragen EERST gelezen?\n"
+                      "☐ Heb je de sleutelwoorden onderstreept?\n"
+                      "☐ Heb je het antwoord in de tekst gevonden (niet geraden)?",
+    },
+
+    # =====================================================================
+    # SESSION 30 — SPREKEN: Interview + foto beschrijven (Net zo Box stijl)
+    # =====================================================================
+    {
+        "id": 30,
+        "title": "Spreken: Interview + foto beschrijven",
+        "chapter": "Examentopics Oefenen",
+        "book_page": "CVO GEMT 3.2 — Net zo Box spreekvaardigheid",
+        "review": [
+            {"q": "Hoe begin je jezelf voor te stellen op een examen?",
+             "a": "Ik heet … / Mijn naam is … Ik kom uit … en ik woon nu … jaar in Gent."},
+            {"q": "Hoe beschrijf je een foto in het Nederlands?",
+             "a": "Op de foto zie ik … / Er staat/zit/ligt … / Het lijkt alsof … / In de achtergrond …"},
+            {"q": "Hoe zeg je 'It seems as if he is happy'?",
+             "a": "Het lijkt alsof hij blij is. (alsof + bijzin → V-einde)"},
+            {"q": "Wat is inversie na 'Vergeleken met'?",
+             "a": "Vergeleken met India is België kleiner. (Vergeleken met … + V-S inversie)"},
+        ],
+        "vocabulary": [
+            {"nl": "op de foto zie ik", "en": "in the photo I see",
+                "ex": "Op de foto zie ik een man van ongeveer 40 jaar."},
+            {"nl": "er staat / er zit / er ligt", "en": "there stands / sits / lies",
+                "ex": "Er staat een vrouw bij de deur."},
+            {"nl": "het lijkt alsof", "en": "it seems as if",
+                "ex": "Het lijkt alsof ze blij is."},
+            {"nl": "in de achtergrond", "en": "in the background",
+                "ex": "In de achtergrond zie ik een park."},
+            {"nl": "op de voorgrond", "en": "in the foreground",
+                "ex": "Op de voorgrond staat een man."},
+            {"nl": "vergeleken met", "en": "compared to",
+                "ex": "Vergeleken met India is Gent klein."},
+            {"nl": "het verschil tussen", "en": "the difference between",
+                "ex": "Het grootste verschil tussen India en België is het weer."},
+            {"nl": "wat mij opvalt is dat", "en": "what strikes me is that",
+                "ex": "Wat mij opvalt is dat de straten schoon zijn."},
+            {"nl": "naar mijn mening", "en": "in my opinion",
+                "ex": "Naar mijn mening zijn Belgen vriendelijk."},
+            {"nl": "ziet er … uit", "en": "looks / appears …",
+                "ex": "Hij ziet er moe uit."},
+            {"nl": "de situatie", "en": "the situation",
+                "ex": "Beschrijf de situatie op de foto."},
+            {"nl": "spontaan antwoorden", "en": "to answer spontaneously",
+                "ex": "Probeer spontaan te antwoorden."},
+        ],
+        "grammar_title": "Spreekvaardighed — 4 spreektaken + foto beschrijven",
+        "grammar_html": """
+<h4>Net zo Box spreekvaardigheid — 4 examentaken</h4>
+<table>
+<tr><th>Taak</th><th>Wat moet je doen?</th><th>Sleutelzinnen</th></tr>
+<tr><td><b>1. Jezelf voorstellen</b></td><td>Naam, herkomst, woonplaats, werk, reden</td>
+<td><em>Ik heet … / Ik kom uit … / Ik werk als … aan UGent / Ik woon al … jaar in Gent.</em></td></tr>
+<tr><td><b>2. Foto beschrijven</b></td><td>Persoon/situatie op foto beschrijven</td>
+<td><em>Op de foto zie ik… / Er staat/zit… / Het lijkt alsof… / In de achtergrond…</em></td></tr>
+<tr><td><b>3. Situatie bespreken</b></td><td>Reageer op een situatie of probleem</td>
+<td><em>Ik denk dat… / Volgens mij… / Ik zou … kunnen / Je moet …</em></td></tr>
+<tr><td><b>4. Mening geven</b></td><td>Geef je mening over een stelling</td>
+<td><em>Ik ben (geen) voorstander van … omdat… / Enerzijds… anderzijds…</em></td></tr>
+</table>
+
+<h4>Interviewvragen die zeker worden gesteld (CVO GEMT 3.2)</h4>
+<ol>
+<li><em>Waar kom je vandaan?</em> → <b>Ik kom uit [stad], India.</b></li>
+<li><em>Wat doe je?</em> → <b>Ik werk als onderzoeker aan UGent.</b></li>
+<li><em>Waarom studeer je Nederlands?</em> → <b>Ik studeer Nederlands omdat ik in Gent woon en werk.</b></li>
+<li><em>Hoe lang woon je al in Gent?</em> → <b>Ik woon al [X] jaar in Gent.</b></li>
+<li><em>Wat vind je van Gent?</em> → <b>Ik vind Gent een levendige en mooie stad.</b></li>
+<li><em>Wat vind je moeilijk aan het leven in België?</em> → <b>Ik vind het soms moeilijk om Nederlands te spreken, maar ik oefen elke dag.</b></li>
+<li><em>Wat is het grootste verschil tussen India en België?</em> → <b>Het grootste verschil is dat India veel groter en warmer is.</b></li>
+<li><em>Wat vind je van Belgen?</em> → <b>Ik vind Belgen vriendelijk, maar soms een beetje gereserveerd.</b></li>
+</ol>
+
+<h4>Foto beschrijven — stap-voor-stap</h4>
+<ol>
+<li><b>Persoon:</b> <em>Op de foto zie ik een man/vrouw van ongeveer … jaar.</em></li>
+<li><b>Uiterlijk:</b> <em>Hij/zij heeft … haar en … ogen.</em></li>
+<li><b>Situatie:</b> <em>Hij/zij staat/zit/loopt … (waar?)</em></li>
+<li><b>Activiteit:</b> <em>Het lijkt alsof hij/zij … aan het doen is.</em></li>
+<li><b>Achtergrond:</b> <em>In de achtergrond zie ik …</em></li>
+<li><b>Indruk:</b> <em>Wat mij opvalt is dat … / Hij/zij ziet er … uit.</em></li>
+</ol>
+""",
+        "grammar_letop": """
+<ul>
+<li><span class="wrong">Het lijkt alsof hij blij.</span> →
+   <span class="right">Het lijkt alsof hij blij <b>is</b>.</span><br>
+   alsof = onderschikkend voegwoord → bijzin → werkwoord naar einde.</li>
+<li><span class="wrong">Vergeleken met India, België is klein.</span> →
+   <span class="right">Vergeleken met India <b>is België</b> klein.</span><br>
+   Vergeleken met … aan het begin → inversie in de hoofdzin.</li>
+<li><span class="wrong">Op de foto is een man.</span> →
+   <span class="right">Op de foto <b>zie ik</b> een man. / <b>Er staat</b> een man op de foto.</span><br>
+   Gebruik 'zie ik' of 'er staat/zit/loopt': rijker en correcter Nederlands.</li>
+<li>Spreek altijd in volledige zinnen. Zeg niet: <span class="wrong">'Groot.' </span> maar:
+   <span class="right">'Ik vind Gent een grote, mooie stad.'</span></li>
+</ul>
+""",
+        "grammar_extra": """
+<h4>Handige vul-zinnen voor het spreekexamen</h4>
+<table>
+<tr><th>Situatie</th><th>Zin</th></tr>
+<tr><td>Tijd winnen</td><td><em>Dat is een goede vraag. Laat me even nadenken.</em></td></tr>
+<tr><td>Niet begrijpen</td><td><em>Kunt u de vraag herhalen? / Wat bedoelt u precies?</em></td></tr>
+<tr><td>Twijfelen</td><td><em>Ik ben er niet helemaal zeker van, maar ik denk dat…</em></td></tr>
+<tr><td>Mening geven</td><td><em>Naar mijn mening… / Ik vind dat… / Volgens mij…</em></td></tr>
+<tr><td>Conclusie</td><td><em>Kortom, ik denk dat… / Ten slotte wil ik zeggen dat…</em></td></tr>
+</table>
+
+<h4>Er staat / zit / ligt / hangt — gebruik</h4>
+<table>
+<tr><th>Werkwoord</th><th>Gebruik</th><th>Voorbeeld</th></tr>
+<tr><td>er staat</td><td>people/things standing</td><td><em>Er staat een vrouw bij de deur.</em></td></tr>
+<tr><td>er zit</td><td>people/things sitting</td><td><em>Er zit een kind op de bank.</em></td></tr>
+<tr><td>er ligt</td><td>things lying flat</td><td><em>Er ligt een boek op tafel.</em></td></tr>
+<tr><td>er hangt</td><td>things hanging</td><td><em>Er hangt een schilderij aan de muur.</em></td></tr>
+</table>
+""",
+        "grammar_quick": """
+<ul>
+<li>Foto beschrijven: Op de foto zie ik … / Er staat/zit … / In de achtergrond …</li>
+<li>Het lijkt alsof + bijzin → V-einde</li>
+<li>Vergeleken met … → inversie in hoofdzin</li>
+<li>Mening: Ik vind dat … / Volgens mij … / Naar mijn mening …</li>
+<li>Tijd winnen: Dat is een goede vraag. Laat me even nadenken.</li>
+</ul>
+""",
+        "exercises": [
+            {"type": "choice",
+             "q": "Je beschrijft een foto. Welke zin is het beste?",
+             "options": [
+                 "Op de foto is een man.",
+                 "Op de foto zie ik een man van ongeveer 40 jaar.",
+                 "Foto: man, groot, bruin haar.",
+                 "Er een man staat op de foto.",
+             ],
+             "a": "Op de foto zie ik een man van ongeveer 40 jaar.",
+             "tip": "Gebruik 'Op de foto zie ik …' voor foto beschrijving. Geef leeftijd en details."},
+            {"type": "choice",
+             "q": "Welk 'er'-werkwoord gebruik je: 'Een kind ___ op de stoel.'",
+             "options": ["er staat", "er zit", "er ligt", "er hangt"],
+             "a": "er zit",
+             "tip": "Personen die zitten → er zit. Staan = er staat. Liggen = er ligt."},
+            {"type": "fill",
+             "q": "Vul in: '___ alsof hij moe is.' (it seems)",
+             "a": "Het lijkt",
+             "tip": "Het lijkt alsof = it seems as if. alsof → bijzin → V-einde (is)."},
+            {"type": "fill",
+             "q": "Vul in: '___ met India is België een klein land.' (Compared to)",
+             "a": "Vergeleken",
+             "tip": "Vergeleken met = compared to. Vergeleken met … → inversie: Vergeleken met India IS België."},
+            {"type": "fill",
+             "q": "Vraag op examen: 'Waarom studeer je Nederlands?' → 'Ik studeer Nederlands ___ ik in Gent woon en werk.'",
+             "a": "omdat",
+             "tip": "Omdat-bijzin → V-einde: omdat ik in Gent woon en werk."},
+            {"type": "tf",
+             "q": "'Het lijkt alsof zij is verdrietig.' is correct.",
+             "a": False,
+             "correction": "alsof-bijzin → V-einde: Het lijkt alsof zij verdrietig IS.",
+             "tip": "alsof = onderschikkend voegwoord → bijzin → werkwoord naar einde."},
+            {"type": "tf",
+             "q": "'Vergeleken met India is België kleiner.' is correct.",
+             "a": True,
+             "correction": "Correct! Vergeleken met … aan het begin → inversie: IS België. ✓",
+             "tip": "Bijwoordgroep aan het begin → inversie (V-S)."},
+            {"type": "tf",
+             "q": "'Wat mij opvalt is de mensen zijn vriendelijk.' is correct.",
+             "a": False,
+             "correction": "Dat-bijzin na 'is': Wat mij opvalt is DAT de mensen vriendelijk zijn.",
+             "tip": "dat + bijzin → V-einde: dat de mensen vriendelijk ZIJN."},
+            {"type": "translate",
+             "q": "In the background I see a park with trees.",
+             "a": "In de achtergrond zie ik een park met bomen.",
+             "tip": "In de achtergrond + inversie (zie ik). met = with (no preposition changes needed)."},
+            {"type": "translate",
+             "q": "The biggest difference between India and Belgium is the weather.",
+             "a": "Het grootste verschil tussen India en België is het weer.",
+             "tip": "het verschil TUSSEN … en … Het grootste = superlative of groot."},
+            {"type": "reorder",
+             "q": "alsof / lijkt / hij / het / eten / graag / aan / het / is",
+             "a": "Het lijkt alsof hij graag aan het eten is.",
+             "tip": "Het lijkt alsof + bijzin → aan het eten IS helemaal op het einde (V-einde)."},
+            {"type": "reorder",
+             "q": "achtergrond / de / zie / in / park / een / ik",
+             "a": "In de achtergrond zie ik een park.",
+             "tip": "In de achtergrond = bijwoordgroep vooraan → inversie: zie ik."},
+        ],
+        "jouw_beurt": "🎤 SPREEKTAAK — Net zo Box examentypisch\n\n"
+                      "Oefen deze 4 taken hardop (neem 2–3 minuten per taak):\n\n"
+                      "TAAK 1 — Jezelf voorstellen (60 seconden)\n"
+                      "Beantwoord: Wie ben je? Waar kom je vandaan? Wat doe je? Hoe lang woon je in Gent?\n\n"
+                      "TAAK 2 — Foto beschrijven\n"
+                      "Beschrijf iemand die je nu ziet of een foto op je telefoon.\n"
+                      "Gebruik: Op de foto zie ik … / Er staat … / Het lijkt alsof … / In de achtergrond …\n\n"
+                      "TAAK 3 — Situatie bespreken\n"
+                      "Situatie: Je collega is altijd moe en gestrest. Wat adviseer je?\n"
+                      "Gebruik: Je zou … kunnen / Je moet … / Ik denk dat …\n\n"
+                      "TAAK 4 — Mening geven\n"
+                      "Stelling: 'Nederlands leren is nuttig als je in België woont.'\n"
+                      "Geef je mening met 2 argumenten en een conclusie.\n\n"
+                      "✅ Zelfcheck:\n"
+                      "☐ Spreek je in volledige zinnen?\n"
+                      "☐ Gebruik je connectors (omdat, want, maar, bovendien)?\n"
+                      "☐ Gebruik je inversie na tijds/bijwoorden?\n"
+                      "☐ Neem je 10 seconden denktijd voor je antwoordt?",
+    },
+
+    # =====================================================================
+    # SESSION 31 — LUISTEREN: Gesprekken begrijpen (Net zo Box stijl)
+    # =====================================================================
+    {
+        "id": 31,
+        "title": "Luisteren: Gesprekken en dialogen begrijpen",
+        "chapter": "Examentopics Oefenen",
+        "book_page": "CVO GEMT 3.2 — Net zo Box luistervaardigheid",
+        "review": [
+            {"q": "Net zo Box luisterstrategie: wat doe je VOOR het luisteren?",
+             "a": "Lees de vragen, onderstreep sleutelwoorden. Luister naar de INTONATIE en signaalwoorden."},
+            {"q": "Welke signaalwoorden geven een tegengesteld idee aan?",
+             "a": "maar, toch, echter, hoewel, integendeel"},
+            {"q": "Welke signaalwoorden geven een reden aan?",
+             "a": "omdat, want, doordat, vandaar, daarom"},
+            {"q": "Hoe zeg je 'I have a sore throat' bij de dokter?",
+             "a": "Ik heb keelpijn. / Mijn keel doet pijn."},
+        ],
+        "vocabulary": [
+            {"nl": "keelpijn", "en": "sore throat", "ex": "Ik heb keelpijn."},
+            {"nl": "hoofdpijn", "en": "headache", "ex": "Ik heb hoofdpijn."},
+            {"nl": "koorts", "en": "fever", "ex": "Ik heb 38,5 graden koorts."},
+            {"nl": "misselijk", "en": "nauseous / feeling sick",
+                "ex": "Ik ben misselijk."},
+            {"nl": "het recept", "en": "the prescription",
+                "ex": "De dokter schrijft een recept."},
+            {"nl": "een afspraak maken", "en": "to make an appointment",
+                "ex": "Ik wil een afspraak maken bij de dokter."},
+            {"nl": "zo snel mogelijk", "en": "as soon as possible",
+                "ex": "Kunt u me zo snel mogelijk helpen?"},
+            {"nl": "bezig zijn met", "en": "to be busy with",
+                "ex": "De dokter is bezig. Belt u later terug."},
+            {"nl": "terugbellen", "en": "to call back",
+                "ex": "Ik bel u later terug."},
+            {"nl": "de wachtkamer", "en": "the waiting room",
+                "ex": "Wacht u in de wachtkamer."},
+            {"nl": "beschikbaar", "en": "available",
+                "ex": "Is dokter Peeters beschikbaar?"},
+            {"nl": "de klacht", "en": "the complaint / symptom",
+                "ex": "Wat zijn uw klachten?"},
+        ],
+        "grammar_title": "📻 Luisterteksten — dialogen en gesprekken (gesimuleerd)",
+        "grammar_html": """
+<div class="info-box">
+<strong>Net zo Box luisterinstructie:</strong><br>
+Lees de vragen in het <b>Quiz-tabblad</b> eerst. Lees dan de dialogen hieronder hardop (of vraag iemand voor te lezen).
+Let op: intonatie, pauzes en signaalwoorden geven de betekenis!
+</div>
+
+<h4>🎧 Dialoog 1 — Bij de huisartspraktijk (telefoon)</h4>
+<div style="background:#f9f9f9;border-left:4px solid #4a90d9;padding:1rem 1.5rem;border-radius:6px;line-height:1.9">
+<p><b>Receptioniste:</b> Goedemorgen, huisartspraktijk De Leie, met Sofie.</p>
+<p><b>Patiënt (Kumar):</b> Goedemorgen. Ik bel om een afspraak te maken. Ik heb al drie dagen keelpijn en af en toe koorts.</p>
+<p><b>Receptioniste:</b> Heeft u ook andere klachten? Hoest u veel?</p>
+<p><b>Patiënt:</b> Nee, ik hoest niet, maar ik ben wel erg moe en een beetje misselijk.</p>
+<p><b>Receptioniste:</b> Ik zie dat dokter Claes morgen om 10:30 beschikbaar is. Gaat dat voor u?</p>
+<p><b>Patiënt:</b> Dat is prima, dank u. En moet ik iets meebrengen?</p>
+<p><b>Receptioniste:</b> Uw identiteitskaart en, als u medicijnen neemt, de lijst meebrengen, graag.</p>
+<p><b>Patiënt:</b> Begrepen. Tot morgen!</p>
+</div>
+
+<h4>🎧 Dialoog 2 — In de supermarkt</h4>
+<div style="background:#f9f9f9;border-left:4px solid #27ae60;padding:1rem 1.5rem;border-radius:6px;line-height:1.9">
+<p><b>Kassamedewerker:</b> Goedemiddag! Heeft u een klantenkaart?</p>
+<p><b>Klant (Kumar):</b> Nee, helaas niet. Ik wil er graag een aanvragen. Hoe doe ik dat?</p>
+<p><b>Kassamedewerker:</b> U kunt een formulier invullen aan de servicebalie, of het online doen via onze website.</p>
+<p><b>Klant:</b> Oké, ik doe het online. Heeft de kaart voordelen?</p>
+<p><b>Kassamedewerker:</b> Ja, u spaart punten bij elke aankoop. Bovendien krijgt u elke maand kortingsbonnen.</p>
+<p><b>Klant:</b> Klinkt goed! En betaal ik met kaart?</p>
+<p><b>Kassamedewerker:</b> Ja, dat kan. Pinnen of contactloos — beide zijn mogelijk.</p>
+</div>
+
+<h4>🎧 Dialoog 3 — Op de treinstation (informatie balie)</h4>
+<div style="background:#f9f9f9;border-left:4px solid #e67e22;padding:1rem 1.5rem;border-radius:6px;line-height:1.9">
+<p><b>Beambte:</b> Goedemorgen, waarmee kan ik u helpen?</p>
+<p><b>Reiziger (Kumar):</b> Goedemorgen. Ik wil een treinticket kopen naar Brussel. Hoe laat vertrekt de eerst volgende trein?</p>
+<p><b>Beambte:</b> De volgende trein vertrekt om 11:14. De reis duurt ongeveer 30 minuten.</p>
+<p><b>Reiziger:</b> En moet ik overstappen?</p>
+<p><b>Beambte:</b> Nee, het is een rechtstreekse trein. Het ticket kost 9 euro 50 voor een enkele reis.</p>
+<p><b>Reiziger:</b> Ik neem een retour, graag. Wanneer is de laatste trein terug naar Gent?</p>
+<p><b>Beambte:</b> De laatste trein terug vertrekt om 23:42. Een retourticket kost 14 euro.</p>
+</div>
+""",
+        "grammar_letop": """
+<ul>
+<li>Let op <b>negatieve woorden</b>: niet, geen, nooit, nergens, niemand — ze veranderen de betekenis totaal.</li>
+<li>Let op <b>tijdsaanduidingen</b>: morgen, gisteren, volgende week, om 10:30 — die zijn extreem belangrijk.</li>
+<li>Let op <b>modaliteiten</b>: moet (must), kan (can), mag (may), wil (want) — deze geven bedoeling aan.</li>
+<li>Als je iets niet verstaat: noteer wat je WEL begrijpt. Gebruik context om de rest af te leiden.</li>
+</ul>
+""",
+        "grammar_extra": """
+<h4>Luistertypen en aanpak</h4>
+<table>
+<tr><th>Type luistertekst</th><th>Wat let je op?</th></tr>
+<tr><td>Telefoongesprek (dokter, school)</td><td>Reden bellen, afspraakinformatie (datum/tijd), instructies</td></tr>
+<tr><td>Winkel / service</td><td>Product, prijs, mogelijkheden, voordelen</td></tr>
+<tr><td>Trein / bus informatie</td><td>Vertrektijd, prijs, overstappen of niet, eindbestemming</td></tr>
+<tr><td>Discussie / mening</td><td>Wie is voor/tegen? Welke argumenten? Wat is de conclusie?</td></tr>
+<tr><td>Aankondiging / omroep</td><td>Wat, wanneer, waar, voor wie</td></tr>
+</table>
+<h4>Signaalwoorden om te herkennen</h4>
+<ul>
+<li><b>Reden:</b> omdat, want, doordat, vandaar, daarom</li>
+<li><b>Contrast:</b> maar, toch, echter, hoewel, integendeel, in tegenstelling tot</li>
+<li><b>Toevoeging:</b> ook, bovendien, daarbij, enerzijds/anderzijds</li>
+<li><b>Gevolg:</b> dus, daardoor, dan ook, bijgevolg</li>
+<li><b>Tijdsvolgorde:</b> eerst, daarna, ten slotte, uiteindelijk</li>
+</ul>
+""",
+        "grammar_quick": """
+<ul>
+<li>Stap 1: Lees de vragen VOOR het luisteren</li>
+<li>Stap 2: Luister naar signaalwoorden (maar, omdat, dus, ten slotte)</li>
+<li>Stap 3: Let op getallen, tijden, namen — schrijf ze neer</li>
+<li>Stap 4: Controleer je antwoord: klopt het met de context?</li>
+<li>Negatieve woorden (niet/geen/nooit) veranderen alles — let op!</li>
+</ul>
+""",
+        "exercises": [
+            {"type": "choice",
+             "q": "Dialoog 1: Wat zijn de klachten van de patiënt? (kies alle correcte antwoorden — kies de meest complete optie)",
+             "options": [
+                 "keelpijn en hoest",
+                 "koorts, keelpijn, moeheid en misselijkheid",
+                 "hoofdpijn en keelpijn",
+                 "koorts en hoest",
+             ],
+             "a": "koorts, keelpijn, moeheid en misselijkheid",
+             "tip": "Lees dialoog 1: keelpijn + soms koorts + erg moe + een beetje misselijk. Hoest = niet!"},
+            {"type": "choice",
+             "q": "Dialoog 1: Hoe laat is de afspraak bij de dokter?",
+             "options": ["10:00", "10:30", "11:00", "11:30"],
+             "a": "10:30",
+             "tip": "Receptioniste: 'dokter Claes morgen om 10:30 beschikbaar'"},
+            {"type": "tf",
+             "q": "Dialoog 1: De patiënt hoest veel.",
+             "a": False,
+             "correction": "Fout. De patiënt zegt: 'Nee, ik hoest niet.'",
+             "tip": "Let op 'nee, ik hoest NIET' — negatief antwoord!"},
+            {"type": "tf",
+             "q": "Dialoog 1: De patiënt moet zijn identiteitskaart meebrengen.",
+             "a": True,
+             "correction": "Juist. Receptioniste: 'Uw identiteitskaart … meebrengen, graag.'",
+             "tip": "Identiteitskaart = verplicht meebrengen. ✓"},
+            {"type": "choice",
+             "q": "Dialoog 2: Hoe kan de klant een klantenkaart aanvragen?",
+             "options": [
+                 "Alleen aan de servicebalie",
+                 "Alleen online",
+                 "Aan de servicebalie of online",
+                 "Via de kassamedewerker",
+             ],
+             "a": "Aan de servicebalie of online",
+             "tip": "Kassamedewerker: 'aan de servicebalie, of het online doen via onze website.'"},
+            {"type": "tf",
+             "q": "Dialoog 2: Met de klantenkaart krijg je elke week kortingsbonnen.",
+             "a": False,
+             "correction": "Fout. De kassamedewerker zegt: 'elke MAAND kortingsbonnen' (niet elke week).",
+             "tip": "Let op tijdsaanduiding: elke maand ≠ elke week!"},
+            {"type": "choice",
+             "q": "Dialoog 3: Hoe lang duurt de treinreis van Gent naar Brussel?",
+             "options": ["20 minuten", "30 minuten", "45 minuten", "1 uur"],
+             "a": "30 minuten",
+             "tip": "Beambte: 'De reis duurt ongeveer 30 minuten.'"},
+            {"type": "tf",
+             "q": "Dialoog 3: De reiziger moet overstappen in Brussel.",
+             "a": False,
+             "correction": "Fout. Beambte: 'Nee, het is een rechtstreekse trein.'",
+             "tip": "Rechtstreekse trein = direct train, geen overstap nodig!"},
+            {"type": "choice",
+             "q": "Dialoog 3: Hoeveel kost een retourticket naar Brussel?",
+             "options": ["9 euro 50", "12 euro", "14 euro", "18 euro"],
+             "a": "14 euro",
+             "tip": "Beambte: 'Een retourticket kost 14 euro.'"},
+            {"type": "fill",
+             "q": "Dialoog 3: De trein naar Brussel vertrekt om ___.",
+             "a": "11:14",
+             "tip": "Beambte: 'De volgende trein vertrekt om 11:14.'"},
+            {"type": "translate",
+             "q": "How do you say 'I have a sore throat and a slight fever'?",
+             "a": "Ik heb keelpijn en lichte koorts.",
+             "tip": "keelpijn = sore throat. lichte koorts = slight/mild fever. Beide met 'hebben'."},
+            {"type": "translate",
+             "q": "How do you say 'I would like to make an appointment as soon as possible'?",
+             "a": "Ik zou graag zo snel mogelijk een afspraak willen maken.",
+             "tip": "zo snel mogelijk = as soon as possible. zou graag + willen + infinitief."},
+        ],
+        "jouw_beurt": "🎧 LUISTERTAAK — Net zo Box examentypisch\n\n"
+                      "Gebruik de 3 dialogen in het Grammar-tabblad.\n\n"
+                      "Stap 1: Lees de vragen in het Quiz-tabblad EERST.\n"
+                      "Stap 2: Lees elke dialoog hardop, alsof je luistert.\n"
+                      "Stap 3: Beantwoord de vragen zonder terug te kijken.\n\n"
+                      "Extra oefening — schrijf na elke dialoog:\n"
+                      "A) Waar gaat het gesprek over? (1 zin)\n"
+                      "B) Wat zijn de belangrijkste details? (datum/tijd/prijs/klachten)\n"
+                      "C) Welke signaalwoorden hoor je? (maar/want/bovendien/toch)\n\n"
+                      "Eigen schrijfopdracht:\n"
+                      "Schrijf een korte dialoog (6 zinnen) voor één van deze situaties:\n"
+                      "- Je belt de tandarts om een afspraak te verzetten.\n"
+                      "- Je vraagt informatie over de trein naar Antwerpen.\n\n"
+                      "✅ Zelfcheck:\n"
+                      "☐ Heb je de vragen eerst gelezen?\n"
+                      "☐ Heb je gelet op negatieve woorden (niet/geen/nooit)?\n"
+                      "☐ Heb je getallen en tijden goed genoteerd?\n"
+                      "☐ Heb je signaalwoorden herkend?",
+    },
+
+    # =====================================================================
+    # SESSION 32 — NT2 Taalmenu stijl: ER (alle 5 functies) + fill-in-verb
+    # =====================================================================
+    {
+        "id": 32,
+        "title": "NT2 Taalmenu: ER (alle 5 functies)",
+        "chapter": "Examentopics Oefenen",
+        "book_page": "NT2 Taalmenu B1 — Grammatica ER · CVO GEMT 3.2 p. 63–68",
+        "review": [
+            {"q": "Hoeveel functies heeft 'er'? Noem ze.",
+             "a": "5 functies: 1) er + zijn (there is/are), 2) er + getal (quantity), "
+                  "3) er + preposition (er op, erin, ervan…), 4) er = place (there), "
+                  "5) er + passief (er wordt gewerkt)."},
+            {"q": "'There are many students in Ghent.' → Dutch?",
+             "a": "<b>Er zijn</b> veel studenten in Gent."},
+            {"q": "'Ik luister naar de radio.' → vervang 'de radio' met er.",
+             "a": "Ik luister <b>ernaar</b>. (er + naar fused)"},
+            {"q": "'I have three.' (ik heb — hoeveel?) → Dutch with 'er'?",
+             "a": "Ik heb <b>er</b> drie."},
+        ],
+        "vocabulary": [
+            {"nl": "er zijn", "en": "there is / there are",
+                "ex": "Er zijn veel mensen op de markt."},
+            {"nl": "er + getal", "en": "er + number (quantity)",
+                "ex": "Ik heb er twee. / Er zijn drie opties."},
+            {"nl": "erin", "en": "in it / in them",
+                "ex": "Ik geloof erin. / Doe het erin."},
+            {"nl": "erop", "en": "on it / on them",
+                "ex": "Ik reken erop. / Zet het erop."},
+            {"nl": "ervan", "en": "of it / from it",
+                "ex": "Ik hou ervan. / Wat vind je ervan?"},
+            {"nl": "ermee", "en": "with it / with them",
+                "ex": "Ben je ermee klaar?"},
+            {"nl": "ernaar", "en": "to it / towards it",
+                "ex": "Ik kijk ernaar uit. / Luister je ernaar?"},
+            {"nl": "erover", "en": "about it",
+                "ex": "We praten erover. / Denk erover na."},
+            {"nl": "ervoor", "en": "for it / in front of it",
+                "ex": "Ik ben ervoor. / Ik betaal ervoor."},
+            {"nl": "er wordt + infinitief", "en": "er + passive (it is being done)",
+                "ex": "Er wordt hard gewerkt. / Er wordt gezongen."},
+            {"nl": "er + bijvoeglijk naamwoord", "en": "there (place reference)",
+                "ex": "Ben je er al geweest? / Ik kom er nooit."},
+            {"nl": "waar + preposition", "en": "question form of er + prep",
+                "ex": "Waarvan hou je? / Waarop wacht je?"},
+        ],
+        "grammar_title": "ER — 5 functies, NT2 Taalmenu stijl",
+        "grammar_html": """
+<h4>De 5 functies van ER — complete referentietabel</h4>
+<table>
+<tr><th>#</th><th>Functie</th><th>Wanneer</th><th>Voorbeeld</th></tr>
+<tr><td><b>1</b></td><td><b>Er + zijn</b></td><td>Er zijn/is = there is/are</td>
+<td><em>Er zijn veel studenten in Gent.</em><br><em>Er is een probleem.</em></td></tr>
+<tr><td><b>2</b></td><td><b>Er + aantal</b></td><td>Onbepaald getal als object</td>
+<td><em>Ik heb er drie.</em><br><em>Er wonen er veel in Gent.</em></td></tr>
+<tr><td><b>3</b></td><td><b>Er + voorzetsel</b></td><td>Vervangt ding + vz (niet persoon)</td>
+<td><em>Ik wacht op de bus → Ik wacht erop.</em><br><em>Ik denk aan mijn werk → Ik denk eraan.</em></td></tr>
+<tr><td><b>4</b></td><td><b>Er = plaatsaanduiding</b></td><td>Verwijst naar eerder genoemde plaats</td>
+<td><em>Ben je al in Gent geweest? Ja, ik ben er al geweest.</em></td></tr>
+<tr><td><b>5</b></td><td><b>Er + passief</b></td><td>Er + wordt/worden + infinitief</td>
+<td><em>Er wordt hard gewerkt in ons laboratorium.</em><br><em>Er wordt veel gefietst in Gent.</em></td></tr>
+</table>
+
+<h4>NT2 Taalmenu ER oefening — typ 'er' of '-'</h4>
+<p>Vul <b>er</b> in als het nodig is. Typ <b>-</b> als het niet nodig is.</p>
+<ol>
+<li>Mijn vriend is vaak in Utrecht, maar ik kom ___ nooit.</li>
+<li>Wacht je ___ al lang op de bus?</li>
+<li>Vandaag rijden ___ geen treinen.</li>
+<li>Voordat ik in Gent woonde, werkte ik ___ al in die stad.</li>
+<li>Mijn zus heeft geen kinderen, maar ik heb ___ vier.</li>
+<li>Wie wil ___ mee naar de stad?</li>
+<li>Morgen gebruik ik ___ de auto niet.</li>
+<li>De radio? Ik luister ___ nooit naar.</li>
+</ol>
+<p><b>Antwoorden:</b> 1. er · 2. er · 3. er · 4. er · 5. er · 6. er · 7. – · 8. er</p>
+
+<h4>Er + voorzetsel — samengevoegd of apart?</h4>
+<table>
+<tr><th>Werkwoord + voorzetsel</th><th>Er-vorm</th><th>Vraagvorm (waar+vz)</th></tr>
+<tr><td>wachten op</td><td>erop wachten → <em>Ik wacht erop.</em></td><td>Waarop wacht je?</td></tr>
+<tr><td>denken aan</td><td>eraan denken → <em>Ik denk eraan.</em></td><td>Waaraan denk je?</td></tr>
+<tr><td>houden van</td><td>ervan houden → <em>Ik hou ervan.</em></td><td>Waarvan hou je?</td></tr>
+<tr><td>rekenen op</td><td>erop rekenen → <em>Ik reken erop.</em></td><td>Waarop reken je?</td></tr>
+<tr><td>praten over</td><td>erover praten → <em>We praten erover.</em></td><td>Waarover praten jullie?</td></tr>
+<tr><td>kijken naar</td><td>ernaar kijken → <em>Ik kijk ernaar.</em></td><td>Waarnaar kijk je?</td></tr>
+</table>
+<p>⚠️ Personen krijgen GEEN er: <span class="wrong">Ik denk eraan hem.</span> → <span class="right">Ik denk aan hem.</span></p>
+""",
+        "grammar_letop": """
+<ul>
+<li><span class="wrong">Er rijden geen treinen vandaag.</span> → <span class="right">Vandaag rijden er geen treinen.</span><br>
+   Er + zijn/ontbreken: werkwoord op positie 2, er komt daarna. Let op inversie!</li>
+<li><span class="wrong">Ik wacht er op de bus.</span> → <span class="right">Ik wacht erop.</span><br>
+   Er + voorzetsel worden samengevoegd als er geen pauze/ander woord tussenkomt.</li>
+<li><span class="wrong">Ik luister er nooit naar.</span> → <span class="right">Ik luister er nooit naar.</span><br>
+   Wacht — deze IS correct! Er + bijwoord + voorzetsel hoeven NIET samen. 'Er nooit naar luisteren' is OK.</li>
+<li><span class="wrong">Ik denk eraan mijn moeder.</span> → <span class="right">Ik denk aan mijn moeder.</span><br>
+   Personen (mijn moeder, hem, haar) → GEEN er! Gebruik gewoon het voorzetsel.</li>
+</ul>
+""",
+        "grammar_extra": """
+<h4>NT2 Taalmenu stijl — combinatieoefening: ER in zinnen</h4>
+<p>Vervang het onderstreepte deel met een er-vorm:</p>
+<ul>
+<li>Ik kijk naar <u>de film</u>. → Ik kijk <b>ernaar</b>.</li>
+<li>We praten over <u>het probleem</u>. → We praten <b>erover</b>.</li>
+<li>Ik hou van <u>het fietsen</u>. → Ik hou <b>ervan</b>.</li>
+<li>Ben jij al in <u>Brussel</u> geweest? → Ben jij <b>er</b> al geweest?</li>
+<li>Er wonen <u>200 studenten</u> in dat gebouw. → Er wonen <b>er</b> 200.</li>
+</ul>
+
+<h4>ER + passief — veelgebruikt op examen</h4>
+<table>
+<tr><th>Actief</th><th>Passief met er</th></tr>
+<tr><td>De mensen fietsen veel in Gent.</td><td><em>Er wordt veel gefietst in Gent.</em></td></tr>
+<tr><td>De studenten werken hard.</td><td><em>Er wordt hard gewerkt.</em></td></tr>
+<tr><td>De mensen praten luid.</td><td><em>Er wordt luid gepraat.</em></td></tr>
+</table>
+""",
+        "grammar_quick": """
+<ul>
+<li><b>Er zijn/is</b> = there is/are → Er zijn veel mensen.</li>
+<li><b>Er + getal</b> = onbepaald aantal → Ik heb er drie.</li>
+<li><b>Er + vz</b> = ding vervangen → wachten op → erop. denken aan → eraan.</li>
+<li><b>Er = plaats</b> = eerder genoemde plaats → Ben je er al geweest?</li>
+<li><b>Er + passief</b> = Er wordt/worden + vd → Er wordt gefietst.</li>
+<li>Personen: NOOIT er! → Ik denk aan hem (niet: eraan hem).</li>
+<li>Vraagvorm: <b>waar + vz</b> → Waarop? Waaraan? Waarvoor?</li>
+</ul>
+""",
+        "exercises": [
+            # NT2 Taalmenu-style: type 'er' or '-'
+            {"type": "fill",
+             "q": "NT2 Taalmenu stijl — typ 'er' of '-': 'Mijn vriend is vaak in Utrecht, maar ik kom ___ nooit.'",
+             "a": "er",
+             "tip": "Er = plaatsaanduiding (verwijst naar Utrecht, eerder genoemde plaats)."},
+            {"type": "fill",
+             "q": "NT2 Taalmenu stijl — typ 'er' of '-': 'Vandaag rijden ___ geen treinen.'",
+             "a": "er",
+             "tip": "Er zijn/rijden = er + zijn-achtig werkwoord bij ontbreken van iets."},
+            {"type": "fill",
+             "q": "NT2 Taalmenu stijl — typ 'er' of '-': 'Mijn zus heeft geen kinderen, maar ik heb ___ vier.'",
+             "a": "er",
+             "tip": "Er + getal: onbepaald aantal als object → ik heb er vier."},
+            {"type": "fill",
+             "q": "NT2 Taalmenu stijl — typ 'er' of '-': 'Morgen gebruik ik ___ de auto niet.'",
+             "a": "-",
+             "tip": "Auto is al bepaald (de auto) en er is geen vage/onbepaalde verwijzing nodig. Geen er!"},
+            {"type": "fill",
+             "q": "NT2 Taalmenu stijl — typ 'er' of '-': 'De radio? Ik luister ___ nooit naar.'",
+             "a": "er",
+             "tip": "Er + voorzetsel: luisteren naar → er ... naar. De radio wordt vervangen door er."},
+            {"type": "fill",
+             "q": "Vervang het onderstreepte woord met er: 'Ik kijk naar <u>de film</u>.' → Ik kijk ___.",
+             "a": "ernaar",
+             "tip": "kijken naar → ernaar. Er + naar fused together."},
+            {"type": "fill",
+             "q": "Vervang met er: 'We praten over <u>het probleem</u>.' → We praten ___.",
+             "a": "erover",
+             "tip": "praten over → erover. Er + over fused together."},
+            {"type": "fill",
+             "q": "Vervang met er: 'Ik hou van <u>het fietsen</u>.' → Ik hou ___.",
+             "a": "ervan",
+             "tip": "houden van → ervan. Er + van fused together."},
+            {"type": "choice",
+             "q": "Welke zin gebruikt ER correct?",
+             "options": [
+                 "Ik denk eraan mijn moeder.",
+                 "Ik wacht eraan de bus.",
+                 "Er wordt veel gefietst in Gent.",
+                 "Er zijn mijn vrienden.",
+             ],
+             "a": "Er wordt veel gefietst in Gent.",
+             "tip": "ER + passief: er wordt + vd. Personen krijgen geen er. Er zijn = there are (niet bezittelijk)."},
+            {"type": "choice",
+             "q": "Vraagvorm: 'Ik wacht erop.' → Vraag?",
+             "options": ["Erop wacht je?", "Waarop wacht je?", "Op wat wacht je?", "Waarvoor wacht je?"],
+             "a": "Waarop wacht je?",
+             "tip": "Vraagvorm van er + vz = waar + vz: erop → WAAROP?"},
+            {"type": "tf",
+             "q": "'Er wordt hard gewerkt in ons lab.' is een correcte passieve zin.",
+             "a": True,
+             "correction": "Correct! Er + passief: er wordt + gewerkt (vd). ✓",
+             "tip": "Er + passief: er wordt/worden + voltooid deelwoord."},
+            {"type": "tf",
+             "q": "'Ik heb er de fiets.' is correct voor 'I have the bicycle'.",
+             "a": False,
+             "correction": "Nee — er + getal geldt voor ONBEPAALDE aantallen, niet voor bepaalde objecten (de fiets). Gewoon: Ik heb de fiets.",
+             "tip": "Er + getal alleen bij onbepaald aantal: Ik heb er drie. Niet bij bepaalde objecten."},
+            {"type": "translate",
+             "q": "There are a lot of people cycling in Ghent.",
+             "a": "Er wordt veel gefietst in Gent. / Er zijn veel mensen die fietsen in Gent.",
+             "tip": "Er + passief (er wordt gefietst) or Er zijn veel mensen die... Both correct."},
+            {"type": "reorder",
+             "q": "er / zijn / studenten / veel / in / Gent",
+             "a": "Er zijn veel studenten in Gent.",
+             "tip": "Er + zijn: Er staat op positie 1, zijn op positie 2 (V2-regel). Er zijn + onderwerp + rest."},
+        ],
+        "jouw_beurt": "📝 NT2 TAALMENU STIJL — ER oefening\n\n"
+                      "Schrijf 6 zinnen over je leven in Gent met ER. Gebruik elke functie minstens één keer:\n\n"
+                      "1. Er + zijn: 'Er zijn veel ... in Gent.'\n"
+                      "2. Er + getal: 'Ik heb er ... collega's in mijn bureau.'\n"
+                      "3. Er + voorzetsel: gebruik een vaste verbinding (erop, ervan, ermee, ernaar...)\n"
+                      "4. Er = plaats: 'Ben je al in [stad] geweest? Ja, ik ben er al geweest.'\n"
+                      "5. Er + passief: 'In Gent wordt er veel ... (gefietst, geviert, gebouwd...)'\n"
+                      "6. Vraagvorm: 'Waarvan hou je? / Waarop reken je?'\n\n"
+                      "✅ NT2 Taalmenu zelfcheck:\n"
+                      "☐ Personen → GEEN er (ik denk aan hem, niet eraan hem)?\n"
+                      "☐ er + vz samengevoegd: erop, ervan, ermee?\n"
+                      "☐ Er + passief: er wordt/worden + voltooid deelwoord?\n"
+                      "☐ Vraagvorm: waar + vz (waarop, waarvan, waarover)?",
+    },
+
+    # =====================================================================
+    # SESSION 33 — NT2 Taalmenu stijl: Imperfectum fill-in + wonen & buurt
+    # =====================================================================
+    {
+        "id": 33,
+        "title": "NT2 Taalmenu: Imperfectum fill-in + Wonen & Buurt schrijven",
+        "chapter": "Examentopics Oefenen",
+        "book_page": "NT2 Taalmenu B1 — Imperfectum & schrijven wonen",
+        "review": [
+            {"q": "Imperfectum regel — 't kofschip: wat is het?",
+             "a": "Werkwoorden waarvan de stam eindigt op t, k, f, s, ch, p → stam + <b>te(n)</b>. Alle anderen → stam + <b>de(n)</b>."},
+            {"q": "werken → imperfectum (ik / hij)? / (wij / zij)?",
+             "a": "ik werkte / hij werkte / wij werkten / zij werkten."},
+            {"q": "leven → imperfectum (ik)? (v is uitgesproken als f → kofschip!)",
+             "a": "ik <b>leefde</b>. (stam = leef + de → leefde. Kijk naar de uitgesproken klank, niet de spelling!)"},
+            {"q": "Verschil: perfectum vs imperfectum — wanneer gebruik je welke?",
+             "a": "<b>Perf:</b> 1 afgeronde actie ('Gisteren heb ik gegeten'). "
+                  "<b>Imperf:</b> achtergrond/gewoonte ('Vroeger woonde ik in India. Terwijl ik at, belde hij.')"},
+        ],
+        "vocabulary": [
+            {"nl": "de buurt", "en": "the neighbourhood",
+                "ex": "Ik woon in een rustige buurt in Gent."},
+            {"nl": "de wijk", "en": "the district / area",
+                "ex": "De Muide is een leuke wijk."},
+            {"nl": "levendig", "en": "lively / vibrant",
+                "ex": "De Korenmarkt is levendig."},
+            {"nl": "rustig", "en": "quiet / peaceful",
+                "ex": "Mijn straat is rustig."},
+            {"nl": "de voorziening", "en": "the facility / amenity",
+                "ex": "Er zijn goede voorzieningen: winkels, scholen, een park."},
+            {"nl": "op loopafstand", "en": "within walking distance",
+                "ex": "De supermarkt is op loopafstand."},
+            {"nl": "huren / kopen", "en": "to rent / to buy",
+                "ex": "Ik huur een appartement in het centrum."},
+            {"nl": "het appartement", "en": "the apartment / flat",
+                "ex": "Ik woon in een appartement op de derde verdieping."},
+            {"nl": "de verdieping", "en": "the floor / storey",
+                "ex": "Ik woon op de tweede verdieping."},
+            {"nl": "het balkon", "en": "the balcony",
+                "ex": "Mijn appartement heeft een klein balkon."},
+            {"nl": "de omgeving", "en": "the surroundings / area",
+                "ex": "De omgeving van de UGent is erg groen."},
+            {"nl": "verhuizen naar", "en": "to move to",
+                "ex": "Ik ben verhuisd naar Gent in 2022."},
+        ],
+        "grammar_title": "Imperfectum fill-in (NT2 Taalmenu stijl) + Wonen schrijven",
+        "grammar_html": """
+<h4>Imperfectum vormen — volledige regel</h4>
+<table>
+<tr><th>Stap</th><th>Hoe</th><th>Voorbeeld</th></tr>
+<tr><td>1. Stam</td><td>Infinitief – en</td><td>werken → werk · leven → leef (let op v→f!)</td></tr>
+<tr><td>2. Kofschip?</td><td>Eindigt stam op t,k,f,s,ch,p?</td><td>werk → ja (k) · speel → nee</td></tr>
+<tr><td>3a. Ja → +te/ten</td><td>Enkelvoud: stam+te · Meervoud: stam+ten</td><td>ik werkte / wij werkten</td></tr>
+<tr><td>3b. Nee → +de/den</td><td>Enkelvoud: stam+de · Meervoud: stam+den</td><td>ik speelde / wij speelden</td></tr>
+<tr><td>4. Onregelmatig</td><td>Uit het hoofd leren!</td><td>gaan→ging, komen→kwam, zijn→was, hebben→had</td></tr>
+</table>
+
+<h4>Onregelmatige imperfecta — meest gevraagd op NT2 examen</h4>
+<table>
+<tr><th>Infinitief</th><th>Imperfectum (ik)</th><th>Imperfectum (wij)</th></tr>
+<tr><td>zijn</td><td>was</td><td>waren</td></tr>
+<tr><td>hebben</td><td>had</td><td>hadden</td></tr>
+<tr><td>gaan</td><td>ging</td><td>gingen</td></tr>
+<tr><td>komen</td><td>kwam</td><td>kwamen</td></tr>
+<tr><td>zien</td><td>zag</td><td>zagen</td></tr>
+<tr><td>zeggen</td><td>zei</td><td>zeiden</td></tr>
+<tr><td>weten</td><td>wist</td><td>wisten</td></tr>
+<tr><td>rijden</td><td>reed</td><td>reden</td></tr>
+<tr><td>schrijven</td><td>schreef</td><td>schreven</td></tr>
+<tr><td>kopen</td><td>kocht</td><td>kochten</td></tr>
+<tr><td>wonen</td><td>woonde</td><td>woonden</td></tr>
+<tr><td>werken</td><td>werkte</td><td>werkten</td></tr>
+</table>
+
+<h4>NT2 Taalmenu schrijftaak — over je woning/buurt (5-zinnen model)</h4>
+<ol>
+<li><b>Woonplaats:</b> <em>Ik woon in [wijk/straat] in Gent.</em></li>
+<li><b>Woning:</b> <em>Ik huur een appartement op de [X]e verdieping.</em></li>
+<li><b>Buurt:</b> <em>Mijn buurt is [rustig/levendig] en [groen/centraal gelegen].</em></li>
+<li><b>Voorzieningen:</b> <em>Er zijn veel [winkels/parken/restaurants] op loopafstand.</em></li>
+<li><b>Mening:</b> <em>Ik woon graag in Gent omdat [reden — V-einde!].</em></li>
+</ol>
+""",
+        "grammar_letop": """
+<ul>
+<li><span class="wrong">leven → ik levede</span> → <span class="right">ik <b>leefde</b></span><br>
+   v/z aan het eind van de stam worden f/s: leven → leef → leefde. reizen → reis → reisde.</li>
+<li><span class="wrong">werken → ik werkde</span> → <span class="right">ik <b>werkte</b></span><br>
+   k is in 't kofschip → -te (niet -de)!</li>
+<li><span class="wrong">Vroeger ik woonde in India.</span> → <span class="right">Vroeger <b>woonde ik</b> in India.</span><br>
+   Vroeger = bijwoord aan het begin → inversie!</li>
+<li><span class="wrong">Terwijl ik werkte, heb ik geluncht.</span> → <span class="right">Terwijl ik werkte, <b>lunche ik</b>.</span><br>
+   Terwijl = twee gelijktijdige acties → beide in imperfectum!</li>
+</ul>
+""",
+        "grammar_extra": """
+<h4>NT2 Taalmenu stijl — imperfectum fill-in oefening</h4>
+<p>Zet het werkwoord in de juiste imperfectumvorm:</p>
+<ul>
+<li>Vroeger ___ (wonen) ik in een klein appartement.</li>
+<li>Elke dag ___ (fietsen) ik naar de universiteit.</li>
+<li>Mijn buren ___ (zijn) erg vriendelijk.</li>
+<li>Terwijl ik ___ (koken), ___ (bellen) mijn moeder.</li>
+<li>Als kind ___ (spelen) ik graag buiten.</li>
+</ul>
+<p><b>Antwoorden:</b> woonde · fietste · waren · kookte / belde · speelde</p>
+
+<h4>Imperfectum vs perfectum — NT2 signaalwoorden</h4>
+<table>
+<tr><th>→ Imperfectum</th><th>→ Perfectum</th></tr>
+<tr><td>vroeger, als kind, elke dag (gewoonte), terwijl, altijd, vaak</td>
+<td>gisteren, vorige week, al eens, net, recent, eenmalig verleden</td></tr>
+</table>
+""",
+        "grammar_quick": """
+<ul>
+<li>Stam + <b>te(n)</b> als stam eindigt op t,k,f,s,ch,p ('t kofschip)</li>
+<li>Stam + <b>de(n)</b> voor alle andere werkwoorden</li>
+<li>v/z aan eind stam → f/s: leven→leef→leefde · reizen→reis→reisde</li>
+<li>Onregelmatig: zijn→was, hebben→had, gaan→ging, komen→kwam</li>
+<li>Vroeger/terwijl/als kind → imperfectum</li>
+<li>Inversie na 'Vroeger': Vroeger WOONDE IK (niet: ik woonde)</li>
+</ul>
+""",
+        "exercises": [
+            {"type": "fill",
+             "q": "NT2 Taalmenu stijl: 'Vroeger ___ (wonen) ik in een klein appartement.' (imperf, ik)",
+             "a": "woonde",
+             "tip": "wonen: stam = woon. n is niet in 't kofschip → +de: woonde. Vroeger → imperfectum."},
+            {"type": "fill",
+             "q": "NT2 Taalmenu stijl: 'Elke dag ___ (fietsen) ik naar UGent.' (imperf, ik — gewoonte)",
+             "a": "fietste",
+             "tip": "fietsen: stam = fiets. s is in 't kofschip → +te: fietste. Elke dag = gewoonte → imperfectum."},
+            {"type": "fill",
+             "q": "NT2 Taalmenu stijl: 'Terwijl ik ___ (koken), ___ (bellen) mijn moeder.' (beide imperf)",
+             "a": "kookte / belde",
+             "tip": "Terwijl = gelijktijdig → beide imperfectum. koken: stam=kook (k→te): kookte. bellen: stam=bel (l niet kofschip→de): belde."},
+            {"type": "fill",
+             "q": "NT2 Taalmenu stijl: 'Als kind ___ (spelen) ik graag buiten.' (ik, imperf)",
+             "a": "speelde",
+             "tip": "spelen: stam=speel. l niet in kofschip → +de: speelde. Als kind = gewoonte → imperfectum."},
+            {"type": "fill",
+             "q": "NT2 Taalmenu stijl: 'leven → imperfectum (ik)?' (let op v→f!)",
+             "a": "leefde",
+             "tip": "leven: stam normaal = leef (v→f aan het einde). f is in kofschip → +te? Nee wacht: stam leef eindigt op f → kofschip → leefTE. Correct: leefde? Nee: f is in kofschip → leefTE!"},
+            {"type": "choice",
+             "q": "Welke imperfectumvorm is correct: 'schrijven → ik ___'?",
+             "options": ["schrijfde", "schreefde", "schreef", "schrijfte"],
+             "a": "schreef",
+             "tip": "schrijven is onregelmatig: schrijven → schreef (enkv) / schreven (mv). Uit het hoofd leren!"},
+            {"type": "choice",
+             "q": "Welke zin is correct?",
+             "options": [
+                 "Vroeger ik woonde in een groot huis.",
+                 "Vroeger woonde ik in een groot huis.",
+                 "Vroeger ik woonde in een groot huis gehad.",
+                 "Vroeger woon ik in een groot huis.",
+             ],
+             "a": "Vroeger woonde ik in een groot huis.",
+             "tip": "Vroeger → imperfectum (woonde). Vroeger aan het begin → inversie: woonde IK (niet ik woonde)."},
+            {"type": "choice",
+             "q": "NT2 Taalmenu: welk signaalwoord gaat met imperfectum?",
+             "options": ["Gisteren heb ik …", "Vroeger … ik", "Ik heb al eens …", "Net heb ik …"],
+             "a": "Vroeger … ik",
+             "tip": "Vroeger = gewoonte in verleden → imperfectum. Gisteren/al eens/net → perfectum."},
+            {"type": "tf",
+             "q": "'Terwijl ik at, heb ik televisie gekeken.' is correct.",
+             "a": False,
+             "correction": "Terwijl = twee gelijktijdige acties → BEIDE imperfectum: Terwijl ik at, KEEK ik televisie.",
+             "tip": "Terwijl + twee gelijktijdige acties → beide imperfectum."},
+            {"type": "tf",
+             "q": "'Mijn buren waren erg vriendelijk.' is correct imperfectum.",
+             "a": True,
+             "correction": "Correct! zijn (onregelmatig) → waren. ✓",
+             "tip": "zijn → was (enk.) / waren (mv.) — onregelmatig, uit het hoofd."},
+            {"type": "translate",
+             "q": "When I was a child, I used to play outside every day.",
+             "a": "Als kind speelde ik elke dag buiten.",
+             "tip": "Als kind = gewoonte → imperfectum. spelen → speelde. Als kind aan het begin → inversie: speelde ik."},
+            {"type": "translate",
+             "q": "I live in a quiet neighbourhood in Ghent, within walking distance of UGhent.",
+             "a": "Ik woon in een rustige buurt in Gent, op loopafstand van UGent.",
+             "tip": "rustige buurt: buurt = de-woord + een → -e (rustige). op loopafstand van = within walking distance of."},
+            {"type": "reorder",
+             "q": "woonde / in / ik / vroeger / India / klein / een / dorpje / in",
+             "a": "Vroeger woonde ik in een klein dorpje in India.",
+             "tip": "Vroeger → inversie: woonde ik. een klein dorpje: de-woord + een → -e? Nee: dorpje = het-woord + een → geen -e: een klein dorpje."},
+        ],
+        "jouw_beurt": "📝 NT2 TAALMENU STIJL — Schrijftaak: Wonen & Buurt\n\n"
+                      "Schrijf een tekst van 6–8 zinnen over je woning en buurt in Gent.\n"
+                      "Gebruik het 5-zinnen model uit de Grammar-tab.\n\n"
+                      "Voeg ook 2 zinnen imperfectum toe:\n"
+                      "→ 'Vroeger woonde ik in … Toen ik in Gent aankwam, …'\n\n"
+                      "Veelgebruikte NT2 Taalmenu schrijfvragen over wonen:\n"
+                      "A) Beschrijf je woning en buurt.\n"
+                      "B) Wat zijn de voor- en nadelen van je buurt?\n"
+                      "C) Waar woon je liever: in het centrum of buiten de stad? Waarom?\n\n"
+                      "✅ NT2 Taalmenu zelfcheck:\n"
+                      "☐ Vroeger/als kind → imperfectum (woonde, was, had)?\n"
+                      "☐ Inversie na Vroeger: Vroeger WOONDE IK?\n"
+                      "☐ Omdat → werkwoord naar einde?\n"
+                      "☐ Er zijn goede voorzieningen (er + zijn)?",
+    },
+
+    # =====================================================================
+    # SESSION 34 — NT2 Taalmenu stijl: Werk & Dagelijks Leven schrijven
+    # =====================================================================
+    {
+        "id": 34,
+        "title": "NT2 Taalmenu: Werk & Dagelijks Leven schrijven",
+        "chapter": "Examentopics Oefenen",
+        "book_page": "NT2 Taalmenu B1 — schrijven werk & routine",
+        "review": [
+            {"q": "Hoe beschrijf je je werk in het Nederlands? (2 zinnen model)",
+             "a": "Ik werk als [functie] bij/aan [bedrijf/universiteit]. "
+                  "Mijn taken zijn: [taken]. Ik vind mijn werk [adj] omdat [bijzin V-einde]."},
+            {"q": "Hoe gebruik je 'om... te...' om reden/doel te geven?",
+             "a": "Ik studeer Nederlands <b>om</b> beter te communiceren <b>met</b> mijn collega's."},
+            {"q": "Dagelijks leven beschrijven: welke tijdswoorden gebruik je?",
+             "a": "'s ochtends / 's middags / 's avonds · eerst … dan … daarna … ten slotte · om [tijd] uur"},
+            {"q": "Hoe zeg je 'I have been working at UGent for 3 years'?",
+             "a": "Ik werk <b>al 3 jaar</b> aan UGent. (al + duur = ongoing since)"},
+        ],
+        "vocabulary": [
+            {"nl": "de functie", "en": "the job title / function",
+                "ex": "Mijn functie is onderzoeker."},
+            {"nl": "de taak", "en": "the task / duty",
+                "ex": "Mijn taken zijn data analyseren en artikels schrijven."},
+            {"nl": "de collega's", "en": "the colleagues",
+                "ex": "Ik werk samen met collega's uit tien landen."},
+            {"nl": "het onderzoek", "en": "the research",
+                "ex": "Ik doe onderzoek naar klimaatverandering."},
+            {"nl": "een presentatie geven", "en": "to give a presentation",
+                "ex": "Ik geef elke week een presentatie."},
+            {"nl": "vergaderen", "en": "to have a meeting",
+                "ex": "We vergaderen elke maandag."},
+            {"nl": "thuiswerken", "en": "to work from home",
+                "ex": "Ik werk twee dagen per week thuis."},
+            {"nl": "de werkweek", "en": "the working week",
+                "ex": "Mijn werkweek is 38 uur."},
+            {"nl": "de pauze nemen", "en": "to take a break",
+                "ex": "Om 12 uur neem ik een lunchpauze."},
+            {"nl": "zich concentreren op", "en": "to concentrate on",
+                "ex": "Ik concentreer me op mijn onderzoek."},
+            {"nl": "al [duur]", "en": "for [duration] (ongoing)",
+                "ex": "Ik woon al 4 jaar in Gent."},
+            {"nl": "de routine", "en": "the routine",
+                "ex": "Mijn dagelijkse routine begint om 7 uur."},
+        ],
+        "grammar_title": "Werk & dagelijks leven schrijven — NT2 Taalmenu stijl",
+        "grammar_html": """
+<h4>NT2 Taalmenu schrijfmodel — over je werk (6 zinnen)</h4>
+<ol>
+<li><b>Functie + werkgever:</b> <em>Ik werk als onderzoeker aan de Universiteit Gent (UGent).</em></li>
+<li><b>Taken:</b> <em>Mijn taken zijn data analyseren, artikels schrijven en presentaties geven.</em></li>
+<li><b>Werkduur:</b> <em>Ik werk al [X] jaar aan UGent.</em> (al + tijd = ongoing)</li>
+<li><b>Collega's / omgeving:</b> <em>Ik werk samen met collega's uit verschillende landen.</em></li>
+<li><b>Reden om Nederlands te leren (om...te):</b> <em>Ik leer Nederlands om beter te communiceren met Belgen.</em></li>
+<li><b>Mening:</b> <em>Ik vind mijn werk interessant, maar soms stressvol omdat ...</em></li>
+</ol>
+
+<h4>NT2 Taalmenu schrijfmodel — dagelijkse routine (5 zinnen)</h4>
+<ol>
+<li><em>'s Ochtends sta ik op om [tijd] uur.</em></li>
+<li><em>Eerst ontbijt ik, daarna fiets ik naar UGent.</em></li>
+<li><em>Om [tijd] uur begin ik met werken / neem ik een pauze.</em></li>
+<li><em>'s Avonds kook ik en dan ontspan ik.</em></li>
+<li><em>Ik ga slapen om ongeveer [tijd] uur.</em></li>
+</ol>
+
+<h4>Nuttige constructies voor werk schrijven</h4>
+<table>
+<tr><th>Constructie</th><th>Voorbeeld</th><th>Let op</th></tr>
+<tr><td><b>al + duur</b></td><td><em>Ik woon al 4 jaar in Gent.</em></td><td>Heden + al = ongoing, niet perfectum!</td></tr>
+<tr><td><b>om … te …</b></td><td><em>Ik werk hard om snel te promoveren.</em></td><td>om + te + infinitief</td></tr>
+<tr><td><b>Ik vind … dat …</b></td><td><em>Ik vind het prettig dat ik kan thuiswerken.</em></td><td>dat-bijzin → V-einde</td></tr>
+<tr><td><b>Je moet / Je kunt</b></td><td><em>Als onderzoeker moet je flexibel zijn.</em></td><td>Als + bijzin → inversie in hoofdzin</td></tr>
+<tr><td><b>Bovendien / Daarnaast</b></td><td><em>Bovendien schrijf ik voor een internationaal tijdschrift.</em></td><td>Bijwoord → inversie</td></tr>
+</table>
+""",
+        "grammar_letop": """
+<ul>
+<li><span class="wrong">Ik werk voor 3 jaar aan UGent.</span> →
+   <span class="right">Ik werk <b>al 3 jaar</b> aan UGent.</span><br>
+   Ongoing duration: al + tijd (niet: voor + tijd — dat is een Engelse constructie!)</li>
+<li><span class="wrong">Ik leer Nederlands om beter communiceren.</span> →
+   <span class="right">Ik leer Nederlands om beter te communiceren.</span><br>
+   om…te: er moet altijd <b>te</b> staan vóór de infinitief!</li>
+<li><span class="wrong">Bovendien ik schrijf voor een tijdschrift.</span> →
+   <span class="right">Bovendien <b>schrijf ik</b> voor een tijdschrift.</span><br>
+   Bovendien = bijwoord → inversie.</li>
+<li><span class="wrong">Als onderzoeker, ik moet flexibel zijn.</span> →
+   <span class="right">Als onderzoeker <b>moet ik</b> flexibel zijn.</span><br>
+   Als-bijzin of bijwoordgroep aan het begin → inversie!</li>
+</ul>
+""",
+        "grammar_extra": """
+<h4>NT2 Taalmenu veelgevraagde werkwoorden met vaste voorzetsels (werk context)</h4>
+<table>
+<tr><th>Werkwoord + vz</th><th>English</th><th>Voorbeeld</th></tr>
+<tr><td>werken aan</td><td>to work on</td><td><em>Ik werk aan een project over klimaat.</em></td></tr>
+<tr><td>werken bij / werken voor</td><td>to work at / for</td><td><em>Ik werk bij UGent / voor een NGO.</em></td></tr>
+<tr><td>samenwerken met</td><td>to collaborate with</td><td><em>Ik werk samen met een team.</em></td></tr>
+<tr><td>zich concentreren op</td><td>to focus on</td><td><em>Ik concentreer me op data-analyse.</em></td></tr>
+<tr><td>verantwoordelijk zijn voor</td><td>responsible for</td><td><em>Ik ben verantwoordelijk voor de data.</em></td></tr>
+<tr><td>kijken naar</td><td>to look at/into</td><td><em>Ik kijk naar de resultaten.</em></td></tr>
+</table>
+
+<h4>Tijdsaanduidingen voor dagelijkse routine (NT2 Taalmenu typisch)</h4>
+<table>
+<tr><th>Nederlands</th><th>English</th></tr>
+<tr><td>'s ochtends / 's morgens</td><td>in the morning</td></tr>
+<tr><td>'s middags</td><td>in the afternoon</td></tr>
+<tr><td>'s avonds</td><td>in the evening</td></tr>
+<tr><td>'s nachts</td><td>at night</td></tr>
+<tr><td>om [tijd] uur</td><td>at [time] o'clock</td></tr>
+<tr><td>eerst … daarna … dan … ten slotte</td><td>first … then … finally</td></tr>
+</table>
+""",
+        "grammar_quick": """
+<ul>
+<li>Werk: ik werk als [functie] bij/aan [werkgever]</li>
+<li>Duur: ik werk/woon <b>al [X] jaar</b> (niet: voor X jaar)</li>
+<li>Reden: om + te + infinitief (om beter TE communiceren)</li>
+<li>Bijwoorden → inversie: Bovendien SCHRIJF IK / Daarna GA IK</li>
+<li>Als [functie] → inversie in hoofdzin: Als onderzoeker MOET IK</li>
+<li>Vaste voorzetsels: werken AAN / werken BIJ / samenwerken MET</li>
+</ul>
+""",
+        "exercises": [
+            {"type": "fill",
+             "q": "NT2 Taalmenu stijl: 'Ik werk ___ 4 jaar aan UGent.' (for 4 years — ongoing, use Dutch construction)",
+             "a": "al",
+             "tip": "Ongoing duration in Dutch: al + duration (niet 'voor 4 jaar'!). Ik werk al 4 jaar."},
+            {"type": "fill",
+             "q": "NT2 Taalmenu stijl: 'Ik leer Nederlands ___ beter ___ communiceren met mijn collega's.'",
+             "a": "om / te",
+             "tip": "Doel: om + te + infinitief. om beter TE communiceren."},
+            {"type": "fill",
+             "q": "'___ schrijf ik voor een internationaal tijdschrift.' (Moreover — inversie)",
+             "a": "Bovendien",
+             "tip": "Bovendien = moreover. Bijwoord → inversie: Bovendien SCHRIJF ik."},
+            {"type": "fill",
+             "q": "'Als onderzoeker ___ ik flexibel zijn.' (must — inversie na als-groep)",
+             "a": "moet",
+             "tip": "Als [functie/rol] aan begin → inversie: Als onderzoeker MOET ik (niet: ik moet)."},
+            {"type": "choice",
+             "q": "Welke zin is correct?",
+             "options": [
+                 "Ik werk voor 3 jaar aan UGent.",
+                 "Ik werk al 3 jaar aan UGent.",
+                 "Ik werk 3 jaar aan UGent al.",
+                 "Ik heb 3 jaar aan UGent gewerkt.",
+             ],
+             "a": "Ik werk al 3 jaar aan UGent.",
+             "tip": "'al + duur' = I have been working for X years (ongoing, still now). Niet 'voor' — dat is een anglicisme."},
+            {"type": "choice",
+             "q": "Welke zin gebruikt 'om...te' correct?",
+             "options": [
+                 "Ik studeer Nederlands om beter communiceren.",
+                 "Ik studeer Nederlands voor beter te communiceren.",
+                 "Ik studeer Nederlands om beter te communiceren.",
+                 "Ik studeer Nederlands om te beter communiceren.",
+             ],
+             "a": "Ik studeer Nederlands om beter te communiceren.",
+             "tip": "om + [bijwoord] + TE + infinitief. Te staat altijd vlak voor de infinitief."},
+            {"type": "choice",
+             "q": "NT2 Taalmenu: Welke tijdsaanduiding past bij imperfectum?",
+             "options": [
+                 "Gisteren heb ik ...",
+                 "Net heb ik ...",
+                 "'s Ochtends … ik (gewoonte nu)",
+                 "Vroeger … ik (gewoonte verleden)",
+             ],
+             "a": "Vroeger … ik (gewoonte verleden)",
+             "tip": "Vroeger = gewoonte in het verleden → imperfectum. Gisteren/net → perfectum."},
+            {"type": "tf",
+             "q": "'Ik ben verantwoordelijk voor het onderzoek' gebruikt het juiste voorzetsel.",
+             "a": True,
+             "correction": "Correct! verantwoordelijk VOOR = responsible for. ✓",
+             "tip": "Vast voorzetsel: verantwoordelijk voor."},
+            {"type": "tf",
+             "q": "'Bovendien ik vergader elke week met mijn team.' is correct.",
+             "a": False,
+             "correction": "Bovendien = bijwoord → inversie: Bovendien VERGADER IK elke week met mijn team.",
+             "tip": "Bijwoord aan het begin → V-S inversie!"},
+            {"type": "tf",
+             "q": "'Ik werk samen met collega's uit tien landen.' is correct.",
+             "a": True,
+             "correction": "Correct! samenwerken MET = vaste vz. 'uit tien landen' = from ten countries. ✓",
+             "tip": "samenwerken + met. Correct gebruik van vast voorzetsel."},
+            {"type": "translate",
+             "q": "I have been living in Ghent for four years because I work at UGent as a researcher.",
+             "a": "Ik woon al vier jaar in Gent omdat ik aan UGent werk als onderzoeker.",
+             "tip": "al + duur (niet 'voor'). omdat-bijzin → V-einde: werk. als + functie aan het einde."},
+            {"type": "translate",
+             "q": "First I cycle to UGent, then I check my emails and after that I have a meeting.",
+             "a": "Eerst fiets ik naar UGent, daarna check ik mijn e-mails en dan vergader ik.",
+             "tip": "Eerst/daarna/dan = tijdsbijwoorden → inversie na elk: fiets ik / check ik / vergader ik."},
+            {"type": "reorder",
+             "q": "werk / ik / aan / al / jaar / drie / UGent",
+             "a": "Ik werk al drie jaar aan UGent.",
+             "tip": "al + duur. Standaard SVO volgorde hier: Ik werk al drie jaar aan UGent."},
+        ],
+        "jouw_beurt": "📝 NT2 TAALMENU STIJL — Schrijftaak: Werk & Dagelijks Leven\n\n"
+                      "Kies één van deze twee taken (beide komen voor op NT2/CVO examens):\n\n"
+                      "TAAK A — Schrijf een tekst over je werk (6–8 zinnen):\n"
+                      "Gebruik het schrijfmodel: functie → taken → duur → collega's → om...te → mening\n"
+                      "Tip: gebruik 'al X jaar', 'om beter te...', 'omdat...', 'bovendien'\n\n"
+                      "TAAK B — Beschrijf je dagelijkse routine (6–8 zinnen):\n"
+                      "Gebruik: 's ochtends / eerst / daarna / om X uur / 's avonds\n"
+                      "Voeg toe: één imperfectum zin (vroeger/als kind)\n\n"
+                      "NT2 Taalmenu veelgevraagde werkthema's:\n"
+                      "- Waarom studeer je Nederlands voor je werk?\n"
+                      "- Wat zijn de voor- en nadelen van thuiswerken?\n"
+                      "- Hoe combineer je werk en privéleven?\n\n"
+                      "✅ NT2 Taalmenu zelfcheck:\n"
+                      "☐ al + duur (niet 'voor X jaar')?\n"
+                      "☐ om + te + infinitief?\n"
+                      "☐ Inversie na bovendien/daarna/eerst/ten slotte?\n"
+                      "☐ Vaste voorzetsels: werken AAN / BIJ, samenwerken MET?",
+    },
+
+    # =====================================================================
+    # SESSION 35 — Modale werkwoorden (Modal verbs)
+    # =====================================================================
+    {
+        "id": 35,
+        "title": "Modale werkwoorden",
+        "chapter": "Hoofdstuk 10 – Grammatica Referentie",
+        "book_page": "—",
+        "review": "Modale werkwoorden (kunnen, moeten, mogen, willen, zullen) staan altijd "
+                  "samen met een <b>infinitief</b>. Let op de woordvolgorde: in een gewone zin "
+                  "staat de infinitief <b>achteraan</b>; in een bijzin staan <em>beide</em> werkwoorden "
+                  "aan het einde.",
+        "vocabulary": [
+            {"nl": "kunnen", "en": "can / to be able to",
+                "ex": "Ik kan goed Nederlands spreken."},
+            {"nl": "moeten", "en": "must / have to",
+                "ex": "Ik moet morgen vroeg opstaan."},
+            {"nl": "mogen", "en": "may / to be allowed to",
+                "ex": "Mag ik hier parkeren?"},
+            {"nl": "willen", "en": "to want to",
+                "ex": "Ik wil naar Gent verhuizen."},
+            {"nl": "zullen",
+                "en": "shall / will (future/promise)", "ex": "Het zal morgen regenen."},
+            {"nl": "hoeven (te)", "en": "do not need to (+ niet/geen)",
+             "ex": "Je hoeft dat niet te doen."},
+            {"nl": "durven (te)", "en": "to dare (to)",
+             "ex": "Ik durf niet alleen op straat te spreken."},
+            {"nl": "de verplichting", "en": "the obligation",
+                "ex": "moeten = verplichting"},
+            {"nl": "de toestemming", "en": "the permission",
+                "ex": "mogen = toestemming"},
+            {"nl": "de mogelijkheid", "en": "the possibility / ability",
+                "ex": "kunnen = mogelijkheid"},
+        ],
+        "grammar_title": "Modale werkwoorden — conjugatie + woordvolgorde",
+        "grammar_html": """
+<h4>1. Conjugatietabel — tegenwoordige tijd</h4>
+<table>
+<tr><th>Persoon</th><th>kunnen</th><th>moeten</th><th>mogen</th><th>willen</th><th>zullen</th></tr>
+<tr><td>ik</td><td>kan</td><td>moet</td><td>mag</td><td>wil</td><td>zal</td></tr>
+<tr><td>jij/je</td><td>kan(t)*</td><td>moet</td><td>mag</td><td>wil(t)*</td><td>zal(t)*</td></tr>
+<tr><td>hij/zij/het</td><td>kan</td><td>moet</td><td>mag</td><td>wil</td><td>zal</td></tr>
+<tr><td>wij/we</td><td>kunnen</td><td>moeten</td><td>mogen</td><td>willen</td><td>zullen</td></tr>
+<tr><td>jullie</td><td>kunnen</td><td>moeten</td><td>mogen</td><td>willen</td><td>zullen</td></tr>
+<tr><td>zij/ze (pl.)</td><td>kunnen</td><td>moeten</td><td>mogen</td><td>willen</td><td>zullen</td></tr>
+</table>
+<p><em>* jij/je: -t vervalt bij inversie: <b>Kan jij</b> … / <b>Wil jij</b> … / <b>Zal jij</b> …</em></p>
+
+<h4>2. Imperfectum van modale werkwoorden</h4>
+<table>
+<tr><th>Infinitief</th><th>Imperfectum (ik/hij)</th><th>Imperfectum (wij)</th></tr>
+<tr><td>kunnen</td><td>kon</td><td>konden</td></tr>
+<tr><td>moeten</td><td>moest</td><td>moesten</td></tr>
+<tr><td>mogen</td><td>mocht</td><td>mochten</td></tr>
+<tr><td>willen</td><td>wou / wilde</td><td>wilden</td></tr>
+<tr><td>zullen</td><td>zou</td><td>zouden</td></tr>
+</table>
+<p>💡 Modalen gebruiken bijna altijd het <b>imperfectum</b> in het verleden — NIET het perfectum.<br>
+✅ <em>Gisteren kon ik niet komen.</em> ✗ <strike>Gisteren heb ik niet kunnen komen.</strike> (onnatuurlijk)</p>
+
+<h4>3. Woordvolgorde — hoofdzin vs bijzin</h4>
+<div class="formula-card">
+<b>Hoofdzin (main clause):</b> modaal na subject/V2 → infinitief achteraan<br>
+Ik <b>kan</b> goed Nederlands <b>spreken</b>.<br>
+Hij <b>moet</b> morgen vroeg <b>opstaan</b>.<br>
+Wij <b>mogen</b> hier niet <b>parkeren</b>.<br><br>
+<b>Bijzin (subordinate clause):</b> beide werkwoorden aan het einde<br>
+… omdat hij vroeg moet <b>opstaan</b>.<br>
+… dat ik goed Nederlands kan <b>spreken</b>.<br>
+… als je hier niet mag <b>parkeren</b>.<br>
+</div>
+<p>Formule bijzin: … <b>voegwoord + rest + infinitief + modaal</b><br>
+OF: … <b>voegwoord + rest + modaal + infinitief</b> (beide volgorden zijn correct!)</p>
+
+<h4>4. Hoeven … te (needn't)</h4>
+<p>Altijd met <b>niet/geen</b> + <b>te</b> + infinitief:</p>
+<ul>
+<li>Je hoeft dat <b>niet te doen</b>.</li>
+<li>Hij hoeft <b>geen</b> examen <b>te maken</b>.</li>
+<li>Bijzin: … omdat je dat niet hoeft <b>te doen</b>.</li>
+</ul>
+
+<h4>5. Gebruik — wanneer welk modaal?</h4>
+<table>
+<tr><th>Modaal</th><th>Gebruik</th><th>Voorbeeld</th></tr>
+<tr><td><b>kunnen</b></td><td>ability / possibility</td><td>Ik kan autorijden. / Het kan regenen.</td></tr>
+<tr><td><b>moeten</b></td><td>obligation / necessity</td><td>Ik moet werken. / Je moet op tijd zijn.</td></tr>
+<tr><td><b>mogen</b></td><td>permission / prohibition (niet mogen)</td><td>Je mag hier fietsen. / Je mag niet roken.</td></tr>
+<tr><td><b>willen</b></td><td>desire / intention</td><td>Ik wil koffie. / We willen verhuizen.</td></tr>
+<tr><td><b>zullen</b></td><td>future / promise / offer</td><td>Ik zal je helpen. / Zal ik bellen?</td></tr>
+<tr><td><b>hoeven (te)</b></td><td>no obligation (always + niet/geen)</td><td>Je hoeft niet te betalen.</td></tr>
+</table>
+""",
+        "grammar_letop": [
+            {"wrong": "Ik moet naar huis gaan gisteren.",
+             "right": "Ik moest gisteren naar huis gaan.",
+             "explain": "Past tense of modals = imperfectum (moest), NOT present tense. Also: time word 'gisteren' can go early."},
+            {"wrong": "omdat ik kan Nederlands spreken",
+             "right": "omdat ik Nederlands kan spreken",
+             "explain": "In a bijzin, the infinitief goes at the very end, after the modal: … kan SPREKEN."},
+            {"wrong": "Jij moet niet betalen. (meaning: you don't need to pay)",
+             "right": "Jij hoeft niet te betalen.",
+             "explain": "'Niet moeten' = 'must not' (forbidden!). Use 'hoeven niet te' for 'don't need to'."},
+            {"wrong": "Ik zou graag een koffie willen.",
+             "right": "Ik wil graag een koffie. / Ik zou graag een koffie willen bestellen.",
+             "explain": "'Zou graag' is already polite. Keep it simple; double modals sound unnatural."},
+        ],
+        "grammar_extra": """
+<h4>Modalen in het dagelijks leven — veelgebruikte zinnen</h4>
+<table>
+<tr><th>Situatie</th><th>Zin</th></tr>
+<tr><td>Twijfel / aanbod</td><td>Zal ik een kopje thee zetten?</td></tr>
+<tr><td>Beleefd verzoek</td><td>Zou jij de deur kunnen sluiten?</td></tr>
+<tr><td>Toestemming vragen</td><td>Mag ik even binnenkomen?</td></tr>
+<tr><td>Verplichting</td><td>Je moet een identificatiebewijs meenemen.</td></tr>
+<tr><td>Verbod</td><td>Je mag hier niet roken. / U moet hier niet parkeren.</td></tr>
+<tr><td>Geen verplichting</td><td>Je hoeft geen bewijs mee te brengen.</td></tr>
+<tr><td>Willen (beleefd)</td><td>Ik zou graag een afspraak willen maken.</td></tr>
+</table>
+
+<h4>Bijzinnen met modalen — oefenzinnen</h4>
+<ul>
+<li>Ik weet dat je goed Nederlands <b>kunt spreken</b>.</li>
+<li>Hij zei dat hij vroeg <b>moest vertrekken</b>.</li>
+<li>Ze vroegen of ik <b>mocht blijven</b>.</li>
+<li>Ik hoop dat het morgen niet <b>zal regenen</b>.</li>
+<li>Als je wilt, <b>kan ik</b> je helpen.</li>
+</ul>
+""",
+        "grammar_quick": [
+            "Hoofdzin: modaal V2 → infinitief ACHTERAAN: Ik kan goed Nederlands spreken.",
+            "Bijzin: … omdat/dat + rest + INF + MODAAL (of MODAAL + INF): … omdat ik kan spreken.",
+            "Imperfectum: kon / moest / mocht / wou(wilde) / zou — gebruik bijna ALTIJD imperfectum in verleden.",
+            "mogen + niet = verboden · hoeven + niet/geen + te = geen verplichting",
+            "Inversie: -t vervalt bij jij: Kan jij? / Wil jij? / Zal jij?",
+        ],
+        "exercises": [
+            {"type": "fill",
+             "q": "Ik ___ morgen vroeg naar UGent. (must)",
+             "a": "moet",
+             "tip": "moeten = verplichting. Ik → moet (geen -t!)."},
+            {"type": "fill",
+             "q": "Gisteren ___ ik niet naar de les komen. (could not — past tense)",
+             "a": "kon",
+             "tip": "Past tense of kunnen = kon (imperfectum, onregelmatig)."},
+            {"type": "fill",
+             "q": "___ ik hier parkeren? (May I…?)",
+             "a": "Mag",
+             "tip": "mogen = toestemming. Vraagzin: Mag ik…?"},
+            {"type": "fill",
+             "q": "Ze ___ graag naar Brussel verhuizen. (want to, zij pl.)",
+             "a": "willen",
+             "tip": "Ze (plural) → willen (lange vorm)."},
+            {"type": "fill",
+             "q": "Het ___ morgen regenen. (will / it's likely)",
+             "a": "zal",
+             "tip": "zullen = toekomst/voorspelling. Het → zal."},
+            {"type": "fill",
+             "q": "Je hoeft dat niet ___ doen. (to do — don't forget 'te'!)",
+             "a": "te",
+             "tip": "hoeven = altijd met 'niet/geen' + 'te' + infinitief: niet te doen."},
+            {"type": "choice",
+             "q": "Bijzin: 'Ik weet dat hij vroeg ___ ___.'",
+             "options": ["opstaan moet", "moet opstaan", "opstaan heeft"],
+             "a": "moet opstaan",
+             "tip": "Bijzin: modaal + infinitief aan het einde. OF infinitief + modaal — hier: moet opstaan."},
+            {"type": "choice",
+             "q": "'You don't need to pay.' → correct Dutch?",
+             "options": ["Je moet niet betalen.", "Je hoeft niet te betalen.", "Je kan niet betalen."],
+             "a": "Je hoeft niet te betalen.",
+             "tip": "'Don't need to' = hoeven + niet + te. 'Moet niet' = forbidden (must not)!"},
+            {"type": "tf",
+             "q": "'omdat ik naar huis moet gaan' is correct Dutch word order.",
+             "a": True,
+             "correction": "Correct! Bijzin: voegwoord + rest + infinitief + modaal (gaan + moet). ✓",
+             "tip": "Bijzin: beide werkwoorden achteraan. Infinitief + modaal is een gebruikelijke volgorde."},
+            {"type": "tf",
+             "q": "'Gisteren heb ik niet kunnen komen.' is the natural way to say this.",
+             "a": False,
+             "correction": "Fout! Voor modalen gebruik je bijna altijd imperfectum: 'Gisteren kon ik niet komen.'",
+             "tip": "Perfectum van modalen klinkt onnatuurlijk. Gebruik imperfectum."},
+            {"type": "translate",
+             "q": "She wants to study Dutch because she has to work in Belgium.",
+             "a": "Ze wil Nederlands studeren omdat ze in België moet werken.",
+             "tip": "wil + infinitief achteraan. omdat + bijzin: België moet werken (modaal achteraan)."},
+            {"type": "translate",
+             "q": "May I ask a question? I would like to know more about this.",
+             "a": "Mag ik een vraag stellen? Ik zou graag meer hierover willen weten.",
+             "tip": "mogen = toestemming vragen. zou graag + willen = beleefd."},
+            {"type": "reorder",
+             "q": "ze / dat / ik / weet / goed / kan / Nederlands / spreken",
+             "a": "Ik weet dat ze goed Nederlands kan spreken.",
+             "tip": "Bijzin na 'dat': subject + rest + infinitief + modaal."},
+        ],
+        "jouw_beurt": "Schrijf 6 zinnen over je leven in Gent met modale werkwoorden.\n\n"
+                      "Gebruik elk modaal minstens één keer:\n"
+                      "1. kunnen — Ik kan … (iets wat jij goed kunt)\n"
+                      "2. moeten — Ik moet … (een verplichting)\n"
+                      "3. mogen — In België mag je … / mag je niet …\n"
+                      "4. willen — Ik wil graag … (een plan of wens)\n"
+                      "5. zullen — Volgend jaar zal ik … (toekomstplan)\n"
+                      "6. hoeven — Ik hoef … niet te … (iets wat jij niet hoeft te doen)\n\n"
+                      "Bonus: Schrijf 2 bijzinnen met modalen:\n"
+                      "→ … omdat ik … moet …\n"
+                      "→ Ik weet dat …kan …",
+    },
+
+    # =====================================================================
+    # SESSION 36 — Werkwoordtabel: Perfectum & Imperfectum volledig overzicht
+    # =====================================================================
+    {
+        "id": 36,
+        "title": "Werkwoordtabel: Perfectum & Imperfectum",
+        "chapter": "Hoofdstuk 10 – Grammatica Referentie",
+        "book_page": "—",
+        "review": "Overzicht van alle verbformaties: <b>regelmatige werkwoorden</b> (de kofschip-regel), "
+                  "<b>hebben vs zijn</b>, en de volledige tabel van <b>irreguliere werkwoorden</b> "
+                  "uit het examenpakket.",
+        "vocabulary": [
+            {"nl": "het voltooid deelwoord (vd)", "en": "past participle",
+             "ex": "gewerkt, gegeten, geschreven"},
+            {"nl": "het imperfectum",
+                "en": "simple past (imperfect)", "ex": "werkte, at, schreef"},
+            {"nl": "de stam", "en": "the verb stem", "ex": "werken → stam = werk"},
+            {"nl": "regelmatig", "en": "regular", "ex": "werken, wonen, maken"},
+            {"nl": "onregelmatig / irregulier",
+                "en": "irregular", "ex": "gaan→ging, zijn→was"},
+            {"nl": "'t kofschip / 't fokschaap", "en": "mnemonic for -te/-de endings",
+                "ex": "k-f-s-ch-p → +te; rest → +de"},
+            {"nl": "hebben + vd", "en": "perfectum with hebben",
+                "ex": "Ik heb gewerkt."},
+            {"nl": "zijn + vd", "en": "perfectum with zijn", "ex": "Ik ben gegaan."},
+            {"nl": "de beweging", "en": "movement / motion",
+                "ex": "gaan, komen, rijden → zijn"},
+            {"nl": "de verandering", "en": "change of state",
+                "ex": "worden, vallen, sterven → zijn"},
+        ],
+        "grammar_title": "Perfectum & Imperfectum — Regelmatig + Irregulier",
+        "grammar_html": """
+<h4>1. Regelmatige werkwoorden — de regels</h4>
+<div class="formula-card">
+<b>STAM</b> = infinitief min -en (let op v/f, z/s aan het einde!)<br>
+werken → werk | leven → leef (v→f) | reizen → reis (z→s)<br><br>
+<b>IMPERFECTUM REGELMATIG:</b><br>
+Laatste letter stam in 't kofschip (t k f s ch p)? → stam + <b>te</b> (ik) / <b>ten</b> (wij)<br>
+Andere letters? → stam + <b>de</b> (ik) / <b>den</b> (wij)<br><br>
+<b>VOLTOOID DEELWOORD (Perfectum):</b><br>
+Regelmatig: ge- + stam + t (kofschip) of ge- + stam + d (andere)<br>
+→ gewerkt, gemaakt, gespeeLD, gewoond<br><br>
+<b>Stelregel:</b> de stam bepaalt of je -t of -d gebruikt voor BEIDE imperfectum EN vd.
+</div>
+
+<h4>2. Regelmatige werkwoorden — schema</h4>
+<table>
+<tr><th>Infinitief</th><th>Stam</th><th>Kofschip?</th><th>Imperf. (ik)</th><th>Perfectum</th></tr>
+<tr><td>werken</td><td>werk</td><td>k ✓</td><td>werk<b>te</b></td><td>heb ge-werk<b>t</b></td></tr>
+<tr><td>maken</td><td>maak→mak</td><td>k ✓</td><td>maak<b>te</b></td><td>heb ge-maakt</td></tr>
+<tr><td>fietsen</td><td>fiets</td><td>s ✓</td><td>fiets<b>te</b></td><td>heb ge-fietst</td></tr>
+<tr><td>spelen</td><td>speel→spel</td><td>l ✗</td><td>speel<b>de</b></td><td>heb ge-speel<b>d</b></td></tr>
+<tr><td>wonen</td><td>woon→won</td><td>n ✗</td><td>woon<b>de</b></td><td>heb ge-woond</td></tr>
+<tr><td>leven</td><td>leef (v→f)</td><td>f ✓</td><td>leef<b>te</b></td><td>heb ge-leefd*</td></tr>
+<tr><td>reizen</td><td>reis (z→s)</td><td>s ✓</td><td>reis<b>de</b>**</td><td>heb ge-reisd**</td></tr>
+</table>
+<p><em>* leven → leeft = kofschip → leef<b>te</b>; maar vd = ge-leef<b>d</b> (schrijf-conventie: leefde, gereisd)</em></p>
+<p><em>** Let op! reizen → s is kofschip maar de vd schrijft men toch gereisd (z blijft in spelling)</em></p>
+
+<h4>3. Hebben of Zijn?</h4>
+<table>
+<tr><th>ZIJN ✈️</th><th>HEBBEN 🔨</th></tr>
+<tr><td><b>Beweging naar een bestemming:</b><br>gaan, komen, rijden*, lopen*, vliegen*, varen*<br><em>* ook hebben mogelijk als nadruk op activiteit</em></td><td><b>Alle andere werkwoorden</b> (transitive, activities)</td></tr>
+<tr><td><b>Verandering van toestand:</b><br>worden, vallen, opstaan, groeien, sterven, trouwen, scheiden, vertrekken, aankomen, blijven, verschijnen, verdwijnen</td><td>werken, eten, drinken, lezen, kijken, schrijven, praten, slapen, zitten, staan, liggen</td></tr>
+<tr><td><b>Altijd zijn:</b><br>zijn → geweest<br>blijven → gebleven</td><td><b>Altijd hebben:</b><br>hebben → gehad</td></tr>
+</table>
+<p>💡 <b>Ezelsbruggetje:</b> BEWEGING (van A naar B) + VERANDERING → zijn. Al het rest → hebben.</p>
+
+<h4>4. zijn / hebben / worden — volledig overzicht</h4>
+<table>
+<tr><th>Persoon</th><th>zijn (pres.)</th><th>zijn (imperf.)</th><th>hebben (pres.)</th><th>hebben (imperf.)</th><th>worden (pres.)</th><th>worden (imperf.)</th></tr>
+<tr><td>ik</td><td>ben</td><td>was</td><td>heb</td><td>had</td><td>word</td><td>werd</td></tr>
+<tr><td>jij/je</td><td>bent/is*</td><td>was</td><td>hebt/heeft</td><td>had</td><td>wordt</td><td>werd</td></tr>
+<tr><td>hij/zij/het</td><td>is</td><td>was</td><td>heeft</td><td>had</td><td>wordt</td><td>werd</td></tr>
+<tr><td>wij/we</td><td>zijn</td><td>waren</td><td>hebben</td><td>hadden</td><td>worden</td><td>werden</td></tr>
+<tr><td>jullie</td><td>zijn</td><td>waren</td><td>hebben</td><td>hadden</td><td>worden</td><td>werden</td></tr>
+<tr><td>zij/ze (pl.)</td><td>zijn</td><td>waren</td><td>hebben</td><td>hadden</td><td>worden</td><td>werden</td></tr>
+</table>
+<p><em>* 'Ben jij?' (inversie) → geen -t: 'Ben jij student?' (niet: 'Bent jij')</em></p>
+
+<h4>5. Irreguliere Werkwoorden — volledig overzicht (van je examen-woordenlijst)</h4>
+<table>
+<tr><th>Infinitief</th><th>Engels</th><th>Zijn / Hebben</th><th>Perfectum (vd)</th><th>Imperf. (ik/hij)</th><th>Imperf. (wij)</th></tr>
+<tr><td>aankomen</td><td>to arrive</td><td>zijn</td><td>aangekomen</td><td>kwam aan</td><td>kwamen aan</td></tr>
+<tr><td>beginnen</td><td>to begin</td><td>zijn</td><td>begonnen</td><td>begon</td><td>begonnen</td></tr>
+<tr><td>begrijpen</td><td>to understand</td><td>hebben</td><td>begrepen</td><td>begreep</td><td>begrepen</td></tr>
+<tr><td>bederven</td><td>to spoil</td><td>heb/ben</td><td>bedorven</td><td>bedierf</td><td>bedierven</td></tr>
+<tr><td>bevallen</td><td>to please / give birth</td><td>zijn</td><td>bevallen</td><td>beviel</td><td>bevielen</td></tr>
+<tr><td>bijten</td><td>to bite</td><td>hebben</td><td>gebeten</td><td>beet</td><td>beten</td></tr>
+<tr><td>blijven</td><td>to stay</td><td>zijn</td><td>gebleven</td><td>bleef</td><td>bleven</td></tr>
+<tr><td>breken</td><td>to break</td><td>hebben</td><td>gebroken</td><td>brak</td><td>braken</td></tr>
+<tr><td>brengen</td><td>to bring</td><td>hebben</td><td>gebracht</td><td>bracht</td><td>brachten</td></tr>
+<tr><td>denken</td><td>to think</td><td>hebben</td><td>gedacht</td><td>dacht</td><td>dachten</td></tr>
+<tr><td>doen</td><td>to do</td><td>hebben</td><td>gedaan</td><td>deed</td><td>deden</td></tr>
+<tr><td>dragen</td><td>to wear / carry</td><td>hebben</td><td>gedragen</td><td>droeg</td><td>droegen</td></tr>
+<tr><td>drinken</td><td>to drink</td><td>hebben</td><td>gedronken</td><td>dronk</td><td>dronken</td></tr>
+<tr><td>eten</td><td>to eat</td><td>hebben</td><td>gegeten</td><td>at</td><td>aten</td></tr>
+<tr><td>gaan</td><td>to go</td><td>zijn</td><td>gegaan</td><td>ging</td><td>gingen</td></tr>
+<tr><td>genieten</td><td>to enjoy</td><td>hebben</td><td>genoten</td><td>genoot</td><td>genoten</td></tr>
+<tr><td>geven</td><td>to give</td><td>hebben</td><td>gegeven</td><td>gaf</td><td>gaven</td></tr>
+<tr><td>hangen</td><td>to hang</td><td>hebben</td><td>gehangen</td><td>hing</td><td>hingen</td></tr>
+<tr><td>hebben</td><td>to have</td><td>hebben</td><td>gehad</td><td>had</td><td>hadden</td></tr>
+<tr><td>helpen</td><td>to help</td><td>hebben</td><td>geholpen</td><td>hielp</td><td>hielpen</td></tr>
+<tr><td>houden</td><td>to hold / keep</td><td>hebben</td><td>gehouden</td><td>hield</td><td>hielden</td></tr>
+<tr><td>kiezen</td><td>to choose</td><td>hebben</td><td>gekozen</td><td>koos</td><td>kozen</td></tr>
+<tr><td>kijken</td><td>to look / watch</td><td>hebben</td><td>gekeken</td><td>keek</td><td>keken</td></tr>
+<tr><td>komen</td><td>to come</td><td>zijn</td><td>gekomen</td><td>kwam</td><td>kwamen</td></tr>
+<tr><td>kopen</td><td>to buy</td><td>hebben</td><td>gekocht</td><td>kocht</td><td>kochten</td></tr>
+<tr><td>krijgen</td><td>to get / receive</td><td>hebben</td><td>gekregen</td><td>kreeg</td><td>kregen</td></tr>
+<tr><td>kunnen</td><td>can / be able to</td><td>hebben</td><td>gekund</td><td>kon</td><td>konden</td></tr>
+<tr><td>laten</td><td>to let / leave</td><td>hebben</td><td>gelaten</td><td>liet</td><td>lieten</td></tr>
+<tr><td>lezen</td><td>to read</td><td>hebben</td><td>gelezen</td><td>las</td><td>lazen</td></tr>
+<tr><td>liegen</td><td>to lie (untruth)</td><td>hebben</td><td>gelogen</td><td>loog</td><td>logen</td></tr>
+<tr><td>liggen</td><td>to lie (down)</td><td>hebben</td><td>gelegen</td><td>lag</td><td>lagen</td></tr>
+<tr><td>lopen</td><td>to walk / run</td><td>heb/ben</td><td>gelopen</td><td>liep</td><td>liepen</td></tr>
+<tr><td>meegaan</td><td>to go along</td><td>zijn</td><td>meegegaan</td><td>ging mee</td><td>gingen mee</td></tr>
+<tr><td>meenemen</td><td>to take along</td><td>hebben</td><td>meegenomen</td><td>nam mee</td><td>namen mee</td></tr>
+<tr><td>moeten</td><td>must / have to</td><td>hebben</td><td>gemoeten</td><td>moest</td><td>moesten</td></tr>
+<tr><td>mogen</td><td>may / be allowed</td><td>hebben</td><td>gemogen</td><td>mocht</td><td>mochten</td></tr>
+<tr><td>nemen</td><td>to take</td><td>hebben</td><td>genomen</td><td>nam</td><td>namen</td></tr>
+<tr><td>onderzoeken</td><td>to investigate</td><td>hebben</td><td>onderzocht</td><td>onderzocht</td><td>onderzochten</td></tr>
+<tr><td>ontbijten</td><td>to eat breakfast</td><td>hebben</td><td>ontbeten</td><td>ontbeet</td><td>ontbeten</td></tr>
+<tr><td>opstaan</td><td>to get up</td><td>zijn</td><td>opgestaan</td><td>stond op</td><td>stonden op</td></tr>
+<tr><td>oversteken</td><td>to cross (street)</td><td>zijn</td><td>overgestoken</td><td>stak over</td><td>staken over</td></tr>
+<tr><td>rijden</td><td>to drive / ride</td><td>heb/ben</td><td>gereden</td><td>reed</td><td>reden</td></tr>
+<tr><td>roepen</td><td>to call / shout</td><td>hebben</td><td>geroepen</td><td>riep</td><td>riepen</td></tr>
+<tr><td>schrijven</td><td>to write</td><td>hebben</td><td>geschreven</td><td>schreef</td><td>schreven</td></tr>
+<tr><td>schrikken</td><td>to be startled</td><td>zijn</td><td>geschrokken</td><td>schrok</td><td>schrokken</td></tr>
+<tr><td>slaan</td><td>to hit / beat</td><td>hebben</td><td>geslagen</td><td>sloeg</td><td>sloegen</td></tr>
+<tr><td>slapen</td><td>to sleep</td><td>hebben</td><td>geslapen</td><td>sliep</td><td>sliepen</td></tr>
+<tr><td>sluiten</td><td>to close</td><td>hebben</td><td>gesloten</td><td>sloot</td><td>sloten</td></tr>
+<tr><td>snijden</td><td>to cut</td><td>hebben</td><td>gesneden</td><td>sneed</td><td>sneden</td></tr>
+<tr><td>spreken</td><td>to speak</td><td>hebben</td><td>gesproken</td><td>sprak</td><td>spraken</td></tr>
+<tr><td>springen</td><td>to jump</td><td>heb/ben</td><td>gesprongen</td><td>sprong</td><td>sprongen</td></tr>
+<tr><td>staan</td><td>to stand</td><td>hebben</td><td>gestaan</td><td>stond</td><td>stonden</td></tr>
+<tr><td>steken</td><td>to sting / put</td><td>hebben</td><td>gestoken</td><td>stak</td><td>staken</td></tr>
+<tr><td>sterven</td><td>to die</td><td>zijn</td><td>gestorven</td><td>stierf</td><td>stierven</td></tr>
+<tr><td>strijken</td><td>to iron</td><td>hebben</td><td>gestreken</td><td>streek</td><td>streken</td></tr>
+<tr><td>trekken</td><td>to pull</td><td>hebben</td><td>getrokken</td><td>trok</td><td>trokken</td></tr>
+<tr><td>uitdoen</td><td>to turn off / take off</td><td>hebben</td><td>uitgedaan</td><td>deed uit</td><td>deden uit</td></tr>
+<tr><td>uitgaan</td><td>to go out</td><td>zijn</td><td>uitgegaan</td><td>ging uit</td><td>gingen uit</td></tr>
+<tr><td>vallen</td><td>to fall</td><td>zijn</td><td>gevallen</td><td>viel</td><td>vielen</td></tr>
+<tr><td>vergeten</td><td>to forget</td><td>heb/ben</td><td>vergeten</td><td>vergat</td><td>vergaten</td></tr>
+<tr><td>verkopen</td><td>to sell</td><td>hebben</td><td>verkocht</td><td>verkocht</td><td>verkochten</td></tr>
+<tr><td>verliezen</td><td>to lose</td><td>hebben</td><td>verloren</td><td>verloor</td><td>verloren</td></tr>
+<tr><td>vertrekken</td><td>to leave / depart</td><td>zijn</td><td>vertrokken</td><td>vertrok</td><td>vertrokken</td></tr>
+<tr><td>vinden</td><td>to find / think</td><td>hebben</td><td>gevonden</td><td>vond</td><td>vonden</td></tr>
+<tr><td>vliegen</td><td>to fly</td><td>heb/ben</td><td>gevlogen</td><td>vloog</td><td>vlogen</td></tr>
+<tr><td>vragen</td><td>to ask</td><td>hebben</td><td>gevraagd</td><td>vroeg</td><td>vroegen</td></tr>
+<tr><td>weten</td><td>to know</td><td>hebben</td><td>geweten</td><td>wist</td><td>wisten</td></tr>
+<tr><td>willen</td><td>to want</td><td>hebben</td><td>gewild</td><td>wou / wilde</td><td>wilden</td></tr>
+<tr><td>winnen</td><td>to win</td><td>hebben</td><td>gewonnen</td><td>won</td><td>wonnen</td></tr>
+<tr><td>worden</td><td>to become</td><td>zijn</td><td>geworden</td><td>werd</td><td>werden</td></tr>
+<tr><td>zeggen</td><td>to say</td><td>hebben</td><td>gezegd</td><td>zei</td><td>zeiden</td></tr>
+<tr><td>zien</td><td>to see</td><td>hebben</td><td>gezien</td><td>zag</td><td>zagen</td></tr>
+<tr><td>zijn</td><td>to be</td><td>zijn</td><td>geweest</td><td>was</td><td>waren</td></tr>
+<tr><td>zingen</td><td>to sing</td><td>hebben</td><td>gezongen</td><td>zong</td><td>zongen</td></tr>
+<tr><td>zitten</td><td>to sit</td><td>hebben</td><td>gezeten</td><td>zat</td><td>zaten</td></tr>
+<tr><td>zoeken</td><td>to search</td><td>hebben</td><td>gezocht</td><td>zocht</td><td>zochten</td></tr>
+<tr><td>zullen</td><td>will / shall</td><td>—</td><td>—</td><td>zou</td><td>zouden</td></tr>
+<tr><td>zwemmen</td><td>to swim</td><td>heb/ben</td><td>gezwommen</td><td>zwom</td><td>zwommen</td></tr>
+</table>
+""",
+        "grammar_letop": [
+            {"wrong": "Ik heb naar Gent gegaan.",
+             "right": "Ik ben naar Gent gegaan.",
+             "explain": "gaan = beweging naar bestemming → altijd ZIJN. Ik ben gegaan."},
+            {"wrong": "Zij heeft gevallen.",
+             "right": "Zij is gevallen.",
+             "explain": "vallen = verandering van toestand (plotseling) → ZIJN. Zij is gevallen."},
+            {"wrong": "Ik heb gewerkt gisteren. (wrong word order)",
+             "right": "Ik heb gisteren gewerkt.",
+             "explain": "Tijdsbepaling (gisteren) → vóór het voltooid deelwoord, niet erachter."},
+            {"wrong": "De stam van 'leven' is 'leven'.",
+             "right": "De stam van 'leven' is 'leef' (v→f).",
+             "explain": "v en z aan het einde van de stam veranderen: v→f (leven→leef), z→s (reizen→reis)."},
+        ],
+        "grammar_extra": """
+<h4>Uitgebreide irreguliere werkwoorden (extra, van 'Irr- impefectum - long.xlsx')</h4>
+<table>
+<tr><th>Infinitief</th><th>Engels</th><th>Perfectum</th><th>Imperf. ik/hij</th></tr>
+<tr><td>bieden</td><td>to offer / bid</td><td>(heb) geboden</td><td>bood</td></tr>
+<tr><td>blazen</td><td>to blow</td><td>(heb) geblazen</td><td>blies</td></tr>
+<tr><td>blijken</td><td>to turn out</td><td>(is) gebleken</td><td>bleek</td></tr>
+<tr><td>buigen</td><td>to bend</td><td>(heb) gebogen</td><td>boog</td></tr>
+<tr><td>fluiten</td><td>to whistle</td><td>(heb) gefloten</td><td>floot</td></tr>
+<tr><td>genezen</td><td>to heal</td><td>(heb) genezen</td><td>genas</td></tr>
+<tr><td>gieten</td><td>to pour</td><td>(heb) gegoten</td><td>goot</td></tr>
+<tr><td>graven</td><td>to dig</td><td>(heb) gegraven</td><td>groef</td></tr>
+<tr><td>klimmen</td><td>to climb</td><td>(ben/heb) geklommen</td><td>klom</td></tr>
+<tr><td>lijden</td><td>to suffer</td><td>(heb) geleden</td><td>leed</td></tr>
+<tr><td>lijken</td><td>to seem</td><td>(heb) geleken</td><td>leek</td></tr>
+<tr><td>overlijden</td><td>to pass away</td><td>(ben) overleden</td><td>overleed</td></tr>
+<tr><td>ruiken</td><td>to smell</td><td>(heb) geroken</td><td>rook</td></tr>
+<tr><td>schenken</td><td>to pour / donate</td><td>(heb) geschonken</td><td>schonk</td></tr>
+<tr><td>schieten</td><td>to shoot</td><td>(heb) geschoten</td><td>schoot</td></tr>
+<tr><td>schijnen</td><td>to shine / seem</td><td>(heb) geschenen</td><td>scheen</td></tr>
+<tr><td>stijgen</td><td>to rise</td><td>(ben) gestegen</td><td>steeg</td></tr>
+<tr><td>vangen</td><td>to catch</td><td>(heb) gevangen</td><td>ving</td></tr>
+<tr><td>varen</td><td>to sail</td><td>(heb/ben) gevaren</td><td>voer</td></tr>
+<tr><td>verbieden</td><td>to forbid</td><td>(heb) verboden</td><td>verbood</td></tr>
+<tr><td>verdwijnen</td><td>to disappear</td><td>(ben) verdwenen</td><td>verdween</td></tr>
+<tr><td>verstaan</td><td>to understand (hear)</td><td>(heb) verstaan</td><td>verstond</td></tr>
+<tr><td>wegen</td><td>to weigh</td><td>(heb) gewogen</td><td>woog</td></tr>
+<tr><td>wijzen</td><td>to point</td><td>(heb) gewezen</td><td>wees</td></tr>
+<tr><td>zwijgen</td><td>to be silent</td><td>(heb) gezwegen</td><td>zweeg</td></tr>
+</table>
+""",
+        "grammar_quick": [
+            "Stam = infinitief − en. v→f, z→s aan het einde.",
+            "Kofschip (t k f s ch p) → +te / ge…t. Andere → +de / ge…d.",
+            "Beweging (A→B) + Verandering → ZIJN. Al het rest → HEBBEN.",
+            "zijn: ben/bent/is/zijn | was/waren",
+            "hebben: heb/hebt/heeft/hebben | had/hadden",
+            "worden: word/wordt/worden | werd/werden — ZIJN in perfectum: is/zijn geworden.",
+            "Modalen imperfectum: kon / moest / mocht / wou(wilde) / zou.",
+        ],
+        "exercises": [
+            {"type": "fill",
+             "q": "Regelmatig: de stam van 'fietsen' is ___. (remove -en)",
+             "a": "fiets",
+             "tip": "Infinitief min -en → fiets. Laatste letter s → kofschip → fietste."},
+            {"type": "fill",
+             "q": "Regelmatig: de stam van 'leven' is ___. (let op v→f!)",
+             "a": "leef",
+             "tip": "leven: z en v aan einde van stam veranderen. v→f: leef."},
+            {"type": "choice",
+             "q": "Imperfectum van 'werken' (ik)?",
+             "options": ["werkde", "werkte", "werkte / werkten"],
+             "a": "werkte",
+             "tip": "werk: k = kofschip → +te: werkte."},
+            {"type": "choice",
+             "q": "Imperfectum van 'spelen' (ik)?",
+             "options": ["spelte", "speelde", "spleelde"],
+             "a": "speelde",
+             "tip": "speel→spel: l ≠ kofschip → +de: speelde."},
+            {"type": "fill",
+             "q": "Perfectum: Ik ___ (zijn) gisteren naar de markt gegaan.",
+             "a": "ben",
+             "tip": "gaan = beweging → zijn. Ik BEN gegaan."},
+            {"type": "fill",
+             "q": "Perfectum: Zij ___ (hebben) drie jaar in Gent gewoond.",
+             "a": "heeft",
+             "tip": "wonen = niet beweging/verandering → hebben. Zij HEEFT gewoond."},
+            {"type": "choice",
+             "q": "Perfectum van 'vallen' — gebruikt 'zijn' of 'hebben'?",
+             "options": ["hebben — hij heeft gevallen", "zijn — hij is gevallen"],
+             "a": "zijn — hij is gevallen",
+             "tip": "vallen = verandering van positie → zijn. Hij is gevallen."},
+            {"type": "fill",
+             "q": "Onregelmatig: imperfectum van 'schrijven' (ik)?",
+             "a": "schreef",
+             "tip": "schrijven is onregelmatig: schreef (singularis), schreven (pluralis)."},
+            {"type": "fill",
+             "q": "Onregelmatig: imperfectum van 'zien' (ik)?",
+             "a": "zag",
+             "tip": "zien → zag (singularis), zagen (pluralis). Onregelmatig."},
+            {"type": "tf",
+             "q": "'Ik heb gisteren in Gent geweest.' is correct.",
+             "a": False,
+             "correction": "Fout! zijn → perfectum met ZIJN: 'Ik ben gisteren in Gent geweest.'",
+             "tip": "zijn → zijn + geweest. NOOIT hebben + geweest."},
+            {"type": "tf",
+             "q": "'Ze is drie jaar in België gewoond.' is correct.",
+             "a": False,
+             "correction": "Fout! wonen = activiteit (geen beweging/verandering) → HEBBEN: 'Ze heeft drie jaar in België gewoond.'",
+             "tip": "wonen → hebben + gewoond. Niet zijn!"},
+            {"type": "translate",
+             "q": "Yesterday I went to the market and bought fresh vegetables.",
+             "a": "Gisteren ben ik naar de markt gegaan en heb ik verse groenten gekocht.",
+             "tip": "gaan = zijn + gegaan. kopen = hebben + gekocht. Inversie na gisteren: ben ik."},
+            {"type": "reorder",
+             "q": "jaar / gewoond / heb / vijf / al / ik / in / Gent",
+             "a": "Ik heb al vijf jaar in Gent gewoond.",
+             "tip": "Perfectum: hebben + vd achteraan. al + tijdsduur vóór het vd."},
+        ],
+        "jouw_beurt": "Gebruik deze tabel als naslagwerk terwijl je schrijft!\n\n"
+                      "Schrijftaak: Vertel over de afgelopen week (6–8 zinnen).\n"
+                      "Gebruik BEIDE tijden:\n"
+                      "• Perfectum: voor afgeronde handelingen (Ik heb … / Ik ben …)\n"
+                      "• Imperfectum: voor beschrijvingen/gewoonten (Het was … / Ik werkte …)\n\n"
+                      "Gebruik minstens:\n"
+                      "- 3 onregelmatige werkwoorden (zie de tabel!)\n"
+                      "- 1 zijn-werkwoord en 1 hebben-werkwoord in perfectum\n"
+                      "- 1 bijzin met 'omdat' + werkwoord achteraan\n\n"
+                      "Voorbeeld: Maandag ben ik vroeg opgestaan omdat ik een vergadering had.\n"
+                      "Daarna heb ik mijn e-mails gelezen en heb ik met collega's gesproken.",
+    },
 ]
 
 # ---------------------------------------------------------------------------
@@ -5347,6 +7669,116 @@ _REVIEW_QA = {
          "a": "<b>To pass (an exam).</b> Ik wil slagen voor het examen."},
         {"q": "Translate: 'Compared to India, Belgium is smaller.'",
          "a": "<b>Vergeleken met</b> India is België kleiner."},
+    ],
+    26: [  # S26: Uiterlijk beschrijven
+        {"q": "Which verb for eyes/nose/hair? 'Zij ___ bruine ogen.'",
+         "a": "<b>heeft</b> — lichaamsdelen altijd met HEBBEN."},
+        {"q": "Adjective rule: 'een ___ gezicht' (ovaal — gezicht = het-woord + een)",
+         "a": "een <b>ovaal</b> gezicht — het-woord + een → GEEN -e!"},
+        {"q": "How do you say 'She has medium-length curly brown hair'?",
+         "a": "Zij heeft <b>halflang krullend bruin</b> haar. (geen -e: het-woord, geen lidwoord)"},
+        {"q": "Which verb: 'Hij ___ een bril.' (wears glasses)",
+         "a": "<b>draagt</b> — accessoires altijd met DRAGEN."},
+    ],
+    27: [  # S27: Mening schrijven
+        {"q": "Complete: 'Ik vind dat sociale media gevaarlijk ___.' (verb-end!)",
+         "a": "<b>zijn</b> — dat-bijzin → werkwoord naar EINDE."},
+        {"q": "Wat is het verschil tussen 'omdat' en 'want'?",
+         "a": "<b>omdat</b>: V-einde (bijzin). <b>want</b>: S+V (normale volgorde, nevenschikkend)."},
+        {"q": "Complete: 'Bovendien ___ het gezond.' (inversie na bovendien)",
+         "a": "<b>is het</b> — bovendien = bijwoord → inversie: Bovendien IS HET gezond."},
+        {"q": "Vast voorzetsel: 'voorstander ___ / tegenstander ___'",
+         "a": "voorstander <b>van</b> / tegenstander <b>van</b>."},
+    ],
+    28: [  # S28: Formele e-mail
+        {"q": "Hoe begin je een formele e-mail?",
+         "a": "<b>Geachte mevrouw/meneer [achternaam],</b> (niet 'Beste' of 'Hoi')"},
+        {"q": "Hoe sluit je een formele e-mail af?",
+         "a": "<b>Met vriendelijke groeten,</b> [naam]"},
+        {"q": "Beleefd een afspraak vragen: 'Ik ___ graag een afspraak willen maken.'",
+         "a": "<b>zou</b> — zou + graag + willen + infinitief."},
+        {"q": "Formele instructie: 'Please fill in the form' → '___ dit formulier in te vullen.'",
+         "a": "<b>Gelieve</b> dit formulier in te vullen."},
+    ],
+    29: [  # S29: Lezen
+        {"q": "Net zo Box leesstrategie: wat doe je EERST?",
+         "a": "Lees de <b>vragen</b> eerst — zoek dan de antwoorden in de tekst."},
+        {"q": "Wat betekent 'werkstress'?",
+         "a": "<b>work stress / occupational stress</b>. werk + stress."},
+        {"q": "Wat betekent 'verminderen'?",
+         "a": "<b>to reduce / decrease</b>. Stress verminderen = to reduce stress."},
+        {"q": "Hoeveel uur slaap hebben volwassenen nodig (leestekst)?",
+         "a": "<b>7 tot 9 uur</b> per nacht."},
+    ],
+    30: [  # S30: Spreken
+        {"q": "Hoe begin je een foto beschrijving?",
+         "a": "<b>Op de foto zie ik</b> een man/vrouw van ongeveer … jaar."},
+        {"q": "'It seems as if he is sad.' → Dutch?",
+         "a": "<b>Het lijkt alsof hij verdrietig is.</b> (alsof → bijzin → V-einde)"},
+        {"q": "'Compared to India, Belgium is smaller.' → Dutch?",
+         "a": "<b>Vergeleken met India is België kleiner.</b> (inversie)"},
+        {"q": "Hoe win je tijd als je niet meteen weet wat je moet zeggen?",
+         "a": "<b>Dat is een goede vraag. Laat me even nadenken.</b>"},
+    ],
+    31: [  # S31: Luisteren
+        {"q": "Dialoog 1: Welke klachten heeft de patiënt?",
+         "a": "Keelpijn, af en toe koorts, moe en misselijk. <b>Geen</b> hoest."},
+        {"q": "Dialoog 3: Wat kost een retourticket Gent–Brussel?",
+         "a": "<b>14 euro.</b> (enkele reis = 9 euro 50)"},
+        {"q": "Welke signaalwoorden geven een contrast/tegengesteld idee?",
+         "a": "<b>maar, toch, echter, hoewel, integendeel</b>"},
+        {"q": "Hoe zeg je 'I have a sore throat'?",
+         "a": "<b>Ik heb keelpijn.</b>"},
+    ],
+    32: [  # S32: ER alle 5 functies
+        {"q": "Hoeveel functies heeft 'er'? Noem ze.",
+         "a": "5: er+zijn, er+getal, er+vz, er=plaats, er+passief."},
+        {"q": "'There are many students.' → Dutch with er?",
+         "a": "<b>Er zijn</b> veel studenten."},
+        {"q": "'I have three.' → Dutch with er?",
+         "a": "Ik heb <b>er</b> drie. (er + getal)"},
+        {"q": "Vervang: 'Ik luister naar de radio.' → met er?",
+         "a": "Ik luister <b>ernaar</b>. (er + naar fused)"},
+    ],
+    33: [  # S33: Imperfectum + Wonen
+        {"q": "Imperfectum van 'wonen' (ik)?",
+         "a": "<b>woonde</b>. stam=woon, n niet kofschip → +de."},
+        {"q": "Imperfectum van 'leven' (ik)? (let op v→f!)",
+         "a": "<b>leefde</b>. leven → stam=leef (v→f) → f in kofschip → +te: leefTe = leefde."},
+        {"q": "Inversie na 'Vroeger': 'Vroeger ___ ik in India.'",
+         "a": "Vroeger <b>woonde ik</b> in India. (inversie: V-S)"},
+        {"q": "Hoe zeg je 'within walking distance'?",
+         "a": "<b>op loopafstand</b>. De supermarkt is op loopafstand."},
+    ],
+    34: [  # S34: Werk & Dagelijks Leven
+        {"q": "Hoe zeg je 'I have been working at UGent for 3 years'?",
+         "a": "Ik werk <b>al 3 jaar</b> aan UGent. (niet: voor 3 jaar!)"},
+        {"q": "'om…te' voorbeeld: 'I study Dutch to communicate better.'",
+         "a": "Ik studeer Nederlands <b>om beter te communiceren</b>."},
+        {"q": "Inversie: 'Bovendien ___ ik voor een tijdschrift.' (schrijven)",
+         "a": "Bovendien <b>schrijf ik</b> voor een tijdschrift."},
+        {"q": "Vast voorzetsel: werken ___ / samenwerken ___?",
+         "a": "werken <b>aan/bij</b> / samenwerken <b>met</b>."},
+    ],
+    35: [  # S35: Modale werkwoorden
+        {"q": "Conjugeer 'kunnen' voor ik/jij/hij/wij.",
+         "a": "ik <b>kan</b> / jij <b>kan(t)</b> / hij <b>kan</b> / wij <b>kunnen</b>."},
+        {"q": "Imperfectum van moeten, kunnen, mogen, willen, zullen?",
+         "a": "<b>moest / kon / mocht / wou(wilde) / zou</b>."},
+        {"q": "Bijzin met modaal: 'omdat hij vroeg ___.'  (must leave)",
+         "a": "omdat hij vroeg <b>moet vertrekken</b>. (infinitief + modaal achteraan)"},
+        {"q": "'You don't need to pay.' in het Nederlands?",
+         "a": "Je <b>hoeft niet te betalen</b>. (hoeven + niet + te + inf)"},
+    ],
+    36: [  # S36: Werkwoordtabel
+        {"q": "Wat is de stam van 'leven'? (let op v→f!)",
+         "a": "stam = <b>leef</b>. (v→f). leef + te (kofschip f) = <b>leefde</b>."},
+        {"q": "Wanneer gebruik je ZIJN in het perfectum?",
+         "a": "<b>Beweging</b> (gaan/komen/rijden…) + <b>verandering</b> (vallen/worden…) → zijn."},
+        {"q": "Perfectum van 'zijn' (ik)?",
+         "a": "Ik <b>ben geweest</b>. (zijn → ZIJN + geweest)"},
+        {"q": "Onregelmatig: schrijven → imperfectum (ik)?",
+         "a": "<b>schreef</b>. (schreven voor wij)"},
     ],
 }
 

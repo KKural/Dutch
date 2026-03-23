@@ -69,6 +69,7 @@
             <button class="btn btn-warn" onclick="nextCard()">✗ Still learning</button>
         </div>
         <div class="fc-progress" id="fc-progress"></div>
+        <div class="fc-swipe-hint">← swipe for next &nbsp;|&nbsp; tap to flip →</div>
     </div>
     {% else %}
     <p class="empty-msg">No vocabulary for this session — it's a review session!</p>
@@ -277,6 +278,28 @@
             if (e.key === 'ArrowLeft') prevCard();
         }
     });
+
+    // Touch swipe support for flashcards
+    (function () {
+        const fc = document.getElementById('flashcard');
+        if (!fc) return;
+        let startX = 0, startY = 0;
+        fc.addEventListener('touchstart', e => {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+        }, { passive: true });
+        fc.addEventListener('touchend', e => {
+            const dx = e.changedTouches[0].clientX - startX;
+            const dy = e.changedTouches[0].clientY - startY;
+            if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+                // horizontal swipe → next/prev
+                if (dx < 0) nextCard(); else prevCard();
+            } else if (Math.abs(dy) < 15 && Math.abs(dx) < 15) {
+                // tap (no movement) → flip
+                flipCard();
+            }
+        }, { passive: true });
+    })();
 
     // === QUIZ ===
     let answered = {};
