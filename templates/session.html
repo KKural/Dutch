@@ -261,12 +261,12 @@
             <tbody>
                 {% for v in s.verb_drill_data %}
                 <tr>
-                    <td class="drill-inf">{{ v[0] }}</td>
-                    <td><input class="drill-inp" data-answer="{{ v[1] }}" placeholder="…" autocomplete="off"></td>
+                    <td class="drill-inf">{{ v[0] }}<br><small class="drill-en">{{ v[1] }}</small></td>
                     <td><input class="drill-inp" data-answer="{{ v[2] }}" placeholder="…" autocomplete="off"></td>
                     <td><input class="drill-inp" data-answer="{{ v[3] }}" placeholder="…" autocomplete="off"></td>
                     <td><input class="drill-inp" data-answer="{{ v[4] }}" placeholder="…" autocomplete="off"></td>
                     <td><input class="drill-inp" data-answer="{{ v[5] }}" placeholder="…" autocomplete="off"></td>
+                    <td><input class="drill-inp" data-answer="{{ v[6] }}" placeholder="…" autocomplete="off"></td>
                 </tr>
                 {% endfor %}
             </tbody>
