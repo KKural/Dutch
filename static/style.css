@@ -989,3 +989,96 @@ body {
         padding: .75rem;
     }
 }
+
+/* =========================================================
+   VERB DRILL TABLE
+   ========================================================= */
+.drill-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.drill-score {
+    font-weight: 600;
+    color: #2c6fad;
+    margin-left: .5rem;
+}
+.drill-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.drill-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .9rem;
+    min-width: 700px;
+}
+.drill-table thead tr {
+    background: #2c6fad;
+    color: #fff;
+}
+.drill-table th {
+    padding: .55rem .7rem;
+    text-align: left;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.drill-table th small {
+    display: block;
+    font-size: .72rem;
+    font-weight: 400;
+    opacity: .85;
+}
+.drill-table tbody tr:nth-child(even) {
+    background: #f0f4f8;
+}
+.drill-table tbody tr:hover {
+    background: #dbeafe;
+}
+.drill-table td {
+    padding: .35rem .5rem;
+    border-bottom: 1px solid #dde3ea;
+}
+.drill-inf {
+    font-weight: 600;
+    color: #1e3a5f;
+    white-space: nowrap;
+}
+.drill-inp {
+    width: 100%;
+    min-width: 90px;
+    padding: .3rem .4rem;
+    border: 2px solid #c8d6e5;
+    border-radius: 5px;
+    font-size: .88rem;
+    outline: none;
+    background: #fff;
+    transition: border-color .15s, background .15s;
+    box-sizing: border-box;
+}
+.drill-inp:focus {
+    border-color: #2c6fad;
+    background: #f0f7ff;
+}
+.drill-inp.drill-ok {
+    border-color: #1a7f4b !important;
+    background: #d4f5e2 !important;
+    color: #0d4d28;
+}
+.drill-inp.drill-err {
+    border-color: #c0392b !important;
+    background: #fde8e8 !important;
+    color: #7b1a1a;
+}
+
+@media (max-width: 600px) {
+    .drill-table {
+        font-size: .8rem;
+    }
+    .drill-inp {
+        min-width: 70px;
+        font-size: .8rem;
+    }
+}

@@ -19,6 +19,7 @@
     <button class="tab" data-tab="vocab">Flashcards</button>
     <button class="tab" data-tab="grammar">Grammar</button>
     <button class="tab" data-tab="exercises">Quiz</button>
+    {% if s.verb_drill_data %}<button class="tab" data-tab="verbdrill">🔴 Verb Drill</button>{% endif %}
     <button class="tab" data-tab="writing">Your Turn</button>
 </div>
 
@@ -226,6 +227,54 @@
     </div>
 </div>
 
+{% if s.verb_drill_data %}
+<!-- ======== VERB DRILL TAB ======== -->
+<div class="tab-panel" id="panel-verbdrill">
+    <h2>🔴 Werkwoord Drill</h2>
+    <div class="info-box">
+        <strong>Hoe werkt het?</strong> Vul elke cel in en druk op <kbd>Tab</kbd> of klik ergens anders — de cel wordt
+        <span style="color:#1a7f4b;font-weight:600">groen ✓</span> bij correct of
+        <span style="color:#c0392b;font-weight:600">rood ✗</span> bij fout.
+        Gebruik <strong>heb</strong> of <strong>ben</strong> (of <strong>heb/ben</strong>) als hulpwerkwoord.
+        Klik <em>Alles onthullen</em> om de antwoorden te zien. Klik <em>Opnieuw</em> om opnieuw te oefenen.
+    </div>
+
+    <div class="drill-toolbar">
+        <button class="btn btn-sm" onclick="drillCheckAll()">✓ Alles controleren</button>
+        <button class="btn btn-sm" onclick="drillReveal()">👁 Alles onthullen</button>
+        <button class="btn btn-sm" onclick="drillReset()">↺ Opnieuw</button>
+        <span class="drill-score" id="drillScore"></span>
+    </div>
+
+    <div class="drill-table-wrap">
+        <table class="drill-table">
+            <thead>
+                <tr>
+                    <th>Infinitief</th>
+                    <th>Stam<br><small>(ik, jij, hij)</small></th>
+                    <th>Hulpww.<br><small>(heb / ben)</small></th>
+                    <th>Voltooid deelw.<br><small>(perfectum VD)</small></th>
+                    <th>Imperfectum<br><small>(enkelvoud)</small></th>
+                    <th>Imperfectum<br><small>(meervoud)</small></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for v in s.verb_drill_data %}
+                <tr>
+                    <td class="drill-inf">{{ v[0] }}</td>
+                    <td><input class="drill-inp" data-answer="{{ v[1] }}" placeholder="…" autocomplete="off"></td>
+                    <td><input class="drill-inp" data-answer="{{ v[2] }}" placeholder="…" autocomplete="off"></td>
+                    <td><input class="drill-inp" data-answer="{{ v[3] }}" placeholder="…" autocomplete="off"></td>
+                    <td><input class="drill-inp" data-answer="{{ v[4] }}" placeholder="…" autocomplete="off"></td>
+                    <td><input class="drill-inp" data-answer="{{ v[5] }}" placeholder="…" autocomplete="off"></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endif %}
+
 <!-- COMPLETE SESSION BUTTON -->
 <div class="complete-wrap">
     <button class="btn btn-success btn-lg" id="completeBtn" onclick="completeSession()">
@@ -408,5 +457,65 @@
                 btn.classList.add('completed');
             });
 }
+
+    // === VERB DRILL ===
+    function drillCheck(inp) {
+        const ans = (inp.dataset.answer || '').trim().toLowerCase();
+        const val = inp.value.trim().toLowerCase();
+        if (!val) { inp.classList.remove('drill-ok','drill-err'); return; }
+        if (val === ans) {
+            inp.classList.add('drill-ok');
+            inp.classList.remove('drill-err');
+        } else {
+            inp.classList.add('drill-err');
+            inp.classList.remove('drill-ok');
+        }
+        drillUpdateScore();
+    }
+
+    function drillCheckAll() {
+        document.querySelectorAll('.drill-inp').forEach(inp => {
+            inp.value = inp.value; // trigger without clearing
+            drillCheck(inp);
+        });
+        // also fill blanks with red outline
+        document.querySelectorAll('.drill-inp').forEach(inp => {
+            if (!inp.value.trim()) inp.classList.add('drill-err');
+        });
+        drillUpdateScore();
+    }
+
+    function drillReveal() {
+        document.querySelectorAll('.drill-inp').forEach(inp => {
+            inp.value = inp.dataset.answer;
+            inp.classList.add('drill-ok');
+            inp.classList.remove('drill-err');
+        });
+        drillUpdateScore();
+    }
+
+    function drillReset() {
+        document.querySelectorAll('.drill-inp').forEach(inp => {
+            inp.value = '';
+            inp.classList.remove('drill-ok','drill-err');
+        });
+        const sc = document.getElementById('drillScore');
+        if (sc) sc.textContent = '';
+    }
+
+    function drillUpdateScore() {
+        const all = document.querySelectorAll('.drill-inp');
+        const ok = document.querySelectorAll('.drill-inp.drill-ok').length;
+        const sc = document.getElementById('drillScore');
+        if (sc && all.length) sc.textContent = ok + ' / ' + all.length + ' correct';
+    }
+
+    // Attach blur listener to all drill inputs
+    document.querySelectorAll('.drill-inp').forEach(inp => {
+        inp.addEventListener('blur', () => drillCheck(inp));
+        inp.addEventListener('keydown', e => {
+            if (e.key === 'Enter') { drillCheck(inp); inp.blur(); }
+        });
+    });
 </script>
 {% endblock %}
