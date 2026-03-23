@@ -244,6 +244,7 @@
         <button class="btn btn-sm" onclick="drillReveal()">👁 Alles onthullen</button>
         <button class="btn btn-sm" onclick="drillReset()">↺ Opnieuw</button>
         <span class="drill-score" id="drillScore"></span>
+        <span class="drill-saved" id="drillSaved"></span>
     </div>
 
     <div class="drill-table-wrap">
@@ -465,38 +466,41 @@
 }
 
     // === VERB DRILL ===
+    const DRILL_KEY = 'verbdrill_s{{ s.id }}';
+
     function drillCheck(inp) {
-        const ans = (inp.dataset.answer || '').trim().toLowerCase();
+        // Accept any slash-separated alternative (e.g. "wou/wilde", "hebben/zijn")
+        const answers = (inp.dataset.answer || '').split('/').map(a => a.trim().toLowerCase());
         const val = inp.value.trim().toLowerCase();
         if (!val) { inp.classList.remove('drill-ok', 'drill-err'); return; }
-        if (val === ans) {
+        if (answers.includes(val)) {
             inp.classList.add('drill-ok');
             inp.classList.remove('drill-err');
         } else {
             inp.classList.add('drill-err');
             inp.classList.remove('drill-ok');
         }
+        drillSave();
         drillUpdateScore();
     }
 
     function drillCheckAll() {
-        document.querySelectorAll('.drill-inp').forEach(inp => {
-            inp.value = inp.value; // trigger without clearing
-            drillCheck(inp);
-        });
-        // also fill blanks with red outline
+        document.querySelectorAll('.drill-inp').forEach(inp => drillCheck(inp));
         document.querySelectorAll('.drill-inp').forEach(inp => {
             if (!inp.value.trim()) inp.classList.add('drill-err');
         });
+        drillSave();
         drillUpdateScore();
     }
 
     function drillReveal() {
         document.querySelectorAll('.drill-inp').forEach(inp => {
-            inp.value = inp.dataset.answer;
+            // Show first alternative as the displayed answer
+            inp.value = (inp.dataset.answer || '').split('/')[0].trim();
             inp.classList.add('drill-ok');
             inp.classList.remove('drill-err');
         });
+        drillSave();
         drillUpdateScore();
     }
 
@@ -505,8 +509,11 @@
             inp.value = '';
             inp.classList.remove('drill-ok', 'drill-err');
         });
+        localStorage.removeItem(DRILL_KEY);
         const sc = document.getElementById('drillScore');
         if (sc) sc.textContent = '';
+        const sv = document.getElementById('drillSaved');
+        if (sv) sv.textContent = '';
     }
 
     function drillUpdateScore() {
@@ -516,7 +523,30 @@
         if (sc && all.length) sc.textContent = ok + ' / ' + all.length + ' correct';
     }
 
-    // Attach blur listener to all drill inputs
+    function drillSave() {
+        const vals = Array.from(document.querySelectorAll('.drill-inp')).map(i => i.value);
+        localStorage.setItem(DRILL_KEY, JSON.stringify(vals));
+        const sv = document.getElementById('drillSaved');
+        if (sv) {
+            sv.textContent = '💾 Opgeslagen';
+            clearTimeout(sv._t);
+            sv._t = setTimeout(() => { sv.textContent = ''; }, 2000);
+        }
+    }
+
+    // Restore saved progress on load
+    (function drillLoad() {
+        const saved = localStorage.getItem(DRILL_KEY);
+        if (!saved) return;
+        try {
+            const vals = JSON.parse(saved);
+            document.querySelectorAll('.drill-inp').forEach((inp, i) => {
+                if (vals[i]) { inp.value = vals[i]; drillCheck(inp); }
+            });
+        } catch(e) {}
+    })();
+
+    // Attach listeners to all drill inputs
     document.querySelectorAll('.drill-inp').forEach(inp => {
         inp.addEventListener('blur', () => drillCheck(inp));
         inp.addEventListener('keydown', e => {
