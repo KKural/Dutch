@@ -27,7 +27,7 @@ CHAPTERS = [
     {"id": 8, "name": "Examenvoorbereiding", "icon": "🎯",
         "desc": "Exam Preparation", "pages": "—", "sessions": [21, 22, 23, 24, 25]},
     {"id": 9, "name": "Examentopics Oefenen", "icon": "📋",
-        "desc": "Net zo Box + NT2 Taalmenu stijl — alle 4 vaardigheden", "pages": "CVO GEMT 3.2", "sessions": [26, 27, 28, 29, 30, 31, 32, 33, 34]},
+        "desc": "Net zo Box + NT2 Taalmenu stijl — alle 4 vaardigheden", "pages": "CVO GEMT 3.2", "sessions": [26, 27, 28, 29, 30, 31, 32, 33, 34, 37, 38, 39]},
     {"id": 10, "name": "Grammatica Referentie", "icon": "📚",
         "desc": "Modale werkwoorden + volledige werkwoordtabel", "pages": "—", "sessions": [35, 36]},
 ]
@@ -1164,6 +1164,21 @@ They mean the same but change the word order! Think of <b>omdat</b> as the stric
              "tip": "Hoofdzin (Hij sport) + omdat + subject + … + werkwoordgroep op einde."},
             {"type": "choice", "q": "Op het examen: Omdat het regent, ___ ik thuis.", "options": ["blijf", "omdat", "want"],
              "a": "blijf", "tip": "Omdat-bijzin eerst → hoofdzin begint met werkwoord (inversie): blijf ik."},
+            {"type": "fill", "q": "Mijn ontbijt is havermout, ___ dat mij langer energie geeft.", "a": "want",
+             "tip": "Na 'want' blijft de volgorde normaal: dat geeft ..."},
+            {"type": "translate", "q": "I snack less because I want healthier habits. (use omdat)",
+             "a": "Ik snack minder omdat ik gezondere gewoontes wil.",
+             "tip": "Gebruik 'omdat' + werkwoordgroep op het einde: ... gewoontes wil."},
+            {"type": "choice", "q": "Welke zin klinkt natuurlijk over eetgewoontes?",
+             "options": [
+                 "Ik eet op vaste uren, daarom blijf ik minder snoepen.",
+                 "Ik eet op vaste uren daarom ik blijf minder snoepen.",
+                 "Ik eet op vaste uren, want daarom blijf ik minder snoepen."
+             ], "a": "Ik eet op vaste uren, daarom blijf ik minder snoepen.",
+             "tip": "Na 'daarom' krijg je inversie: daarom blijf ik ..."},
+            {"type": "reorder", "q": "is / te / veel / suiker / ongezond / Daarom / drink / minder / ik",
+             "a": "Te veel suiker is ongezond. Daarom drink ik minder.",
+             "tip": "Maak eerst de vaststelling, daarna 'Daarom' + inversie (drink ik)."},
         ],
 
         "jouw_beurt": "Write 6 sentences about your eating habits — 2 with omdat, 2 with want, 2 with daarom.\n\n"
@@ -1331,6 +1346,21 @@ verb goes to the END of the als-clause. In Tamil, verb position doesn't change f
                  "Als je ziek bent, je moet naar de dokter."
              ], "a": "Als je ziek bent, moet je naar de dokter.",
              "tip": "Als-bijzin: werkwoord (bent) op het EINDE. Hoofdzin: inversie (moet je)."},
+            {"type": "fill", "q": "Voor gezonde gewoontes: Als je zin in snoep ___ (hebben), drink eerst water.", "a": "hebt",
+             "tip": "In de als-bijzin komt het werkwoord op het einde: je ... hebt."},
+            {"type": "choice", "q": "Welke advieszin over slaapgewoontes is correct?",
+             "options": [
+                 "Als je beter wilt slapen, moet je je gsm vroeger wegleggen.",
+                 "Als je wilt beter slapen, je moet je gsm vroeger wegleggen.",
+                 "Als je beter wilt slapen, je moet je gsm vroeger wegleggen."
+             ], "a": "Als je beter wilt slapen, moet je je gsm vroeger wegleggen.",
+             "tip": "Als-bijzin: werkwoordgroep op het einde. Hoofdzin: inversie (moet je)."},
+            {"type": "translate", "q": "If you prepare meals at home, you can eat healthier.",
+             "a": "Als je thuis maaltijden voorbereidt, kun je gezonder eten.",
+             "tip": "als + bijzin (voorbereidt op einde), dan inversie: kun je ..."},
+            {"type": "reorder", "q": "als / je / elke / dag / wandelt / , / voel / je / je / fitter",
+             "a": "Als je elke dag wandelt, voel je je fitter.",
+             "tip": "Na de als-bijzin volgt inversie: voel je ..."},
         ],
 
         "jouw_beurt": "Write 6 advice sentences using als for a friend who wants to live healthier in Ghent.\n\n"
@@ -5203,6 +5233,15 @@ de nadelen. Daarom vind ik dat iedereen minstens twee keer per week moet sporten
 <tr><th>de-woord (+ -e)</th><th>het-woord (geen -e na een)</th></tr>
 <tr><td>de neus, de mond, de kin, de ogen (mv), de wangen, de oren, de handen</td><td>het haar, het hoofd, het gezicht, het oog (enkelvoud), het kind</td></tr>
 </table>
+
+<h4>Extra basis oefenen</h4>
+<ul>
+<li><em>Ik ben lang.</em></li>
+<li><em>Ik heb bruine ogen.</em></li>
+<li><em>Ik heb kort zwart haar.</em></li>
+<li><em>Ik draag een bril.</em></li>
+<li><em>Hij heeft een grote neus.</em></li>
+</ul>
 """,
         "grammar_quick": """
 <ul>
@@ -5273,6 +5312,19 @@ de nadelen. Daarom vind ik dat iedereen minstens twee keer per week moet sporten
              "q": "een / heeft / hij / rechte / neus",
              "a": "Hij heeft een rechte neus.",
              "tip": "neus = de-woord + een → -e al gegeven: rechte. Hij heeft een rechte neus."},
+              {"type": "fill",
+               "q": "Basis: Ik ___ een bril. (wear)",
+               "a": "draag",
+               "tip": "Accessoire = dragen. Ik draag een bril."},
+              {"type": "choice",
+               "q": "Basis: Welke zin is correct?",
+               "options": ["Ik ben blauwe ogen.", "Ik heb blauwe ogen.", "Ik draag blauwe ogen.", "Ik is blauwe ogen."],
+               "a": "Ik heb blauwe ogen.",
+               "tip": "Ogen are body parts, so use hebben."},
+              {"type": "translate",
+               "q": "He has short black hair.",
+               "a": "Hij heeft kort zwart haar.",
+               "tip": "haar = no article here, so no -e on the adjectives."},
         ],
         "jouw_beurt": "📝 SCHRIJFTAAK — Net zo Box stijl\n\n"
                       "Beschrijf het uiterlijk van een vriend, familielid of collega in 6–8 zinnen.\n\n"
@@ -5401,6 +5453,14 @@ de nadelen. Daarom vind ik dat iedereen minstens twee keer per week moet sporten
 <tr><td>Omdat</td><td>Because</td><td>Onderschikkend → V-einde</td></tr>
 <tr><td>Want</td><td>Because (coordinate)</td><td>Nevenschikkend → S+V</td></tr>
 </table>
+
+<h4>Extra basiszinnen voor zwakkere leerders</h4>
+<ul>
+<li><em>Ik vind dat Nederlands belangrijk is.</em></li>
+<li><em>Volgens mij is Gent een mooie stad.</em></li>
+<li><em>Ik leer Nederlands omdat ik hier woon.</em></li>
+<li><em>Ik ben voorstander van sport, want sport is gezond.</em></li>
+</ul>
 """,
         "grammar_quick": """
 <ul>
@@ -5485,6 +5545,19 @@ de nadelen. Daarom vind ik dat iedereen minstens twee keer per week moet sporten
              "q": "ten / wil / ik / slotte / zeggen / dat / goed / is / het",
              "a": "Ten slotte wil ik zeggen dat het goed is.",
              "tip": "Ten slotte → inversie: wil ik. dat-bijzin → V-einde: het goed IS."},
+              {"type": "fill",
+               "q": "Basis: Ik leer Nederlands ___ ik in België woon.",
+               "a": "omdat",
+               "tip": "Use omdat to give a reason."},
+              {"type": "choice",
+               "q": "Basis: Welke zin is correct?",
+               "options": ["Volgens mij Gent is mooi.", "Volgens mij is Gent mooi.", "Volgens mij Gent mooi is.", "Volgens mij mooi is Gent."],
+               "a": "Volgens mij is Gent mooi.",
+               "tip": "Volgens mij at the start gives inversion."},
+              {"type": "translate",
+               "q": "I think that sport is healthy.",
+               "a": "Ik denk dat sport gezond is.",
+               "tip": "In the dat-clause, the verb goes at the end."},
         ],
         "jouw_beurt": "📝 SCHRIJFTAAK — Net zo Box mening (examentypisch)\n\n"
                       "Kies één stelling en schrijf een meningtekst van 5–7 zinnen:\n\n"
@@ -5600,6 +5673,14 @@ de nadelen. Daarom vind ik dat iedereen minstens twee keer per week moet sporten
 <tr><td>Informatie vragen</td><td><em>Ik zou graag meer informatie willen over [onderwerp]. Kunt u mij laten weten…?</em></td></tr>
 <tr><td>Klacht</td><td><em>Ik schrijf u om een klacht in te dienen over [probleem]. Ik verwacht een oplossing voor [datum].</em></td></tr>
 </table>
+
+<h4>Extra basiszinnen</h4>
+<ul>
+<li><em>Geachte mevrouw,</em></li>
+<li><em>Ik schrijf u omdat ik een afspraak wil maken.</em></li>
+<li><em>Ik zou graag dinsdag langskomen.</em></li>
+<li><em>Met vriendelijke groeten,</em></li>
+</ul>
 """,
         "grammar_quick": """
 <ul>
@@ -5665,6 +5746,19 @@ de nadelen. Daarom vind ik dat iedereen minstens twee keer per week moet sporten
              "q": "vriendelijke / met / groeten / Kumar",
              "a": "Met vriendelijke groeten, Kumar.",
              "tip": "Standaard afsluiting: Met vriendelijke groeten, [naam]."},
+              {"type": "fill",
+               "q": "Basis: ___ mevrouw Janssens, (formal opening)",
+               "a": "Geachte",
+               "tip": "Formal email starts with Geachte mevrouw/meneer."},
+              {"type": "choice",
+               "q": "Basis: Welke zin is beleefd?",
+               "options": ["Ik wil een afspraak.", "Geef mij een afspraak.", "Ik zou graag een afspraak willen maken.", "Afspraak nu."],
+               "a": "Ik zou graag een afspraak willen maken.",
+               "tip": "Use zou graag willen for a polite request."},
+              {"type": "translate",
+               "q": "Dear sir, I would like more information.",
+               "a": "Geachte meneer, ik zou graag meer informatie willen.",
+               "tip": "Keep it short and polite."},
         ],
         "jouw_beurt": "📝 SCHRIJFTAAK — Formele e-mail (Net zo Box examentypisch)\n\n"
                       "Kies één situatie en schrijf een formele e-mail van 5–7 zinnen:\n\n"
@@ -5786,6 +5880,15 @@ de nadelen. Daarom vind ik dat iedereen minstens twee keer per week moet sporten
 <tr><td>Woordbetekenis</td><td>Lees de hele zin rondom het woord. Welk synoniem past?</td></tr>
 <tr><td>Samenvatten</td><td>Schrijf de hoofdgedachte van elke alinea in één zin.</td></tr>
 </table>
+
+<h4>Extra basiswoorden uit de tekst</h4>
+<ul>
+<li><em>gezond</em> = healthy</li>
+<li><em>slapen</em> = to sleep</li>
+<li><em>fruit</em> = fruit</li>
+<li><em>pauze</em> = break</li>
+<li><em>wandeling</em> = walk</li>
+</ul>
 """,
         "grammar_quick": """
 <ul>
@@ -5863,6 +5966,19 @@ de nadelen. Daarom vind ik dat iedereen minstens twee keer per week moet sporten
              "q": "pauze / nemen / is / tijdens / het / werk / goed",
              "a": "Het is goed om een pauze te nemen tijdens het werk.",
              "tip": "Om…te … constructie: Het is goed + om + pauze te nemen + tijdens het werk."},
+              {"type": "fill",
+               "q": "Basis: Een gezonde levensstijl is belangrijk. 'gezonde' means ___.",
+               "a": "healthy",
+               "tip": "Link the Dutch word to the English meaning."},
+              {"type": "choice",
+               "q": "Basis: Wat eet je elke dag volgens de tekst?",
+               "options": ["twee stuks fruit", "vijf broodjes", "geen groenten", "alleen soep"],
+               "a": "twee stuks fruit",
+               "tip": "This is stated directly in the text."},
+              {"type": "translate",
+               "q": "What does 'pauze' mean?",
+               "a": "break",
+               "tip": "It appears in the last paragraph."},
         ],
         "jouw_beurt": "📝 LEESOPDRACHT — Net zo Box stijl\n\n"
                       "Beantwoord deze open vragen op basis van de leestekst (in het Grammar-tabblad):\n\n"
@@ -5992,6 +6108,56 @@ de nadelen. Daarom vind ik dat iedereen minstens twee keer per week moet sporten
 <tr><td>er ligt</td><td>things lying flat</td><td><em>Er ligt een boek op tafel.</em></td></tr>
 <tr><td>er hangt</td><td>things hanging</td><td><em>Er hangt een schilderij aan de muur.</em></td></tr>
 </table>
+
+<h4>Korte modelantwoorden om hardop te oefenen</h4>
+<p><b>1. Jezelf voorstellen</b></p>
+<ul>
+<li><em>Ik heet Kumar. Ik kom uit India. Ik woon in Gent en ik werk aan UGent.</em></li>
+<li><em>Ik leer Nederlands omdat ik hier woon en werk.</em></li>
+</ul>
+
+<p><b>2. Foto beschrijven</b></p>
+<ul>
+<li><em>Op de foto zie ik een vrouw. Ze heeft lang haar en ze lacht.</em></li>
+<li><em>In de achtergrond zie ik een park. Het lijkt alsof het mooi weer is.</em></li>
+</ul>
+
+<p><b>3. Advies geven</b></p>
+<ul>
+<li><em>Je zou meer moeten slapen.</em></li>
+<li><em>Je moet regelmatig pauze nemen.</em></li>
+</ul>
+
+<p><b>4. Mening geven</b></p>
+<ul>
+<li><em>Volgens mij is Nederlands leren nuttig.</em></li>
+<li><em>Ik vind dat het belangrijk is, omdat je in België beter kunt communiceren.</em></li>
+</ul>
+
+<h4>Audio-ready spreekdrills — call and response</h4>
+<p>Zeg eerst de <b>Prompt</b> hardop, pauzeer 2 seconden, en antwoord dan met de <b>Response</b>.</p>
+<table>
+<tr><th>Prompt</th><th>Response</th></tr>
+<tr><td><em>Hoe heet je?</em></td><td><em>Ik heet Kumar.</em></td></tr>
+<tr><td><em>Waar kom je vandaan?</em></td><td><em>Ik kom uit India.</em></td></tr>
+<tr><td><em>Waar woon je nu?</em></td><td><em>Ik woon in Gent.</em></td></tr>
+<tr><td><em>Wat doe je?</em></td><td><em>Ik werk aan UGent.</em></td></tr>
+<tr><td><em>Waarom leer je Nederlands?</em></td><td><em>Ik leer Nederlands omdat ik hier woon en werk.</em></td></tr>
+<tr><td><em>Wat zie je op de foto?</em></td><td><em>Op de foto zie ik een vrouw.</em></td></tr>
+<tr><td><em>Hoe ziet ze eruit?</em></td><td><em>Ze heeft lang haar en ze lacht.</em></td></tr>
+<tr><td><em>Wat adviseer je?</em></td><td><em>Je zou meer moeten slapen.</em></td></tr>
+<tr><td><em>Wat vind je van Gent?</em></td><td><em>Ik vind Gent een mooie stad.</em></td></tr>
+<tr><td><em>Is Nederlands leren nuttig?</em></td><td><em>Ja, volgens mij is het heel nuttig.</em></td></tr>
+</table>
+
+<p><b>Shadowing drill</b></p>
+<ul>
+<li><em>Ik woon in Gent.</em></li>
+<li><em>Ik werk aan UGent.</em></li>
+<li><em>Ik leer Nederlands omdat ik hier woon.</em></li>
+<li><em>Op de foto zie ik een man.</em></li>
+<li><em>Volgens mij is Nederlands belangrijk.</em></li>
+</ul>
 """,
         "grammar_quick": """
 <ul>
@@ -6061,6 +6227,19 @@ de nadelen. Daarom vind ik dat iedereen minstens twee keer per week moet sporten
              "q": "achtergrond / de / zie / in / park / een / ik",
              "a": "In de achtergrond zie ik een park.",
              "tip": "In de achtergrond = bijwoordgroep vooraan → inversie: zie ik."},
+              {"type": "fill",
+               "q": "Basis: Op de foto ___ ik een man. (see)",
+               "a": "zie",
+               "tip": "The fixed phrase is: Op de foto zie ik ..."},
+              {"type": "choice",
+               "q": "Basis: Welke zin is good exam Dutch?",
+               "options": ["Foto man groot.", "Ik zie man.", "Op de foto zie ik een man.", "Er man op foto."],
+               "a": "Op de foto zie ik een man.",
+               "tip": "Use a full sentence."},
+              {"type": "translate",
+               "q": "I live in Ghent and I work at the university.",
+               "a": "Ik woon in Gent en ik werk aan de universiteit.",
+               "tip": "A short introduction answer for speaking practice."},
         ],
         "jouw_beurt": "🎤 SPREEKTAAK — Net zo Box examentypisch\n\n"
                       "Oefen deze 4 taken hardop (neem 2–3 minuten per taak):\n\n"
@@ -7664,6 +7843,334 @@ Regelmatig: ge- + stam + t (kofschip) of ge- + stam + d (andere)<br>
             ("zich vervelen",    "to be bored",           "verveel",  "hebben", "verveeld",     "verveelde",    "verveelden"),
             ("zich voelen",      "to feel",               "voel",     "hebben", "gevoeld",      "voelde",       "voelden"),
         ],
+    },
+    # =====================================================================
+    # SESSION 37 — Extra basic mixed practice linked to the book
+    # =====================================================================
+    {
+        "id": 37,
+        "title": "Extra basis oefenen: alledaags Nederlands",
+        "chapter": "Examentopics Oefenen",
+        "book_page": "Gebaseerd op p. 3–8, 20–31 en examentopics",
+        "review": [
+            {"q": "Hoe zeg je: 'I have brown eyes'?", "a": "Ik heb bruine ogen."},
+            {"q": "Welke zin is correct: 'Gisteren ik werkte' of 'Gisteren werkte ik'?", "a": "Gisteren werkte ik."},
+            {"q": "Wat gebruik je voor een reden: omdat of daarom?", "a": "omdat voor een bijzin met werkwoord op het einde; daarom als bijwoord met inversie."},
+            {"q": "Hoe vraag je beleefd een afspraak?", "a": "Ik zou graag een afspraak willen maken."},
+        ],
+        "vocabulary": [
+            {"nl": "dagelijks", "en": "daily / every day", "ex": "Ik oefen dagelijks Nederlands."},
+            {"nl": "gemakkelijk", "en": "easy", "ex": "Deze oefening is gemakkelijk."},
+            {"nl": "moeilijk", "en": "difficult", "ex": "Uitspraak is soms moeilijk."},
+            {"nl": "langzaam", "en": "slowly", "ex": "De docent spreekt langzaam."},
+            {"nl": "duidelijk", "en": "clear / clearly", "ex": "Zij spreekt duidelijk."},
+            {"nl": "herhalen", "en": "to repeat", "ex": "Kunt u dat herhalen?"},
+            {"nl": "begrijpen", "en": "to understand", "ex": "Ik begrijp de vraag."},
+            {"nl": "proberen", "en": "to try", "ex": "Ik probeer elke dag te oefenen."},
+            {"nl": "de afspraak", "en": "the appointment", "ex": "Ik heb morgen een afspraak."},
+            {"nl": "de vrije tijd", "en": "free time", "ex": "In mijn vrije tijd lees ik boeken."},
+        ],
+        "grammar_title": "Basisherhaling — korte zinnen, reden geven en jezelf beschrijven",
+        "grammar_html": """
+<h4>Wat oefen je hier?</h4>
+<p>Deze extra sessie is voor <strong>basisherhaling</strong>. Ze volgt de thema's uit je boek, maar met eenvoudigere zinnen.
+Je oefent 4 dingen die je vaak nodig hebt:</p>
+<ol>
+<li><b>jezelf beschrijven</b>: <em>Ik ben … / Ik heb … / Ik draag …</em></li>
+<li><b>vrije tijd</b>: <em>In mijn vrije tijd … / In het weekend …</em></li>
+<li><b>een reden geven</b>: <em>… omdat …</em></li>
+<li><b>beleefd vragen</b>: <em>Ik zou graag … willen …</em></li>
+</ol>
+
+<h4>Vier basispatronen</h4>
+<table>
+<tr><th>Functie</th><th>Patroon</th><th>Voorbeeld</th></tr>
+<tr><td>Eigenschap</td><td><b>zijn</b> + adjectief</td><td><em>Ik ben rustig. Mijn collega is vriendelijk.</em></td></tr>
+<tr><td>Lichaamsdeel / bezit</td><td><b>hebben</b> + zelfstandig naamwoord</td><td><em>Ik heb zwarte ogen. Ik heb een rugzak.</em></td></tr>
+<tr><td>Reden</td><td>hoofdzin + <b>omdat</b> + bijzin</td><td><em>Ik leer Nederlands omdat ik in Gent woon.</em></td></tr>
+<tr><td>Beleefde vraag</td><td><b>zou graag willen</b> + infinitief</td><td><em>Ik zou graag een afspraak willen maken.</em></td></tr>
+</table>
+
+<h4>Kleine bouwstenen voor makkelijke antwoorden</h4>
+<ul>
+<li><em>Ik ben 32 jaar oud.</em></li>
+<li><em>Ik woon in Gent.</em></li>
+<li><em>Ik werk aan de universiteit.</em></li>
+<li><em>In mijn vrije tijd wandel ik en lees ik.</em></li>
+<li><em>Ik leer Nederlands omdat ik hier woon en werk.</em></li>
+<li><em>Kunt u dat herhalen, alstublieft?</em></li>
+</ul>
+""",
+        "grammar_letop": """
+<ul>
+<li><span class="wrong">Ik ben bruine ogen.</span> → <span class="right">Ik heb bruine ogen.</span><br>
+   Ogen, haar, neus en mond gebruik je met <b>hebben</b>.</li>
+<li><span class="wrong">Omdat ik woon in Gent.</span> → <span class="right">Omdat ik in Gent woon.</span><br>
+   Na <b>omdat</b> gaat het werkwoord naar het <b>einde</b>.</li>
+<li><span class="wrong">Ik zou graag maken een afspraak.</span> → <span class="right">Ik zou graag een afspraak willen maken.</span><br>
+   Beleefde vraag: <b>zou graag + object + willen + infinitief</b>.</li>
+<li><span class="wrong">Gisteren ik werkte thuis.</span> → <span class="right">Gisteren werkte ik thuis.</span><br>
+   Als tijd eerst komt, krijg je <b>inversie</b>.</li>
+</ul>
+""",
+        "grammar_extra": """
+<h4>Modelantwoorden voor zwakkere starters</h4>
+<p>Gebruik deze zinnen als basis en verander alleen 1 of 2 woorden:</p>
+<ul>
+<li><em>Ik ben niet zo lang, maar ik ben wel sportief.</em></li>
+<li><em>Ik heb zwart haar en bruine ogen.</em></li>
+<li><em>In mijn vrije tijd kijk ik series en bel ik met mijn familie.</em></li>
+<li><em>Ik leer Nederlands omdat ik beter wil communiceren op het werk.</em></li>
+<li><em>Ik zou graag een afspraak willen maken voor volgende week.</em></li>
+<li><em>Volgens mij is Nederlands moeilijk, maar ook interessant.</em></li>
+</ul>
+
+<h4>Mini-stappenplan om te oefenen</h4>
+<ol>
+<li>Lees de zin hardop.</li>
+<li>Schrijf dezelfde zin opnieuw met jouw informatie.</li>
+<li>Verander daarna alleen de tijd of de plaats.</li>
+<li>Maak ten slotte een volledig nieuwe zin zonder hulp.</li>
+</ol>
+""",
+        "grammar_quick": """
+<ul>
+<li><b>zijn</b>: ik ben rustig, hij is lang</li>
+<li><b>hebben</b>: ik heb bruine ogen, zij heeft kort haar</li>
+<li><b>omdat</b>: werkwoord op het einde</li>
+<li><b>zou graag willen</b>: beleefde vraag</li>
+<li>na een tijdswoord eerst: <b>inversie</b></li>
+</ul>
+""",
+        "exercises": [
+            {"type": "fill", "q": "Ik ___ in Gent. (live)", "a": "woon", "tip": "wonen → ik woon."},
+            {"type": "fill", "q": "Ik heb bruine ___. (eyes)", "a": "ogen", "tip": "bruine ogen = brown eyes."},
+            {"type": "fill", "q": "In mijn vrije tijd ___ ik boeken. (read)", "a": "lees", "tip": "lezen → ik lees."},
+            {"type": "fill", "q": "Ik leer Nederlands ___ ik in België woon. (because)", "a": "omdat", "tip": "omdat introduces a reason."},
+            {"type": "choice", "q": "Welke zin is correct?", "options": ["Ik ben zwart haar.", "Ik heb zwart haar.", "Ik draag zwart haar.", "Ik is zwart haar."], "a": "Ik heb zwart haar.", "tip": "Use hebben for hair."},
+            {"type": "choice", "q": "Welke zin is correct?", "options": ["Gisteren ik werkte thuis.", "Gisteren thuis werkte ik.", "Gisteren werkte ik thuis.", "Gisteren ik thuis werkte."], "a": "Gisteren werkte ik thuis.", "tip": "Time word first gives inversion."},
+            {"type": "choice", "q": "Welke beleefde vraag is correct?", "options": ["Ik wil afspraak maken graag.", "Ik zou graag een afspraak willen maken.", "Ik graag zou een afspraak maken.", "Zou ik graag maken afspraak."], "a": "Ik zou graag een afspraak willen maken.", "tip": "Memorize the fixed pattern."},
+            {"type": "tf", "q": "'Omdat ik in Gent woon.' is a complete main sentence.", "a": false, "correction": "Fout. 'Omdat ik in Gent woon' is a subordinate clause. You usually need a main clause too, for example: Ik leer Nederlands omdat ik in Gent woon.", "tip": "Omdat-clause usually depends on a main clause."},
+            {"type": "tf", "q": "'Ik ben slank en ik draag een bril.' is correct Dutch.", "a": true, "correction": "Juist. 'zijn' for quality and 'dragen' for an accessory are both correct here.", "tip": "slank = quality; bril = accessory."},
+            {"type": "tf", "q": "'Zij heeft een grote neus.' is correct.", "a": true, "correction": "Juist. neus is a de-word, so 'grote' is correct.", "tip": "de-word + een often takes -e on the adjective."},
+            {"type": "translate", "q": "I work at the university.", "a": "Ik werk aan de universiteit.", "tip": "Use 'aan de universiteit' here."},
+            {"type": "translate", "q": "In my free time I walk in the city.", "a": "In mijn vrije tijd wandel ik in de stad.", "tip": "Start with the time phrase, then invert: wandel ik."},
+            {"type": "translate", "q": "I learn Dutch because I want to speak with colleagues.", "a": "Ik leer Nederlands omdat ik met collega's wil spreken.", "tip": "omdat sends the verb cluster to the end."},
+            {"type": "reorder", "q": "woon / ik / in / Gent", "a": "Ik woon in Gent.", "tip": "Simple SVO sentence."},
+            {"type": "reorder", "q": "vrije / mijn / in / tijd / lees / ik", "a": "In mijn vrije tijd lees ik.", "tip": "Time phrase first, then inversion."},
+            {"type": "reorder", "q": "omdat / ik / Nederlands / leer / hier / werk", "a": "Ik leer Nederlands omdat ik hier werk.", "tip": "Build a main clause first, then the omdat-clause."}
+        ],
+        "jouw_beurt": "Schrijf 6 korte zinnen over jezelf.\n\n"
+                      "Gebruik deze onderwerpen:\n"
+                      "1. naam of leeftijd\n"
+                      "2. waar je woont\n"
+                      "3. waar je werkt of studeert\n"
+                      "4. je uiterlijk\n"
+                      "5. wat je in je vrije tijd doet\n"
+                      "6. waarom je Nederlands leert\n\n"
+                      "Basismodel:\n"
+                      "Ik ben ...\n"
+                      "Ik woon ...\n"
+                      "Ik werk ...\n"
+                      "Ik heb ...\n"
+                      "In mijn vrije tijd ...\n"
+                      "Ik leer Nederlands omdat ...",
+    },
+
+    # =====================================================================
+    # SESSION 38 — Extra basic speaking and daily conversation
+    # =====================================================================
+    {
+        "id": 38,
+        "title": "Extra basis spreken: korte gesprekken",
+        "chapter": "Examentopics Oefenen",
+        "book_page": "Gebaseerd op spreek- en dagelijkse situaties",
+        "review": [
+            {"q": "Hoe zeg je beleefd: 'Can you repeat that?'", "a": "Kunt u dat herhalen, alstublieft?"},
+            {"q": "Hoe stel je jezelf kort voor?", "a": "Ik heet … Ik kom uit … Ik woon in …"},
+            {"q": "Welke zin gebruik je om hulp te vragen?", "a": "Kunt u mij helpen?"},
+        ],
+        "vocabulary": [
+            {"nl": "alstublieft", "en": "please", "ex": "Kunt u dat herhalen, alstublieft?"},
+            {"nl": "natuurlijk", "en": "of course", "ex": "Natuurlijk, ik help u graag."},
+            {"nl": "even", "en": "for a moment / briefly", "ex": "Wacht even, alstublieft."},
+            {"nl": "begrijpelijk", "en": "understandable", "ex": "Dat is begrijpelijk."},
+            {"nl": "de vraag", "en": "the question", "ex": "Dat is een moeilijke vraag."},
+            {"nl": "antwoorden", "en": "to answer", "ex": "Ik antwoord rustig."},
+            {"nl": "helpen", "en": "to help", "ex": "Kunt u mij helpen?"},
+            {"nl": "uitleggen", "en": "to explain", "ex": "Kunt u dat uitleggen?"},
+        ],
+        "grammar_title": "Korte spreekpatronen voor elke dag",
+        "grammar_html": """
+<h4>Handige minizinnen</h4>
+<ul>
+<li><em>Goedemorgen. Hoe gaat het?</em></li>
+<li><em>Ik heet … en ik kom uit …</em></li>
+<li><em>Kunt u dat herhalen, alstublieft?</em></li>
+<li><em>Sorry, ik begrijp het niet goed.</em></li>
+<li><em>Kunt u langzamer spreken?</em></li>
+<li><em>Dank u wel voor uw hulp.</em></li>
+</ul>
+
+<h4>Drie vaste patronen</h4>
+<table>
+<tr><th>Functie</th><th>Patroon</th><th>Voorbeeld</th></tr>
+<tr><td>Vraag</td><td><b>Kunt u ... ?</b></td><td><em>Kunt u dat herhalen?</em></td></tr>
+<tr><td>Niet begrijpen</td><td><b>Ik begrijp ... niet.</b></td><td><em>Ik begrijp de vraag niet.</em></td></tr>
+<tr><td>Voorstellen</td><td><b>Ik heet ...</b></td><td><em>Ik heet Kumar.</em></td></tr>
+</table>
+""",
+        "grammar_letop": """
+<ul>
+<li><span class="wrong">Jij kunt herhalen dat?</span> → <span class="right">Kunt u dat herhalen?</span></li>
+<li><span class="wrong">Ik begrijp niet goed het.</span> → <span class="right">Ik begrijp het niet goed.</span></li>
+<li><span class="wrong">Spreek langzaam kunt u?</span> → <span class="right">Kunt u langzaam spreken?</span></li>
+</ul>
+""",
+        "grammar_extra": """
+<h4>Korte modeldialogen</h4>
+<p><b>In de klas</b></p>
+<ul>
+<li><em>A: Begrijp je de oefening?</em></li>
+<li><em>B: Niet helemaal. Kunt u dat uitleggen?</em></li>
+</ul>
+
+<p><b>Op het werk</b></p>
+<ul>
+<li><em>A: Kun je morgen komen?</em></li>
+<li><em>B: Ja, natuurlijk.</em></li>
+</ul>
+
+<h4>Audio-ready spreekdrills — call and response</h4>
+<p>Lees de eerste zin hardop alsof iemand een vraag stelt. Geef dan meteen het korte antwoord.</p>
+<table>
+<tr><th>Call</th><th>Response</th></tr>
+<tr><td><em>Hoe heet je?</em></td><td><em>Ik heet Ravi.</em></td></tr>
+<tr><td><em>Waar woon je?</em></td><td><em>Ik woon in Gent.</em></td></tr>
+<tr><td><em>Begrijp je de vraag?</em></td><td><em>Nog niet helemaal.</em></td></tr>
+<tr><td><em>Kunt u dat herhalen?</em></td><td><em>Ja, natuurlijk.</em></td></tr>
+<tr><td><em>Heb je hulp nodig?</em></td><td><em>Ja, graag.</em></td></tr>
+<tr><td><em>Kun je langzaam spreken?</em></td><td><em>Ja, natuurlijk.</em></td></tr>
+<tr><td><em>Wat doe je in je vrije tijd?</em></td><td><em>Ik lees en ik wandel.</em></td></tr>
+<tr><td><em>Waarom leer je Nederlands?</em></td><td><em>Omdat ik in België woon.</em></td></tr>
+</table>
+
+<p><b>Repeat-after-me drill</b></p>
+<ul>
+<li><em>Kunt u dat herhalen, alstublieft?</em></li>
+<li><em>Ik begrijp het niet goed.</em></li>
+<li><em>Kunt u langzaam spreken?</em></li>
+<li><em>Ik heet Ravi.</em></li>
+<li><em>Ik woon in Gent.</em></li>
+</ul>
+""",
+        "grammar_quick": """
+<ul>
+<li><b>Kunt u ... ?</b> = polite question</li>
+<li><b>Ik begrijp het niet.</b> = I do not understand</li>
+<li><b>Ik heet ...</b> = I am called ...</li>
+</ul>
+""",
+        "exercises": [
+            {"type": "fill", "q": "Kunt u dat ___? (repeat)", "a": "herhalen", "tip": "A common classroom phrase."},
+            {"type": "fill", "q": "Ik ___ het niet goed. (understand)", "a": "begrijp", "tip": "begrijpen → ik begrijp."},
+            {"type": "choice", "q": "Welke vraag is beleefd?", "options": ["Herhaal dat.", "Kunt u dat herhalen?", "Dat herhalen jij.", "Herhalen nu."], "a": "Kunt u dat herhalen?", "tip": "Use kunt u for a polite question."},
+            {"type": "choice", "q": "Welke zin gebruik je om jezelf voor te stellen?", "options": ["Ik begrijp het niet.", "Ik heet Ravi.", "Kunt u helpen?", "Dat is moeilijk."], "a": "Ik heet Ravi.", "tip": "A basic self-introduction."},
+            {"type": "tf", "q": "'Ik begrijp het niet goed.' is correct.", "a": true, "correction": "Juist.", "tip": "Natural Dutch word order."},
+            {"type": "translate", "q": "Can you help me, please?", "a": "Kunt u mij helpen, alstublieft?", "tip": "A useful polite question."},
+            {"type": "reorder", "q": "ik / heet / Kumar", "a": "Ik heet Kumar.", "tip": "Simple introduction sentence."}
+        ],
+        "jouw_beurt": "🎤 AUDIO-READY SPREEKDRILL\n\n"
+                      "Lees elke call hardop en geef meteen het response. Herhaal elke set 3 keer.\n\n"
+                      "1. Call: Hoe heet je?\n"
+                      "   Response: Ik heet ...\n\n"
+                      "2. Call: Waar woon je?\n"
+                      "   Response: Ik woon in ...\n\n"
+                      "3. Call: Wat doe je?\n"
+                      "   Response: Ik werk / ik studeer ...\n\n"
+                      "4. Call: Begrijp je het?\n"
+                      "   Response: Nog niet helemaal.\n\n"
+                      "5. Call: Wat zeg je als iemand te snel spreekt?\n"
+                      "   Response: Kunt u langzaam spreken, alstublieft?\n\n"
+                      "6. Call: Waarom leer je Nederlands?\n"
+                      "   Response: Omdat ik in België woon en werk.\n\n"
+                      "Zeg daarna dezelfde responses nog eens, maar vervang de informatie met jouw eigen woorden.",
+    },
+
+    # =====================================================================
+    # SESSION 39 — Extra basic reading and writing
+    # =====================================================================
+    {
+        "id": 39,
+        "title": "Extra basis lezen en schrijven",
+        "chapter": "Examentopics Oefenen",
+        "book_page": "Gebaseerd op dagelijkse thema's uit het boek",
+        "review": [
+            {"q": "Hoe zeg je: 'I live in Ghent'?", "a": "Ik woon in Gent."},
+            {"q": "Wat betekent 'vrije tijd'?", "a": "free time"},
+            {"q": "Welke zin geeft een reden?", "a": "Ik leer Nederlands omdat ik hier woon."},
+        ],
+        "vocabulary": [
+            {"nl": "de stad", "en": "the city", "ex": "Gent is een mooie stad."},
+            {"nl": "de les", "en": "the lesson", "ex": "Vandaag heb ik Nederlandse les."},
+            {"nl": "de docent", "en": "the teacher", "ex": "De docent spreekt duidelijk."},
+            {"nl": "het antwoord", "en": "the answer", "ex": "Ik schrijf het antwoord op."},
+            {"nl": "oefenen", "en": "to practise", "ex": "Ik oefen elke avond."},
+            {"nl": "schrijven", "en": "to write", "ex": "Ik schrijf korte zinnen."},
+            {"nl": "lezen", "en": "to read", "ex": "Ik lees een korte tekst."},
+            {"nl": "gemakkelijk", "en": "easy", "ex": "Deze tekst is gemakkelijk."},
+        ],
+        "grammar_title": "Korte tekstjes begrijpen en zelf schrijven",
+        "grammar_html": """
+<h4>Korte tekst</h4>
+<p><em>Ik heet Ravi. Ik woon in Gent. Overdag werk ik aan de universiteit. 's Avonds leer ik Nederlands. In mijn vrije tijd wandel ik in de stad en lees ik boeken. Ik leer Nederlands omdat ik beter wil praten met collega's.</em></p>
+
+<h4>Wat leer je hier?</h4>
+<ul>
+<li>korte zinnen lezen</li>
+<li>belangrijke woorden herkennen</li>
+<li>je eigen tekst maken met hetzelfde model</li>
+</ul>
+""",
+        "grammar_letop": """
+<ul>
+<li>Lees eerst wie, waar, wat en waarom.</li>
+<li>Zoek bekende woorden zoals <b>woon</b>, <b>werk</b>, <b>leer</b>.</li>
+<li>Schrijf daarna dezelfde tekst opnieuw met jouw informatie.</li>
+</ul>
+""",
+        "grammar_extra": """
+<h4>Model om zelf te schrijven</h4>
+<ul>
+<li><em>Ik heet ...</em></li>
+<li><em>Ik woon in ...</em></li>
+<li><em>Ik werk / studeer ...</em></li>
+<li><em>In mijn vrije tijd ...</em></li>
+<li><em>Ik leer Nederlands omdat ...</em></li>
+</ul>
+""",
+        "grammar_quick": """
+<ul>
+<li>Wie? Waar? Wat? Waarom?</li>
+<li>Korte zinnen zijn goed oefenmateriaal.</li>
+<li>Gebruik het model en verander alleen de details.</li>
+</ul>
+""",
+        "exercises": [
+            {"type": "choice", "q": "Waar woont Ravi?", "options": ["in Brussel", "in Gent", "in Antwerpen", "in India"], "a": "in Gent", "tip": "Read the first two sentences."},
+            {"type": "choice", "q": "Wat doet Ravi 's avonds?", "options": ["Hij sport.", "Hij kookt.", "Hij leert Nederlands.", "Hij slaapt."], "a": "Hij leert Nederlands.", "tip": "The answer is stated directly."},
+            {"type": "fill", "q": "Ravi werkt aan de ___.", "a": "universiteit", "tip": "This word appears in the text."},
+            {"type": "fill", "q": "In zijn vrije tijd ___ hij in de stad. (walks)", "a": "wandelt", "tip": "wandelen → hij wandelt."},
+            {"type": "tf", "q": "Ravi leert Nederlands omdat hij beter wil praten met collega's.", "a": true, "correction": "Juist.", "tip": "Look at the final sentence."},
+            {"type": "translate", "q": "I read short texts.", "a": "Ik lees korte teksten.", "tip": "A useful writing-practice sentence."},
+            {"type": "reorder", "q": "leer / ik / Nederlands / omdat / hier / woon / ik", "a": "Ik leer Nederlands omdat ik hier woon.", "tip": "Main clause first, then omdat-clause."}
+        ],
+        "jouw_beurt": "Schrijf 5 korte zinnen over jezelf met dit model:\n\n"
+                      "Ik heet ...\n"
+                      "Ik woon in ...\n"
+                      "Ik werk / studeer ...\n"
+                      "In mijn vrije tijd ...\n"
+                      "Ik leer Nederlands omdat ...",
     },
 ]
 
