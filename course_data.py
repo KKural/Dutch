@@ -9,6 +9,12 @@ Enhanced version with:
 """
 
 import random as _rnd
+
+# Allow JSON-style literals in data entries that may be pasted from JSON.
+true = True
+false = False
+null = None
+
 CHAPTERS = [
     {"id": 1, "name": "Vrije Tijd", "icon": "🎉",
         "desc": "Free Time & Hobbies", "pages": "p. 3–8", "sessions": [1, 2, 3]},
