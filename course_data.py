@@ -9,12 +9,6 @@ Enhanced version with:
 """
 
 import random as _rnd
-
-# Allow JSON-style literals in data entries that may be pasted from JSON.
-true = True
-false = False
-null = None
-
 CHAPTERS = [
     {"id": 1, "name": "Vrije Tijd", "icon": "🎉",
         "desc": "Free Time & Hobbies", "pages": "p. 3–8", "sessions": [1, 2, 3]},
@@ -33,9 +27,12 @@ CHAPTERS = [
     {"id": 8, "name": "Examenvoorbereiding", "icon": "🎯",
         "desc": "Exam Preparation", "pages": "—", "sessions": [21, 22, 23, 24, 25]},
     {"id": 9, "name": "Examentopics Oefenen", "icon": "📋",
-        "desc": "Net zo Box + NT2 Taalmenu stijl — alle 4 vaardigheden", "pages": "CVO GEMT 3.2", "sessions": [26, 27, 28, 29, 30, 31, 32, 33, 34, 37, 38, 39, 40, 41, 42, 43, 44, 45]},
+        "desc": "Net zo Box + NT2 Taalmenu stijl — alle 4 vaardigheden", "pages": "CVO GEMT 3.2", "sessions": [26, 27, 28, 29, 30, 31, 32, 33, 34]},
     {"id": 10, "name": "Grammatica Referentie", "icon": "📚",
         "desc": "Modale werkwoorden + volledige werkwoordtabel", "pages": "—", "sessions": [35, 36]},
+    {"id": 11, "name": "Examen Extra — Maandag 4 mei notities", "icon": "✏️",
+        "desc": "Adjectief -e buiging, alle voornaamwoorden, ER-positie + Gent schrijven + goedkoop reizen + kamperen luisteren + blessures beschrijven",
+        "pages": "CVO GEMT 3.2 — examentopics", "sessions": [37, 38, 39, 40, 41, 42, 43]},
 ]
 
 SESSIONS = [
@@ -1170,21 +1167,6 @@ They mean the same but change the word order! Think of <b>omdat</b> as the stric
              "tip": "Hoofdzin (Hij sport) + omdat + subject + … + werkwoordgroep op einde."},
             {"type": "choice", "q": "Op het examen: Omdat het regent, ___ ik thuis.", "options": ["blijf", "omdat", "want"],
              "a": "blijf", "tip": "Omdat-bijzin eerst → hoofdzin begint met werkwoord (inversie): blijf ik."},
-            {"type": "fill", "q": "Mijn ontbijt is havermout, ___ dat mij langer energie geeft.", "a": "want",
-             "tip": "Na 'want' blijft de volgorde normaal: dat geeft ..."},
-            {"type": "translate", "q": "I snack less because I want healthier habits. (use omdat)",
-             "a": "Ik snack minder omdat ik gezondere gewoontes wil.",
-             "tip": "Gebruik 'omdat' + werkwoordgroep op het einde: ... gewoontes wil."},
-            {"type": "choice", "q": "Welke zin klinkt natuurlijk over eetgewoontes?",
-             "options": [
-                 "Ik eet op vaste uren, daarom blijf ik minder snoepen.",
-                 "Ik eet op vaste uren daarom ik blijf minder snoepen.",
-                 "Ik eet op vaste uren, want daarom blijf ik minder snoepen."
-             ], "a": "Ik eet op vaste uren, daarom blijf ik minder snoepen.",
-             "tip": "Na 'daarom' krijg je inversie: daarom blijf ik ..."},
-            {"type": "reorder", "q": "is / te / veel / suiker / ongezond / Daarom / drink / minder / ik",
-             "a": "Te veel suiker is ongezond. Daarom drink ik minder.",
-             "tip": "Maak eerst de vaststelling, daarna 'Daarom' + inversie (drink ik)."},
         ],
 
         "jouw_beurt": "Write 6 sentences about your eating habits — 2 with omdat, 2 with want, 2 with daarom.\n\n"
@@ -1213,9 +1195,6 @@ They mean the same but change the word order! Think of <b>omdat</b> as the stric
         "vocabulary": [
             ("bewegen", "to exercise / move", "Je moet meer bewegen."),
             ("sporten", "to do sports", "Ik sport drie keer per week."),
-            ("indien", "if (formal)", "Indien u vragen heeft, kunt u ons contacteren."),
-            ("Ik raad je aan om...", "I advise you to...", "Ik raad je aan om meer water te drinken."),
-            ("aanraden", "to recommend / advise", "De dokter raadt een gezond dieet aan."),
             ("wandelen", "to walk", "Wandelen is goed voor je gezondheid."),
             ("fietsen", "to cycle", "In Gent fietsen veel mensen."),
             ("zwemmen", "to swim", "Zwemmen is een goede sport."),
@@ -1263,7 +1242,6 @@ verb goes to the END of the als-clause. In Tamil, verb position doesn't change f
   <tr><th>Word</th><th>Use</th><th>Example</th></tr>
   <tr><td><b>als</b></td><td>if / when (condition, future)</td><td>Als het regent, blijf ik thuis.</td></tr>
   <tr><td><b>wanneer</b></td><td>when (more formal, same as als)</td><td>Wanneer kom je? (= When are you coming?)</td></tr>
-  <tr><td><b>indien</b></td><td>if (formal only, conditions)</td><td>Indien u vragen heeft, kunt u bellen.</td></tr>
   <tr><td><b>of</b></td><td>if (= whether, in indirect questions)</td><td>Ik weet niet <b>of</b> hij komt.</td></tr>
 </table>
 """,
@@ -1289,28 +1267,14 @@ verb goes to the END of the als-clause. In Tamil, verb position doesn't change f
   <tr><td>5</td><td>als / kan / hij / niet / slapen</td><td>als hij niet kan slapen</td></tr>
 </table>
 
-<h4>Giving advice — all four levels (book p. 17–18)</h4>
-<table>
-  <tr><th>Level</th><th>Dutch</th><th>English</th></tr>
-  <tr><td>Mild</td><td><b>Misschien kan je</b> meer bewegen.</td><td>Maybe you can exercise more.</td></tr>
-  <tr><td>Medium</td><td><b>Je zou … kunnen</b> meer sporten.</td><td>You could exercise more.</td></tr>
-  <tr><td>Strong</td><td><b>Je moet</b> meer bewegen.</td><td>You must exercise more.</td></tr>
-  <tr><td>Formal</td><td><b>Ik raad je aan om</b> meer te bewegen.</td><td>I advise you to exercise more.</td></tr>
-</table>
-<p><em>"Ik raad je aan om … te …" is the most formal advice phrasing — used by doctors, teachers, officials. Note the <b>om … te + infinitief</b> structure!</em></p>
-<h4>Als — example advice sentences</h4>
+<h4>Giving advice — example sentences</h4>
 <ul>
   <li><b>Als</b> je moe <b>bent</b>, moet je vroeger naar bed gaan.</li>
-  <li><b>Als</b> je wilt afvallen, raad ik je aan om minder suiker te eten.</li>
+  <li><b>Als</b> je wilt afvallen, moet je minder suiker eten.</li>
   <li><b>Als</b> je stress <b>hebt</b>, kun je gaan wandelen in het Citadelpark.</li>
   <li>Je moet meer water drinken <b>als</b> je hoofdpijn <b>hebt</b>.</li>
   <li><b>Als</b> je in Gent <b>woont</b>, kun je overal fietsen.</li>
-</ul>
-<h4>Indien — formal conditions (book p. 18)</h4>
-<ul>
-  <li><b>Indien</b> u vragen heeft, kunt u ons altijd contacteren. (formal: instead of 'als')</li>
-  <li><b>Indien</b> je meer informatie nodig hebt, stuur een e-mail. (in writing)</li>
-  <li><em>Note: 'indien' is ONLY for conditions (= if), NEVER for time (= when). Use 'als' or 'wanneer' for time.</em></li>
+  <li>Je kunt beter slapen <b>als</b> je 's avonds geen koffie <b>drinkt</b>.</li>
 </ul>
 """,
 
@@ -1321,8 +1285,6 @@ verb goes to the END of the als-clause. In Tamil, verb position doesn't change f
   <li>Advice pattern: Als je … wilt, moet je …</li>
   <li>Use <b>of</b> (not als) for indirect yes/no questions (= whether)</li>
   <li>Als & wanneer are interchangeable for "when" (als is more common)</li>
-  <li><b>Indien</b> = formal "if" (conditions only, never for habitual/time): used in letters and formal speech</li>
-  <li><b>Ik raad je aan om … te …</b> = I advise you to … (formal advice)</li>
   <li>Modal verbs in als-clause: als je … wilt/kunt/moet + infinitive (end)</li>
 </ul>
 """,
@@ -1372,21 +1334,6 @@ verb goes to the END of the als-clause. In Tamil, verb position doesn't change f
                  "Als je ziek bent, je moet naar de dokter."
              ], "a": "Als je ziek bent, moet je naar de dokter.",
              "tip": "Als-bijzin: werkwoord (bent) op het EINDE. Hoofdzin: inversie (moet je)."},
-            {"type": "fill", "q": "Voor gezonde gewoontes: Als je zin in snoep ___ (hebben), drink eerst water.", "a": "hebt",
-             "tip": "In de als-bijzin komt het werkwoord op het einde: je ... hebt."},
-            {"type": "choice", "q": "Welke advieszin over slaapgewoontes is correct?",
-             "options": [
-                 "Als je beter wilt slapen, moet je je gsm vroeger wegleggen.",
-                 "Als je wilt beter slapen, je moet je gsm vroeger wegleggen.",
-                 "Als je beter wilt slapen, je moet je gsm vroeger wegleggen."
-             ], "a": "Als je beter wilt slapen, moet je je gsm vroeger wegleggen.",
-             "tip": "Als-bijzin: werkwoordgroep op het einde. Hoofdzin: inversie (moet je)."},
-            {"type": "translate", "q": "If you prepare meals at home, you can eat healthier.",
-             "a": "Als je thuis maaltijden voorbereidt, kun je gezonder eten.",
-             "tip": "als + bijzin (voorbereidt op einde), dan inversie: kun je ..."},
-            {"type": "reorder", "q": "als / je / elke / dag / wandelt / , / voel / je / je / fitter",
-             "a": "Als je elke dag wandelt, voel je je fitter.",
-             "tip": "Na de als-bijzin volgt inversie: voel je ..."},
         ],
 
         "jouw_beurt": "Write 6 advice sentences using als for a friend who wants to live healthier in Ghent.\n\n"
@@ -1427,14 +1374,6 @@ verb goes to the END of the als-clause. In Tamil, verb position doesn't change f
             ("medicijn (het)", "medicine", "De dokter geeft een medicijn."),
             ("recept (het)", "prescription", "Ik heb een recept van de dokter."),
             ("zich voelen", "to feel (reflexive)", "Ik voel me niet lekker."),
-            # --- Grandmother's remedies (book p. 22) ---
-            ("slapeloosheid (de)", "insomnia / sleeplessness", "Ik heb last van slapeloosheid."),
-            ("azijn (de)", "vinegar", "Grootmoeders remedie: azijn op je pols."),
-            ("lavendel (de)", "lavender", "Lavendel helpt bij slapeloosheid."),
-            ("het sap van een citroen", "lemon juice", "Drink het sap van een citroen voor keelpijn."),
-            ("warm bad (het)", "warm bath", "Een warm bad helpt als je spierpijn hebt."),
-            ("de remedie", "the remedy", "Dit is een goed middel voor keelpijn."),
-            ("het middel", "the remedy / medicine", "Er is geen goed middel tegen de griep."),
         ],
 
         "grammar_title": "Bij de Dokter — Reflexive Verbs, Klachten & Lichaam",
@@ -1793,15 +1732,6 @@ A is [adj]-er dan B.</p>
             ("de bestemming", "destination", "Wat is je bestemming?"),
             ("het spoor", "platform / track", "De trein vertrekt van spoor 5."),
             ("de vertraging", "delay", "De trein heeft 10 minuten vertraging."),
-            # --- Travel evaluation vocabulary (book p. 33) ---
-            ("zalig / super", "wonderful / great", "De reis was zalig!"),
-            ("fantastisch", "fantastic", "Het hotel was fantastisch."),
-            ("dat viel mee", "that was better than expected", "De reis viel mee — het was goedkoper dan gedacht."),
-            ("dat viel tegen", "that was disappointing", "Het hotel viel erg tegen — het was vies."),
-            ("dat viel enorm tegen", "that was a real letdown", "De vakantie viel enorm tegen door het slechte weer."),
-            ("verschrikkelijk / afschuwelijk", "terrible / awful", "Het eten was verschrikkelijk."),
-            ("redelijk", "fairly / reasonably", "Het hotel was redelijk goed."),
-            ("niet slecht", "not bad", "De vlucht was niet slecht."),
         ],
 
         "grammar_title": "Future Tense — Gaan + infinitive & Zullen + infinitive",
@@ -5276,15 +5206,6 @@ de nadelen. Daarom vind ik dat iedereen minstens twee keer per week moet sporten
 <tr><th>de-woord (+ -e)</th><th>het-woord (geen -e na een)</th></tr>
 <tr><td>de neus, de mond, de kin, de ogen (mv), de wangen, de oren, de handen</td><td>het haar, het hoofd, het gezicht, het oog (enkelvoud), het kind</td></tr>
 </table>
-
-<h4>Extra basis oefenen</h4>
-<ul>
-<li><em>Ik ben lang.</em></li>
-<li><em>Ik heb bruine ogen.</em></li>
-<li><em>Ik heb kort zwart haar.</em></li>
-<li><em>Ik draag een bril.</em></li>
-<li><em>Hij heeft een grote neus.</em></li>
-</ul>
 """,
         "grammar_quick": """
 <ul>
@@ -5355,19 +5276,6 @@ de nadelen. Daarom vind ik dat iedereen minstens twee keer per week moet sporten
              "q": "een / heeft / hij / rechte / neus",
              "a": "Hij heeft een rechte neus.",
              "tip": "neus = de-woord + een → -e al gegeven: rechte. Hij heeft een rechte neus."},
-              {"type": "fill",
-               "q": "Basis: Ik ___ een bril. (wear)",
-               "a": "draag",
-               "tip": "Accessoire = dragen. Ik draag een bril."},
-              {"type": "choice",
-               "q": "Basis: Welke zin is correct?",
-               "options": ["Ik ben blauwe ogen.", "Ik heb blauwe ogen.", "Ik draag blauwe ogen.", "Ik is blauwe ogen."],
-               "a": "Ik heb blauwe ogen.",
-               "tip": "Ogen are body parts, so use hebben."},
-              {"type": "translate",
-               "q": "He has short black hair.",
-               "a": "Hij heeft kort zwart haar.",
-               "tip": "haar = no article here, so no -e on the adjectives."},
         ],
         "jouw_beurt": "📝 SCHRIJFTAAK — Net zo Box stijl\n\n"
                       "Beschrijf het uiterlijk van een vriend, familielid of collega in 6–8 zinnen.\n\n"
@@ -5496,14 +5404,6 @@ de nadelen. Daarom vind ik dat iedereen minstens twee keer per week moet sporten
 <tr><td>Omdat</td><td>Because</td><td>Onderschikkend → V-einde</td></tr>
 <tr><td>Want</td><td>Because (coordinate)</td><td>Nevenschikkend → S+V</td></tr>
 </table>
-
-<h4>Extra basiszinnen voor zwakkere leerders</h4>
-<ul>
-<li><em>Ik vind dat Nederlands belangrijk is.</em></li>
-<li><em>Volgens mij is Gent een mooie stad.</em></li>
-<li><em>Ik leer Nederlands omdat ik hier woon.</em></li>
-<li><em>Ik ben voorstander van sport, want sport is gezond.</em></li>
-</ul>
 """,
         "grammar_quick": """
 <ul>
@@ -5588,19 +5488,6 @@ de nadelen. Daarom vind ik dat iedereen minstens twee keer per week moet sporten
              "q": "ten / wil / ik / slotte / zeggen / dat / goed / is / het",
              "a": "Ten slotte wil ik zeggen dat het goed is.",
              "tip": "Ten slotte → inversie: wil ik. dat-bijzin → V-einde: het goed IS."},
-              {"type": "fill",
-               "q": "Basis: Ik leer Nederlands ___ ik in België woon.",
-               "a": "omdat",
-               "tip": "Use omdat to give a reason."},
-              {"type": "choice",
-               "q": "Basis: Welke zin is correct?",
-               "options": ["Volgens mij Gent is mooi.", "Volgens mij is Gent mooi.", "Volgens mij Gent mooi is.", "Volgens mij mooi is Gent."],
-               "a": "Volgens mij is Gent mooi.",
-               "tip": "Volgens mij at the start gives inversion."},
-              {"type": "translate",
-               "q": "I think that sport is healthy.",
-               "a": "Ik denk dat sport gezond is.",
-               "tip": "In the dat-clause, the verb goes at the end."},
         ],
         "jouw_beurt": "📝 SCHRIJFTAAK — Net zo Box mening (examentypisch)\n\n"
                       "Kies één stelling en schrijf een meningtekst van 5–7 zinnen:\n\n"
@@ -5716,14 +5603,6 @@ de nadelen. Daarom vind ik dat iedereen minstens twee keer per week moet sporten
 <tr><td>Informatie vragen</td><td><em>Ik zou graag meer informatie willen over [onderwerp]. Kunt u mij laten weten…?</em></td></tr>
 <tr><td>Klacht</td><td><em>Ik schrijf u om een klacht in te dienen over [probleem]. Ik verwacht een oplossing voor [datum].</em></td></tr>
 </table>
-
-<h4>Extra basiszinnen</h4>
-<ul>
-<li><em>Geachte mevrouw,</em></li>
-<li><em>Ik schrijf u omdat ik een afspraak wil maken.</em></li>
-<li><em>Ik zou graag dinsdag langskomen.</em></li>
-<li><em>Met vriendelijke groeten,</em></li>
-</ul>
 """,
         "grammar_quick": """
 <ul>
@@ -5789,19 +5668,6 @@ de nadelen. Daarom vind ik dat iedereen minstens twee keer per week moet sporten
              "q": "vriendelijke / met / groeten / Kumar",
              "a": "Met vriendelijke groeten, Kumar.",
              "tip": "Standaard afsluiting: Met vriendelijke groeten, [naam]."},
-              {"type": "fill",
-               "q": "Basis: ___ mevrouw Janssens, (formal opening)",
-               "a": "Geachte",
-               "tip": "Formal email starts with Geachte mevrouw/meneer."},
-              {"type": "choice",
-               "q": "Basis: Welke zin is beleefd?",
-               "options": ["Ik wil een afspraak.", "Geef mij een afspraak.", "Ik zou graag een afspraak willen maken.", "Afspraak nu."],
-               "a": "Ik zou graag een afspraak willen maken.",
-               "tip": "Use zou graag willen for a polite request."},
-              {"type": "translate",
-               "q": "Dear sir, I would like more information.",
-               "a": "Geachte meneer, ik zou graag meer informatie willen.",
-               "tip": "Keep it short and polite."},
         ],
         "jouw_beurt": "📝 SCHRIJFTAAK — Formele e-mail (Net zo Box examentypisch)\n\n"
                       "Kies één situatie en schrijf een formele e-mail van 5–7 zinnen:\n\n"
@@ -5923,15 +5789,6 @@ de nadelen. Daarom vind ik dat iedereen minstens twee keer per week moet sporten
 <tr><td>Woordbetekenis</td><td>Lees de hele zin rondom het woord. Welk synoniem past?</td></tr>
 <tr><td>Samenvatten</td><td>Schrijf de hoofdgedachte van elke alinea in één zin.</td></tr>
 </table>
-
-<h4>Extra basiswoorden uit de tekst</h4>
-<ul>
-<li><em>gezond</em> = healthy</li>
-<li><em>slapen</em> = to sleep</li>
-<li><em>fruit</em> = fruit</li>
-<li><em>pauze</em> = break</li>
-<li><em>wandeling</em> = walk</li>
-</ul>
 """,
         "grammar_quick": """
 <ul>
@@ -6009,19 +5866,6 @@ de nadelen. Daarom vind ik dat iedereen minstens twee keer per week moet sporten
              "q": "pauze / nemen / is / tijdens / het / werk / goed",
              "a": "Het is goed om een pauze te nemen tijdens het werk.",
              "tip": "Om…te … constructie: Het is goed + om + pauze te nemen + tijdens het werk."},
-              {"type": "fill",
-               "q": "Basis: Een gezonde levensstijl is belangrijk. 'gezonde' means ___.",
-               "a": "healthy",
-               "tip": "Link the Dutch word to the English meaning."},
-              {"type": "choice",
-               "q": "Basis: Wat eet je elke dag volgens de tekst?",
-               "options": ["twee stuks fruit", "vijf broodjes", "geen groenten", "alleen soep"],
-               "a": "twee stuks fruit",
-               "tip": "This is stated directly in the text."},
-              {"type": "translate",
-               "q": "What does 'pauze' mean?",
-               "a": "break",
-               "tip": "It appears in the last paragraph."},
         ],
         "jouw_beurt": "📝 LEESOPDRACHT — Net zo Box stijl\n\n"
                       "Beantwoord deze open vragen op basis van de leestekst (in het Grammar-tabblad):\n\n"
@@ -6151,56 +5995,6 @@ de nadelen. Daarom vind ik dat iedereen minstens twee keer per week moet sporten
 <tr><td>er ligt</td><td>things lying flat</td><td><em>Er ligt een boek op tafel.</em></td></tr>
 <tr><td>er hangt</td><td>things hanging</td><td><em>Er hangt een schilderij aan de muur.</em></td></tr>
 </table>
-
-<h4>Korte modelantwoorden om hardop te oefenen</h4>
-<p><b>1. Jezelf voorstellen</b></p>
-<ul>
-<li><em>Ik heet Kumar. Ik kom uit India. Ik woon in Gent en ik werk aan UGent.</em></li>
-<li><em>Ik leer Nederlands omdat ik hier woon en werk.</em></li>
-</ul>
-
-<p><b>2. Foto beschrijven</b></p>
-<ul>
-<li><em>Op de foto zie ik een vrouw. Ze heeft lang haar en ze lacht.</em></li>
-<li><em>In de achtergrond zie ik een park. Het lijkt alsof het mooi weer is.</em></li>
-</ul>
-
-<p><b>3. Advies geven</b></p>
-<ul>
-<li><em>Je zou meer moeten slapen.</em></li>
-<li><em>Je moet regelmatig pauze nemen.</em></li>
-</ul>
-
-<p><b>4. Mening geven</b></p>
-<ul>
-<li><em>Volgens mij is Nederlands leren nuttig.</em></li>
-<li><em>Ik vind dat het belangrijk is, omdat je in België beter kunt communiceren.</em></li>
-</ul>
-
-<h4>Audio-ready spreekdrills — call and response</h4>
-<p>Zeg eerst de <b>Prompt</b> hardop, pauzeer 2 seconden, en antwoord dan met de <b>Response</b>.</p>
-<table>
-<tr><th>Prompt</th><th>Response</th></tr>
-<tr><td><em>Hoe heet je?</em></td><td><em>Ik heet Kumar.</em></td></tr>
-<tr><td><em>Waar kom je vandaan?</em></td><td><em>Ik kom uit India.</em></td></tr>
-<tr><td><em>Waar woon je nu?</em></td><td><em>Ik woon in Gent.</em></td></tr>
-<tr><td><em>Wat doe je?</em></td><td><em>Ik werk aan UGent.</em></td></tr>
-<tr><td><em>Waarom leer je Nederlands?</em></td><td><em>Ik leer Nederlands omdat ik hier woon en werk.</em></td></tr>
-<tr><td><em>Wat zie je op de foto?</em></td><td><em>Op de foto zie ik een vrouw.</em></td></tr>
-<tr><td><em>Hoe ziet ze eruit?</em></td><td><em>Ze heeft lang haar en ze lacht.</em></td></tr>
-<tr><td><em>Wat adviseer je?</em></td><td><em>Je zou meer moeten slapen.</em></td></tr>
-<tr><td><em>Wat vind je van Gent?</em></td><td><em>Ik vind Gent een mooie stad.</em></td></tr>
-<tr><td><em>Is Nederlands leren nuttig?</em></td><td><em>Ja, volgens mij is het heel nuttig.</em></td></tr>
-</table>
-
-<p><b>Shadowing drill</b></p>
-<ul>
-<li><em>Ik woon in Gent.</em></li>
-<li><em>Ik werk aan UGent.</em></li>
-<li><em>Ik leer Nederlands omdat ik hier woon.</em></li>
-<li><em>Op de foto zie ik een man.</em></li>
-<li><em>Volgens mij is Nederlands belangrijk.</em></li>
-</ul>
 """,
         "grammar_quick": """
 <ul>
@@ -6270,19 +6064,6 @@ de nadelen. Daarom vind ik dat iedereen minstens twee keer per week moet sporten
              "q": "achtergrond / de / zie / in / park / een / ik",
              "a": "In de achtergrond zie ik een park.",
              "tip": "In de achtergrond = bijwoordgroep vooraan → inversie: zie ik."},
-              {"type": "fill",
-               "q": "Basis: Op de foto ___ ik een man. (see)",
-               "a": "zie",
-               "tip": "The fixed phrase is: Op de foto zie ik ..."},
-              {"type": "choice",
-               "q": "Basis: Welke zin is good exam Dutch?",
-               "options": ["Foto man groot.", "Ik zie man.", "Op de foto zie ik een man.", "Er man op foto."],
-               "a": "Op de foto zie ik een man.",
-               "tip": "Use a full sentence."},
-              {"type": "translate",
-               "q": "I live in Ghent and I work at the university.",
-               "a": "Ik woon in Gent en ik werk aan de universiteit.",
-               "tip": "A short introduction answer for speaking practice."},
         ],
         "jouw_beurt": "🎤 SPREEKTAAK — Net zo Box examentypisch\n\n"
                       "Oefen deze 4 taken hardop (neem 2–3 minuten per taak):\n\n"
@@ -7671,1855 +7452,2038 @@ Regelmatig: ge- + stam + t (kofschip) of ge- + stam + d (andere)<br>
             ("zullen",     "will / shall",           "zal",
              "—",           "—",           "zou",        "zouden"),
             # ── 3. Onregelmatige werkwoorden / Irregular verbs (A–Z) ─────────
-            ("bakken",     "to bake / fry",               "bak",      "hebben",      "gebakken",    "bakte",        "bakten"),
-            ("bederven",   "to spoil",                    "bederf",   "hebben/zijn", "bedorven",    "bedierf",      "bedierven"),
-            ("bedriegen",  "to deceive / cheat",          "bedrieg",  "hebben",      "bedrogen",    "bedroog",      "bedrogen"),
-            ("beginnen",   "to begin",                    "begin",    "zijn",        "begonnen",    "begon",        "begonnen"),
-            ("begrijpen",  "to understand",               "begrijp",  "hebben",      "begrepen",    "begreep",      "begrepen"),
-            ("beschrijven","to describe",                 "beschrijf","hebben",      "beschreven",  "beschreef",    "beschreven"),
-            ("bevallen",   "to please / give birth",      "val",      "zijn",        "bevallen",    "beviel",       "bevielen"),
-            ("bewegen",    "to exercise / move",          "beweeg",   "hebben",      "bewogen",     "bewoog",       "bewogen"),
-            ("bezoeken",   "to visit",                    "bezoek",   "hebben",      "bezocht",     "bezocht",      "bezochten"),
-            ("bidden",     "to pray",                     "bid",      "hebben",      "gebeden",     "bad",          "baden"),
-            ("bieden",     "to offer / bid",              "bied",     "hebben",      "geboden",     "bood",         "boden"),
-            ("bijten",     "to bite",                     "bijt",     "hebben",      "gebeten",     "beet",         "beten"),
-            ("binden",     "to bind / tie",               "bind",     "hebben",      "gebonden",    "bond",         "bonden"),
-            ("blazen",     "to blow",                     "blaas",    "hebben",      "geblazen",    "blies",        "bliezen"),
-            ("blijken",    "to appear / turn out",        "blijk",    "zijn",        "gebleken",    "bleek",        "bleken"),
-            ("blijven",    "to stay",                     "blijf",    "zijn",        "gebleven",    "bleef",        "bleven"),
-            ("braden",     "to roast / grill",            "braad",    "hebben",      "gebraden",    "braadde",      "braadden"),
-            ("breken",     "to break",                    "breek",    "hebben",      "gebroken",    "brak",         "braken"),
-            ("brengen",    "to bring",                    "breng",    "hebben",      "gebracht",    "bracht",       "brachten"),
-            ("buigen",     "to bend / bow",               "buig",     "hebben/zijn", "gebogen",     "boog",         "bogen"),
-            ("denken",     "to think",                    "denk",     "hebben",      "gedacht",     "dacht",        "dachten"),
-            ("dragen",     "to wear / carry",             "draag",    "hebben",      "gedragen",    "droeg",        "droegen"),
-            ("drijven",    "to float / drive",            "drijf",    "hebben/zijn", "gedreven",    "dreef",        "dreven"),
-            ("drinken",    "to drink",                    "drink",    "hebben",      "gedronken",   "dronk",        "dronken"),
-            ("duiken",     "to dive",                     "duik",     "hebben/zijn", "gedoken",     "dook",         "doken"),
-            ("dwingen",    "to force / compel",           "dwing",    "hebben",      "gedwongen",   "dwong",        "dwongen"),
-            ("ervaren",    "to experience",               "ervaar",   "hebben",      "ervaren",     "ervoer",       "ervoeren"),
-            ("eten",       "to eat",                      "eet",      "hebben",      "gegeten",     "at",           "aten"),
-            ("fluiten",    "to whistle",                  "fluit",    "hebben",      "gefloten",    "floot",        "floten"),
-            ("genezen",    "to heal / cure",              "genees",   "zijn/hebben", "genezen",     "genas",        "genazen"),
-            ("genieten",   "to enjoy",                    "geniet",   "hebben",      "genoten",     "genoot",       "genoten"),
-            ("geven",      "to give",                     "geef",     "hebben",      "gegeven",     "gaf",          "gaven"),
-            ("gieten",     "to pour",                     "giet",     "hebben",      "gegoten",     "goot",         "goten"),
-            ("glijden",    "to slide / glide",            "glijd",    "hebben/zijn", "gegleden",    "gleed",        "gleden"),
-            ("glimmen",    "to shine / glimmer",          "glim",     "hebben",      "geglommen",   "glom",         "glommen"),
-            ("graven",     "to dig",                      "graaf",    "hebben",      "gegraven",    "groef",        "groeven"),
-            ("hangen",     "to hang",                     "hang",     "hebben",      "gehangen",    "hing",         "hingen"),
-            ("helpen",     "to help",                     "help",     "hebben",      "geholpen",    "hielp",        "hielpen"),
-            ("heten",      "to be called",                "heet",     "hebben",      "geheten",     "heette",       "heetten"),
-            ("houden",     "to hold / keep",              "houd",     "hebben",      "gehouden",    "hield",        "hielden"),
-            ("kiezen",     "to choose",                   "kies",     "hebben",      "gekozen",     "koos",         "kozen"),
-            ("kijken",     "to look / watch",             "kijk",     "hebben",      "gekeken",     "keek",         "keken"),
-            ("klimmen",    "to climb",                    "klim",     "hebben/zijn", "geklommen",   "klom",         "klommen"),
-            ("klinken",    "to sound",                    "klink",    "hebben",      "geklonken",   "klonk",        "klonken"),
-            ("knijpen",    "to pinch / squeeze",          "knijp",    "hebben",      "geknepen",    "kneep",        "knepen"),
-            ("kopen",      "to buy",                      "koop",     "hebben",      "gekocht",     "kocht",        "kochten"),
-            ("krijgen",    "to get / receive",            "krijg",    "hebben",      "gekregen",    "kreeg",        "kregen"),
-            ("krimpen",    "to shrink",                   "krimp",    "zijn",        "gekrompen",   "kromp",        "krompen"),
-            ("kruipen",    "to crawl",                    "kruip",    "hebben/zijn", "gekropen",    "kroop",        "kropen"),
-            ("lachen",     "to laugh",                    "lach",     "hebben",      "gelachen",    "lachte",       "lachten"),
-            ("laden",      "to load / charge",            "laad",     "hebben",      "geladen",     "laadde",       "laadden"),
-            ("laten",      "to let / leave",              "laat",     "hebben",      "gelaten",     "liet",         "lieten"),
-            ("lezen",      "to read",                     "lees",     "hebben",      "gelezen",     "las",          "lazen"),
-            ("liegen",     "to lie (untruth)",            "lieg",     "hebben",      "gelogen",     "loog",         "logen"),
-            ("liggen",     "to lie (down)",               "lig",      "hebben",      "gelegen",     "lag",          "lagen"),
-            ("lijden",     "to suffer",                   "lijd",     "hebben",      "geleden",     "leed",         "leden"),
-            ("lijken",     "to seem / look like",         "lijk",     "hebben",      "geleken",     "leek",         "leken"),
-            ("lopen",      "to walk / run",               "loop",     "hebben/zijn", "gelopen",     "liep",         "liepen"),
-            ("meten",      "to measure",                  "meet",     "hebben",      "gemeten",     "mat",          "maten"),
-            ("nemen",      "to take",                     "neem",     "hebben",      "genomen",     "nam",          "namen"),
-            ("onderzoeken","to investigate",              "onderzoek","hebben",      "onderzocht",  "onderzocht",   "onderzochten"),
-            ("ontbijten",  "to eat breakfast",            "ontbijt",  "hebben",      "ontbeten",    "ontbeet",      "ontbeten"),
-            ("ontwerpen",  "to design",                   "ontwerp",  "hebben",      "ontworpen",   "ontwierp",     "ontwierpen"),
-            ("overlijden", "to pass away",                "overlijd", "zijn",        "overleden",   "overleed",     "overleden"),
-            ("oversteken", "to cross (a road)",           "steek",    "zijn",        "overgestoken","stak over",    "staken over"),
-            ("raden",      "to guess",                    "raad",     "hebben",      "geraden",     "raadde",       "raadden"),
-            ("rijden",     "to drive / ride",             "rijd",     "hebben/zijn", "gereden",     "reed",         "reden"),
-            ("rijzen",     "to rise",                     "rijs",     "zijn",        "gerezen",     "rees",         "rezen"),
-            ("roepen",     "to call / shout",             "roep",     "hebben",      "geroepen",    "riep",         "riepen"),
-            ("ruiken",     "to smell",                    "ruik",     "hebben",      "geroken",     "rook",         "roken"),
-            ("scheiden",   "to separate / divorce",       "scheid",   "zijn/hebben", "gescheiden",  "scheidde",     "scheidden"),
-            ("schelden",   "to scold",                    "scheld",   "hebben",      "gescholden",  "schold",       "scholden"),
-            ("schenken",   "to pour / donate",            "schenk",   "hebben",      "geschonken",  "schonk",       "schonken"),
-            ("scheren",    "to shave",                    "scheer",   "hebben",      "geschoren",   "schoor",       "schoren"),
-            ("schieten",   "to shoot",                    "schiet",   "hebben",      "geschoten",   "schoot",       "schoten"),
-            ("schijnen",   "to shine / seem",             "schijn",   "hebben",      "geschenen",   "scheen",       "schenen"),
-            ("schrijven",  "to write",                    "schrijf",  "hebben",      "geschreven",  "schreef",      "schreven"),
-            ("schrikken",  "to be startled",              "schrik",   "zijn",        "geschrokken", "schrok",       "schrokken"),
-            ("schuiven",   "to slide / push",             "schuif",   "hebben/zijn", "geschoven",   "schoof",       "schoven"),
-            ("slaan",      "to hit / beat",               "sla",      "hebben",      "geslagen",    "sloeg",        "sloegen"),
-            ("slapen",     "to sleep",                    "slaap",    "hebben",      "geslapen",    "sliep",        "sliepen"),
-            ("slijpen",    "to sharpen / grind",          "slijp",    "hebben",      "geslepen",    "sleep",        "slepen"),
-            ("sluipen",    "to sneak",                    "sluip",    "zijn/hebben", "geslopen",    "sloop",        "slopen"),
-            ("sluiten",    "to close",                    "sluit",    "hebben",      "gesloten",    "sloot",        "sloten"),
-            ("smelten",    "to melt",                     "smelt",    "zijn/hebben", "gesmolten",   "smolt",        "smolten"),
-            ("snijden",    "to cut",                      "snijd",    "hebben",      "gesneden",    "sneed",        "sneden"),
-            ("snuiten",    "to blow (nose)",              "snuit",    "hebben",      "gesnoten",    "snoot",        "snoten"),
-            ("snuiven",    "to sniff / snort",            "snuif",    "hebben",      "gesnoven",    "snoof",        "snoven"),
-            ("spijten",    "to regret",                   "spijt",    "hebben",      "gespeten",    "speet",        "speten"),
-            ("spreken",    "to speak",                    "spreek",   "hebben",      "gesproken",   "sprak",        "spraken"),
-            ("springen",   "to jump",                     "spring",   "hebben/zijn", "gesprongen",  "sprong",       "sprongen"),
-            ("spuiten",    "to spray / inject",           "spuit",    "hebben",      "gespoten",    "spoot",        "spoten"),
-            ("staan",      "to stand",                    "sta",      "hebben",      "gestaan",     "stond",        "stonden"),
-            ("steken",     "to sting / stab / put",       "steek",    "hebben",      "gestoken",    "stak",         "staken"),
-            ("stelen",     "to steal",                    "steel",    "hebben",      "gestolen",    "stal",         "stalen"),
-            ("sterven",    "to die",                      "sterf",    "zijn",        "gestorven",   "stierf",       "stierven"),
-            ("stijgen",    "to rise / climb",             "stijg",    "zijn",        "gestegen",    "steeg",        "stegen"),
-            ("stinken",    "to stink",                    "stink",    "hebben",      "gestonken",   "stonk",        "stonken"),
-            ("strijden",   "to battle / fight",           "strijd",   "hebben",      "gestreden",   "streed",       "streden"),
-            ("strijken",   "to iron / stroke",            "strijk",   "hebben",      "gestreken",   "streek",       "streken"),
-            ("trekken",    "to pull / draw",              "trek",     "hebben",      "getrokken",   "trok",         "trokken"),
-            ("vallen",     "to fall",                     "val",      "zijn",        "gevallen",    "viel",         "vielen"),
-            ("vangen",     "to catch",                    "vang",     "hebben",      "gevangen",    "ving",         "vingen"),
-            ("varen",      "to sail",                     "vaar",     "hebben/zijn", "gevaren",     "voer",         "voeren"),
-            ("vechten",    "to fight",                    "vecht",    "hebben",      "gevochten",   "vocht",        "vochten"),
-            ("verbieden",  "to forbid",                   "verbied",  "hebben",      "verboden",    "verbood",      "verboden"),
-            ("verdwijnen", "to disappear",                "verdwijn", "zijn",        "verdwenen",   "verdween",     "verdwenen"),
-            ("vergelijken","to compare",                  "vergelijk","hebben",      "vergeleken",  "vergeleek",    "vergeleken"),
-            ("vergeten",   "to forget",                   "vergeet",  "hebben/zijn", "vergeten",    "vergat",       "vergaten"),
-            ("verkopen",   "to sell",                     "verkoop",  "hebben",      "verkocht",    "verkocht",     "verkochten"),
-            ("verliezen",  "to lose",                     "verlies",  "hebben",      "verloren",    "verloor",      "verloren"),
-            ("vermijden",  "to avoid",                    "vermijd",  "hebben",      "vermeden",    "vermeed",      "vermeden"),
-            ("verraden",   "to betray",                   "verraad",  "hebben",      "verraden",    "verried",      "verrieden"),
-            ("verstaan",   "to understand (hear clearly)","versta",   "hebben",      "verstaan",    "verstond",     "verstonden"),
-            ("vertrekken", "to leave / depart",           "vertrek",  "zijn",        "vertrokken",  "vertrok",      "vertrokken"),
-            ("verwijten",  "to reproach / blame",         "verwijt",  "hebben",      "verweten",    "verweet",      "verweten"),
-            ("verzinnen",  "to make up / invent",         "verzin",   "hebben",      "verzonnen",   "verzon",       "verzonnen"),
-            ("vinden",     "to find / think",             "vind",     "hebben",      "gevonden",    "vond",         "vonden"),
-            ("vliegen",    "to fly",                      "vlieg",    "hebben/zijn", "gevlogen",    "vloog",        "vlogen"),
-            ("vouwen",     "to fold",                     "vouw",     "hebben",      "gevouwen",    "vouwde",       "vouwden"),
-            ("vragen",     "to ask",                      "vraag",    "hebben",      "gevraagd",    "vroeg",        "vroegen"),
-            ("vriezen",    "to freeze",                   "vries",    "hebben/zijn", "gevroren",    "vroor",        "vroren"),
-            ("wassen",     "to wash",                     "was",      "hebben",      "gewassen",    "waste",        "wasten"),
-            ("wegen",      "to weigh",                    "weeg",     "hebben",      "gewogen",     "woog",         "wogen"),
-            ("werpen",     "to throw",                    "werp",     "hebben",      "geworpen",    "wierp",        "wierpen"),
-            ("weten",      "to know",                     "weet",     "hebben",      "geweten",     "wist",         "wisten"),
-            ("wijzen",     "to point / show",             "wijs",     "hebben",      "gewezen",     "wees",         "wezen"),
-            ("winnen",     "to win",                      "win",      "hebben",      "gewonnen",    "won",          "wonnen"),
-            ("wrijven",    "to rub",                      "wrijf",    "hebben",      "gewreven",    "wreef",        "wreven"),
-            ("zeggen",     "to say",                      "zeg",      "hebben",      "gezegd",      "zei",          "zeiden"),
-            ("zenden",     "to send",                     "zend",     "hebben",      "gezonden",    "zond",         "zonden"),
-            ("zien",       "to see",                      "zie",      "hebben",      "gezien",      "zag",          "zagen"),
-            ("zingen",     "to sing",                     "zing",     "hebben",      "gezongen",    "zong",         "zongen"),
-            ("zinken",     "to sink",                     "zink",     "zijn",        "gezonken",    "zonk",         "zonken"),
-            ("zitten",     "to sit",                      "zit",      "hebben",      "gezeten",     "zat",          "zaten"),
-            ("zoeken",     "to search / look for",        "zoek",     "hebben",      "gezocht",     "zocht",        "zochten"),
-            ("zuigen",     "to suck",                     "zuig",     "hebben",      "gezogen",     "zoog",         "zogen"),
-            ("zwemmen",    "to swim",                     "zwem",     "hebben/zijn", "gezwommen",   "zwom",         "zwommen"),
-            ("zwijgen",    "to be silent",                "zwijg",    "hebben",      "gezwegen",    "zweeg",        "zwegen"),
+            ("bakken",     "to bake / fry",               "bak",
+             "hebben",      "gebakken",    "bakte",        "bakten"),
+            ("bederven",   "to spoil",                    "bederf",
+             "hebben/zijn", "bedorven",    "bedierf",      "bedierven"),
+            ("bedriegen",  "to deceive / cheat",          "bedrieg",
+             "hebben",      "bedrogen",    "bedroog",      "bedrogen"),
+            ("beginnen",   "to begin",                    "begin",
+             "zijn",        "begonnen",    "begon",        "begonnen"),
+            ("begrijpen",  "to understand",               "begrijp",
+             "hebben",      "begrepen",    "begreep",      "begrepen"),
+            ("beschrijven", "to describe",                 "beschrijf",
+             "hebben",      "beschreven",  "beschreef",    "beschreven"),
+            ("bevallen",   "to please / give birth",      "val",
+             "zijn",        "bevallen",    "beviel",       "bevielen"),
+            ("bewegen",    "to exercise / move",          "beweeg",
+             "hebben",      "bewogen",     "bewoog",       "bewogen"),
+            ("bezoeken",   "to visit",                    "bezoek",
+             "hebben",      "bezocht",     "bezocht",      "bezochten"),
+            ("bidden",     "to pray",                     "bid",
+             "hebben",      "gebeden",     "bad",          "baden"),
+            ("bieden",     "to offer / bid",              "bied",
+             "hebben",      "geboden",     "bood",         "boden"),
+            ("bijten",     "to bite",                     "bijt",
+             "hebben",      "gebeten",     "beet",         "beten"),
+            ("binden",     "to bind / tie",               "bind",
+             "hebben",      "gebonden",    "bond",         "bonden"),
+            ("blazen",     "to blow",                     "blaas",
+             "hebben",      "geblazen",    "blies",        "bliezen"),
+            ("blijken",    "to appear / turn out",        "blijk",
+             "zijn",        "gebleken",    "bleek",        "bleken"),
+            ("blijven",    "to stay",                     "blijf",
+             "zijn",        "gebleven",    "bleef",        "bleven"),
+            ("braden",     "to roast / grill",            "braad",
+             "hebben",      "gebraden",    "braadde",      "braadden"),
+            ("breken",     "to break",                    "breek",
+             "hebben",      "gebroken",    "brak",         "braken"),
+            ("brengen",    "to bring",                    "breng",
+             "hebben",      "gebracht",    "bracht",       "brachten"),
+            ("buigen",     "to bend / bow",               "buig",
+             "hebben/zijn", "gebogen",     "boog",         "bogen"),
+            ("denken",     "to think",                    "denk",
+             "hebben",      "gedacht",     "dacht",        "dachten"),
+            ("dragen",     "to wear / carry",             "draag",
+             "hebben",      "gedragen",    "droeg",        "droegen"),
+            ("drijven",    "to float / drive",            "drijf",
+             "hebben/zijn", "gedreven",    "dreef",        "dreven"),
+            ("drinken",    "to drink",                    "drink",
+             "hebben",      "gedronken",   "dronk",        "dronken"),
+            ("duiken",     "to dive",                     "duik",
+             "hebben/zijn", "gedoken",     "dook",         "doken"),
+            ("dwingen",    "to force / compel",           "dwing",
+             "hebben",      "gedwongen",   "dwong",        "dwongen"),
+            ("ervaren",    "to experience",               "ervaar",
+             "hebben",      "ervaren",     "ervoer",       "ervoeren"),
+            ("eten",       "to eat",                      "eet",
+             "hebben",      "gegeten",     "at",           "aten"),
+            ("fluiten",    "to whistle",                  "fluit",
+             "hebben",      "gefloten",    "floot",        "floten"),
+            ("genezen",    "to heal / cure",              "genees",
+             "zijn/hebben", "genezen",     "genas",        "genazen"),
+            ("genieten",   "to enjoy",                    "geniet",
+             "hebben",      "genoten",     "genoot",       "genoten"),
+            ("geven",      "to give",                     "geef",
+             "hebben",      "gegeven",     "gaf",          "gaven"),
+            ("gieten",     "to pour",                     "giet",
+             "hebben",      "gegoten",     "goot",         "goten"),
+            ("glijden",    "to slide / glide",            "glijd",
+             "hebben/zijn", "gegleden",    "gleed",        "gleden"),
+            ("glimmen",    "to shine / glimmer",          "glim",
+             "hebben",      "geglommen",   "glom",         "glommen"),
+            ("graven",     "to dig",                      "graaf",
+             "hebben",      "gegraven",    "groef",        "groeven"),
+            ("hangen",     "to hang",                     "hang",
+             "hebben",      "gehangen",    "hing",         "hingen"),
+            ("helpen",     "to help",                     "help",
+             "hebben",      "geholpen",    "hielp",        "hielpen"),
+            ("heten",      "to be called",                "heet",
+             "hebben",      "geheten",     "heette",       "heetten"),
+            ("houden",     "to hold / keep",              "houd",
+             "hebben",      "gehouden",    "hield",        "hielden"),
+            ("kiezen",     "to choose",                   "kies",
+             "hebben",      "gekozen",     "koos",         "kozen"),
+            ("kijken",     "to look / watch",             "kijk",
+             "hebben",      "gekeken",     "keek",         "keken"),
+            ("klimmen",    "to climb",                    "klim",
+             "hebben/zijn", "geklommen",   "klom",         "klommen"),
+            ("klinken",    "to sound",                    "klink",
+             "hebben",      "geklonken",   "klonk",        "klonken"),
+            ("knijpen",    "to pinch / squeeze",          "knijp",
+             "hebben",      "geknepen",    "kneep",        "knepen"),
+            ("kopen",      "to buy",                      "koop",
+             "hebben",      "gekocht",     "kocht",        "kochten"),
+            ("krijgen",    "to get / receive",            "krijg",
+             "hebben",      "gekregen",    "kreeg",        "kregen"),
+            ("krimpen",    "to shrink",                   "krimp",
+             "zijn",        "gekrompen",   "kromp",        "krompen"),
+            ("kruipen",    "to crawl",                    "kruip",
+             "hebben/zijn", "gekropen",    "kroop",        "kropen"),
+            ("lachen",     "to laugh",                    "lach",
+             "hebben",      "gelachen",    "lachte",       "lachten"),
+            ("laden",      "to load / charge",            "laad",
+             "hebben",      "geladen",     "laadde",       "laadden"),
+            ("laten",      "to let / leave",              "laat",
+             "hebben",      "gelaten",     "liet",         "lieten"),
+            ("lezen",      "to read",                     "lees",
+             "hebben",      "gelezen",     "las",          "lazen"),
+            ("liegen",     "to lie (untruth)",            "lieg",
+             "hebben",      "gelogen",     "loog",         "logen"),
+            ("liggen",     "to lie (down)",               "lig",
+             "hebben",      "gelegen",     "lag",          "lagen"),
+            ("lijden",     "to suffer",                   "lijd",
+             "hebben",      "geleden",     "leed",         "leden"),
+            ("lijken",     "to seem / look like",         "lijk",
+             "hebben",      "geleken",     "leek",         "leken"),
+            ("lopen",      "to walk / run",               "loop",
+             "hebben/zijn", "gelopen",     "liep",         "liepen"),
+            ("meten",      "to measure",                  "meet",
+             "hebben",      "gemeten",     "mat",          "maten"),
+            ("nemen",      "to take",                     "neem",
+             "hebben",      "genomen",     "nam",          "namen"),
+            ("onderzoeken", "to investigate",              "onderzoek",
+             "hebben",      "onderzocht",  "onderzocht",   "onderzochten"),
+            ("ontbijten",  "to eat breakfast",            "ontbijt",
+             "hebben",      "ontbeten",    "ontbeet",      "ontbeten"),
+            ("ontwerpen",  "to design",                   "ontwerp",
+             "hebben",      "ontworpen",   "ontwierp",     "ontwierpen"),
+            ("overlijden", "to pass away",                "overlijd",
+             "zijn",        "overleden",   "overleed",     "overleden"),
+            ("oversteken", "to cross (a road)",           "steek",
+             "zijn",        "overgestoken", "stak over",    "staken over"),
+            ("raden",      "to guess",                    "raad",
+             "hebben",      "geraden",     "raadde",       "raadden"),
+            ("rijden",     "to drive / ride",             "rijd",
+             "hebben/zijn", "gereden",     "reed",         "reden"),
+            ("rijzen",     "to rise",                     "rijs",
+             "zijn",        "gerezen",     "rees",         "rezen"),
+            ("roepen",     "to call / shout",             "roep",
+             "hebben",      "geroepen",    "riep",         "riepen"),
+            ("ruiken",     "to smell",                    "ruik",
+             "hebben",      "geroken",     "rook",         "roken"),
+            ("scheiden",   "to separate / divorce",       "scheid",
+             "zijn/hebben", "gescheiden",  "scheidde",     "scheidden"),
+            ("schelden",   "to scold",                    "scheld",
+             "hebben",      "gescholden",  "schold",       "scholden"),
+            ("schenken",   "to pour / donate",            "schenk",
+             "hebben",      "geschonken",  "schonk",       "schonken"),
+            ("scheren",    "to shave",                    "scheer",
+             "hebben",      "geschoren",   "schoor",       "schoren"),
+            ("schieten",   "to shoot",                    "schiet",
+             "hebben",      "geschoten",   "schoot",       "schoten"),
+            ("schijnen",   "to shine / seem",             "schijn",
+             "hebben",      "geschenen",   "scheen",       "schenen"),
+            ("schrijven",  "to write",                    "schrijf",
+             "hebben",      "geschreven",  "schreef",      "schreven"),
+            ("schrikken",  "to be startled",              "schrik",
+             "zijn",        "geschrokken", "schrok",       "schrokken"),
+            ("schuiven",   "to slide / push",             "schuif",
+             "hebben/zijn", "geschoven",   "schoof",       "schoven"),
+            ("slaan",      "to hit / beat",               "sla",
+             "hebben",      "geslagen",    "sloeg",        "sloegen"),
+            ("slapen",     "to sleep",                    "slaap",
+             "hebben",      "geslapen",    "sliep",        "sliepen"),
+            ("slijpen",    "to sharpen / grind",          "slijp",
+             "hebben",      "geslepen",    "sleep",        "slepen"),
+            ("sluipen",    "to sneak",                    "sluip",
+             "zijn/hebben", "geslopen",    "sloop",        "slopen"),
+            ("sluiten",    "to close",                    "sluit",
+             "hebben",      "gesloten",    "sloot",        "sloten"),
+            ("smelten",    "to melt",                     "smelt",
+             "zijn/hebben", "gesmolten",   "smolt",        "smolten"),
+            ("snijden",    "to cut",                      "snijd",
+             "hebben",      "gesneden",    "sneed",        "sneden"),
+            ("snuiten",    "to blow (nose)",              "snuit",
+             "hebben",      "gesnoten",    "snoot",        "snoten"),
+            ("snuiven",    "to sniff / snort",            "snuif",
+             "hebben",      "gesnoven",    "snoof",        "snoven"),
+            ("spijten",    "to regret",                   "spijt",
+             "hebben",      "gespeten",    "speet",        "speten"),
+            ("spreken",    "to speak",                    "spreek",
+             "hebben",      "gesproken",   "sprak",        "spraken"),
+            ("springen",   "to jump",                     "spring",
+             "hebben/zijn", "gesprongen",  "sprong",       "sprongen"),
+            ("spuiten",    "to spray / inject",           "spuit",
+             "hebben",      "gespoten",    "spoot",        "spoten"),
+            ("staan",      "to stand",                    "sta",
+             "hebben",      "gestaan",     "stond",        "stonden"),
+            ("steken",     "to sting / stab / put",       "steek",
+             "hebben",      "gestoken",    "stak",         "staken"),
+            ("stelen",     "to steal",                    "steel",
+             "hebben",      "gestolen",    "stal",         "stalen"),
+            ("sterven",    "to die",                      "sterf",
+             "zijn",        "gestorven",   "stierf",       "stierven"),
+            ("stijgen",    "to rise / climb",             "stijg",
+             "zijn",        "gestegen",    "steeg",        "stegen"),
+            ("stinken",    "to stink",                    "stink",
+             "hebben",      "gestonken",   "stonk",        "stonken"),
+            ("strijden",   "to battle / fight",           "strijd",
+             "hebben",      "gestreden",   "streed",       "streden"),
+            ("strijken",   "to iron / stroke",            "strijk",
+             "hebben",      "gestreken",   "streek",       "streken"),
+            ("trekken",    "to pull / draw",              "trek",
+             "hebben",      "getrokken",   "trok",         "trokken"),
+            ("vallen",     "to fall",                     "val",
+             "zijn",        "gevallen",    "viel",         "vielen"),
+            ("vangen",     "to catch",                    "vang",
+             "hebben",      "gevangen",    "ving",         "vingen"),
+            ("varen",      "to sail",                     "vaar",
+             "hebben/zijn", "gevaren",     "voer",         "voeren"),
+            ("vechten",    "to fight",                    "vecht",
+             "hebben",      "gevochten",   "vocht",        "vochten"),
+            ("verbieden",  "to forbid",                   "verbied",
+             "hebben",      "verboden",    "verbood",      "verboden"),
+            ("verdwijnen", "to disappear",                "verdwijn",
+             "zijn",        "verdwenen",   "verdween",     "verdwenen"),
+            ("vergelijken", "to compare",                  "vergelijk",
+             "hebben",      "vergeleken",  "vergeleek",    "vergeleken"),
+            ("vergeten",   "to forget",                   "vergeet",
+             "hebben/zijn", "vergeten",    "vergat",       "vergaten"),
+            ("verkopen",   "to sell",                     "verkoop",
+             "hebben",      "verkocht",    "verkocht",     "verkochten"),
+            ("verliezen",  "to lose",                     "verlies",
+             "hebben",      "verloren",    "verloor",      "verloren"),
+            ("vermijden",  "to avoid",                    "vermijd",
+             "hebben",      "vermeden",    "vermeed",      "vermeden"),
+            ("verraden",   "to betray",                   "verraad",
+             "hebben",      "verraden",    "verried",      "verrieden"),
+            ("verstaan",   "to understand (hear clearly)", "versta",
+             "hebben",      "verstaan",    "verstond",     "verstonden"),
+            ("vertrekken", "to leave / depart",           "vertrek",
+             "zijn",        "vertrokken",  "vertrok",      "vertrokken"),
+            ("verwijten",  "to reproach / blame",         "verwijt",
+             "hebben",      "verweten",    "verweet",      "verweten"),
+            ("verzinnen",  "to make up / invent",         "verzin",
+             "hebben",      "verzonnen",   "verzon",       "verzonnen"),
+            ("vinden",     "to find / think",             "vind",
+             "hebben",      "gevonden",    "vond",         "vonden"),
+            ("vliegen",    "to fly",                      "vlieg",
+             "hebben/zijn", "gevlogen",    "vloog",        "vlogen"),
+            ("vouwen",     "to fold",                     "vouw",
+             "hebben",      "gevouwen",    "vouwde",       "vouwden"),
+            ("vragen",     "to ask",                      "vraag",
+             "hebben",      "gevraagd",    "vroeg",        "vroegen"),
+            ("vriezen",    "to freeze",                   "vries",
+             "hebben/zijn", "gevroren",    "vroor",        "vroren"),
+            ("wassen",     "to wash",                     "was",
+             "hebben",      "gewassen",    "waste",        "wasten"),
+            ("wegen",      "to weigh",                    "weeg",
+             "hebben",      "gewogen",     "woog",         "wogen"),
+            ("werpen",     "to throw",                    "werp",
+             "hebben",      "geworpen",    "wierp",        "wierpen"),
+            ("weten",      "to know",                     "weet",
+             "hebben",      "geweten",     "wist",         "wisten"),
+            ("wijzen",     "to point / show",             "wijs",
+             "hebben",      "gewezen",     "wees",         "wezen"),
+            ("winnen",     "to win",                      "win",
+             "hebben",      "gewonnen",    "won",          "wonnen"),
+            ("wrijven",    "to rub",                      "wrijf",
+             "hebben",      "gewreven",    "wreef",        "wreven"),
+            ("zeggen",     "to say",                      "zeg",
+             "hebben",      "gezegd",      "zei",          "zeiden"),
+            ("zenden",     "to send",                     "zend",
+             "hebben",      "gezonden",    "zond",         "zonden"),
+            ("zien",       "to see",                      "zie",
+             "hebben",      "gezien",      "zag",          "zagen"),
+            ("zingen",     "to sing",                     "zing",
+             "hebben",      "gezongen",    "zong",         "zongen"),
+            ("zinken",     "to sink",                     "zink",
+             "zijn",        "gezonken",    "zonk",         "zonken"),
+            ("zitten",     "to sit",                      "zit",
+             "hebben",      "gezeten",     "zat",          "zaten"),
+            ("zoeken",     "to search / look for",        "zoek",
+             "hebben",      "gezocht",     "zocht",        "zochten"),
+            ("zuigen",     "to suck",                     "zuig",
+             "hebben",      "gezogen",     "zoog",         "zogen"),
+            ("zwemmen",    "to swim",                     "zwem",
+             "hebben/zijn", "gezwommen",   "zwom",         "zwommen"),
+            ("zwijgen",    "to be silent",                "zwijg",
+             "hebben",      "gezwegen",    "zweeg",        "zwegen"),
             # ── 4. Regelmatige werkwoorden / Regular verbs (A–Z) ─────────────
-            ("bellen",     "to call (phone)",        "bel",      "hebben",      "gebeld",       "belde",        "belden"),
-            ("beloven",    "to promise",             "beloof",   "hebben",      "beloofd",      "beloofde",     "beloofden"),
-            ("beperken",   "to limit",               "beperk",   "hebben",      "beperkt",      "beperkte",     "beperkten"),
-            ("beslissen",  "to decide",              "beslis",   "hebben",      "beslist",      "besliste",     "beslisten"),
-            ("betalen",    "to pay",                 "betaal",   "hebben",      "betaald",      "betaalde",     "betaalden"),
-            ("bevestigen", "to confirm",             "bevestig", "hebben",      "bevestigd",    "bevestigde",   "bevestigden"),
-            ("bewaren",    "to keep / store",        "bewaar",   "hebben",      "bewaard",      "bewaarde",     "bewaarden"),
-            ("boeken",     "to book",                "boek",     "hebben",      "geboekt",      "boekte",       "boekten"),
-            ("bouwen",     "to build",               "bouw",     "hebben",      "gebouwd",      "bouwde",       "bouwden"),
-            ("fietsen",    "to cycle",               "fiets",    "hebben/zijn", "gefietst",     "fietste",      "fietsten"),
-            ("gebeuren",   "to happen",              "gebeur",   "zijn",        "gebeurd",      "gebeurde",     "gebeurden"),
-            ("hoesten",    "to cough",               "hoest",    "hebben",      "gehoest",      "hoestte",      "hoestten"),
-            ("integreren", "to integrate",           "integreer","zijn/hebben", "geïntegreerd", "integreerde",  "integreerden"),
-            ("koken",      "to cook",                "kook",     "hebben",      "gekookt",      "kookte",       "kookten"),
-            ("lenen",      "to lend / borrow",       "leen",     "hebben",      "geleend",      "leende",       "leenden"),
-            ("leren",      "to learn / teach",       "leer",     "hebben",      "geleerd",      "leerde",       "leerden"),
-            ("leven",      "to live",                "leef",     "hebben",      "geleefd",      "leefde",       "leefden"),
-            ("luisteren",  "to listen",              "luister",  "hebben",      "geluisterd",   "luisterde",    "luisterden"),
-            ("missen",     "to miss",                "mis",      "hebben",      "gemist",       "miste",        "misten"),
-            ("niezen",     "to sneeze",              "nies",     "hebben",      "geniest",      "nieste",       "niesten"),
-            ("oefenen",    "to practise",            "oefen",    "hebben",      "geoefend",     "oefende",      "oefenden"),
-            ("ontspannen", "to relax",               "ontspan",  "hebben/zijn", "ontspannen",   "ontspande",    "ontspanden"),
-            ("overleven",  "to survive",             "overleef", "hebben",      "overleefd",    "overleefde",   "overleefden"),
-            ("praten",     "to talk / chat",         "praat",    "hebben",      "gepraat",      "praatte",      "praatten"),
-            ("proberen",   "to try",                 "probeer",  "hebben",      "geprobeerd",   "probeerde",    "probeerden"),
-            ("reageren",   "to react / respond",     "reageer",  "hebben",      "gereageerd",   "reageerde",    "reageerden"),
-            ("reizen",     "to travel",              "reis",     "hebben/zijn", "gereisd",      "reisde",       "reisden"),
-            ("slagen",     "to pass (exam)",         "slaag",    "zijn",        "geslaagd",     "slaagde",      "slaagden"),
-            ("spelen",     "to play",                "speel",    "hebben",      "gespeeld",     "speelde",      "speelden"),
-            ("sporten",    "to do sports",           "sport",    "hebben",      "gesport",      "sportte",      "sportten"),
-            ("stoppen",    "to stop",                "stop",     "zijn/hebben", "gestopt",      "stopte",       "stopten"),
-            ("sturen",     "to send",                "stuur",    "hebben",      "gestuurd",     "stuurde",      "stuurden"),
-            ("veranderen", "to change",              "verander", "zijn",        "veranderd",    "veranderde",   "veranderden"),
-            ("verbeteren", "to improve",             "verbeter", "zijn/hebben", "verbeterd",    "verbeterde",   "verbeterden"),
-            ("verdienen",  "to earn",                "verdien",  "hebben",      "verdiend",     "verdiende",    "verdienden"),
-            ("vergaderen", "to have a meeting",      "vergader", "hebben",      "vergaderd",    "vergaderde",   "vergaderden"),
-            ("verhuizen",  "to move (house)",        "verhuis",  "zijn",        "verhuisd",     "verhuisde",    "verhuisden"),
-            ("verminderen","to reduce",              "verminder","hebben",      "verminderd",   "verminderde",  "verminderden"),
-            ("vieren",     "to celebrate",           "vier",     "hebben",      "gevierd",      "vierde",       "vierden"),
-            ("voederen",   "to feed (animals)",      "voeder",   "hebben",      "gevoederd",    "voederde",     "voederden"),
-            ("wachten",    "to wait",                "wacht",    "hebben",      "gewacht",      "wachtte",      "wachtten"),
-            ("wandelen",   "to stroll / walk",       "wandel",   "hebben/zijn", "gewandeld",    "wandelde",     "wandelden"),
-            ("werken",     "to work",                "werk",     "hebben",      "gewerkt",      "werkte",       "werkten"),
+            ("bellen",     "to call (phone)",        "bel",
+             "hebben",      "gebeld",       "belde",        "belden"),
+            ("beloven",    "to promise",             "beloof",
+             "hebben",      "beloofd",      "beloofde",     "beloofden"),
+            ("beperken",   "to limit",               "beperk",
+             "hebben",      "beperkt",      "beperkte",     "beperkten"),
+            ("beslissen",  "to decide",              "beslis",
+             "hebben",      "beslist",      "besliste",     "beslisten"),
+            ("betalen",    "to pay",                 "betaal",
+             "hebben",      "betaald",      "betaalde",     "betaalden"),
+            ("bevestigen", "to confirm",             "bevestig",
+             "hebben",      "bevestigd",    "bevestigde",   "bevestigden"),
+            ("bewaren",    "to keep / store",        "bewaar",
+             "hebben",      "bewaard",      "bewaarde",     "bewaarden"),
+            ("boeken",     "to book",                "boek",
+             "hebben",      "geboekt",      "boekte",       "boekten"),
+            ("bouwen",     "to build",               "bouw",
+             "hebben",      "gebouwd",      "bouwde",       "bouwden"),
+            ("fietsen",    "to cycle",               "fiets",
+             "hebben/zijn", "gefietst",     "fietste",      "fietsten"),
+            ("gebeuren",   "to happen",              "gebeur",
+             "zijn",        "gebeurd",      "gebeurde",     "gebeurden"),
+            ("hoesten",    "to cough",               "hoest",
+             "hebben",      "gehoest",      "hoestte",      "hoestten"),
+            ("integreren", "to integrate",           "integreer",
+             "zijn/hebben", "geïntegreerd", "integreerde",  "integreerden"),
+            ("koken",      "to cook",                "kook",
+             "hebben",      "gekookt",      "kookte",       "kookten"),
+            ("lenen",      "to lend / borrow",       "leen",
+             "hebben",      "geleend",      "leende",       "leenden"),
+            ("leren",      "to learn / teach",       "leer",
+             "hebben",      "geleerd",      "leerde",       "leerden"),
+            ("leven",      "to live",                "leef",
+             "hebben",      "geleefd",      "leefde",       "leefden"),
+            ("luisteren",  "to listen",              "luister",
+             "hebben",      "geluisterd",   "luisterde",    "luisterden"),
+            ("missen",     "to miss",                "mis",
+             "hebben",      "gemist",       "miste",        "misten"),
+            ("niezen",     "to sneeze",              "nies",
+             "hebben",      "geniest",      "nieste",       "niesten"),
+            ("oefenen",    "to practise",            "oefen",
+             "hebben",      "geoefend",     "oefende",      "oefenden"),
+            ("ontspannen", "to relax",               "ontspan",
+             "hebben/zijn", "ontspannen",   "ontspande",    "ontspanden"),
+            ("overleven",  "to survive",             "overleef",
+             "hebben",      "overleefd",    "overleefde",   "overleefden"),
+            ("praten",     "to talk / chat",         "praat",
+             "hebben",      "gepraat",      "praatte",      "praatten"),
+            ("proberen",   "to try",                 "probeer",
+             "hebben",      "geprobeerd",   "probeerde",    "probeerden"),
+            ("reageren",   "to react / respond",     "reageer",
+             "hebben",      "gereageerd",   "reageerde",    "reageerden"),
+            ("reizen",     "to travel",              "reis",
+             "hebben/zijn", "gereisd",      "reisde",       "reisden"),
+            ("slagen",     "to pass (exam)",         "slaag",
+             "zijn",        "geslaagd",     "slaagde",      "slaagden"),
+            ("spelen",     "to play",                "speel",
+             "hebben",      "gespeeld",     "speelde",      "speelden"),
+            ("sporten",    "to do sports",           "sport",
+             "hebben",      "gesport",      "sportte",      "sportten"),
+            ("stoppen",    "to stop",                "stop",
+             "zijn/hebben", "gestopt",      "stopte",       "stopten"),
+            ("sturen",     "to send",                "stuur",
+             "hebben",      "gestuurd",     "stuurde",      "stuurden"),
+            ("veranderen", "to change",              "verander",
+             "zijn",        "veranderd",    "veranderde",   "veranderden"),
+            ("verbeteren", "to improve",             "verbeter",
+             "zijn/hebben", "verbeterd",    "verbeterde",   "verbeterden"),
+            ("verdienen",  "to earn",                "verdien",
+             "hebben",      "verdiend",     "verdiende",    "verdienden"),
+            ("vergaderen", "to have a meeting",      "vergader",
+             "hebben",      "vergaderd",    "vergaderde",   "vergaderden"),
+            ("verhuizen",  "to move (house)",        "verhuis",
+             "zijn",        "verhuisd",     "verhuisde",    "verhuisden"),
+            ("verminderen", "to reduce",              "verminder",
+             "hebben",      "verminderd",   "verminderde",  "verminderden"),
+            ("vieren",     "to celebrate",           "vier",
+             "hebben",      "gevierd",      "vierde",       "vierden"),
+            ("voederen",   "to feed (animals)",      "voeder",
+             "hebben",      "gevoederd",    "voederde",     "voederden"),
+            ("wachten",    "to wait",                "wacht",
+             "hebben",      "gewacht",      "wachtte",      "wachtten"),
+            ("wandelen",   "to stroll / walk",       "wandel",
+             "hebben/zijn", "gewandeld",    "wandelde",     "wandelden"),
+            ("werken",     "to work",                "werk",
+             "hebben",      "gewerkt",      "werkte",       "werkten"),
             # ── 5. Scheidbare werkwoorden / Separable verbs (A–Z) ─────────────
-            ("aankomen",   "to arrive",              "kom",      "zijn",        "aangekomen",   "kwam aan",     "kwamen aan"),
-            ("afwassen",   "to wash the dishes",     "was",      "hebben",      "afgewassen",   "waste af",     "wasten af"),
-            ("afwisselen", "to vary / alternate",    "wissel",   "hebben",      "afgewisseld",  "wisselde af",  "wisselden af"),
-            ("bijkletsen", "to catch up (chat)",     "klets",    "hebben",      "bijgekletst",  "kletste bij",  "kletsten bij"),
-            ("inpakken",   "to pack",                "pak",      "hebben",      "ingepakt",     "pakte in",     "pakten in"),
-            ("meegaan",    "to go along",            "ga",       "zijn",        "meegegaan",    "ging mee",     "gingen mee"),
-            ("meenemen",   "to take along",          "neem",     "hebben",      "meegenomen",   "nam mee",      "namen mee"),
-            ("opbellen",   "to call (phone)",        "bel",      "hebben",      "opgebeld",     "belde op",     "belden op"),
-            ("opgroeien",  "to grow up",             "groei",    "zijn",        "opgegroeid",   "groeide op",   "groeiden op"),
-            ("opstaan",    "to get up",              "sta",      "zijn",        "opgestaan",    "stond op",     "stonden op"),
-            ("opzoeken",   "to look up / visit",     "zoek",     "hebben",      "opgezocht",    "zocht op",     "zochten op"),
-            ("overgeven",  "to vomit",               "geef",     "hebben",      "overgegeven",  "gaf over",     "gaven over"),
-            ("terugbellen","to call back",           "bel",      "hebben",      "teruggebeld",  "belde terug",  "belden terug"),
-            ("thuiswerken","to work from home",      "werk",     "hebben",      "thuisgewerkt", "werkte thuis", "werkten thuis"),
-            ("uitdoen",    "to turn off / take off", "doe",      "hebben",      "uitgedaan",    "deed uit",     "deden uit"),
-            ("uitgaan",    "to go out",              "ga",       "zijn",        "uitgegaan",    "ging uit",     "gingen uit"),
-            ("uitleggen",  "to explain",             "leg",      "hebben",      "uitgelegd",    "legde uit",    "legden uit"),
-            ("uitnodigen", "to invite",              "nodig",    "hebben",      "uitgenodigd",  "nodigde uit",  "nodigden uit"),
-            ("uitslapen",  "to sleep in",            "slaap",    "hebben",      "uitgeslapen",  "sliep uit",    "sliepen uit"),
-            ("volhouden",  "to persevere / keep up", "houd",     "hebben",      "volgehouden",  "hield vol",    "hielden vol"),
-            ("voorstellen","to introduce oneself",   "stel",     "hebben",      "voorgesteld",  "stelde voor",  "stelden voor"),
+            ("aankomen",   "to arrive",              "kom",      "zijn",
+             "aangekomen",   "kwam aan",     "kwamen aan"),
+            ("afwassen",   "to wash the dishes",     "was",
+             "hebben",      "afgewassen",   "waste af",     "wasten af"),
+            ("afwisselen", "to vary / alternate",    "wissel",   "hebben",
+             "afgewisseld",  "wisselde af",  "wisselden af"),
+            ("bijkletsen", "to catch up (chat)",     "klets",    "hebben",
+             "bijgekletst",  "kletste bij",  "kletsten bij"),
+            ("inpakken",   "to pack",                "pak",
+             "hebben",      "ingepakt",     "pakte in",     "pakten in"),
+            ("meegaan",    "to go along",            "ga",       "zijn",
+             "meegegaan",    "ging mee",     "gingen mee"),
+            ("meenemen",   "to take along",          "neem",
+             "hebben",      "meegenomen",   "nam mee",      "namen mee"),
+            ("opbellen",   "to call (phone)",        "bel",
+             "hebben",      "opgebeld",     "belde op",     "belden op"),
+            ("opgroeien",  "to grow up",             "groei",    "zijn",
+             "opgegroeid",   "groeide op",   "groeiden op"),
+            ("opstaan",    "to get up",              "sta",      "zijn",
+             "opgestaan",    "stond op",     "stonden op"),
+            ("opzoeken",   "to look up / visit",     "zoek",
+             "hebben",      "opgezocht",    "zocht op",     "zochten op"),
+            ("overgeven",  "to vomit",               "geef",
+             "hebben",      "overgegeven",  "gaf over",     "gaven over"),
+            ("terugbellen", "to call back",           "bel",      "hebben",
+             "teruggebeld",  "belde terug",  "belden terug"),
+            ("thuiswerken", "to work from home",      "werk",     "hebben",
+             "thuisgewerkt", "werkte thuis", "werkten thuis"),
+            ("uitdoen",    "to turn off / take off", "doe",
+             "hebben",      "uitgedaan",    "deed uit",     "deden uit"),
+            ("uitgaan",    "to go out",              "ga",       "zijn",
+             "uitgegaan",    "ging uit",     "gingen uit"),
+            ("uitleggen",  "to explain",             "leg",
+             "hebben",      "uitgelegd",    "legde uit",    "legden uit"),
+            ("uitnodigen", "to invite",              "nodig",    "hebben",
+             "uitgenodigd",  "nodigde uit",  "nodigden uit"),
+            ("uitslapen",  "to sleep in",            "slaap",
+             "hebben",      "uitgeslapen",  "sliep uit",    "sliepen uit"),
+            ("volhouden",  "to persevere / keep up", "houd",     "hebben",
+             "volgehouden",  "hield vol",    "hielden vol"),
+            ("voorstellen", "to introduce oneself",   "stel",     "hebben",
+             "voorgesteld",  "stelde voor",  "stelden voor"),
             # ── 6. Reflexieve werkwoorden / Reflexive verbs (A–Z) ─────────────
-            ("zich amuseren",    "to enjoy oneself",      "amuseer",  "hebben", "geamuseerd",   "amuseerde",    "amuseerden"),
-            ("zich haasten",     "to hurry",              "haast",    "hebben", "gehaast",      "haastte",      "haastten"),
-            ("zich herinneren",  "to remember",           "herinner", "hebben", "herinnerd",    "herinnerde",   "herinnerden"),
-            ("zich ontspannen",  "to relax",              "ontspan",  "hebben", "ontspannen",   "ontspande",    "ontspanden"),
-            ("zich schamen",     "to be ashamed",         "schaam",   "hebben", "geschaamd",    "schaamde",     "schaamden"),
-            ("zich vergissen",   "to make a mistake",     "vergis",   "hebben", "vergist",      "vergiste",     "vergisten"),
-            ("zich vervelen",    "to be bored",           "verveel",  "hebben", "verveeld",     "verveelde",    "verveelden"),
-            ("zich voelen",      "to feel",               "voel",     "hebben", "gevoeld",      "voelde",       "voelden"),
+            ("zich amuseren",    "to enjoy oneself",      "amuseer",
+             "hebben", "geamuseerd",   "amuseerde",    "amuseerden"),
+            ("zich haasten",     "to hurry",              "haast",
+             "hebben", "gehaast",      "haastte",      "haastten"),
+            ("zich herinneren",  "to remember",           "herinner",
+             "hebben", "herinnerd",    "herinnerde",   "herinnerden"),
+            ("zich ontspannen",  "to relax",              "ontspan",
+             "hebben", "ontspannen",   "ontspande",    "ontspanden"),
+            ("zich schamen",     "to be ashamed",         "schaam",
+             "hebben", "geschaamd",    "schaamde",     "schaamden"),
+            ("zich vergissen",   "to make a mistake",     "vergis",
+             "hebben", "vergist",      "vergiste",     "vergisten"),
+            ("zich vervelen",    "to be bored",           "verveel",
+             "hebben", "verveeld",     "verveelde",    "verveelden"),
+            ("zich voelen",      "to feel",               "voel",
+             "hebben", "gevoeld",      "voelde",       "voelden"),
         ],
     },
+
     # =====================================================================
-    # SESSION 37 — Extra basic mixed practice linked to the book
+    # SESSION 37 — Adjectief buiging: -e of geen -e? (Notities maandag 4 mei)
     # =====================================================================
     {
         "id": 37,
-        "title": "Extra basis oefenen: alledaags Nederlands",
-        "chapter": "Examentopics Oefenen",
-        "book_page": "Gebaseerd op p. 3–8, 20–31 en examentopics",
+        "title": "Adjectief buiging: -e of GEEN -e?",
+        "chapter": "Examen Extra — Maandag 4 mei notities",
+        "book_page": "NT2 Drempel 2 / CVO GEMT 3.2 — grammatica",
         "review": [
-            {"q": "Hoe zeg je: 'I have brown eyes'?", "a": "Ik heb bruine ogen."},
-            {"q": "Welke zin is correct: 'Gisteren ik werkte' of 'Gisteren werkte ik'?", "a": "Gisteren werkte ik."},
-            {"q": "Wat gebruik je voor een reden: omdat of daarom?", "a": "omdat voor een bijzin met werkwoord op het einde; daarom als bijwoord met inversie."},
-            {"q": "Hoe vraag je beleefd een afspraak?", "a": "Ik zou graag een afspraak willen maken."},
+            {"q": "Wat is een 'de-woord' en een 'het-woord'?",
+             "a": "De-woorden: de stad, de fiets, de dag. Het-woorden: het huis, het kind, het boek. Meervoud is altijd 'de'."},
+            {"q": "Wanneer krijgt een bijvoeglijk naamwoord -e?",
+             "a": "Altijd bij de-woorden. Bij het-woorden ALLEEN met een bepaald lidwoord (het/dit/dat/elk/ieder). NIET bij 'een + het-woord'."},
+            {"q": "Geef een voorbeeld zonder -e.",
+             "a": "een groot huis (een + het-woord → geen -e). koud water (geen lidwoord + het-woord → geen -e). De stad is groot. (predicatief → geen -e)"},
         ],
         "vocabulary": [
-            {"nl": "dagelijks", "en": "daily / every day", "ex": "Ik oefen dagelijks Nederlands."},
-            {"nl": "gemakkelijk", "en": "easy", "ex": "Deze oefening is gemakkelijk."},
-            {"nl": "moeilijk", "en": "difficult", "ex": "Uitspraak is soms moeilijk."},
-            {"nl": "langzaam", "en": "slowly", "ex": "De docent spreekt langzaam."},
-            {"nl": "duidelijk", "en": "clear / clearly", "ex": "Zij spreekt duidelijk."},
-            {"nl": "herhalen", "en": "to repeat", "ex": "Kunt u dat herhalen?"},
-            {"nl": "begrijpen", "en": "to understand", "ex": "Ik begrijp de vraag."},
-            {"nl": "proberen", "en": "to try", "ex": "Ik probeer elke dag te oefenen."},
-            {"nl": "de afspraak", "en": "the appointment", "ex": "Ik heb morgen een afspraak."},
-            {"nl": "de vrije tijd", "en": "free time", "ex": "In mijn vrije tijd lees ik boeken."},
+            {"nl": "het bijvoeglijk naamwoord", "en": "adjective",
+             "ex": "Groot, mooi, oud zijn bijvoeglijke naamwoorden."},
+            {"nl": "het lidwoord", "en": "article (de/het/een)",
+             "ex": "De, het en een zijn lidwoorden."},
+            {"nl": "bepaald",
+                "en": "definite (de/het)", "ex": "Het bepaald lidwoord = de, het."},
+            {"nl": "onbepaald",
+                "en": "indefinite (een)", "ex": "Het onbepaald lidwoord = een."},
+            {"nl": "predicatief", "en": "predicative (after zijn/worden)",
+             "ex": "De stad is groot. → groot = predicatief."},
+            {"nl": "attributief", "en": "attributive (before noun)",
+             "ex": "de grote stad → grote = attributief."},
+            {"nl": "de stad",
+                "en": "the city (de-woord)", "ex": "de grote stad"},
+            {"nl": "het huis",
+                "en": "the house (het-woord)", "ex": "een groot huis"},
+            {"nl": "het kind",
+                "en": "the child (het-woord)", "ex": "een klein kind"},
+            {"nl": "het water",
+                "en": "the water (het-woord, geen lidwoord)", "ex": "koud water"},
+            {"nl": "de dag",
+                "en": "the day (de-woord)", "ex": "een mooie dag"},
+            {"nl": "het boek",
+                "en": "the book (het-woord)", "ex": "een interessant boek"},
         ],
-        "grammar_title": "Basisherhaling — korte zinnen, reden geven en jezelf beschrijven",
+        "grammar_title": "De -e buigingsregel — wanneer krijgt het bijvoeglijk naamwoord -e?",
         "grammar_html": """
-<h4>Wat oefen je hier?</h4>
-<p>Deze extra sessie is voor <strong>basisherhaling</strong>. Ze volgt de thema's uit je boek, maar met eenvoudigere zinnen.
-Je oefent 4 dingen die je vaak nodig hebt:</p>
-<ol>
-<li><b>jezelf beschrijven</b>: <em>Ik ben … / Ik heb … / Ik draag …</em></li>
-<li><b>vrije tijd</b>: <em>In mijn vrije tijd … / In het weekend …</em></li>
-<li><b>een reden geven</b>: <em>… omdat …</em></li>
-<li><b>beleefd vragen</b>: <em>Ik zou graag … willen …</em></li>
-</ol>
-
-<h4>Vier basispatronen</h4>
+<h4>De gouden regel — overzichtstabel</h4>
 <table>
-<tr><th>Functie</th><th>Patroon</th><th>Voorbeeld</th></tr>
-<tr><td>Eigenschap</td><td><b>zijn</b> + adjectief</td><td><em>Ik ben rustig. Mijn collega is vriendelijk.</em></td></tr>
-<tr><td>Lichaamsdeel / bezit</td><td><b>hebben</b> + zelfstandig naamwoord</td><td><em>Ik heb zwarte ogen. Ik heb een rugzak.</em></td></tr>
-<tr><td>Reden</td><td>hoofdzin + <b>omdat</b> + bijzin</td><td><em>Ik leer Nederlands omdat ik in Gent woon.</em></td></tr>
-<tr><td>Beleefde vraag</td><td><b>zou graag willen</b> + infinitief</td><td><em>Ik zou graag een afspraak willen maken.</em></td></tr>
+<tr><th>Situatie</th><th>de-woord</th><th>het-woord</th><th>Voorbeeld (de stad / het huis)</th></tr>
+<tr><td><b>Bepaald lidwoord</b> (de/het)</td><td>-<b>e</b></td><td>-<b>e</b></td><td>de groot<b>e</b> stad / het groot<b>e</b> huis</td></tr>
+<tr><td><b>Onbepaald lidwoord</b> (een)</td><td>-<b>e</b></td><td><b>geen -e</b></td><td>een groot<b>e</b> stad / een <b>groot</b> huis</td></tr>
+<tr><td><b>Geen lidwoord</b></td><td>-<b>e</b></td><td><b>geen -e</b></td><td>mooie muziek (de) / koud water (het)</td></tr>
+<tr><td><b>Predicatief</b> (na zijn/worden/blijven)</td><td><b>geen -e</b></td><td><b>geen -e</b></td><td>De stad is groot. / Het huis is groot.</td></tr>
+<tr><td><b>Meervoud</b> (altijd de)</td><td>-<b>e</b></td><td>-<b>e</b></td><td>grote steden / grote huizen</td></tr>
 </table>
 
-<h4>Kleine bouwstenen voor makkelijke antwoorden</h4>
-<ul>
-<li><em>Ik ben 32 jaar oud.</em></li>
-<li><em>Ik woon in Gent.</em></li>
-<li><em>Ik werk aan de universiteit.</em></li>
-<li><em>In mijn vrije tijd wandel ik en lees ik.</em></li>
-<li><em>Ik leer Nederlands omdat ik hier woon en werk.</em></li>
-<li><em>Kunt u dat herhalen, alstublieft?</em></li>
-</ul>
-""",
-        "grammar_letop": """
-<ul>
-<li><span class="wrong">Ik ben bruine ogen.</span> → <span class="right">Ik heb bruine ogen.</span><br>
-   Ogen, haar, neus en mond gebruik je met <b>hebben</b>.</li>
-<li><span class="wrong">Omdat ik woon in Gent.</span> → <span class="right">Omdat ik in Gent woon.</span><br>
-   Na <b>omdat</b> gaat het werkwoord naar het <b>einde</b>.</li>
-<li><span class="wrong">Ik zou graag maken een afspraak.</span> → <span class="right">Ik zou graag een afspraak willen maken.</span><br>
-   Beleefde vraag: <b>zou graag + object + willen + infinitief</b>.</li>
-<li><span class="wrong">Gisteren ik werkte thuis.</span> → <span class="right">Gisteren werkte ik thuis.</span><br>
-   Als tijd eerst komt, krijg je <b>inversie</b>.</li>
-</ul>
-""",
-        "grammar_extra": """
-<h4>Modelantwoorden voor zwakkere starters</h4>
-<p>Gebruik deze zinnen als basis en verander alleen 1 of 2 woorden:</p>
-<ul>
-<li><em>Ik ben niet zo lang, maar ik ben wel sportief.</em></li>
-<li><em>Ik heb zwart haar en bruine ogen.</em></li>
-<li><em>In mijn vrije tijd kijk ik series en bel ik met mijn familie.</em></li>
-<li><em>Ik leer Nederlands omdat ik beter wil communiceren op het werk.</em></li>
-<li><em>Ik zou graag een afspraak willen maken voor volgende week.</em></li>
-<li><em>Volgens mij is Nederlands moeilijk, maar ook interessant.</em></li>
-</ul>
+<h4>⚠️ Speciale gevallen</h4>
+<table>
+<tr><th>Woord</th><th>Werkt als</th><th>Voorbeeld</th></tr>
+<tr><td>dit / dat / elk / ieder + het-woord</td><td>bepaald → -<b>e</b></td><td>dit groot<b>e</b> huis / elk groot<b>e</b> huis</td></tr>
+<tr><td>geen + de-woord</td><td>als een → -<b>e</b></td><td>geen groot<b>e</b> stad</td></tr>
+<tr><td>geen + het-woord</td><td>als een → <b>geen -e</b></td><td>geen groot huis</td></tr>
+<tr><td>mijn / jouw / zijn + de-woord</td><td>als een → -<b>e</b></td><td>mijn groot<b>e</b> fiets</td></tr>
+<tr><td>mijn / jouw / zijn + het-woord</td><td>als een → -<b>e</b></td><td>mijn groot<b>e</b> huis ✓</td></tr>
+</table>
+<p>⚠️ <b>Let op!</b> Bezittelijk voornaamwoord + het-woord → WEL -e! (mijn grote huis — niet mijn groot huis)</p>
 
-<h4>Mini-stappenplan om te oefenen</h4>
-<ol>
-<li>Lees de zin hardop.</li>
-<li>Schrijf dezelfde zin opnieuw met jouw informatie.</li>
-<li>Verander daarna alleen de tijd of de plaats.</li>
-<li>Maak ten slotte een volledig nieuwe zin zonder hulp.</li>
-</ol>
-""",
-        "grammar_quick": """
+<h4>Geheugensteuntje 🧠</h4>
+<div class="formula-card">
+<b>Vraag jezelf:</b><br>
+1️⃣ Staat het bijvoeglijk naamwoord NA zijn/worden/blijven? → <b>GEEN -e</b> (De stad is <b>groot</b>.)<br>
+2️⃣ Is het een meervoud? → <b>WEL -e</b> (grote huizen, grote steden)<br>
+3️⃣ Is het een het-woord met 'een' of geen lidwoord? → <b>GEEN -e</b> (een groot huis)<br>
+4️⃣ In alle andere gevallen → <b>WEL -e</b>
+</div>
+
+<h4>Voorbeelden met Gent</h4>
 <ul>
-<li><b>zijn</b>: ik ben rustig, hij is lang</li>
-<li><b>hebben</b>: ik heb bruine ogen, zij heeft kort haar</li>
-<li><b>omdat</b>: werkwoord op het einde</li>
-<li><b>zou graag willen</b>: beleefde vraag</li>
-<li>na een tijdswoord eerst: <b>inversie</b></li>
+<li>de <b>mooie</b> stad Gent (de-woord + bepaald → -e)</li>
+<li>het <b>oude</b> Gravensteen (het-woord + bepaald → -e)</li>
+<li>een <b>grote</b> universiteit (de-woord + een → -e)</li>
+<li>een <b>oud</b> kasteel (het-woord + een → <b>geen</b> -e!) (kasteel = het-woord)</li>
+<li>Gent is <b>mooi</b>. (predicatief → <b>geen</b> -e)</li>
+<li>Het Gravensteen is <b>oud</b>. (predicatief → <b>geen</b> -e)</li>
+<li>koud bier (het bier — geen lidwoord + het-woord → <b>geen</b> -e)</li>
+<li>koude friet (de friet — geen lidwoord + de-woord → <b>wel</b> -e)</li>
 </ul>
 """,
-        "exercises": [
-            {"type": "fill", "q": "Ik ___ in Gent. (live)", "a": "woon", "tip": "wonen → ik woon."},
-            {"type": "fill", "q": "Ik heb bruine ___. (eyes)", "a": "ogen", "tip": "bruine ogen = brown eyes."},
-            {"type": "fill", "q": "In mijn vrije tijd ___ ik boeken. (read)", "a": "lees", "tip": "lezen → ik lees."},
-            {"type": "fill", "q": "Ik leer Nederlands ___ ik in België woon. (because)", "a": "omdat", "tip": "omdat introduces a reason."},
-            {"type": "choice", "q": "Welke zin is correct?", "options": ["Ik ben zwart haar.", "Ik heb zwart haar.", "Ik draag zwart haar.", "Ik is zwart haar."], "a": "Ik heb zwart haar.", "tip": "Use hebben for hair."},
-            {"type": "choice", "q": "Welke zin is correct?", "options": ["Gisteren ik werkte thuis.", "Gisteren thuis werkte ik.", "Gisteren werkte ik thuis.", "Gisteren ik thuis werkte."], "a": "Gisteren werkte ik thuis.", "tip": "Time word first gives inversion."},
-            {"type": "choice", "q": "Welke beleefde vraag is correct?", "options": ["Ik wil afspraak maken graag.", "Ik zou graag een afspraak willen maken.", "Ik graag zou een afspraak maken.", "Zou ik graag maken afspraak."], "a": "Ik zou graag een afspraak willen maken.", "tip": "Memorize the fixed pattern."},
-            {"type": "tf", "q": "'Omdat ik in Gent woon.' is a complete main sentence.", "a": false, "correction": "Fout. 'Omdat ik in Gent woon' is a subordinate clause. You usually need a main clause too, for example: Ik leer Nederlands omdat ik in Gent woon.", "tip": "Omdat-clause usually depends on a main clause."},
-            {"type": "tf", "q": "'Ik ben slank en ik draag een bril.' is correct Dutch.", "a": true, "correction": "Juist. 'zijn' for quality and 'dragen' for an accessory are both correct here.", "tip": "slank = quality; bril = accessory."},
-            {"type": "tf", "q": "'Zij heeft een grote neus.' is correct.", "a": true, "correction": "Juist. neus is a de-word, so 'grote' is correct.", "tip": "de-word + een often takes -e on the adjective."},
-            {"type": "translate", "q": "I work at the university.", "a": "Ik werk aan de universiteit.", "tip": "Use 'aan de universiteit' here."},
-            {"type": "translate", "q": "In my free time I walk in the city.", "a": "In mijn vrije tijd wandel ik in de stad.", "tip": "Start with the time phrase, then invert: wandel ik."},
-            {"type": "translate", "q": "I learn Dutch because I want to speak with colleagues.", "a": "Ik leer Nederlands omdat ik met collega's wil spreken.", "tip": "omdat sends the verb cluster to the end."},
-            {"type": "reorder", "q": "woon / ik / in / Gent", "a": "Ik woon in Gent.", "tip": "Simple SVO sentence."},
-            {"type": "reorder", "q": "vrije / mijn / in / tijd / lees / ik", "a": "In mijn vrije tijd lees ik.", "tip": "Time phrase first, then inversion."},
-            {"type": "reorder", "q": "omdat / ik / Nederlands / leer / hier / werk", "a": "Ik leer Nederlands omdat ik hier werk.", "tip": "Build a main clause first, then the omdat-clause."}
+        "grammar_letop": [
+            {"wrong": "een grote huis",
+             "right": "een groot huis",
+             "explain": "huis = het-woord. een + het-woord → GEEN -e! (een groot huis)"},
+            {"wrong": "Het huis is grote.",
+             "right": "Het huis is groot.",
+             "explain": "Predicatief (na zijn) → altijd GEEN -e!"},
+            {"wrong": "de oud kasteel",
+             "right": "het oude kasteel",
+             "explain": "kasteel = het-woord. Maar met 'het' (bepaald) → WEL -e: het oude kasteel."},
+            {"wrong": "een interessante boek",
+             "right": "een interessant boek",
+             "explain": "boek = het-woord. een + het-woord → GEEN -e! een interessant boek."},
+            {"wrong": "koud water / koude water",
+             "right": "koud water",
+             "explain": "water = het-woord, geen lidwoord → GEEN -e. koud water ✓"},
         ],
-        "jouw_beurt": "Schrijf 6 korte zinnen over jezelf.\n\n"
-                      "Gebruik deze onderwerpen:\n"
-                      "1. naam of leeftijd\n"
-                      "2. waar je woont\n"
-                      "3. waar je werkt of studeert\n"
-                      "4. je uiterlijk\n"
-                      "5. wat je in je vrije tijd doet\n"
-                      "6. waarom je Nederlands leert\n\n"
-                      "Basismodel:\n"
-                      "Ik ben ...\n"
-                      "Ik woon ...\n"
-                      "Ik werk ...\n"
-                      "Ik heb ...\n"
-                      "In mijn vrije tijd ...\n"
-                      "Ik leer Nederlands omdat ...",
+        "grammar_extra": """
+<h4>Veelvoorkomende het-woorden (leer ze!)</h4>
+<table>
+<tr><th>het-woord</th><th>Voorbeeld zonder -e</th><th>Voorbeeld met -e</th></tr>
+<tr><td>het huis</td><td>een groot huis</td><td>het grote huis / dit grote huis</td></tr>
+<tr><td>het kind</td><td>een klein kind</td><td>het kleine kind / elk kleine kind</td></tr>
+<tr><td>het boek</td><td>een interessant boek</td><td>het interessante boek</td></tr>
+<tr><td>het kasteel</td><td>een oud kasteel</td><td>het oude kasteel</td></tr>
+<tr><td>het centrum</td><td>een druk centrum</td><td>het drukke centrum</td></tr>
+<tr><td>het water</td><td>koud water</td><td>het koude water</td></tr>
+<tr><td>het meisje</td><td>een lief meisje</td><td>het lieve meisje</td></tr>
+<tr><td>het gevoel</td><td>een fijn gevoel</td><td>het fijne gevoel</td></tr>
+</table>
+
+<h4>Oefentabel — vul -e of geen -e in</h4>
+<table>
+<tr><th>Zin</th><th>Correct</th></tr>
+<tr><td>een mooi___ dorp (het dorp)</td><td>een <b>mooi</b> dorp (geen -e)</td></tr>
+<tr><td>het mooi___ dorp</td><td>het <b>mooie</b> dorp (-e)</td></tr>
+<tr><td>een groot___ stad (de stad)</td><td>een <b>grote</b> stad (-e)</td></tr>
+<tr><td>De stad is groot___.</td><td>De stad is <b>groot</b> (geen -e)</td></tr>
+<tr><td>dit interessant___ boek</td><td>dit <b>interessante</b> boek (-e)</td></tr>
+<tr><td>geen klein___ kind (het kind)</td><td>geen <b>klein</b> kind (geen -e)</td></tr>
+</table>
+""",
+        "grammar_quick": [
+            "Predicatief (na zijn/worden) → ALTIJD geen -e: De stad is groot.",
+            "Meervoud → ALTIJD -e: grote steden, kleine kinderen.",
+            "De-woord → bijna altijd -e: de grote stad, een grote stad.",
+            "Het-woord + bepaald (de/het/dit/dat/elk) → -e: het grote huis.",
+            "Het-woord + een / geen lidwoord → GEEN -e: een groot huis, koud water.",
+            "Bezittelijk vnw (mijn/jouw) + het-woord → -e: mijn grote huis.",
+        ],
+        "exercises": [
+            {"type": "choice",
+             "q": "In Gent: 'Ik woon in ___ oud huis.' (het huis — onbepaald)",
+             "options": ["een oude huis", "een oud huis", "het oud huis", "een oud huis"],
+             "a": "een oud huis",
+             "tip": "huis = het-woord. een + het-woord → GEEN -e: een oud huis."},
+            {"type": "choice",
+             "q": "Over het Gravensteen: '___ oud kasteel staat in Gent.' (het kasteel — bepaald)",
+             "options": ["Het oud kasteel", "Het oude kasteel", "Een oud kasteel", "Een oude kasteel"],
+             "a": "Het oude kasteel",
+             "tip": "het + het-woord → WEL -e: Het oude kasteel."},
+            {"type": "fill",
+             "q": "Predicatief: 'Het Gravensteen is ___ (oud).'",
+             "a": "oud",
+             "tip": "Na 'is' (predicatief) → GEEN -e. Het Gravensteen is oud."},
+            {"type": "fill",
+             "q": "'Ik drink ___ (koud) water.' (het water — geen lidwoord)",
+             "a": "koud",
+             "tip": "water = het-woord, geen lidwoord → GEEN -e: koud water."},
+            {"type": "fill",
+             "q": "'Gent is een ___ (mooi) stad.' (de stad — onbepaald)",
+             "a": "mooie",
+             "tip": "stad = de-woord. een + de-woord → WEL -e: een mooie stad."},
+            {"type": "choice",
+             "q": "Meervoud: 'Er zijn veel ___ parken in Gent.' (groot)",
+             "options": ["groot parken", "grote parken", "groten parken", "groten"],
+             "a": "grote parken",
+             "tip": "Meervoud → ALTIJD -e: grote parken."},
+            {"type": "tf",
+             "q": "'een interessante boek' is correct (het boek).",
+             "a": "Nee",
+             "tip": "boek = het-woord. een + het-woord → GEEN -e: een interessant boek."},
+            {"type": "tf",
+             "q": "'het kleine kind' is correct (het kind).",
+             "a": "Ja",
+             "tip": "het + het-woord → WEL -e: het kleine kind. ✓"},
+            {"type": "tf",
+             "q": "'De stad is grote' is correct.",
+             "a": "Nee",
+             "tip": "Predicatief (na 'is') → NOOIT -e! De stad is groot."},
+            {"type": "fill",
+             "q": "'Ik eet ___ (lekker) brood.' (het brood — geen lidwoord)",
+             "a": "lekker",
+             "tip": "brood = het-woord, geen lidwoord → GEEN -e: lekker brood."},
+            {"type": "fill",
+             "q": "'Wij hebben een ___ (groot) probleem.' (het probleem — onbepaald)",
+             "a": "groot",
+             "tip": "probleem = het-woord. een + het-woord → GEEN -e: een groot probleem."},
+            {"type": "choice",
+             "q": "Over de Graslei: 'Dit is ___ mooie plek.' (de plek — onbepaald)",
+             "options": ["een mooie plek", "een mooi plek", "het mooie plek", "een mooier plek"],
+             "a": "een mooie plek",
+             "tip": "plek = de-woord. een + de-woord → WEL -e: een mooie plek."},
+            {"type": "translate",
+             "q": "I live in a small house. (het huis)",
+             "a": "Ik woon in een klein huis.",
+             "tip": "huis = het-woord. een + het-woord → GEEN -e: klein huis."},
+            {"type": "translate",
+             "q": "The old castle is beautiful. (het kasteel)",
+             "a": "Het oude kasteel is mooi.",
+             "tip": "het + het-woord → -e: het oude kasteel. Predicatief (is mooi) → geen -e."},
+            {"type": "reorder",
+             "q": "grote / is / stad / Gent / een",
+             "a": "Gent is een grote stad.",
+             "tip": "stad = de-woord. een grote stad (-e). ✓"},
+        ],
+        "jouw_beurt": "Schrijf 8 zinnen over Gent en gebruik bijvoeglijke naamwoorden.\n\n"
+                      "Gebruik BEIDE vormen (-e en geen -e):\n\n"
+                      "• Minstens 2 met bepaald lidwoord (het … / de …): het oude Gravensteen, de mooie Graslei\n"
+                      "• Minstens 2 met een + het-woord (geen -e): een oud kasteel, een groot plein\n"
+                      "• Minstens 2 predicatief (na 'is'): Gent is mooi. Het Belfort is oud.\n"
+                      "• Minstens 2 meervoud (-e): grote grachten, mooie bruggen\n\n"
+                      "✅ Zelfcheck:\n"
+                      "☐ Na 'is/zijn' → geen -e?\n"
+                      "☐ een + het-woord → geen -e?\n"
+                      "☐ het/de + woord → -e?\n"
+                      "☐ Meervoud → altijd -e?",
     },
 
     # =====================================================================
-    # SESSION 38 — Extra basic speaking and daily conversation
+    # SESSION 38 — Alle voornaamwoordtypen (All pronoun types)
     # =====================================================================
     {
         "id": 38,
-        "title": "Extra basis spreken: korte gesprekken",
-        "chapter": "Examentopics Oefenen",
-        "book_page": "Gebaseerd op spreek- en dagelijkse situaties",
+        "title": "Alle voornaamwoordtypen — aanwijzend, vragend, onbepaald, betrekkelijk",
+        "chapter": "Examen Extra — Maandag 4 mei notities",
+        "book_page": "NT2 Drempel 2 / CVO GEMT 3.2 — grammatica voornaamwoorden",
         "review": [
-            {"q": "Hoe zeg je beleefd: 'Can you repeat that?'", "a": "Kunt u dat herhalen, alstublieft?"},
-            {"q": "Hoe stel je jezelf kort voor?", "a": "Ik heet … Ik kom uit … Ik woon in …"},
-            {"q": "Welke zin gebruik je om hulp te vragen?", "a": "Kunt u mij helpen?"},
+            {"q": "Noem de 4 persoonlijke voornaamwoorden (subject, 1e persoon enkelvoud en meervoud).",
+             "a": "ik (enkelvoud), wij/we (meervoud)"},
+            {"q": "Wat is het verschil tussen 'me' en 'mij'?",
+             "a": "me = onbeklemtoond (Geef me dat boek.). mij = beklemtoond/nadruk (MIJ heb je niet gevraagd!)."},
+            {"q": "Wat zijn reflexieve voornaamwoorden? Geef 3 voorbeelden.",
+             "a": "me, je, zich, ons — Ik was me. Hij scheert zich. Wij vergissen ons."},
         ],
         "vocabulary": [
-            {"nl": "alstublieft", "en": "please", "ex": "Kunt u dat herhalen, alstublieft?"},
-            {"nl": "natuurlijk", "en": "of course", "ex": "Natuurlijk, ik help u graag."},
-            {"nl": "even", "en": "for a moment / briefly", "ex": "Wacht even, alstublieft."},
-            {"nl": "begrijpelijk", "en": "understandable", "ex": "Dat is begrijpelijk."},
-            {"nl": "de vraag", "en": "the question", "ex": "Dat is een moeilijke vraag."},
-            {"nl": "antwoorden", "en": "to answer", "ex": "Ik antwoord rustig."},
-            {"nl": "helpen", "en": "to help", "ex": "Kunt u mij helpen?"},
-            {"nl": "uitleggen", "en": "to explain", "ex": "Kunt u dat uitleggen?"},
+            {"nl": "aanwijzend voornaamwoord", "en": "demonstrative pronoun",
+             "ex": "dit, dat, deze, die"},
+            {"nl": "vragend voornaamwoord", "en": "interrogative pronoun",
+             "ex": "wie, wat, welke, welk"},
+            {"nl": "onbepaald voornaamwoord", "en": "indefinite pronoun",
+             "ex": "iemand, niemand, iets, niets, alles, iedereen"},
+            {"nl": "betrekkelijk voornaamwoord", "en": "relative pronoun",
+             "ex": "die, dat, wat, wie"},
+            {"nl": "dit", "en": "this (het-woord/nearby)",
+             "ex": "Dit boek is interessant."},
+            {"nl": "dat", "en": "that (het-woord/further)",
+             "ex": "Dat huis is groot."},
+            {"nl": "deze", "en": "this (de-woord/nearby)",
+             "ex": "Deze stad is mooi."},
+            {"nl": "die", "en": "that (de-woord/further) / which (relative)",
+             "ex": "Die man is mijn leraar. / de man die..."},
+            {"nl": "iemand", "en": "someone", "ex": "Er is iemand aan de deur."},
+            {"nl": "niemand", "en": "nobody", "ex": "Er is niemand thuis."},
+            {"nl": "iets", "en": "something", "ex": "Ik wil iets eten."},
+            {"nl": "niets", "en": "nothing", "ex": "Ik begrijp niets."},
+            {"nl": "alles", "en": "everything", "ex": "Alles is in orde."},
+            {"nl": "iedereen", "en": "everyone",
+                "ex": "Iedereen spreekt Nederlands."},
+            {"nl": "welke / welk", "en": "which",
+                "ex": "Welke stad? / Welk huis?"},
         ],
-        "grammar_title": "Korte spreekpatronen voor elke dag",
+        "grammar_title": "Alle voornaamwoordtypen — compleet overzicht",
         "grammar_html": """
-<h4>Handige minizinnen</h4>
-<ul>
-<li><em>Goedemorgen. Hoe gaat het?</em></li>
-<li><em>Ik heet … en ik kom uit …</em></li>
-<li><em>Kunt u dat herhalen, alstublieft?</em></li>
-<li><em>Sorry, ik begrijp het niet goed.</em></li>
-<li><em>Kunt u langzamer spreken?</em></li>
-<li><em>Dank u wel voor uw hulp.</em></li>
-</ul>
-
-<h4>Drie vaste patronen</h4>
+<h4>1. Aanwijzende voornaamwoorden (Demonstrative pronouns)</h4>
+<p>Gebruik: om te wijzen op een persoon of ding.</p>
 <table>
-<tr><th>Functie</th><th>Patroon</th><th>Voorbeeld</th></tr>
-<tr><td>Vraag</td><td><b>Kunt u ... ?</b></td><td><em>Kunt u dat herhalen?</em></td></tr>
-<tr><td>Niet begrijpen</td><td><b>Ik begrijp ... niet.</b></td><td><em>Ik begrijp de vraag niet.</em></td></tr>
-<tr><td>Voorstellen</td><td><b>Ik heet ...</b></td><td><em>Ik heet Kumar.</em></td></tr>
+<tr><th></th><th>Dichtbij (this)</th><th>Verder weg (that)</th></tr>
+<tr><td><b>de-woord</b></td><td><b>deze</b> stad</td><td><b>die</b> stad</td></tr>
+<tr><td><b>het-woord</b></td><td><b>dit</b> huis</td><td><b>dat</b> huis</td></tr>
+<tr><td><b>Meervoud</b></td><td><b>deze</b> steden/huizen</td><td><b>die</b> steden/huizen</td></tr>
 </table>
-""",
-        "grammar_letop": """
-<ul>
-<li><span class="wrong">Jij kunt herhalen dat?</span> → <span class="right">Kunt u dat herhalen?</span></li>
-<li><span class="wrong">Ik begrijp niet goed het.</span> → <span class="right">Ik begrijp het niet goed.</span></li>
-<li><span class="wrong">Spreek langzaam kunt u?</span> → <span class="right">Kunt u langzaam spreken?</span></li>
-</ul>
-""",
-        "grammar_extra": """
-<h4>Korte modeldialogen</h4>
-<p><b>In de klas</b></p>
-<ul>
-<li><em>A: Begrijp je de oefening?</em></li>
-<li><em>B: Niet helemaal. Kunt u dat uitleggen?</em></li>
-</ul>
+<p>Als zelfstandig gebruikt (zonder zelfstandig naamwoord): <b>Dit</b> is goed. <b>Dat</b> weet ik niet.</p>
+<div class="formula-card">
+<b>deze / die</b> → de-woorden + meervoud<br>
+<b>dit / dat</b> → het-woorden enkelvoud
+</div>
 
-<p><b>Op het werk</b></p>
-<ul>
-<li><em>A: Kun je morgen komen?</em></li>
-<li><em>B: Ja, natuurlijk.</em></li>
-</ul>
-
-<h4>Audio-ready spreekdrills — call and response</h4>
-<p>Lees de eerste zin hardop alsof iemand een vraag stelt. Geef dan meteen het korte antwoord.</p>
+<h4>2. Vragende voornaamwoorden (Interrogative pronouns)</h4>
 <table>
-<tr><th>Call</th><th>Response</th></tr>
-<tr><td><em>Hoe heet je?</em></td><td><em>Ik heet Ravi.</em></td></tr>
-<tr><td><em>Waar woon je?</em></td><td><em>Ik woon in Gent.</em></td></tr>
-<tr><td><em>Begrijp je de vraag?</em></td><td><em>Nog niet helemaal.</em></td></tr>
-<tr><td><em>Kunt u dat herhalen?</em></td><td><em>Ja, natuurlijk.</em></td></tr>
-<tr><td><em>Heb je hulp nodig?</em></td><td><em>Ja, graag.</em></td></tr>
-<tr><td><em>Kun je langzaam spreken?</em></td><td><em>Ja, natuurlijk.</em></td></tr>
-<tr><td><em>Wat doe je in je vrije tijd?</em></td><td><em>Ik lees en ik wandel.</em></td></tr>
-<tr><td><em>Waarom leer je Nederlands?</em></td><td><em>Omdat ik in België woon.</em></td></tr>
+<tr><th>Vraagwoord</th><th>Gebruik</th><th>Voorbeeld</th></tr>
+<tr><td><b>wie</b></td><td>personen (wie?)</td><td><b>Wie</b> is dat? / <b>Wie</b> heb je gezien?</td></tr>
+<tr><td><b>wat</b></td><td>dingen / abstracte zaken</td><td><b>Wat</b> doe je? / <b>Wat</b> is dat?</td></tr>
+<tr><td><b>welke</b></td><td>keuze uit groep — de-woord / meervoud</td><td><b>Welke</b> stad? / <b>Welke</b> boeken?</td></tr>
+<tr><td><b>welk</b></td><td>keuze uit groep — het-woord enkelvoud</td><td><b>Welk</b> huis? / <b>Welk</b> land?</td></tr>
+</table>
+<p><b>Wie</b> verbuigt in formeel schrift: Aan <b>wie</b> geef je dat? / <b>Wiens</b> boek is dat? (van wie?)</p>
+
+<h4>3. Onbepaalde voornaamwoorden (Indefinite pronouns)</h4>
+<table>
+<tr><th>Woord</th><th>Betekenis</th><th>Voorbeeld</th></tr>
+<tr><td><b>iemand</b></td><td>someone</td><td><b>Iemand</b> belde je.</td></tr>
+<tr><td><b>niemand</b></td><td>nobody</td><td><b>Niemand</b> weet het antwoord.</td></tr>
+<tr><td><b>iets</b></td><td>something</td><td>Heb je <b>iets</b> gegeten?</td></tr>
+<tr><td><b>niets</b></td><td>nothing</td><td>Ik heb <b>niets</b> gedaan.</td></tr>
+<tr><td><b>alles</b></td><td>everything</td><td><b>Alles</b> is goed.</td></tr>
+<tr><td><b>iedereen</b></td><td>everyone</td><td><b>Iedereen</b> was present.</td></tr>
+<tr><td><b>elk / elke</b></td><td>each/every</td><td><b>Elk</b> huis / <b>Elke</b> dag</td></tr>
+<tr><td><b>sommige</b></td><td>some</td><td><b>Sommige</b> mensen...</td></tr>
+<tr><td><b>andere</b></td><td>other(s)</td><td><b>Andere</b> studenten...</td></tr>
+<tr><td><b>men</b></td><td>one / people (general)</td><td><b>Men</b> zegt dat... (= people say)</td></tr>
 </table>
 
-<p><b>Repeat-after-me drill</b></p>
-<ul>
-<li><em>Kunt u dat herhalen, alstublieft?</em></li>
-<li><em>Ik begrijp het niet goed.</em></li>
-<li><em>Kunt u langzaam spreken?</em></li>
-<li><em>Ik heet Ravi.</em></li>
-<li><em>Ik woon in Gent.</em></li>
-</ul>
+<h4>4. Betrekkelijke voornaamwoorden (Relative pronouns)</h4>
+<p>Verbinden een bijzin aan een zelfstandig naamwoord. Werkwoord gaat naar het einde!</p>
+<table>
+<tr><th>Voornaamwoord</th><th>Gebruik</th><th>Voorbeeld</th></tr>
+<tr><td><b>die</b></td><td>de-woord / meervoud</td><td>De stad <b>die</b> ik leuk vind, is Gent.</td></tr>
+<tr><td><b>dat</b></td><td>het-woord enkelvoud</td><td>Het huis <b>dat</b> ik zie, is groot.</td></tr>
+<tr><td><b>wat</b></td><td>na alles/iets/niets/dat + hele zin</td><td>Alles <b>wat</b> hij zegt is waar.</td></tr>
+<tr><td><b>wie</b></td><td>na persoon / vraagzin</td><td>De persoon <b>met wie</b> ik werk...</td></tr>
+</table>
+<p><b>Woordvolgorde</b>: In een betrekkelijke bijzin → werkwoord naar het EINDE!</p>
+<div class="formula-card">
+De stad <b>die</b> ik leuk <b>vind</b>... (vind = naar einde)<br>
+Het boek <b>dat</b> op tafel <b>ligt</b>... (ligt = naar einde)
+</div>
+
+<h4>5. Tamil vergelijking</h4>
+<p>Tamil heeft ook aanwijzende vnw: இது (itu = this), அது (atu = that), இவர் (person here), அவர் (person there).<br>
+Net als in het Nederlands: dichtbij vs verder weg.<br>
+Onbepaalde vnw: யாரோ (someone), எதுவும் (something/anything), எல்லாம் (everything).</p>
 """,
-        "grammar_quick": """
-<ul>
-<li><b>Kunt u ... ?</b> = polite question</li>
-<li><b>Ik begrijp het niet.</b> = I do not understand</li>
-<li><b>Ik heet ...</b> = I am called ...</li>
-</ul>
-""",
-        "exercises": [
-            {"type": "fill", "q": "Kunt u dat ___? (repeat)", "a": "herhalen", "tip": "A common classroom phrase."},
-            {"type": "fill", "q": "Ik ___ het niet goed. (understand)", "a": "begrijp", "tip": "begrijpen → ik begrijp."},
-            {"type": "choice", "q": "Welke vraag is beleefd?", "options": ["Herhaal dat.", "Kunt u dat herhalen?", "Dat herhalen jij.", "Herhalen nu."], "a": "Kunt u dat herhalen?", "tip": "Use kunt u for a polite question."},
-            {"type": "choice", "q": "Welke zin gebruik je om jezelf voor te stellen?", "options": ["Ik begrijp het niet.", "Ik heet Ravi.", "Kunt u helpen?", "Dat is moeilijk."], "a": "Ik heet Ravi.", "tip": "A basic self-introduction."},
-            {"type": "tf", "q": "'Ik begrijp het niet goed.' is correct.", "a": true, "correction": "Juist.", "tip": "Natural Dutch word order."},
-            {"type": "translate", "q": "Can you help me, please?", "a": "Kunt u mij helpen, alstublieft?", "tip": "A useful polite question."},
-            {"type": "reorder", "q": "ik / heet / Kumar", "a": "Ik heet Kumar.", "tip": "Simple introduction sentence."}
+        "grammar_letop": [
+            {"wrong": "Dit stad is mooi.",
+             "right": "Deze stad is mooi.",
+             "explain": "stad = de-woord → deze (dichtbij) of die (ver). dit/dat alleen voor het-woorden."},
+            {"wrong": "de stad wat ik leuk vind",
+             "right": "de stad die ik leuk vind",
+             "explain": "stad = de-woord → betrekkelijk vnw = die. dat = alleen voor het-woorden."},
+            {"wrong": "het huis die groot is",
+             "right": "het huis dat groot is",
+             "explain": "huis = het-woord → betrekkelijk vnw = dat. die = voor de-woorden."},
+            {"wrong": "Welke huis wil je zien?",
+             "right": "Welk huis wil je zien?",
+             "explain": "huis = het-woord → welk (niet welke). welke = de-woorden en meervoud."},
+            {"wrong": "Iemand belde jij.",
+             "right": "Iemand belde je.",
+             "explain": "Onbepaald vnw (iemand) als subject → zin werkt normaal. jij → object = je."},
         ],
-        "jouw_beurt": "🎤 AUDIO-READY SPREEKDRILL\n\n"
-                      "Lees elke call hardop en geef meteen het response. Herhaal elke set 3 keer.\n\n"
-                      "1. Call: Hoe heet je?\n"
-                      "   Response: Ik heet ...\n\n"
-                      "2. Call: Waar woon je?\n"
-                      "   Response: Ik woon in ...\n\n"
-                      "3. Call: Wat doe je?\n"
-                      "   Response: Ik werk / ik studeer ...\n\n"
-                      "4. Call: Begrijp je het?\n"
-                      "   Response: Nog niet helemaal.\n\n"
-                      "5. Call: Wat zeg je als iemand te snel spreekt?\n"
-                      "   Response: Kunt u langzaam spreken, alstublieft?\n\n"
-                      "6. Call: Waarom leer je Nederlands?\n"
-                      "   Response: Omdat ik in België woon en werk.\n\n"
-                      "Zeg daarna dezelfde responses nog eens, maar vervang de informatie met jouw eigen woorden.",
+        "grammar_extra": """
+<h4>Oefenzinnen — aanwijzend</h4>
+<ul>
+<li><b>Deze</b> fiets is van mij. / <b>Die</b> fiets is van haar. (de fiets)</li>
+<li><b>Dit</b> boek is interessant. / <b>Dat</b> boek is saai. (het boek)</li>
+<li><b>Deze</b> studenten zijn slim. (meervoud → altijd deze/die)</li>
+<li>Is <b>dit</b> jouw tas? — Nee, <b>die</b> is van hem. (de tas → die als zelfstandig)</li>
+</ul>
+
+<h4>Oefenzinnen — vragend</h4>
+<ul>
+<li><b>Wie</b> is de leraar hier? — Dat is mevrouw Janssens.</li>
+<li><b>Wat</b> heb je gegeten? — Ik heb pasta gegeten.</li>
+<li><b>Welke</b> cursus doe je? — CVO GEMT 3.2.</li>
+<li><b>Welk</b> niveau heb je? — B1.</li>
+</ul>
+
+<h4>Oefenzinnen — betrekkelijk</h4>
+<ul>
+<li>De man <b>die</b> daar staat, is mijn collega. (de man → die)</li>
+<li>Het restaurant <b>dat</b> ik aanbeveel, is in de Patershol. (het restaurant → dat)</li>
+<li>Alles <b>wat</b> ze zegt, klopt. (alles → wat)</li>
+<li>De mensen <b>met wie</b> ik werk, zijn heel vriendelijk. (met + wie = persoon)</li>
+</ul>
+""",
+        "grammar_quick": [
+            "Aanwijzend: deze/die = de-woorden + mv. dit/dat = het-woorden.",
+            "Vragend persoon = wie. Vragend ding = wat. Keuze = welke (de/mv) / welk (het).",
+            "Onbepaald: iemand, niemand, iets, niets, alles, iedereen, men.",
+            "Betrekkelijk: die = de-woord/mv. dat = het-woord. wat = na alles/iets/niets.",
+            "Betrekkelijke bijzin → werkwoord naar het EINDE!",
+            "men = algemeen subject (men zegt dat... = people say that...)",
+        ],
+        "exercises": [
+            {"type": "choice",
+             "q": "Aanwijzend: '___ stad is heel mooi.' (de stad, dichtbij)",
+             "options": ["Dit stad", "Dat stad", "Deze stad", "Die stad"],
+             "a": "Deze stad",
+             "tip": "stad = de-woord + dichtbij → deze."},
+            {"type": "choice",
+             "q": "Aanwijzend: '___ huis staat te koop.' (het huis, verder weg)",
+             "options": ["Deze huis", "Die huis", "Dit huis", "Dat huis"],
+             "a": "Dat huis",
+             "tip": "huis = het-woord + verder weg → dat."},
+            {"type": "fill",
+             "q": "Vragend: '___ is jouw leraar?' (persoon)",
+             "a": "Wie",
+             "tip": "Persoon vragen → Wie. Ding vragen → Wat."},
+            {"type": "fill",
+             "q": "Vragend: '___ cursus doe jij?' (de cursus — keuze uit groep)",
+             "a": "Welke",
+             "tip": "cursus = de-woord → welke. (Welk = het-woord)"},
+            {"type": "fill",
+             "q": "Betrekkelijk: 'De universiteit ___ ik bezoek, is UGent.' (de universiteit)",
+             "a": "die",
+             "tip": "universiteit = de-woord → betrekkelijk vnw = die."},
+            {"type": "fill",
+             "q": "Betrekkelijk: 'Het gebouw ___ ik zoek, is hier.' (het gebouw)",
+             "a": "dat",
+             "tip": "gebouw = het-woord → betrekkelijk vnw = dat."},
+            {"type": "choice",
+             "q": "Onbepaald: 'Er is ___ aan de deur.' (someone)",
+             "options": ["niemand", "iemand", "iets", "alles"],
+             "a": "iemand",
+             "tip": "iemand = someone. niemand = nobody."},
+            {"type": "choice",
+             "q": "Onbepaald: 'Ik begrijp ___ van deze les.' (nothing)",
+             "options": ["niets", "iets", "niemand", "alles"],
+             "a": "niets",
+             "tip": "niets = nothing. iets = something."},
+            {"type": "tf",
+             "q": "'het huis die groot is' is correct.",
+             "a": "Nee",
+             "tip": "huis = het-woord → betrekkelijk vnw = dat, niet die. het huis DAT groot is."},
+            {"type": "tf",
+             "q": "'Deze studenten zijn slim.' is correct (meervoud).",
+             "a": "Ja",
+             "tip": "Meervoud → altijd deze of die. deze studenten ✓"},
+            {"type": "fill",
+             "q": "Betrekkelijk: 'Alles ___ hij doet, is correct.' (na 'alles')",
+             "a": "wat",
+             "tip": "Na alles/iets/niets → betrekkelijk vnw = wat (niet dat)."},
+            {"type": "translate",
+             "q": "Which book did you read? (het boek)",
+             "a": "Welk boek heb jij gelezen?",
+             "tip": "boek = het-woord → welk (niet welke). Perfectum: heb gelezen."},
+            {"type": "translate",
+             "q": "The restaurant that I recommend is on the Graslei. (het restaurant)",
+             "a": "Het restaurant dat ik aanbeveel, staat op de Graslei.",
+             "tip": "restaurant = het-woord → dat. Betrekkelijke bijzin: V-einde (aanbeveel)."},
+            {"type": "reorder",
+             "q": "die / de / ik / stad / leuk / vind / is / Gent",
+             "a": "De stad die ik leuk vind, is Gent.",
+             "tip": "de stad die ik leuk vind → betrekkelijke bijzin: V-einde (vind). Dan komma + is Gent."},
+        ],
+        "jouw_beurt": "Schrijf 8 zinnen met verschillende voornaamwoordtypen.\n\n"
+                      "Gebruik ALLE 4 types:\n"
+                      "• 2 zinnen met aanwijzende vnw (deze/die/dit/dat):\n"
+                      "  → Deze cursus is moeilijk. / Dat huis is groot.\n"
+                      "• 2 zinnen met vragende vnw (wie/wat/welke/welk):\n"
+                      "  → Welke taal spreek je thuis? / Wie is je leraar?\n"
+                      "• 2 zinnen met onbepaalde vnw (iemand/iets/niemand/alles/iedereen):\n"
+                      "  → Iedereen in mijn klas spreekt een andere taal.\n"
+                      "• 2 zinnen met betrekkelijke vnw (die/dat/wat):\n"
+                      "  → De stad die ik woon, is Gent.\n\n"
+                      "Bonus: Schrijf een mini-tekst van 5 zinnen over je klas of je straat\n"
+                      "en gebruik minstens 4 verschillende voornaamwoordtypen.",
     },
 
     # =====================================================================
-    # SESSION 39 — Extra basic reading and writing
+    # SESSION 39 — ER: begin en midden van de zin (positie-oefening)
     # =====================================================================
     {
         "id": 39,
-        "title": "Extra basis lezen en schrijven",
-        "chapter": "Examentopics Oefenen",
-        "book_page": "Gebaseerd op dagelijkse thema's uit het boek",
+        "title": "ER — positie in de zin: begin en midden",
+        "chapter": "Examen Extra — Maandag 4 mei notities",
+        "book_page": "NT2 Drempel 2 / CVO GEMT 3.2 — grammatica ER",
         "review": [
-            {"q": "Hoe zeg je: 'I live in Ghent'?", "a": "Ik woon in Gent."},
-            {"q": "Wat betekent 'vrije tijd'?", "a": "free time"},
-            {"q": "Welke zin geeft een reden?", "a": "Ik leer Nederlands omdat ik hier woon."},
+            {"q": "Noem de 5 functies van 'er'.",
+             "a": "1) er + zijn (er is/zijn). 2) er + voorzetsel (erover, eraan). 3) er + hoeveelheid (ik heb er drie). 4) er = onbeklemtoonde plaats (Ik werk er). 5) er in passieve zin (Er wordt gevochten)."},
+            {"q": "Wat is het verschil tussen 'er zijn' en 'het is'?",
+             "a": "Er zijn = er bestaat iets (there is/are). Het is = beschrijving (it is). Er is een probleem ≠ Het is een probleem."},
+            {"q": "Kun je 'erover' splitsen?",
+             "a": "Ja! Ik denk erover. = Ik denk er (vaak) over. De splitsing is normaal."},
         ],
         "vocabulary": [
-            {"nl": "de stad", "en": "the city", "ex": "Gent is een mooie stad."},
-            {"nl": "de les", "en": "the lesson", "ex": "Vandaag heb ik Nederlandse les."},
-            {"nl": "de docent", "en": "the teacher", "ex": "De docent spreekt duidelijk."},
-            {"nl": "het antwoord", "en": "the answer", "ex": "Ik schrijf het antwoord op."},
-            {"nl": "oefenen", "en": "to practise", "ex": "Ik oefen elke avond."},
-            {"nl": "schrijven", "en": "to write", "ex": "Ik schrijf korte zinnen."},
-            {"nl": "lezen", "en": "to read", "ex": "Ik lees een korte tekst."},
-            {"nl": "gemakkelijk", "en": "easy", "ex": "Deze tekst is gemakkelijk."},
+            {"nl": "de positie", "en": "position / placement",
+                "ex": "De positie van 'er' is belangrijk."},
+            {"nl": "het begin van de zin", "en": "beginning of the sentence",
+             "ex": "Er zijn veel fietsen in Gent."},
+            {"nl": "het midden van de zin", "en": "middle of the sentence",
+             "ex": "Ik heb er drie."},
+            {"nl": "de splitsing", "en": "the split",
+                "ex": "Ik denk er vaak over. (gesplitst)"},
+            {"nl": "onbeklemtoond", "en": "unstressed",
+                "ex": "Er is onbeklemtoond in de zin."},
+            {"nl": "de inversie",
+                "en": "inversion (V before S)", "ex": "Gisteren was er een feest."},
+            {"nl": "het onderwerp", "en": "the subject",
+                "ex": "In 'er zijn boeken', zijn 'boeken' het onderwerp."},
+            {"nl": "de passiefzin", "en": "the passive sentence",
+             "ex": "Er wordt hier gefietst."},
+            {"nl": "gisteren", "en": "yesterday",
+                "ex": "Gisteren was er een storm."},
+            {"nl": "genoeg", "en": "enough", "ex": "Er zijn er genoeg."},
         ],
-        "grammar_title": "Korte tekstjes begrijpen en zelf schrijven",
+        "grammar_title": "ER — alle 5 functies + positieregels (begin vs midden)",
         "grammar_html": """
-<h4>Korte tekst</h4>
-<p><em>Ik heet Ravi. Ik woon in Gent. Overdag werk ik aan de universiteit. 's Avonds leer ik Nederlands. In mijn vrije tijd wandel ik in de stad en lees ik boeken. Ik leer Nederlands omdat ik beter wil praten met collega's.</em></p>
+<h4>De gouden positieregel voor ER</h4>
+<div class="formula-card">
+<b>Normale zin (subject voorop):</b><br>
+Er → direct NA het werkwoord (of zo vroeg mogelijk)<br>
+<em>Er zijn veel studenten op UGent.</em><br>
+<em>Ik heb er drie gekocht.</em><br><br>
+<b>Inversiezin (ander element voorop):</b><br>
+Subject en werkwoord wisselen → er zit TUSSEN of NA het werkwoord<br>
+<em>Gisteren <b>waren er</b> veel mensen op de Korenmarkt.</em><br>
+<em>Op tafel <b>lagen er</b> drie boeken.</em><br><br>
+<b>Vraagzin:</b><br>
+Er komt NA het werkwoord<br>
+<em>Hoeveel studenten <b>zijn er</b>?</em> / <em><b>Is er</b> een probleem?</em>
+</div>
 
-<h4>Wat leer je hier?</h4>
+<h4>Functie 1: ER + ZIJN — begin van de zin</h4>
+<p><b>Er</b> staat bijna altijd aan het <b>begin</b> (of direct na inversie-element).</p>
+<table>
+<tr><th>Zin</th><th>Positie</th></tr>
+<tr><td><b>Er is</b> een park in Gent.</td><td>Er = begin</td></tr>
+<tr><td><b>Er zijn</b> veel fietsen.</td><td>Er = begin</td></tr>
+<tr><td>Gisteren <b>was er</b> een ongeluk.</td><td>Er = na inversie</td></tr>
+<tr><td>In Gent <b>zijn er</b> veel cafés.</td><td>Er = na inversie</td></tr>
+<tr><td>Hoeveel cafés <b>zijn er</b>?</td><td>Er = na werkwoord (vraag)</td></tr>
+</table>
+
+<h4>Functie 2: ER + VOORZETSEL — midden of einde</h4>
+<p>Er + voorzetsel samen <b>of gesplitst</b>:</p>
+<table>
+<tr><th>Samen (einde)</th><th>Gesplitst (er eerder, voorzetsel op einde)</th></tr>
+<tr><td>Ik denk <b>eraan</b>.</td><td>Ik denk <b>er</b> vaak <b>aan</b>.</td></tr>
+<tr><td>We praten <b>erover</b>.</td><td>We praten <b>er</b> soms <b>over</b>.</td></tr>
+<tr><td>Ik wacht <b>erop</b>.</td><td>Ik wacht <b>er</b> al lang <b>op</b>.</td></tr>
+<tr><td>Ik hou <b>ervan</b>.</td><td>Ik hou <b>er</b> echt <b>van</b>.</td></tr>
+</table>
+
+<h4>Functie 3: ER + HOEVEELHEID — midden van de zin</h4>
+<p><b>Er</b> staat direct na het werkwoord (of hulpwerkwoord), VÓÓR het getal:</p>
+<table>
+<tr><th>Zin</th><th>Positie van er</th></tr>
+<tr><td>Ik heb <b>er</b> drie.</td><td>Na heb</td></tr>
+<tr><td>Ik heb <b>er</b> gisteren twee gekocht.</td><td>Na heb, vóór gisteren</td></tr>
+<tr><td>Ze heeft <b>er</b> veel.</td><td>Na heeft</td></tr>
+<tr><td>Hij wil <b>er</b> geen.</td><td>Na wil</td></tr>
+</table>
+
+<h4>Functie 4: ER = onbeklemtoonde plaats — midden</h4>
+<p>Er verwijst terug naar een eerder genoemde plek:</p>
 <ul>
-<li>korte zinnen lezen</li>
-<li>belangrijke woorden herkennen</li>
-<li>je eigen tekst maken met hetzelfde model</li>
+<li>Ken je de Boekentoren? Ik studeer <b>er</b> elke dag. (= in de Boekentoren)</li>
+<li>Ben je al in het Gravensteen geweest? Ik ben <b>er</b> nog niet geweest.</li>
+</ul>
+
+<h4>Functie 5: ER in passieve zin — begin</h4>
+<p>In een passieve zin zonder echt subject staat <b>er</b> aan het <b>begin</b>:</p>
+<ul>
+<li><b>Er</b> wordt hier veel gefietst. (= people cycle a lot here)</li>
+<li><b>Er</b> wordt Nederlands gesproken in Gent. </li>
+<li><b>Er</b> wordt niet gerookt. (No smoking.)</li>
+</ul>
+
+<h4>⚠️ Wanneer mag er NIET aan het begin?</h4>
+<ul>
+<li>Als er al een ander element (tijd, plaats, etc.) aan het begin staat: <em>Gisteren <b>was er</b> een feest.</em> (er = na inversie)</li>
+<li>Bij functie 3 (hoeveelheid): er staat in het MIDDEN: <em>Ik heb <b>er</b> drie.</em> (NIET: Er heb ik drie.)</li>
 </ul>
 """,
-        "grammar_letop": """
-<ul>
-<li>Lees eerst wie, waar, wat en waarom.</li>
-<li>Zoek bekende woorden zoals <b>woon</b>, <b>werk</b>, <b>leer</b>.</li>
-<li>Schrijf daarna dezelfde tekst opnieuw met jouw informatie.</li>
-</ul>
-""",
-        "grammar_extra": """
-<h4>Model om zelf te schrijven</h4>
-<ul>
-<li><em>Ik heet ...</em></li>
-<li><em>Ik woon in ...</em></li>
-<li><em>Ik werk / studeer ...</em></li>
-<li><em>In mijn vrije tijd ...</em></li>
-<li><em>Ik leer Nederlands omdat ...</em></li>
-</ul>
-""",
-        "grammar_quick": """
-<ul>
-<li>Wie? Waar? Wat? Waarom?</li>
-<li>Korte zinnen zijn goed oefenmateriaal.</li>
-<li>Gebruik het model en verander alleen de details.</li>
-</ul>
-""",
-        "exercises": [
-            {"type": "choice", "q": "Waar woont Ravi?", "options": ["in Brussel", "in Gent", "in Antwerpen", "in India"], "a": "in Gent", "tip": "Read the first two sentences."},
-            {"type": "choice", "q": "Wat doet Ravi 's avonds?", "options": ["Hij sport.", "Hij kookt.", "Hij leert Nederlands.", "Hij slaapt."], "a": "Hij leert Nederlands.", "tip": "The answer is stated directly."},
-            {"type": "fill", "q": "Ravi werkt aan de ___.", "a": "universiteit", "tip": "This word appears in the text."},
-            {"type": "fill", "q": "In zijn vrije tijd ___ hij in de stad. (walks)", "a": "wandelt", "tip": "wandelen → hij wandelt."},
-            {"type": "tf", "q": "Ravi leert Nederlands omdat hij beter wil praten met collega's.", "a": true, "correction": "Juist.", "tip": "Look at the final sentence."},
-            {"type": "translate", "q": "I read short texts.", "a": "Ik lees korte teksten.", "tip": "A useful writing-practice sentence."},
-            {"type": "reorder", "q": "leer / ik / Nederlands / omdat / hier / woon / ik", "a": "Ik leer Nederlands omdat ik hier woon.", "tip": "Main clause first, then omdat-clause."}
+        "grammar_letop": [
+            {"wrong": "Zijn er veel studenten?",
+             "right": "Zijn er veel studenten? ✓ (correct!)",
+             "explain": "Dit is correct! In een vraagzin → er komt NA het werkwoord: Zijn er..."},
+            {"wrong": "Ik heb er gisteren twee gekochte.",
+             "right": "Ik heb er gisteren twee gekocht.",
+             "explain": "Voltooid deelwoord: gekocht (niet gekochte). Er staat na het hulpwerkwoord."},
+            {"wrong": "Er ik denk over.",
+             "right": "Ik denk erover. / Ik denk er vaak over.",
+             "explain": "Bij functie 2 (er+prep), er staat NIET alleen aan het begin. Samen: erover. Gesplitst: er ... over."},
+            {"wrong": "Gisteren er waren veel mensen.",
+             "right": "Gisteren waren er veel mensen.",
+             "explain": "Na inversie (gisteren voorop) → inversie: waren er (niet er waren)."},
+            {"wrong": "Er zijn er drie boeken.",
+             "right": "Er zijn drie boeken. / Ik heb er drie.",
+             "explain": "Je gebruikt ofwel 'er zijn' (functie 1) OFWEL 'er drie' (functie 3), niet beide tegelijk."},
         ],
-        "jouw_beurt": "Schrijf 5 korte zinnen over jezelf met dit model:\n\n"
-                      "Ik heet ...\n"
-                      "Ik woon in ...\n"
-                      "Ik werk / studeer ...\n"
-                      "In mijn vrije tijd ...\n"
-                      "Ik leer Nederlands omdat ...",
+        "grammar_extra": """
+<h4>Posities samengevat — visueel schema</h4>
+<table>
+<tr><th>Functie</th><th>Normaal</th><th>Na inversie</th><th>Vraagzin</th></tr>
+<tr><td>er+zijn</td><td><b>Er</b> zijn studenten.</td><td>Hier <b>zijn er</b> studenten.</td><td><b>Zijn er</b> studenten?</td></tr>
+<tr><td>er+hoeveelheid</td><td>Ik heb <b>er</b> drie.</td><td>Gisteren kocht ik <b>er</b> twee.</td><td>Hoeveel heb je <b>er</b>?</td></tr>
+<tr><td>er+prep (samen)</td><td>Ik denk <b>erover</b>.</td><td>Soms denk ik <b>erover</b>.</td><td><b>Waarover</b> denk je?</td></tr>
+<tr><td>er+prep (gesplitst)</td><td>Ik denk <b>er</b> vaak <b>over</b>.</td><td>Soms denk ik <b>er</b> ook <b>over</b>.</td><td>—</td></tr>
+<tr><td>er=plaats</td><td>Ik studeer <b>er</b>.</td><td>Elke dag studeer ik <b>er</b>.</td><td>Ben je <b>er</b> al geweest?</td></tr>
+<tr><td>er (passief)</td><td><b>Er</b> wordt gefietst.</td><td>In Gent wordt <b>er</b> veel gefietst.</td><td>Wordt <b>er</b> goed betaald?</td></tr>
+</table>
+
+<h4>Examentip: veel gemaakte fouten</h4>
+<ul>
+<li>❌ Er heb ik drie. → ✅ Ik heb er drie. (hoeveelheid: er NA werkwoord, niet aan begin)</li>
+<li>❌ In Gent er zijn veel cafés. → ✅ In Gent zijn er veel cafés. (inversie → werkwoord 2e)</li>
+<li>❌ Ik praat erover hem. → ✅ Ik praat over hem. (persoon → geen er+prep!)</li>
+</ul>
+""",
+        "grammar_quick": [
+            "Er+zijn: bijna altijd aan het begin of na inversie-element.",
+            "Er+hoeveelheid: in het MIDDEN, na het werkwoord (Ik heb er drie).",
+            "Er+prep: samen (erover) of gesplitst (er...over). Mensen → GEEN er+prep!",
+            "Er=plaats: in het midden, na werkwoord (Ik studeer er).",
+            "Er passief: aan het begin (Er wordt gefietst).",
+            "In vraagzin: er NA werkwoord (Zijn er? / Heb je er?)",
+        ],
+        "exercises": [
+            {"type": "choice",
+             "q": "Begin of midden? 'Hoeveel boeken heb je?' — Antwoord met 'er + vijf':",
+             "options": ["Er heb ik vijf.", "Ik heb er vijf.", "Vijf er heb ik.", "Ik er heb vijf."],
+             "a": "Ik heb er vijf.",
+             "tip": "Hoeveelheid: er staat NA het werkwoord (heb). In het midden: Ik heb er vijf."},
+            {"type": "fill",
+             "q": "Begin van de zin: '___ zijn veel toeristen in Gent in de zomer.'",
+             "a": "Er",
+             "tip": "Er+zijn = existentieel = bijna altijd aan het begin: Er zijn..."},
+            {"type": "fill",
+             "q": "Inversie: 'In de zomer ___ veel toeristen in Gent.' (er+zijn, inversie)",
+             "a": "zijn er",
+             "tip": "Na inversie (In de zomer voorop) → werkwoord 2e: zijn er. (niet er zijn)"},
+            {"type": "fill",
+             "q": "Passief, begin: '___ wordt hier Nederlands gesproken.'",
+             "a": "Er",
+             "tip": "Passieve zin zonder subject → er aan het begin: Er wordt..."},
+            {"type": "choice",
+             "q": "Midden van de zin: 'Ik heb gisteren ___ drie gekocht.' (boeken)",
+             "options": ["er gisteren drie", "gisteren er drie", "er", "drie er"],
+             "a": "er",
+             "tip": "Hoeveelheid: er direct na hulpwerkwoord (heb): Ik heb er gisteren drie gekocht."},
+            {"type": "fill",
+             "q": "Er+prep gesplitst: 'Ik denk ___ elke dag ___.' (eraan → splitsen)",
+             "a": "er / aan",
+             "tip": "eraan = er + aan. Gesplitst: Ik denk er elke dag aan. er staat eerder, aan op het einde."},
+            {"type": "tf",
+             "q": "'Er ik heb drie boeken.' is correct.",
+             "a": "Nee",
+             "tip": "Fout! Hoeveelheid: er staat NA het werkwoord: Ik heb er drie boeken."},
+            {"type": "tf",
+             "q": "'Gisteren waren er veel mensen op het plein.' is correct.",
+             "a": "Ja",
+             "tip": "Correct! Inversie: gisteren voorop → waren er (inversie). ✓"},
+            {"type": "tf",
+             "q": "'Ik praat erover hem.' is correct.",
+             "a": "Nee",
+             "tip": "Fout! Persoon → geen er+prep. Ik praat over hem."},
+            {"type": "choice",
+             "q": "Vraagzin: 'Hoeveel studenten ___ op UGent?'",
+             "options": ["er zijn", "zijn er", "er is", "is er"],
+             "a": "zijn er",
+             "tip": "Vraagzin met hoeveel → werkwoord direct na vraagwoord, dan er: Hoeveel studenten zijn er?"},
+            {"type": "fill",
+             "q": "Er=plaats: 'Ken je de Graslei? Ik ga ___ elke week.' (referring to de Graslei)",
+             "a": "er",
+             "tip": "Er verwijst terug naar de genoemde plaats (de Graslei): Ik ga er elke week."},
+            {"type": "translate",
+             "q": "There are many bridges in Ghent.",
+             "a": "Er zijn veel bruggen in Gent.",
+             "tip": "There are = er zijn. Bruggen = bridges (meervoud van brug)."},
+            {"type": "translate",
+             "q": "I think about it every day. (denken aan — split er)",
+             "a": "Ik denk er elke dag aan.",
+             "tip": "eraan gesplitst: er ... aan. Ik denk er elke dag aan."},
+            {"type": "reorder",
+             "q": "er / in Gent / gefietst / veel / wordt",
+             "a": "Er wordt veel gefietst in Gent.",
+             "tip": "Passief: Er wordt + bijwoord + voltooid deelwoord + plaatsbepaling."},
+            {"type": "reorder",
+             "q": "heb / er / ik / gisteren / drie / gekocht",
+             "a": "Ik heb er gisteren drie gekocht.",
+             "tip": "Hoeveelheid: Ik heb + er + tijdsbepaling (gisteren) + getal (drie) + VD (gekocht)."},
+        ],
+        "jouw_beurt": "Schrijf 10 zinnen met ER — gebruik alle 5 functies.\n\n"
+                      "Functie 1 — er+zijn (begin):\n"
+                      "• Er zijn … in Gent / op UGent / in mijn straat\n\n"
+                      "Functie 2 — er+prep (samen EN gesplitst):\n"
+                      "• Ik denk eraan / Ik denk er elke dag aan\n"
+                      "• Ik hou ervan / Ik hou er echt van\n\n"
+                      "Functie 3 — er+hoeveelheid (midden):\n"
+                      "• Ik heb er … / Ik ken er …\n\n"
+                      "Functie 4 — er=plaats (midden):\n"
+                      "• Ik woon er / Ik studeer er\n\n"
+                      "Functie 5 — er passief (begin):\n"
+                      "• Er wordt … in Gent\n\n"
+                      "Bonus: Schrijf 2 inversieniïnnen met er (Gisteren waren er…).",
     },
 
     # =====================================================================
-    # SESSION 40 — Toch & Maar toch: oefenen met verbindingswoorden
+    # SESSION 40 — SCHRIJVEN: Gent – Toeristische plaatsen (Examentopic)
     # =====================================================================
     {
         "id": 40,
-        "title": "Toch & Maar toch — Verbindingswoorden oefenen",
-        "chapter": "Examentopics Oefenen",
-        "book_page": "Verbindingswoorden: toch, maar toch, zodat, terwijl, toen, daarom, hoewel",
+        "title": "SCHRIJVEN: Gent – Toeristische plaatsen bezoeken",
+        "chapter": "Examen Extra — Maandag 4 mei notities",
+        "book_page": "CVO GEMT 3.2 — examentopic schrijven: stad / toerisme",
         "review": [
-            {"q": "Welk woordje gebruik je voor 'yet/anyway' na een punt? (nieuwe zin, inversie)", "a": "Toch — bv. 'Het regende. Toch ging ik fietsen.' (inversie: ging ik)"},
-            {"q": "Wat is het verschil tussen 'maar' en 'maar toch'?", "a": "'Maar' = simple contrast (but). 'Maar toch' = strong surprise/contrast (but still / yet)"},
-            {"q": "Vormt 'zodat' een bijzin? Waar staat het werkwoord?", "a": "Ja! zodat = bijzin → werkwoord op het EINDE: Ik studeer hard zodat ik slaag."},
+            {"q": "Hoe zeg je 'I visited the Gravensteen'?",
+             "a": "Ik heb het Gravensteen bezocht. (perfectum)"},
+            {"q": "Hoe geef je je mening over een plek?",
+             "a": "Ik vind … (erg) mooi / interessant / gezellig. Volgens mij is … de mooiste plek. Ik zou … aanbevelen."},
+            {"q": "Hoe zeg je 'my favourite place in Ghent'?",
+             "a": "Mijn favoriete plek in Gent is … / Ik ga het liefst naar …"},
         ],
         "vocabulary": [
-            {"nl": "toch", "en": "yet / still / anyway", "ex": "Het regende. Toch ging ik fietsen."},
-            {"nl": "maar toch", "en": "but still / yet", "ex": "Ik was moe, maar toch bleef ik studeren."},
-            {"nl": "desondanks", "en": "despite that / nevertheless", "ex": "Het was koud. Desondanks gingen we wandelen."},
-            {"nl": "ondanks", "en": "despite (+ noun)", "ex": "Ondanks de regen fietste ik naar UGent."},
-            {"nl": "eigenlijk", "en": "actually / to be honest", "ex": "Ik wil eigenlijk niet gaan, maar toch ga ik."},
-            {"nl": "alsnog", "en": "after all / in the end", "ex": "Hij wilde niet komen, maar hij deed het alsnog."},
-            {"nl": "terwijl", "en": "while / whereas (contrast)", "ex": "Terwijl hij sliep, werkte ik."},
-            {"nl": "zodat", "en": "so that (purpose)", "ex": "Ik oefen elke dag zodat ik beter word."},
-            {"nl": "daarom", "en": "therefore / that is why", "ex": "Ik was ziek. Daarom bleef ik thuis."},
-            {"nl": "toen", "en": "when (past)", "ex": "Toen ik aankwam, was de les al begonnen."},
+            {"nl": "het Gravensteen",
+                "en": "Gravensteen castle (Ghent)", "ex": "Het Gravensteen is een middeleeuws kasteel."},
+            {"nl": "de Graslei",
+                "en": "Graslei (Ghent quay)", "ex": "De Graslei is de mooiste kade van Gent."},
+            {"nl": "de Korenlei",
+                "en": "Korenlei (opposite quay)", "ex": "De Korenlei staat tegenover de Graslei."},
+            {"nl": "het Belfort",
+                "en": "the Belfry (Ghent)", "ex": "Het Belfort is het symbool van Gent."},
+            {"nl": "de Sint-Baafskathedraal", "en": "Saint Bavo's Cathedral",
+                "ex": "In de Sint-Baafskathedraal hangt het Lam Gods."},
+            {"nl": "de Vrijdagmarkt", "en": "Friday Market square",
+                "ex": "Op de Vrijdagmarkt kun je iets drinken."},
+            {"nl": "het STAM", "en": "City Museum Ghent",
+                "ex": "Het STAM vertelt de geschiedenis van Gent."},
+            {"nl": "de Patershol", "en": "Patershol neighbourhood",
+                "ex": "De Patershol is bekend voor zijn restaurants."},
+            {"nl": "de Citadelpark", "en": "Citadel Park",
+                "ex": "Het Citadelpark is ideaal om te wandelen."},
+            {"nl": "bezoeken", "en": "to visit",
+                "ex": "Ik heb het Gravensteen bezocht."},
+            {"nl": "aanbevelen", "en": "to recommend",
+                "ex": "Ik beveel de Graslei aan."},
+            {"nl": "indrukwekkend", "en": "impressive",
+                "ex": "Het Gravensteen is erg indrukwekkend."},
+            {"nl": "gezellig", "en": "cozy / lively",
+                "ex": "De Graslei is heel gezellig in de zomer."},
+            {"nl": "historisch", "en": "historic / historical",
+                "ex": "Gent heeft een rijke historische binnenstad."},
+            {"nl": "de toerist", "en": "the tourist",
+                "ex": "Veel toeristen bezoeken Gent elk jaar."},
+            {"nl": "lekker eten", "en": "delicious food / to eat well",
+                "ex": "In de Patershol kun je lekker eten."},
         ],
-        "grammar_title": "Toch, Maar toch & verbindingswoorden in context",
+        "grammar_title": "✍️ Schrijftaak — Gent: toeristische plaatsen (examentypisch)",
         "grammar_html": """
-<h4>1. Toch — three uses</h4>
+<div class="info-box">
+<strong>Examentopic:</strong> Op het CVO GEMT 3.2 examen moet je kunnen schrijven over:<br>
+• Welke plaatsen je hebt bezocht (perfectum)<br>
+• Welke plaatsen je leuk vindt en waarom (mening + omdat/want)<br>
+• Wat je aanbeveelt aan een toerist (advies met zou/moet + imperatief)
+</div>
+
+<h4>🏰 Toeristische plaatsen in Gent — overzicht</h4>
 <table>
-  <tr><th>Use</th><th>Example</th><th>Word order</th></tr>
-  <tr><td><b>New sentence</b> (Group C)</td><td>Het regende. <b>Toch</b> <u>ging ik</u> fietsen.</td><td>Inversie (V + S)</td></tr>
-  <tr><td><b>Mid-sentence reinforcer</b></td><td>Ik ga <b>toch</b> niet. / Kom je <b>toch</b> mee?</td><td>After verb, normal</td></tr>
-  <tr><td><b>After 'hoewel' clause</b></td><td>Hoewel het regende, ging ik <b>toch</b> fietsen.</td><td>End of main clause</td></tr>
+<tr><th>Plek</th><th>Beschrijving</th><th>Tip</th></tr>
+<tr><td><b>Het Gravensteen</b></td><td>Middeleeuws kasteel (12e eeuw). Ooit een gevangenis!</td><td>Perfect voor wie van geschiedenis houdt.</td></tr>
+<tr><td><b>De Graslei & Korenlei</b></td><td>Historische kades langs de Leie. Prachtig uitzicht.</td><td>Zit 's avonds op een terrasje!</td></tr>
+<tr><td><b>Het Belfort</b></td><td>Gotische toren (91m). UNESCO-erfgoed. Lift aanwezig.</td><td>Klim naar boven voor het uitzicht over Gent.</td></tr>
+<tr><td><b>Sint-Baafskathedraal</b></td><td>Gotische kerk. Beroemd door het schilderij 'Het Lam Gods'.</td><td>Zie het Lam Gods — een meesterwerk!</td></tr>
+<tr><td><b>De Vrijdagmarkt</b></td><td>Groot plein met terrassen en het standbeeld van Jacob van Artevelde.</td><td>Bezoek de markt op vrijdag!</td></tr>
+<tr><td><b>De Patershol</b></td><td>Middeleeuws straatje met leuke restaurants.</td><td>Eet er een waterzooi (Gentse specialiteit)!</td></tr>
+<tr><td><b>Het STAM</b></td><td>Stadsmuseum — de geschiedenis van Gent in één museum.</td><td>Ideaal voor een regenachtige dag.</td></tr>
+<tr><td><b>Het Citadelpark</b></td><td>Groot park met vijvers en paden. Vlak bij UGent.</td><td>Perfect voor een wandeling of picknick.</td></tr>
 </table>
 
-<h4>2. Maar toch — strong contrast</h4>
-<p>'Maar toch' is a combination of <b>maar</b> (coordinating, normal order) + <b>toch</b> (reinforcer).<br>
-It expresses surprise or stronger contrast than plain 'maar'.</p>
-<table>
-  <tr><th>Weaker contrast</th><th>Stronger contrast</th></tr>
-  <tr><td>Ik was moe, <b>maar</b> ik ging.</td><td>Ik was moe, <b>maar toch</b> ging ik.</td></tr>
-  <tr><td>Het was duur, <b>maar</b> hij kocht het.</td><td>Het was duur, <b>maar toch</b> kocht hij het.</td></tr>
-</table>
-<p><em>Let op! After 'maar toch' → <b>inversie</b> because toch (Group C) triggers it when it starts the second clause.</em></p>
+<h4>✍️ Modeltekst A — "Wat ik bezocht heb"</h4>
+<div style="background:#f9f9f9;border-left:4px solid #9b59b6;padding:1rem 1.5rem;border-radius:6px;line-height:1.9">
+<p>Ik woon al twee jaar in Gent en ik heb veel toeristische plaatsen bezocht. 
+Vorige maand ben ik naar het Gravensteen gegaan. Het is een oud kasteel uit de twaalfde eeuw en het is heel indrukwekkend. 
+Ik heb ook de Sint-Baafskathedraal bezocht, waar het beroemde schilderij 'Het Lam Gods' hangt. 
+Dat was erg bijzonder.</p>
+<p>Mijn favoriete plek in Gent is de Graslei. Ik ga er bijna elke week naartoe, 
+want het is er heel gezellig, zeker in de zomer. Er zijn veel mensen en er zijn mooie cafés. 
+Ik vind de Graslei mooier dan de Korenlei, omdat het uitzicht er beter is.</p>
+</div>
 
-<h4>3. Key connectors in context — contrast triplets</h4>
-<table>
-  <tr><th>Connector</th><th>Group</th><th>Word order</th><th>Example</th></tr>
-  <tr><td><b>hoewel</b></td><td>B (bijzin)</td><td>verb → END</td><td>Hoewel ik moe <u>was</u>, liep ik toch.</td></tr>
-  <tr><td><b>toch</b></td><td>C (bijwoord)</td><td>Inversie</td><td>Ik was moe. <b>Toch</b> <u>liep ik</u>.</td></tr>
-  <tr><td><b>maar</b></td><td>A (nevenschikkend)</td><td>Normal</td><td>Ik was moe, <b>maar</b> ik liep.</td></tr>
-</table>
+<h4>✍️ Modeltekst B — "Wat ik aanbeveel aan een toerist"</h4>
+<div style="background:#f9f9f9;border-left:4px solid #27ae60;padding:1rem 1.5rem;border-radius:6px;line-height:1.9">
+<p>Als je naar Gent komt, moet je zeker het Belfort bezoeken. Je kunt met de lift naar boven gaan 
+en dan zie je het hele centrum. Het is echt de moeite waard! 
+Ik beveel ook de Patershol aan. Daar kun je heerlijk eten, bijvoorbeeld een waterzooi. 
+Dat is een typisch Gents gerecht.</p>
+<p>Als je van kunst houdt, ga dan naar de Sint-Baafskathedraal. 
+Het Lam Gods is een van de mooiste schilderijen van Europa. 
+En als het regent, is het STAM een goed idee. Je leert alles over de geschiedenis van Gent.</p>
+<p>Mijn lievelingsplek is echter de Graslei. Op een warme avond is het er fantastisch. 
+Je kunt er een biertje drinken en de prachtige gevels bewonderen. 
+Ik zou zeggen: begin je bezoek altijd aan de Graslei!</p>
+</div>
 
-<h4>4. Purpose & cause connectors</h4>
+<h4>Nuttige zinnen voor jouw schrijftaak</h4>
 <table>
-  <tr><th>Connector</th><th>Meaning</th><th>Example</th></tr>
-  <tr><td><b>zodat</b></td><td>so that (result/purpose)</td><td>Ik stu­deer hard <b>zodat</b> ik slaag.</td></tr>
-  <tr><td><b>daarom</b></td><td>therefore</td><td>Ik wil slagen. <b>Daarom</b> studeer ik hard.</td></tr>
-  <tr><td><b>omdat</b></td><td>because</td><td>Ik studeer hard <b>omdat</b> ik wil slagen.</td></tr>
-</table>
-
-<h4>5. Time connectors</h4>
-<table>
-  <tr><th>Connector</th><th>Meaning</th><th>Example</th></tr>
-  <tr><td><b>toen</b></td><td>when (past, one moment)</td><td><b>Toen</b> ik aankwam, was de les al begonnen.</td></tr>
-  <tr><td><b>terwijl</b></td><td>while (two things at same time)</td><td><b>Terwijl</b> hij sliep, werkte ik.</td></tr>
-  <tr><td><b>als</b></td><td>when (present/future/repeated)</td><td><b>Als</b> ik thuis ben, studeer ik.</td></tr>
+<tr><th>Functie</th><th>Zinnen</th></tr>
+<tr><td><b>Bezocht (perfectum)</b></td><td>Ik heb … bezocht. / Ik ben naar … gegaan. / Vorige week was ik in …</td></tr>
+<tr><td><b>Mening geven</b></td><td>Ik vind … (heel) mooi/interessant. / Mijn favoriete plek is … / Ik hou van … omdat …</td></tr>
+<tr><td><b>Vergelijken</b></td><td>… is mooier dan … / … is de mooiste plek / net zo gezellig als …</td></tr>
+<tr><td><b>Aanbevelen</b></td><td>Ik beveel … aan. / Je moet zeker … bezoeken. / Ik zou … aanraden.</td></tr>
+<tr><td><b>Locatie</b></td><td>… ligt in het centrum / vlak bij de Leie / op de hoek van …</td></tr>
+<tr><td><b>Reden</b></td><td>… omdat het historisch is. / want het uitzicht is prachtig. / Daarom ga ik er graag naartoe.</td></tr>
 </table>
 """,
-        "grammar_letop": """
-<ul>
-  <li>❌ Maar toch ik bleef. → ✅ Maar toch <b>bleef ik</b>. <em>(toch triggers inversie)</em></li>
-  <li>❌ Toch ik ging. → ✅ Toch <b>ging ik</b>. <em>(toch = Group C → always inversie)</em></li>
-  <li>❌ Terwijl hij sliep, maar toch ik werkte. → ✅ Terwijl hij sliep, <b>werkte ik</b>. Toch werkte ik!</li>
-  <li>'Toen' = only for one specific moment in the PAST. Use 'als' for repeated/present.</li>
-  <li>'Zodat' explains a PURPOSE or RESULT. Verb goes to END of that clause.</li>
-  <li>'Terwijl' can also mean contrast (whereas): <em>Ik werk hard, terwijl hij alleen maar speelt.</em></li>
-</ul>
-""",
+        "grammar_letop": [
+            {"wrong": "Ik ben het Gravensteen bezocht.",
+             "right": "Ik heb het Gravensteen bezocht.",
+             "explain": "bezoeken = hebben-verb in perfectum: Ik HEB bezocht (niet ben)."},
+            {"wrong": "Ik ga naar Graslei.",
+             "right": "Ik ga naar de Graslei.",
+             "explain": "de Graslei = met bepaald lidwoord. de Graslei (niet gewoon 'Graslei')."},
+            {"wrong": "Mijn favoriete plek is de Graslei omdat het is gezellig.",
+             "right": "Mijn favoriete plek is de Graslei omdat het gezellig is.",
+             "explain": "Omdat-bijzin → werkwoord naar EINDE: omdat het gezellig IS."},
+            {"wrong": "Ik beveel de Graslei voor.",
+             "right": "Ik beveel de Graslei aan.",
+             "explain": "aanbevelen = scheidbaar werkwoord: Ik beveel … AAN. (niet: voor)"},
+        ],
         "grammar_extra": """
-<h4>Full contrast toolkit — same idea, different connector</h4>
+<h4>Nuttige woordenschat voor Gent beschrijven</h4>
 <table>
-  <tr><th>Idea</th><th>Option 1 (Group A)</th><th>Option 2 (Group B)</th><th>Option 3 (Group C)</th></tr>
-  <tr><td>Contrast/but</td><td>Ik was moe, <b>maar</b> ik ging.</td><td><b>Hoewel</b> ik moe was, ging ik.</td><td>Ik was moe. <b>Toch</b> ging ik.</td></tr>
-  <tr><td>Strong contrast</td><td>… , <b>maar toch</b> ging ik.</td><td>—</td><td>—</td></tr>
-  <tr><td>Because</td><td>… , <b>want</b> ik ben ziek.</td><td>… <b>omdat</b> ik ziek ben.</td><td>Ik ben ziek. <b>Daarom</b> ga ik niet.</td></tr>
-  <tr><td>Purpose</td><td>—</td><td>… <b>zodat</b> hij begrijpt.</td><td>—</td></tr>
-  <tr><td>While</td><td>—</td><td><b>Terwijl</b> ik kookte, …</td><td>—</td></tr>
-  <tr><td>When (past)</td><td>—</td><td><b>Toen</b> ik aankwam, …</td><td>—</td></tr>
+<tr><th>Categorie</th><th>Woorden</th></tr>
+<tr><td><b>Beschrijving</b></td><td>historisch, middeleeuws, modern, gezellig, rustig, druk, indrukwekkend, schilderachtig, authentiek</td></tr>
+<tr><td><b>Locatie</b></td><td>in het centrum, vlak bij, langs de Leie, op het plein, in de buurt van</td></tr>
+<tr><td><b>Activiteiten</b></td><td>bezoeken, rondlopen, een terrasje doen, foto's maken, eten, winkelen</td></tr>
+<tr><td><b>Mening</b></td><td>ik vind, ik hou van, mijn favoriet is, ik beveel … aan, het is de moeite waard</td></tr>
 </table>
 
-<h4>Practice sentences — daily life in Gent</h4>
-<ul>
-  <li>"Het was heel druk op de tram. <b>Toch</b> <b>nam ik</b> hem, want ik was al laat."</li>
-  <li>"Ik was erg moe na het werk, <b>maar toch</b> <b>ging ik</b> naar de les."</li>
-  <li>"<b>Terwijl</b> mijn collega's lunchen, oefen ik Nederlands."</li>
-  <li>"<b>Toen</b> ik gisteren thuiskwam, had ik een bericht van mijn docent."</li>
-  <li>"Ik studeer elke avond <b>zodat</b> ik een goed resultaat behaal."</li>
-  <li>"Ik vond het examen moeilijk. <b>Daarom</b> <b>oefen ik</b> extra."</li>
-</ul>
+<h4>Schrijfplan — 3-alinea model (examentypisch)</h4>
+<ol>
+<li><b>Inleiding:</b> Ik woon in Gent / Ik bezoek Gent graag. Ik heb … bezocht.</li>
+<li><b>Mijn favoriete plek:</b> Mijn favoriete plek is … omdat/want … Ik vind het er … Ik ga er graag naartoe.</li>
+<li><b>Aanbeveling:</b> Als je naar Gent komt, moet je … Je kunt er … Ik beveel … aan.</li>
+</ol>
 """,
-        "grammar_quick": """
-<ul>
-  <li><b>toch</b> (new sentence) → inversie: Toch <b>ging ik</b>.</li>
-  <li><b>maar toch</b> → strong contrast + inversie in second part: … maar toch <b>ging ik</b>.</li>
-  <li><b>hoewel</b> → bijzin (verb end) + inversie in main: Hoewel het regende, <b>ging ik</b> toch.</li>
-  <li><b>zodat</b> → bijzin (verb end): zodat ik het examen <b>haal</b>.</li>
-  <li><b>daarom</b> → inversie: Daarom <b>oefen ik</b> elke dag.</li>
-  <li><b>terwijl</b> → bijzin (verb end): terwijl hij sliep / contrast: terwijl jij uitrust.</li>
-  <li><b>toen</b> → bijzin past only + inversie in main: Toen ik aankwam, <b>was het</b> al laat.</li>
-</ul>
-""",
+        "grammar_quick": [
+            "Perfectum (bezocht): Ik HEB bezocht (bezoeken = hebben). Ik BEN gegaan (gaan = zijn).",
+            "Mening: Ik vind … + adj. / Mijn favoriete plek is … / Ik hou van … omdat …",
+            "Aanbeveling: Ik beveel … AAN. / Je moet zeker … bezoeken. / Als je … komt, …",
+            "Vergelijking: … is mooier DAN … / de mooiste plek / net zo gezellig als …",
+            "Locatie: de Graslei (MET lidwoord!) / in het centrum / langs de Leie.",
+            "Omdat-bijzin: werkwoord naar EINDE (omdat het mooi IS).",
+        ],
         "exercises": [
             {"type": "choice",
-             "q": "Ik was heel moe na het werk. ___ ging ik toch naar de les. (yet/anyway — new sentence, inversie)",
-             "options": ["Maar toch", "Toch", "Hoewel"],
-             "a": "Toch",
-             "tip": "New sentence + inversie (ging ik) → Toch (Group C). 'Maar toch' is for continuing the same sentence after a comma."},
+             "q": "Perfectum van 'bezoeken': 'Ik ___ het Gravensteen ___.'",
+             "options": ["ben ... bezocht", "heb ... bezocht", "ben ... bezoekt", "heb ... bezoekt"],
+             "a": "heb ... bezocht",
+             "tip": "bezoeken = transitief werkwoord → hebben. Voltooid deelwoord: bezocht."},
+            {"type": "fill",
+             "q": "'Ik hou van de Graslei ___ het er heel gezellig is.' (because — bijzin)",
+             "a": "omdat",
+             "tip": "Because + bijzin (V-einde) = omdat. Ik hou van de Graslei omdat het gezellig IS."},
+            {"type": "fill",
+             "q": "'Ik beveel de Patershol ___.' (to recommend — scheidbaar)",
+             "a": "aan",
+             "tip": "aanbevelen = scheidbaar: beveel + object + AAN."},
             {"type": "choice",
-             "q": "Het was regenachtig, ___ fietste ik naar de Korenmarkt. (strong contrast, same sentence)",
-             "options": ["maar toch", "toch", "zodat"],
-             "a": "maar toch",
-             "tip": "'Maar toch' = but still — strong contrast within the same sentence. After 'toch' → inversie (fietste ik)."},
-            {"type": "choice",
-             "q": "Ik oefen elke dag ___ ik goed word in het Nederlands. (purpose)",
-             "options": ["zodat", "omdat", "toch"],
-             "a": "zodat",
-             "tip": "Purpose (so that) = zodat. Bijzin → verb to end: zodat ik goed word."},
-            {"type": "choice",
-             "q": "___ ik gisteren thuiskwam, was mijn roommate aan het koken. (when, past moment)",
-             "options": ["Als", "Toen", "Terwijl"],
-             "a": "Toen",
-             "tip": "'Toen' = when (specific past moment). 'Als' = when (repeated/present). 'Terwijl' = while (simultaneous)."},
-            {"type": "choice",
-             "q": "___ mijn collega vergadering had, werkte ik verder aan mijn onderzoek. (while, simultaneous)",
-             "options": ["Toen", "Als", "Terwijl"],
-             "a": "Terwijl",
-             "tip": "Two things happening at the same time in the past → terwijl."},
+             "q": "Vergelijking: 'De Graslei is ___ de Korenlei.'",
+             "options": ["mooier als", "mooier dan", "mooist dan", "mooier van"],
+             "a": "mooier dan",
+             "tip": "Vergelijking = vergrotende trap + DAN. mooier dan ✓"},
             {"type": "fill",
-             "q": "Ik vond het examen heel moeilijk. ___ heb ik een goed resultaat gehaald. (yet/anyway — inversie!)",
-             "a": "Toch",
-             "tip": "New sentence + inversie → Toch heb ik... (heb before ik)."},
-            {"type": "fill",
-             "q": "Het was te duur, ___ kocht hij het cadeau. (strong contrast, same sentence)",
-             "a": "maar toch",
-             "tip": "'maar toch' = but still. After 'toch' → inversie: maar toch kocht hij."},
-            {"type": "fill",
-             "q": "Ik zet mijn telefoon uit ___ ik beter kan concentreren. (so that)",
-             "a": "zodat",
-             "tip": "zodat = so that. Bijzin: verb to end (concentreren)."},
-            {"type": "fill",
-             "q": "Het regende de hele dag. ___ zijn wij naar de Gentse Feesten gegaan. (therefore — inversie)",
-             "a": "Toch",
-             "tip": "Toch (Group C) → inversie: Toch zijn wij gegaan."},
-            {"type": "fill",
-             "q": "___ hij praatte, schreef ik alles op. (while — bijzin, verb end)",
-             "a": "Terwijl",
-             "tip": "Terwijl + bijzin (verb end: praatte). When clause starts the sentence → inversie in main: schreef ik."},
+             "q": "'Als je naar Gent komt, ___ je zeker het Belfort bezoeken.' (must/should)",
+             "a": "moet",
+             "tip": "Advies/aanbeveling: moet je … bezoeken. Als-bijzin → inversie in de hoofdzin."},
             {"type": "tf",
-             "q": "'Maar toch ik ging naar huis.' is een correcte zin.",
-             "a": False,
-             "correction": "Fout! Na 'maar toch' is inversie verplicht: 'Maar toch <b>ging ik</b> naar huis.'",
-             "tip": "Toch = Group C → inversie (verb before subject)."},
+             "q": "'Ik ben het Gravensteen bezocht.' is correct.",
+             "a": "Nee",
+             "tip": "bezoeken = hebben-verb! Ik HEB het Gravensteen bezocht."},
             {"type": "tf",
-             "q": "'Hoewel het koud was, ging ik toch wandelen.' is correct.",
-             "a": True,
-             "correction": "Juist! Hoewel + bijzin (was), + inversie in hoofdzin (ging ik) + toch als versterker.",
-             "tip": "Hoewel-bijzin first → inversie in main + toch reinforces the contrast."},
-            {"type": "tf",
-             "q": "'Terwijl' gebruik je voor een specifiek moment in het verleden (like 'then').",
-             "a": False,
-             "correction": "Fout! 'Terwijl' = while (two things happening simultaneously). For a single past moment: 'Toen'.",
-             "tip": "Terwijl = simultaneous actions. Toen = single past moment."},
+             "q": "'Mijn favoriete plek is de Graslei omdat het gezellig is.' is correct.",
+             "a": "Ja",
+             "tip": "Correct! omdat + bijzin → V-einde: gezellig IS. ✓"},
+            {"type": "fill",
+             "q": "'De Sint-Baafskathedraal is een ___ (impressive) kerk.' (de kerk — attributief)",
+             "a": "indrukwekkende",
+             "tip": "kerk = de-woord + een → -e: een indrukwekkende kerk."},
+            {"type": "choice",
+             "q": "'Het STAM is een museum ___ de geschiedenis van Gent vertelt.' (betrekkelijk vnw, het museum)",
+             "options": ["die", "dat", "wat", "welk"],
+             "a": "dat",
+             "tip": "museum = het-woord → betrekkelijk voornaamwoord = dat."},
+            {"type": "fill",
+             "q": "'In de Patershol kun je ___ (to eat well).'",
+             "a": "lekker eten",
+             "tip": "lekker eten = to eat well / eat delicious food. Patershol is known for restaurants."},
             {"type": "translate",
-             "q": "Although I was tired, I still went to Dutch class.",
-             "a": "Hoewel ik moe was, ging ik toch naar de Nederlandse les.",
-             "tip": "hoewel + bijzin (V-end: was) + inversie in main (ging ik) + toch as reinforcer."},
+             "q": "Last week I visited the Belfry. It is very impressive.",
+             "a": "Vorige week heb ik het Belfort bezocht. Het is heel indrukwekkend.",
+             "tip": "bezoeken = hebben. het Belfort (met lidwoord). indrukwekkend = impressive."},
             {"type": "translate",
-             "q": "I study every evening so that I can speak better Dutch.",
-             "a": "Ik studeer elke avond zodat ik beter Nederlands kan spreken.",
-             "tip": "zodat + bijzin: verb cluster to END → zodat ik beter Nederlands kan spreken."},
-            {"type": "translate",
-             "q": "It was expensive, but still I bought it.",
-             "a": "Het was duur, maar toch kocht ik het.",
-             "tip": "maar toch + inversie: kocht ik."},
-            {"type": "translate",
-             "q": "When I arrived at UGent, the lecture had already started.",
-             "a": "Toen ik aankwam bij UGent, was het college al begonnen.",
-             "tip": "Toen + bijzin (past, V-end: aankwam) → inversie in main (was het)."},
+             "q": "My favourite place in Ghent is the Graslei because it is very cosy.",
+             "a": "Mijn favoriete plek in Gent is de Graslei omdat het er heel gezellig is.",
+             "tip": "favoriete plek = favourite place. de Graslei (met lidwoord). omdat → V-einde. er = there."},
             {"type": "reorder",
-             "q": "ik / was / moe / , / maar / toch / ik / bleef / studeren",
-             "a": "Ik was moe, maar toch bleef ik studeren.",
-             "tip": "maar toch + inversie: bleef ik. Main clause before comma = normal order."},
+             "q": "beveel / ik / Patershol / de / aan",
+             "a": "Ik beveel de Patershol aan.",
+             "tip": "aanbevelen (scheidbaar): Ik beveel + object (de Patershol) + aan."},
             {"type": "reorder",
-             "q": "terwijl / mijn / collega / vergaderde / , / ik / mailde / de / docent",
-             "a": "Terwijl mijn collega vergaderde, mailde ik de docent.",
-             "tip": "Terwijl-bijzin first (V-end: vergaderde) → inversie in main: mailde ik."},
-            {"type": "reorder",
-             "q": "ik / oefen / elke / dag / zodat / ik / het / examen / haal",
-             "a": "Ik oefen elke dag zodat ik het examen haal.",
-             "tip": "Main clause normal order, zodat-bijzin (V-end: haal)."},
+             "q": "het / is / Gravensteen / oud / een / kasteel",
+             "a": "Het Gravensteen is een oud kasteel.",
+             "tip": "kasteel = het-woord. een + het-woord → GEEN -e: een oud kasteel. ✓"},
         ],
-        "jouw_beurt": "Schrijf een korte tekst (8–10 zinnen) over iets wat je deed ondanks een reden om het NIET te doen.\n\n"
-                      "Gebruik minstens:\n"
-                      "• 'toch' (nieuwe zin + inversie)\n"
-                      "• 'maar toch' (in dezelfde zin)\n"
-                      "• 'hoewel' (bijzin)\n"
-                      "• 'zodat' (doel)\n"
-                      "• 'daarom' (reden + inversie)\n"
-                      "• 'terwijl' of 'toen'\n\n"
-                      "Voorbeeld: 'Het was vrijdagavond en ik was erg moe. Toch ging ik naar de les, "
-                      "want ik wil goed worden in Nederlands. Hoewel het regende, reed ik met de fiets, "
-                      "zodat ik op tijd zou komen. Mijn collega's bleven allemaal thuis, maar toch koos "
-                      "ik ervoor te gaan. Toen ik aankwam, waren er maar drie studenten. Daarom konden "
-                      "we extra oefenen met de docent.'",
+        "jouw_beurt": "📝 SCHRIJFTAAK — Gent: toeristische plaatsen (examentypisch)\n\n"
+                      "Schrijf een tekst van 8–12 zinnen over Gent. Gebruik de 3-alinea structuur:\n\n"
+                      "ALINEA 1 — Welke plaatsen heb ik bezocht?\n"
+                      "• Gebruik het perfectum: Ik heb … bezocht. / Ik ben naar … gegaan.\n"
+                      "• Noem minstens 2 plaatsen.\n\n"
+                      "ALINEA 2 — Mijn favoriete plek en waarom\n"
+                      "• Mijn favoriete plek is … omdat … (V-einde!)\n"
+                      "• Gebruik een vergelijking: … is mooier/gezelliger dan …\n"
+                      "• Gebruik ER: Ik ga er graag naartoe. / Het is er heel gezellig.\n\n"
+                      "ALINEA 3 — Aanbeveling voor een toerist\n"
+                      "• Als je naar Gent komt, moet je … bezoeken.\n"
+                      "• Gebruik: Ik beveel … aan. / Je kunt er … / Het is de moeite waard.\n\n"
+                      "✅ Zelfcheck:\n"
+                      "☐ Perfectum correct (heb bezocht / ben gegaan)?\n"
+                      "☐ omdat → werkwoord naar einde?\n"
+                      "☐ Lidwoord bij plaatsnamen (de Graslei, het Gravensteen)?\n"
+                      "☐ Adjectief -e regels correct?\n"
+                      "☐ ER gebruikt (er naartoe, er gezellig)?",
     },
 
     # =====================================================================
-    # SESSION 41 — Examen: Ongeluk beschrijven — Hulpdiensten bellen (112)
+    # SESSION 41 — LEZEN: Goedkoop reizen — tips voor een budget vakantie
     # =====================================================================
     {
         "id": 41,
-        "title": "Examen: Ongeluk beschrijven & Hulpdiensten bellen",
-        "chapter": "Examentopics Oefenen",
-        "book_page": "Examenvoorbereiding — mondeling + schrijven: noodsituatie beschrijven",
+        "title": "Lezen: Goedkoop reizen — tips voor een budgetvakantie",
+        "chapter": "Examen Extra — Maandag 4 mei notities",
+        "book_page": "CVO GEMT 3.2 — examentopic lezen: reizen",
         "review": [
-            {"q": "Wat is het noodnummer in België?", "a": "112 — voor ambulance, brandweer en politie."},
-            {"q": "Hoe zeg je 'He fell down and got injured'?", "a": "Hij is gevallen en hij is gewond geraakt."},
-            {"q": "Welk woord gebruik je voor 'first aid'?", "a": "eerste hulp — bv. Ik heb eerste hulp verleend."},
+            {"q": "Wat is een 'leestekst begrip' (reading comprehension) oefening?",
+             "a": "Je leest een tekst en beantwoordt vragen: meerkeuzevragen (kies het goede antwoord), juist/onjuist en invulvragen."},
+            {"q": "Wat doe je VOOR het lezen van de tekst?",
+             "a": "Lees de vragen eerst! Onderstreep sleutelwoorden. Kijk naar de titel en inleiding voor context."},
+            {"q": "Hoe zeg je 'cheap / budget' in het Nederlands?",
+             "a": "goedkoop (cheap), voordelig (affordable), budget- (budget). Tegenover: duur (expensive)."},
         ],
         "vocabulary": [
-            {"nl": "het ongeluk", "en": "the accident", "ex": "Er is een ongeluk gebeurd op de Kortrijksesteenweg."},
-            {"nl": "vallen / gevallen", "en": "to fall / fallen", "ex": "Hij is van de fiets gevallen."},
-            {"nl": "gewond raken / gewond zijn", "en": "to get injured / to be injured", "ex": "Ze is ernstig gewond."},
-            {"nl": "de eerste hulp verlenen", "en": "to provide first aid", "ex": "Ik heb eerste hulp verleend."},
-            {"nl": "bewust / bewusteloos", "en": "conscious / unconscious", "ex": "De persoon is bewusteloos."},
-            {"nl": "bloeden", "en": "to bleed", "ex": "Hij bloedt aan zijn hoofd."},
-            {"nl": "de ambulance", "en": "the ambulance", "ex": "Ik heb de ambulance gebeld."},
-            {"nl": "de hulpdiensten", "en": "the emergency services", "ex": "De hulpdiensten zijn onderweg."},
-            {"nl": "de locatie / het adres", "en": "the location / the address", "ex": "Het ongeluk is op de hoek van de Veldstraat."},
-            {"nl": "ademen / niet ademen", "en": "to breathe / not breathing", "ex": "Hij ademt nog maar heel zwak."},
-            {"nl": "het slachtoffer", "en": "the victim", "ex": "Het slachtoffer is een oudere man."},
-            {"nl": "de rug / het hoofd / het been / de arm", "en": "back / head / leg / arm", "ex": "Ze heeft pijn aan haar been."},
-            {"nl": "stil liggen", "en": "to lie still", "ex": "Ik heb gezegd dat hij stil moest liggen."},
-            {"nl": "geruststellen", "en": "to reassure", "ex": "Ik heb de persoon gerustgesteld."},
-            {"nl": "onderweg zijn", "en": "to be on the way", "ex": "De ambulance is onderweg."},
+            {"nl": "goedkoop", "en": "cheap / inexpensive",
+                "ex": "Dit hotel is heel goedkoop."},
+            {"nl": "voordelig", "en": "affordable / good value",
+                "ex": "Trein is voordelig met een abonnement."},
+            {"nl": "het budget", "en": "the budget",
+                "ex": "Mijn budget voor vakantie is 500 euro."},
+            {"nl": "de tip", "en": "the tip / advice",
+                "ex": "Ik geef je een tip om goedkoop te reizen."},
+            {"nl": "besparen (op)", "en": "to save (money on)",
+             "ex": "Je kunt besparen op vluchten."},
+            {"nl": "van tevoren", "en": "in advance / beforehand",
+                "ex": "Koop je tickets van tevoren."},
+            {"nl": "het hostel", "en": "the hostel",
+                "ex": "Een hostel is goedkoper dan een hotel."},
+            {"nl": "de vakantie", "en": "the holiday / vacation",
+                "ex": "Ik ga op vakantie naar Spanje."},
+            {"nl": "het seizoen", "en": "the season",
+                "ex": "In het laagseizoen zijn vluchten goedkoper."},
+            {"nl": "het laagseizoen", "en": "low season",
+                "ex": "Reis in het laagseizoen voor lagere prijzen."},
+            {"nl": "het hoogseizoen", "en": "high season",
+                "ex": "In het hoogseizoen zijn hotels duur."},
+            {"nl": "de vlucht", "en": "the flight",
+                "ex": "Een vroege vlucht is vaak goedkoper."},
+            {"nl": "de treinpass", "en": "the rail pass",
+                "ex": "Met een Interrail-pas kun je goedkoop reizen."},
+            {"nl": "het openbaar vervoer", "en": "public transport",
+                "ex": "Met openbaar vervoer bespaar je geld."},
+            {"nl": "de kortingskaart", "en": "the discount card",
+                "ex": "Studenten krijgen een kortingskaart."},
         ],
-        "grammar_title": "Een noodsituatie beschrijven — structuur & taalgebruik",
+        "grammar_title": "📖 Leestekst — Goedkoop reizen: 8 handige tips",
         "grammar_html": """
-<h4>Exam topic: iemand meldt een ongeluk (reporting an accident)</h4>
-<p>In the exam you may be asked to <b>write or speak</b> about a situation where someone has had an accident.
-You need to cover:</p>
-<ol>
-  <li><b>Wat is er gebeurd?</b> — What happened? (use perfectum / imperfectum)</li>
-  <li><b>Waar?</b> — Where is it? (give address / landmark)</li>
-  <li><b>Wie is het slachtoffer?</b> — Who is the victim? (age, appearance, condition)</li>
-  <li><b>Toestand</b> — What is their condition? (conscious? breathing? bleeding?)</li>
-  <li><b>Heb je eerste hulp verleend?</b> — Did you give first aid?</li>
-  <li><b>Wat hebt u gedaan / nog nodig?</b> — What did you do / what do you need?</li>
-</ol>
+<div class="info-box">
+<strong>Leerstrategie (Net zo Box):</strong><br>
+1. Lees de TITEL en de VRAGEN eerst.<br>
+2. Lees de tekst één keer snel door (globaal begrijpen).<br>
+3. Lees een tweede keer en beantwoord de vragen.<br>
+4. Let op: negaties (niet, geen, nooit), tijdsaanduidingen en vergelijkingen.
+</div>
 
-<h4>Model telefoongesprek: bellen naar 112</h4>
-<p><em>Operator: U spreekt met 112. Wat is uw noodgeval?</em><br>
-<strong>Jij:</strong> Goedemiddag. Ik bel om een ongeluk te melden. Er is iemand gevallen op straat.<br>
-<em>Operator: Wat is het adres?</em><br>
-<strong>Jij:</strong> Het is op de Kortrijksesteenweg, ter hoogte van nummer 45, in Gent.<br>
-<em>Operator: Wat is de toestand van het slachtoffer?</em><br>
-<strong>Jij:</strong> Het is een oudere man van ongeveer 70 jaar. Hij is van zijn fiets gevallen en hij is gewond aan zijn hoofd. Hij bloedt een beetje. Hij is bij bewustzijn maar hij kan niet opstaan.<br>
-<em>Operator: Heeft u eerste hulp verleend?</em><br>
-<strong>Jij:</strong> Ja. Ik heb hem gerustgesteld en gezegd dat hij stil moest blijven liggen. Ik heb zijn hoofd niet bewogen. Ik heb ook zijn jas gebruikt om hem warm te houden.<br>
-<em>Operator: De ambulance is onderweg. Blijf bij hem tot de hulpdiensten aankomen.</em><br>
-<strong>Jij:</strong> Goed, ik blijf bij hem. Dank u wel.</p>
+<h4>📄 Leestekst: Goedkoop reizen — 8 handige tips</h4>
+<div style="background:#f9f9f9;border-left:4px solid #e67e22;padding:1rem 1.5rem;border-radius:6px;line-height:1.9">
 
-<h4>Useful connecting words for your story</h4>
-<table>
-  <tr><th>Connector</th><th>Use</th><th>Example</th></tr>
-  <tr><td><b>toen</b></td><td>when (past moment)</td><td>Toen ik de man zag, belde ik meteen 112.</td></tr>
-  <tr><td><b>omdat</b></td><td>because</td><td>Ik belde 112 omdat de man gewond was.</td></tr>
-  <tr><td><b>zodat</b></td><td>so that</td><td>Ik bleef bij hem zodat hij niet alleen was.</td></tr>
-  <tr><td><b>daarna</b></td><td>after that</td><td>Daarna heb ik zijn naam gevraagd.</td></tr>
-  <tr><td><b>terwijl</b></td><td>while</td><td>Terwijl ik belde, hielp een andere voorbijganger.</td></tr>
-  <tr><td><b>toch</b></td><td>still / anyway</td><td>Hij was bang, toch bleef hij rustig.</td></tr>
-  <tr><td><b>maar toch</b></td><td>but still</td><td>Het was een kleine wond, maar toch belde ik 112.</td></tr>
-  <tr><td><b>daarom</b></td><td>therefore</td><td>Hij kon niet bewegen. Daarom heb ik hem niet verplaatst.</td></tr>
-</table>
+<p><strong>Wil je goedkoop op vakantie? Dat kan! Met een beetje planning kun je veel geld besparen. 
+Hier zijn acht handige tips voor een budgetvakantie.</strong></p>
 
-<h4>Tenses to use</h4>
-<ul>
-  <li><b>Perfectum</b> for completed actions: Ik heb gebeld. Hij is gevallen. Ik heb eerste hulp verleend.</li>
-  <li><b>Imperfectum</b> for descriptions/state: Hij was bewusteloos. Hij bloedde aan zijn hoofd. Ze lag op de grond.</li>
-  <li><b>Present tense</b> for urgent/ongoing: Hij ademt zwak. De ambulance is onderweg.</li>
-</ul>
+<p><strong>Tip 1: Reis in het laagseizoen.</strong><br>
+In het laagseizoen zijn vluchten en hotels veel goedkoper dan in het hoogseizoen. 
+Probeer te reizen in september, oktober of in het vroege voorjaar. 
+Dan zijn er ook minder toeristen, wat een extra voordeel is.</p>
+
+<p><strong>Tip 2: Koop je tickets van tevoren.</strong><br>
+Vliegtuigtickets zijn het goedkoopst als je ze vroeg koopt — soms wel drie tot zes maanden van tevoren. 
+Vergelijk ook altijd verschillende websites zoals Skyscanner of Google Flights. 
+Treintickets in België en Nederland zijn goedkoper als je ze online koopt.</p>
+
+<p><strong>Tip 3: Overnacht in een hostel of bij een gastgezin.</strong><br>
+Hotels kunnen erg duur zijn, zeker in de zomer. Een hostel is veel goedkoper, 
+maar je deelt dan een kamer met andere reizigers. 
+Als je meer privacy wilt, is Airbnb soms een goede optie.
+Je kunt ook bij een gastgezin verblijven — dat heet couchsurfen en is soms gratis!</p>
+
+<p><strong>Tip 4: Gebruik openbaar vervoer.</strong><br>
+In plaats van een huurauto, gebruik het openbaar vervoer: bus, metro of tram. 
+In veel Europese steden kun je een dagpas of weekpas kopen, wat veel goedkoper is dan losse tickets. 
+In België heeft De Lijn en de NMBS veel voordelige abonnementen voor studenten.</p>
+
+<p><strong>Tip 5: Eet lokaal en ga naar de markt.</strong><br>
+Restaurants in toeristische gebieden zijn vaak veel duurder dan elders. 
+Ga naar lokale restaurants en eet waar de plaatselijke bevolking eet. 
+Of koop je eten op de markt of in een supermarkt en maak zelf een picknick.</p>
+
+<p><strong>Tip 6: Zoek gratis activiteiten.</strong><br>
+Veel musea zijn gratis op bepaalde dagen. In België zijn musea op de eerste zondag van de maand 
+soms gratis. Bovendien zijn wandelingen, parken, stranden en markten altijd gratis. 
+Je hoeft niet veel geld te besteden om een stad goed te leren kennen.</p>
+
+<p><strong>Tip 7: Neem een studenten- of jongerekorting.</strong><br>
+Ben je student of jonger dan 26 jaar? Dan kun je in veel landen een speciale kortingskaart gebruiken. 
+De ISIC-kaart (International Student Identity Card) geeft korting op musea, hostels en vervoer 
+in meer dan 130 landen.</p>
+
+<p><strong>Tip 8: Plan een budget en houd je eraan.</strong><br>
+Maak een reisbudget voor elke dag. Gebruik een app zoals Trail Wallet of een notitieblok om bij te houden 
+hoeveel je uitgeeft. Als je weet dat je per dag maximaal 50 euro wilt besteden, 
+is het makkelijker om keuzes te maken.</p>
+
+<p><em>Met deze tips kun je een geweldige vakantie hebben zonder veel geld uit te geven. 
+Veel plezier op reis!</em></p>
+</div>
 """,
         "grammar_letop": """
 <ul>
-  <li>'Vallen' uses <b>zijn</b> in perfectum: Hij <b>is</b> gevallen. (NOT heeft)</li>
-  <li>'Gewond raken' uses <b>zijn</b>: Ze <b>is</b> gewond geraakt.</li>
-  <li>For location: use <b>op</b> (on the street), <b>aan</b> (at), <b>ter hoogte van</b> (at the level of).</li>
-  <li>Say the address <b>clearly</b>: straatnaam + huisnummer + stad.</li>
-  <li>For condition: <b>bij bewustzijn</b> (conscious) vs <b>bewusteloos</b> (unconscious).</li>
-  <li>Do NOT say you moved the person unless trained — say <em>Ik heb hem niet bewogen</em> if unsure.</li>
-  <li>Useful phrase: <em>Ik heb hem/haar gerustgesteld en gezegd dat hij/zij stil moest blijven.</em></li>
+<li><b>Besparen OP</b>: Je kunt geld besparen OP vluchten. (vaste voorzetsel)</li>
+<li><b>Van tevoren</b>: Koop je ticket van tevoren (= in advance). Let op de spelling!</li>
+<li><b>In het laagseizoen</b> vs <b>in het hoogseizoen</b>: tegenovergesteld!</li>
+<li><b>Openbaar vervoer</b> = het geheel (bus + trein + metro + tram). Geen meervoud!</li>
+<li><b>Zeker in de zomer</b> = certainly/especially in summer. Zeker ≠ sure (here = especially).</li>
 </ul>
 """,
         "grammar_extra": """
-<h4>Model schrijftaak — volledige tekst (for writing exam)</h4>
-<p><em>Read and use this as a template, replacing details:</em></p>
-<p>Gisteren was ik op weg naar de universiteit toen ik een vrouw op straat zag liggen. Ze was gevallen
-terwijl ze aan het fietsen was. Er was niemand anders in de buurt. Ik belde meteen 112 om een ambulance
-te roepen.</p>
-<p>De telefoniste vroeg naar het adres. Ik gaf haar het adres: de Coupure Links, ter hoogte van nummer 88,
-in Gent. Daarna vroeg ze naar de toestand van het slachtoffer.</p>
-<p>De vrouw was nog bij bewustzijn maar ze kon haar been niet bewegen. Ze bloedde een beetje aan haar knie.
-Ik heb haar gerustgesteld en gezegd dat ze stil moest blijven liggen, zodat de situatie niet erger werd.
-Ik heb haar niet proberen op te tillen omdat ik niet wist of er een rugletsel was. Terwijl ik bij haar
-bleef, kwamen er andere voorbijgangers die ook wilden helpen.</p>
-<p>Na ongeveer vijf minuten arriveerde de ambulance. De verpleegkundigen namen het over. Ik heb mijn
-naam en telefoonnummer achtergelaten zodat de politie later contact met mij kon opnemen. Het was een
-stressvolle situatie, maar toch ben ik blij dat ik er was en dat ik kon helpen.</p>
+<h4>Woordenschat voor goedkoop reizen</h4>
+<table>
+<tr><th>Goedkoop/voordelig</th><th>Duur</th></tr>
+<tr><td>hostel, camping, Airbnb</td><td>hotel, resort</td></tr>
+<tr><td>trein/bus/tram</td><td>taxi, huurauto, vliegtuig</td></tr>
+<tr><td>lokaal restaurant, markt, picknick</td><td>toeristenrestaurant, room service</td></tr>
+<tr><td>laagseizoen (sept/okt/nov/jan/feb)</td><td>hoogseizoen (juli/aug)</td></tr>
+<tr><td>ISIC-kaart, Interrail, abonnement</td><td>losse tickets, last-minute</td></tr>
+</table>
 
-<h4>Key phrases checklist for the exam</h4>
+<h4>Tijdsuitdrukkingen in de tekst</h4>
 <ul>
-  <li>✅ Er is een ongeluk gebeurd op …</li>
-  <li>✅ Hij/zij is gevallen / is aangereden / heeft zich bezeerd.</li>
-  <li>✅ Het slachtoffer is een man/vrouw van ongeveer … jaar.</li>
-  <li>✅ Hij/zij is bij bewustzijn / bewusteloos / ademt zwak.</li>
-  <li>✅ Hij/zij bloedt aan … / heeft pijn aan … / kan niet bewegen.</li>
-  <li>✅ Ik heb eerste hulp verleend: ik heb hem/haar gerustgesteld.</li>
-  <li>✅ Ik heb hem/haar niet bewogen omdat ik niet zeker was van de letsels.</li>
-  <li>✅ De locatie is: [straatnaam + nummer + stad].</li>
-  <li>✅ De ambulance is onderweg / is al aangekomen.</li>
+<li><b>van tevoren</b> = in advance (3-6 maanden van tevoren)</li>
+<li><b>in het vroege voorjaar</b> = in early spring</li>
+<li><b>op de eerste zondag van de maand</b> = on the first Sunday of the month</li>
+<li><b>per dag</b> = per day / daily</li>
 </ul>
 """,
-        "grammar_quick": """
-<ul>
-  <li>112 = noodoproep België (ambulance / brandweer / politie)</li>
-  <li>Wat? Waar? Wie? Toestand? Eerste hulp? — de 5 vragen bij een noodoproep</li>
-  <li>vallen → <b>is gevallen</b> (zijn, not hebben!)</li>
-  <li>bij bewustzijn = conscious | bewusteloos = unconscious</li>
-  <li><b>zodat</b> ik kon helpen → purpose | <b>omdat</b> hij gevallen was → reason</li>
-  <li><b>Terwijl</b> ik wachtte, … | <b>Toen</b> de ambulance aankwam, …</li>
-  <li><b>Maar toch</b> belde ik — strong contrast (the situation seemed minor but I still called)</li>
-</ul>
-""",
+        "grammar_quick": [
+            "Laagseizoen = goedkoper (sept/okt). Hoogseizoen = duurder (juli/aug).",
+            "Van tevoren kopen = goedkoper (3-6 maanden eerder).",
+            "Hostel < Airbnb < Hotel (goedkoopmeter).",
+            "Openbaar vervoer (dagpas/weekpas) < huurauto.",
+            "ISIC-kaart: korting voor studenten in 130+ landen.",
+            "Gratis: musea op 1e zondag, parken, wandelingen, markten.",
+        ],
         "exercises": [
             {"type": "choice",
-             "q": "Je belt 112. Welke informatie geef je EERST?",
-             "options": ["Je naam en telefoonnummer", "Het adres van het ongeluk", "De toestand van het slachtoffer", "Of je eerste hulp hebt verleend"],
-             "a": "Het adres van het ongeluk",
-             "tip": "Emergency services need the location first so they can dispatch help immediately."},
-            {"type": "fill",
-             "q": "Hij is van zijn fiets ___ en hij is gewond ___. (gevallen / geraakt)",
-             "a": "gevallen / geraakt",
-             "tip": "vallen → is gevallen (zijn). gewond raken → is gewond geraakt (zijn)."},
-            {"type": "fill",
-             "q": "De vrouw is ___. Ze reageert niet op mijn stem. (unconscious)",
-             "a": "bewusteloos",
-             "tip": "bewusteloos = not conscious/responsive. bij bewustzijn = conscious."},
-            {"type": "fill",
-             "q": "Ik heb hem ___ en gezegd dat hij stil moest blijven ___. (gerustgesteld / liggen)",
-             "a": "gerustgesteld / liggen",
-             "tip": "geruststellen = to reassure. stil blijven liggen = to keep lying still."},
-            {"type": "choice",
-             "q": "Welke zin is correct voor het noemen van de locatie?",
+             "q": "Tip 1: Wanneer zijn vluchten het goedkoopst?",
              "options": [
-                 "Het ongeluk is op de Veldstraat ter hoogte van nummer 12, in Gent.",
-                 "Het ongeluk is in de Veldstraat nummer, Gent",
-                 "Het is gegaan op Veldstraat 12 Gent zijn",
-                 "Veldstraat 12, de ambulance moet komen"
+                 "In het hoogseizoen (juli/augustus).",
+                 "In het laagseizoen (september/oktober/voorjaar).",
+                 "Op de eerste zondag van de maand.",
+                 "Als je last-minute boekt.",
              ],
-             "a": "Het ongeluk is op de Veldstraat ter hoogte van nummer 12, in Gent.",
-             "tip": "Use: op de [straatnaam], ter hoogte van nummer [X], in [stad]."},
+             "a": "In het laagseizoen (september/oktober/voorjaar).",
+             "tip": "Tip 1: 'In het laagseizoen zijn vluchten en hotels veel goedkoper.'"},
+            {"type": "tf",
+             "q": "Volgens de tekst zijn treintickets goedkoper als je ze online koopt.",
+             "a": "Ja",
+             "tip": "Tip 2: 'Treintickets in België en Nederland zijn goedkoper als je ze online koopt.'"},
+            {"type": "tf",
+             "q": "Couchsurfen betekent altijd betalen voor een slaapplaats.",
+             "a": "Nee",
+             "tip": "Tip 3: 'dat heet couchsurfen en is soms GRATIS!' — niet altijd betalen!"},
             {"type": "choice",
-             "q": "Je ziet dat de man een gewond been heeft maar nog kan praten. Wat is zijn toestand?",
-             "options": ["Hij is bewusteloos.", "Hij is bij bewustzijn maar gewond.", "Hij ademt niet.", "Hij is al dood."],
-             "a": "Hij is bij bewustzijn maar gewond.",
-             "tip": "Bij bewustzijn = conscious (can respond). Gewond = injured."},
+             "q": "Tip 4: Wat raadt de tekst aan in plaats van een huurauto?",
+             "options": [
+                 "Een fiets huren.",
+                 "Een taxi nemen.",
+                 "Openbaar vervoer gebruiken.",
+                 "Te voet gaan.",
+             ],
+             "a": "Openbaar vervoer gebruiken.",
+             "tip": "Tip 4: 'In plaats van een huurauto, gebruik het openbaar vervoer: bus, metro of tram.'"},
+            {"type": "choice",
+             "q": "Tip 5: Waarom zijn restaurants in toeristische gebieden duurder?",
+             "options": [
+                 "Omdat ze betere kwaliteit hebben.",
+                 "Omdat ze grotere porties hebben.",
+                 "Omdat ze in toeristische gebieden liggen en meer vragen.",
+                 "De tekst zegt dit niet.",
+             ],
+             "a": "De tekst zegt dit niet.",
+             "tip": "De tekst zegt ALLEEN dat ze duurder zijn, niet waarom. Let op: lees alleen wat er staat!"},
             {"type": "tf",
-             "q": "'Hij heeft gevallen' is correct Nederlands.",
-             "a": False,
-             "correction": "Fout! 'Vallen' neemt 'zijn': hij <b>is</b> gevallen. Nooit 'heeft gevallen'.",
-             "tip": "Movement/change of state verbs use zijn: vallen, komen, gaan, worden, blijven."},
+             "q": "In België zijn musea elke zondag gratis.",
+             "a": "Nee",
+             "tip": "Tip 6: 'op de EERSTE zondag van de maand soms gratis' — niet ELKE zondag!"},
+            {"type": "choice",
+             "q": "Tip 7: Wie kan de ISIC-kaart gebruiken?",
+             "options": [
+                 "Iedereen.",
+                 "Studenten en mensen jonger dan 26 jaar.",
+                 "Alleen mensen ouder dan 26 jaar.",
+                 "Alleen Belgische studenten.",
+             ],
+             "a": "Studenten en mensen jonger dan 26 jaar.",
+             "tip": "Tip 7: 'Ben je student of jonger dan 26 jaar?'"},
+            {"type": "fill",
+             "q": "Tip 2: Vliegtuigtickets zijn het goedkoopst als je ze ___ koopt (hoe vroeg?)",
+             "a": "vroeg / van tevoren / drie tot zes maanden van tevoren",
+             "tip": "Tip 2: 'soms wel drie tot zes maanden van tevoren' — van tevoren = in advance."},
+            {"type": "fill",
+             "q": "Tip 8: Gebruik een ___ om bij te houden hoeveel je uitgeeft.",
+             "a": "app / Trail Wallet / notitieblok",
+             "tip": "Tip 8: 'Gebruik een app zoals Trail Wallet of een notitieblok om bij te houden…'"},
+            {"type": "choice",
+             "q": "Wat is GEEN tip uit de tekst?",
+             "options": [
+                 "Reis in het laagseizoen.",
+                 "Gebruik een kortingskaart.",
+                 "Vlieg altijd first class voor betere deals.",
+                 "Eet lokaal voedsel.",
+             ],
+             "a": "Vlieg altijd first class voor betere deals.",
+             "tip": "First class vliegen staat NIET in de tekst en is ook niet goedkoop!"},
             {"type": "tf",
-             "q": "In een noodoproep moet je altijd het adres geven.",
-             "a": True,
-             "correction": "Juist! Het adres is de allereerste prioriteit zodat de hulpdiensten kunnen komen.",
-             "tip": "Zonder adres kunnen de hulpdiensten niet helpen."},
+             "q": "Een hostel is duurder dan een hotel.",
+             "a": "Nee",
+             "tip": "Tip 3: 'Een hostel is VEEL GOEDKOPER' dan een hotel."},
             {"type": "translate",
-             "q": "I called 112 because the man was injured and unconscious.",
-             "a": "Ik heb 112 gebeld omdat de man gewond en bewusteloos was.",
-             "tip": "omdat + bijzin (V-end: was). perfectum: heb gebeld."},
+             "q": "You can save money by travelling in low season.",
+             "a": "Je kunt geld besparen door in het laagseizoen te reizen.",
+             "tip": "besparen op / door = save by. laagseizoen = low season. door + te + infinitief."},
             {"type": "translate",
-             "q": "While I was waiting, another passer-by came to help.",
-             "a": "Terwijl ik wachtte, kwam er een andere voorbijganger om te helpen.",
-             "tip": "terwijl + bijzin (V-end: wachtte) → inversie in main: kwam er."},
-            {"type": "translate",
-             "q": "I stayed with her so that she was not alone.",
-             "a": "Ik bleef bij haar zodat ze niet alleen was.",
-             "tip": "zodat + bijzin (V-end: was). Purpose = why you stayed."},
-            {"type": "translate",
-             "q": "The wound was small, but still I called the emergency services.",
-             "a": "De wond was klein, maar toch belde ik de hulpdiensten.",
-             "tip": "maar toch + inversie: belde ik. Strong contrast — despite the size, I still called."},
-            {"type": "reorder",
-             "q": "ik / zag / de / vrouw / liggen / , / belde / ik / meteen / 112 / toen",
-             "a": "Toen ik de vrouw zag liggen, belde ik meteen 112.",
-             "tip": "Toen-bijzin first (V-end: zag) → inversie in main: belde ik."},
-            {"type": "reorder",
-             "q": "ik / heb / hem / gerustgesteld / hij / stil / zodat / zou / blijven",
-             "a": "Ik heb hem gerustgesteld zodat hij stil zou blijven.",
-             "tip": "zodat + bijzin (V-end: blijven, with modal zou). Purpose clause."},
-            {"type": "reorder",
-             "q": "hij / kon / niet / bewegen / . / daarom / heb / ik / 112 / gebeld",
-             "a": "Hij kon niet bewegen. Daarom heb ik 112 gebeld.",
-             "tip": "Daarom (Group C) → inversie: heb ik gebeld."},
+             "q": "I always buy my train tickets in advance.",
+             "a": "Ik koop mijn treintickets altijd van tevoren.",
+             "tip": "van tevoren = in advance. Altijd staat na het werkwoord."},
         ],
-        "jouw_beurt": "Schrijf een tekst van 10–12 zinnen over de volgende situatie:\n\n"
-                      "Je loopt door de stad (kies een straat in Gent) en je ziet plotseling een persoon "
-                      "vallen of een ongeluk meemaken. Beschrijf:\n\n"
-                      "1. Wat er is gebeurd (ongeluk, val, aanrijding...)\n"
-                      "2. Waar het is (exact adres of beschrijving)\n"
-                      "3. Hoe de persoon eruitziet en wat zijn/haar toestand is\n"
-                      "4. Of je eerste hulp hebt verleend en wat je hebt gedaan\n"
-                      "5. Wat je aan de telefonist van 112 hebt verteld\n\n"
-                      "Gebruik minstens: toen, terwijl, omdat, zodat, daarom, maar toch, toch.\n\n"
-                      "Nuttige eerste zin: 'Gisteren liep ik over de [straatnaam] toen ik plotseling "
-                      "een [man/vrouw/jongen] zag [vallen/liggen/struikelen]...'\n\n"
-                      "Model antwoord:\n"
-                      "Gisteren liep ik over de Sint-Pietersnieuwstraat toen ik plotseling een oudere "
-                      "vrouw zag vallen. Ze was gestruikeld over een losliggende steen. Ik ging meteen "
-                      "naar haar toe omdat ze niet opstond. Ze was bij bewustzijn maar ze bloedde aan "
-                      "haar knie en ze had veel pijn aan haar pols. Ik heb 112 gebeld omdat ik zeker "
-                      "wilde zijn dat ze goede hulp kreeg. De telefoniste vroeg het adres. Ik gaf haar "
-                      "het adres: de Sint-Pietersnieuwstraat, ter hoogte van het universiteitscafé, in "
-                      "Gent. Daarna heb ik de vrouw gerustgesteld en gezegd dat ze stil moest blijven "
-                      "liggen zodat de situatie niet erger werd. Terwijl ik bij haar bleef, arriveerde "
-                      "na vijf minuten de ambulance. Het was een kleine val, maar toch was ik blij dat "
-                      "ik 112 had gebeld. Daarom raad ik iedereen aan om altijd te bellen als je iemand "
-                      "gewond ziet.",
+        "jouw_beurt": "📖 LEESTAKEN — Goedkoop reizen\n\n"
+                      "Taak 1 — Samenvatten:\n"
+                      "Schrijf een samenvatting van de 8 tips in eigen woorden (1 zin per tip).\n"
+                      "Gebruik: Ten eerste … / Ten tweede … / Bovendien … / Ten slotte …\n\n"
+                      "Taak 2 — Persoonlijke reactie:\n"
+                      "Welke 3 tips vind jij het nuttigst? Schrijf 4-6 zinnen.\n"
+                      "Gebruik: Ik vind tip … het nuttigst omdat … / Ik gebruik al … / Ik ga … proberen.\n\n"
+                      "Taak 3 — Eigen tips:\n"
+                      "Ken jij een tip die niet in de tekst staat? Schrijf 2-3 eigen tips voor goedkoop reizen.\n\n"
+                      "✅ Zelfcheck:\n"
+                      "☐ Heb je de vragen EERST gelezen?\n"
+                      "☐ Heb je gelet op 'niet/geen/nooit' (negaties)?\n"
+                      "☐ Heb je gelet op 'altijd/soms/nooit' (frequentie)?\n"
+                      "☐ Heb je de tekst niet uitgebreid — alleen wat er staat?",
     },
 
     # =====================================================================
-    # SESSION 42 — Het Adjectief: volledige -e regel (Book p. 42-43 + PPTX)
+    # SESSION 42 — LUISTEREN: Nathalie gaat kamperen (Belgisch meisje)
     # =====================================================================
     {
         "id": 42,
-        "title": "Het Adjectief — Volledige -e Regel",
-        "chapter": "Examentopics Oefenen",
-        "book_page": "NT2 Drempel 2 p. 42–43 + HET ADJECTIEF.pptx",
+        "title": "Luisteren: Nathalie gaat kamperen — een Belgisch meisje vertelt",
+        "chapter": "Examen Extra — Maandag 4 mei notities",
+        "book_page": "CVO GEMT 3.2 — examentopic luisteren: vakantie / kamperen",
         "review": [
-            {"q": "Geef de -e regel voor: 'een ___ huis' (groot — het huis)", "a": "geen -e: een groot huis (het-woord + een → geen -e)"},
-            {"q": "Geef de -e regel voor: 'de ___ fiets' (nieuw)", "a": "een -e: de nieuwe fiets (de-woord → altijd -e)"},
-            {"q": "Wanneer krijgt een bijvoeglijk naamwoord NOOIT -e?", "a": "Na zijn/worden/lijken (predicatief): 'De fiets is nieuw.' Nooit: 'De fiets is nieuwe.'"},
+            {"q": "Luisterstrategie: wat doe je VOOR het luisteren?",
+             "a": "Lees de vragen eerst. Onderstreep sleutelwoorden. Denk: Waar gaat het over? Wie spreekt? Wat wil ik weten?"},
+            {"q": "Hoe zeg je 'to go camping' in het Nederlands?",
+             "a": "kamperen (het kamperen). Ik ga kamperen. / We gaan op kamp."},
+            {"q": "Noem 5 woorden die bij kamperen horen.",
+             "a": "de tent, de slaapzak, de kampeerplaats, het kampvuur, de rugzak"},
         ],
         "vocabulary": [
-            {"nl": "predicatief", "en": "predicative (after the verb)", "ex": "De auto is groot. (never -e)"},
-            {"nl": "attributief", "en": "attributive (before the noun)", "ex": "de grote auto (before the noun → check the rule)"},
-            {"nl": "het lidwoord", "en": "the article", "ex": "de / het / een"},
-            {"nl": "het zelfstandig naamwoord", "en": "the noun", "ex": "huis (het), fiets (de)"},
-            {"nl": "het bijvoeglijk naamwoord", "en": "the adjective", "ex": "groot, nieuw, mooi"},
-            {"nl": "onzijdig", "en": "neuter (het-word)", "ex": "het huis, het kind, het boek"},
-            {"nl": "materiaal", "en": "material (adjective)", "ex": "een houten stoel, een stenen muur"},
+            {"nl": "kamperen", "en": "to go camping",
+                "ex": "We gaan deze zomer kamperen."},
+            {"nl": "de tent", "en": "the tent",
+                "ex": "Ik heb een nieuwe tent gekocht."},
+            {"nl": "de slaapzak", "en": "the sleeping bag",
+                "ex": "Vergeet je slaapzak niet!"},
+            {"nl": "de kampeerplaats / camping", "en": "the campsite",
+             "ex": "We verblijven op een kampeerplaats in de Ardennen."},
+            {"nl": "het kampvuur", "en": "the campfire",
+                "ex": "We zitten rond het kampvuur."},
+            {"nl": "de rugzak", "en": "the backpack",
+                "ex": "Mijn rugzak weegt 12 kilo."},
+            {"nl": "de slaapmat", "en": "the sleeping mat",
+                "ex": "Een slaapmat is comfortabeler dan de grond."},
+            {"nl": "de Ardennen",
+                "en": "the Ardennes (Belgian forests)", "ex": "We kamperen in de Ardennen."},
+            {"nl": "de natuur", "en": "nature", "ex": "Ik hou van de natuur."},
+            {"nl": "wandelen", "en": "to hike / to walk",
+                "ex": "We wandelen elke dag 10 km."},
+            {"nl": "inpakken", "en": "to pack", "ex": "Ik pak mijn koffer in."},
+            {"nl": "de sportwinkel", "en": "the sports shop",
+                "ex": "Ik koop een tent bij de sportwinkel."},
+            {"nl": "comfort", "en": "comfort",
+                "ex": "Kamperen is niet altijd comfortabel."},
+            {"nl": "avontuurlijk", "en": "adventurous",
+                "ex": "Kamperen is een avontuurlijke vakantie."},
+            {"nl": "gezellig", "en": "cozy / fun with others",
+                "ex": "Kamperen met vrienden is heel gezellig."},
+            {"nl": "het materiaal", "en": "the gear / equipment",
+                "ex": "Heb je goed kampeermateriaal?"},
         ],
-        "grammar_title": "Het Adjectief — de -e regel volledig (Book + PPTX)",
+        "grammar_title": "🎧 Luistertekst — Nathalie vertelt over haar kampeerplannen",
         "grammar_html": """
-<h4>The Big Rule — Flowchart</h4>
-<pre>
-Is the adjective AFTER the verb (predicatief)?
-  → NEVER -e.    "De auto is oud."  "Het huis is groot."
+<div class="info-box">
+<strong>Luisterinstructie (Net zo Box stijl):</strong><br>
+Lees de vragen in het <b>Quiz-tabblad</b> eerst!<br>
+Lees dan de monoloog/dialoog hieronder <b>hardop</b>, alsof je echt luistert.<br>
+Let op: intonatie, pauzes en signaalwoorden. Noteer sleutelinformatie.
+</div>
 
-Is the adjective BEFORE the noun (attributief)?
-  → Check the article + de/het:
+<h4>🎧 Monoloog — Nathalie (20 jaar, uit Gent) vertelt over haar vakantieplannen</h4>
+<div style="background:#f9f9f9;border-left:4px solid #9b59b6;padding:1rem 1.5rem;border-radius:6px;line-height:1.9">
+<p>Hallo! Ik heet Nathalie en ik ben twintig jaar oud. Ik ben geboren in Gent en ik studeer 
+verpleegkunde aan de Arteveldehogeschool. Deze zomer wil ik voor het eerst in mijn leven gaan kamperen.</p>
 
-  ┌─ de-word?  ────────────────────────────────→ ALWAYS -e
-  │   (any article: de/een/geen/mijn/dit/dat)   "een grote fiets"
-  │                                              "de grote fiets"
-  │                                              "geen grote fiets"
-  └─ het-word? ─→ definite (het/dit/dat)?  ────→ ALWAYS -e
-                   "het grote huis"
-                   "dat nieuwe boek"
-             ─→ indefinite (een/geen/mijn/zijn)?→ NO -e
-                   "een groot huis"
-                   "geen nieuw boek"
-                   "mijn groot huis"
-             ─→ NO article (standalone)?    ────→ NO -e
-                   "groot haar"  "koud water"
-</pre>
+<p>Ik ga samen met mijn vriendin Laura naar de Ardennen. We vertrekken op 15 juli en we blijven 
+twee weken. We gaan naar een kampeerplaats vlak bij Durbuy. 
+Dat is een klein maar heel schattig stadje in de provincie Luxemburg.</p>
 
-<h4>Complete rule table (from book p. 42)</h4>
-<table>
-  <tr><th>Situation</th><th>-e?</th><th>Example</th></tr>
-  <tr><td>Predicatief (na zijn/worden/lijken)</td><td><b>NOOIT -e</b></td><td>De auto <b>is</b> oud. Het huis <b>is</b> groot.</td></tr>
-  <tr><td>de-woord + de</td><td><b>WEL -e</b></td><td>de <b>oude</b> auto</td></tr>
-  <tr><td>de-woord + een</td><td><b>WEL -e</b></td><td>een <b>oude</b> auto</td></tr>
-  <tr><td>de-woord + geen/mijn/zijn/haar/ons</td><td><b>WEL -e</b></td><td>mijn <b>oude</b> auto</td></tr>
-  <tr><td>het-woord + het/dit/dat</td><td><b>WEL -e</b></td><td>het <b>grote</b> huis · dat <b>nieuwe</b> boek</td></tr>
-  <tr><td>het-woord + een</td><td><b>GEEN -e</b></td><td>een <b>groot</b> huis</td></tr>
-  <tr><td>het-woord + geen/mijn/zijn/haar</td><td><b>GEEN -e</b></td><td>mijn <b>groot</b> huis · geen <b>nieuw</b> boek</td></tr>
-  <tr><td>het-woord + geen lidwoord</td><td><b>GEEN -e</b></td><td><b>groot</b> haar · <b>koud</b> water</td></tr>
-  <tr><td>Meervoud (altijd)</td><td><b>WEL -e</b></td><td><b>grote</b> huizen · <b>oude</b> fietsen</td></tr>
-</table>
+<p>We hebben nog niet alles klaar. Ik heb al een tent gekocht bij de sportwinkel in Gent — 
+een tweepersoonstent voor 89 euro. Dat was een koopje! 
+Maar ik heb nog geen slaapzak en ook geen slaapmat. 
+Die koop ik volgende week. Laura heeft haar slaapzak al van vroeger, maar haar tent is te oud. 
+Gelukkig deelt ze mijn tent.</p>
 
-<h4>Special adjectives — NEVER get -e</h4>
-<table>
-  <tr><th>Adjective</th><th>Example</th></tr>
-  <tr><td>roze</td><td>een roze jurk (never: roze<b>n</b>e jurk)</td></tr>
-  <tr><td>oranje</td><td>een oranje fiets</td></tr>
-  <tr><td>gratis</td><td>een gratis ticket</td></tr>
-  <tr><td>effen</td><td>een effen hemd (plain shirt)</td></tr>
-  <tr><td>Materials: houten, stenen, gouden, zilveren, wollen, plastic…</td><td>een <b>houten</b> stoel · een <b>stenen</b> muur</td></tr>
-</table>
-<p><em>Materials use <b>-en</b> form (not -e): houten, stenen, gouden.</em></p>
+<p>Op de camping willen we veel activiteiten doen. We gaan elke dag wandelen in het bos. 
+Op woensdag is er een kanoëersroute op de rivier de Ourthe, die we zeker willen doen. 
+Op donderdag is er een avondmarkt in Durbuy. Dat is leuk om lokale producten te kopen.</p>
 
-<h4>Tamil comparison</h4>
-<p>In Tamil, adjectives never change: பெரிய வீடு = big house, பெரிய மேசை = big table. Same word!<br>
-In Dutch, the SAME adjective changes based on de/het + article. This is the trickiest rule — memorise the flowchart!</p>
+<p>Mijn moeder maakt zich een beetje zorgen. Ze vindt kamperen niet zo comfortabel. 
+Maar ik denk dat het een geweldige ervaring gaat zijn. 
+Ik hou van de natuur en van avontuurlijke vakanties. 
+Bovendien is kamperen veel goedkoper dan een hotel. 
+De camping kost maar 18 euro per nacht voor twee personen.</p>
+
+<p>Na de Ardennen ga ik misschien nog een weekendje naar Brugge met mijn ouders. 
+Maar dat is nog niet zeker. Eerst maar de kampeerervaring afwachten!</p>
+</div>
+
+<h4>🎧 Dialoog — Nathalie bespreekt haar plannen met haar vriend Thomas</h4>
+<div style="background:#f9f9f9;border-left:4px solid #27ae60;padding:1rem 1.5rem;border-radius:6px;line-height:1.9">
+<p><b>Thomas:</b> Hé Nathalie, ga je echt kamperen deze zomer? Dat wist ik niet!</p>
+<p><b>Nathalie:</b> Ja! Ik ga met Laura naar de Ardennen. We vertrekken op 15 juli voor twee weken.</p>
+<p><b>Thomas:</b> Leuk! Heb je al alles voor de camping?</p>
+<p><b>Nathalie:</b> Bijna. Ik heb een tent gekocht, maar ik moet nog een slaapzak kopen. 
+En ook een slaapmat — die zijn best wel duur.</p>
+<p><b>Thomas:</b> Ik heb nog een oude slaapmat liggen. Die kun je lenen als je wilt.</p>
+<p><b>Nathalie:</b> Oh, echt? Dat zou super zijn! Dan hoef ik er geen te kopen.</p>
+<p><b>Thomas:</b> En wat gaan jullie doen op de camping?</p>
+<p><b>Nathalie:</b> Wandelen, kanoën op de Ourthe... En op donderdag is er een markt in Durbuy. 
+Maar eigenlijk ben ik het meest benieuwd naar het kampvuur 's avonds. 
+Dat lijkt me zo romantisch en gezellig!</p>
+<p><b>Thomas:</b> Haha, dat snap ik. En is het goedkoop?</p>
+<p><b>Nathalie:</b> Heel goedkoop! De camping kost maar 18 euro per nacht voor ons beiden. 
+En wandelen en kanoën zijn ook niet zo duur. Dus het wordt een heel voordelige vakantie.</p>
+<p><b>Thomas:</b> Ik ben jaloezie! Veel plezier alvast!</p>
+<p><b>Nathalie:</b> Dank je! Ik stuur je zeker foto's.</p>
+</div>
 """,
         "grammar_letop": """
 <ul>
-  <li>❌ De fiets is nieuwe. → ✅ De fiets is <b>nieuw</b>. <em>(predicatief → nooit -e)</em></li>
-  <li>❌ een groot huis → een <b>groot</b> huis ✅ (het-woord + een → geen -e)</li>
-  <li>❌ het groot huis → het <b>grote</b> huis ✅ (het-woord + het → WEL -e)</li>
-  <li>❌ groot haar → <b>groot</b> haar ✅ (haar = het-woord, geen lidwoord → geen -e)</li>
-  <li>❌ een houte stoel → een <b>houten</b> stoel ✅ (materiaal → altijd -en, nooit -e)</li>
-  <li>❌ een roze<b>n</b>e jurk → een <b>roze</b> jurk ✅ (roze/oranje/gratis → nooit veranderen)</li>
-  <li>❌ mijn grote huis (speaking casually) → ✅ mijn <b>groot</b> huis (het-woord + bezittelijk = geen -e)</li>
+<li><b>Voor het eerst</b> = for the first time. 'Ik ga voor het EERST kamperen.'</li>
+<li><b>Vlak bij</b> = very close to / right next to. 'We gaan naar een camping vlak bij Durbuy.'</li>
+<li><b>Dat was een koopje</b> = That was a bargain! (heel goedkoop)</li>
+<li><b>Zich zorgen maken</b> = to worry. 'Mijn moeder maakt zich zorgen.' (reflexief werkwoord!)</li>
+<li><b>Bijna</b> = almost / nearly. 'Bijna klaar' = almost ready.</li>
+<li><b>Benieuwd naar</b> = curious about / looking forward to. 'Ik ben benieuwd naar het kampvuur.'</li>
+<li><b>Lenen</b> = to borrow OR to lend. Context bepaalt! 'Die kun je lenen' = you can borrow it.</li>
 </ul>
 """,
         "grammar_extra": """
-<h4>Common het-words you need to know (book p. 42)</h4>
-<p>De most common het-words that catch students out:</p>
+<h4>Kampeerwoordenschat — extra</h4>
 <table>
-  <tr><th>het-word</th><th>Meaning</th><th>Example (een → geen -e)</th></tr>
-  <tr><td>het huis</td><td>house</td><td>een groot huis</td></tr>
-  <tr><td>het kind</td><td>child</td><td>een klein kind</td></tr>
-  <tr><td>het boek</td><td>book</td><td>een dik boek</td></tr>
-  <tr><td>het werk</td><td>work</td><td>een interessant werk</td></tr>
-  <tr><td>het land</td><td>country</td><td>een mooi land</td></tr>
-  <tr><td>het jaar</td><td>year</td><td>een druk jaar</td></tr>
-  <tr><td>het haar</td><td>hair</td><td>lang zwart haar</td></tr>
-  <tr><td>het gezicht</td><td>face</td><td>een ovaal gezicht</td></tr>
-  <tr><td>het artikel</td><td>article</td><td>een wetenschappelijk artikel</td></tr>
-  <tr><td>het resultaat</td><td>result</td><td>een goed resultaat</td></tr>
+<tr><th>Nederlands</th><th>Engels</th></tr>
+<tr><td>de tweepersoonstent</td><td>two-person tent</td></tr>
+<tr><td>de kampeerplaats / de camping</td><td>campsite</td></tr>
+<tr><td>het kampvuur</td><td>campfire</td></tr>
+<tr><td>kanoën</td><td>to kayak / to canoe</td></tr>
+<tr><td>de Ardennen</td><td>the Ardennes (Belgian forests region)</td></tr>
+<tr><td>Durbuy</td><td>small town in Belgian Ardennes</td></tr>
+<tr><td>de provincie Luxemburg</td><td>Luxembourg province (Belgium — NOT the country)</td></tr>
+<tr><td>de Ourthe</td><td>Ourthe river (Ardennes)</td></tr>
+<tr><td>verpleegkunde</td><td>nursing (study)</td></tr>
+<tr><td>de Arteveldehogeschool</td><td>Artevelde University College (Ghent)</td></tr>
 </table>
 
-<h4>Quick-test your knowledge</h4>
-<p>Fill in: oud, nieuw, groot, klein, mooi</p>
-<ul>
-  <li>___ huis (het, een) → <b>groot</b> huis</li>
-  <li>de ___ fiets (de, de) → de <b>oude</b> fiets</li>
-  <li>het huis is ___ → <b>groot</b> (predicatief)</li>
-  <li>___ kinderen (meervoud) → <b>kleine</b> kinderen</li>
-  <li>mijn ___ boek (het, mijn) → mijn <b>nieuw</b> boek</li>
-  <li>dat ___ restaurant (het, dat) → dat <b>nieuwe</b> restaurant</li>
-</ul>
+<h4>Luistertypen — herkennen</h4>
+<table>
+<tr><th>Vraagtype</th><th>Wat zoek je?</th></tr>
+<tr><td>Wie is de spreker?</td><td>Naam, leeftijd, woonplaats, beroep/studie</td></tr>
+<tr><td>Wanneer / Hoe lang?</td><td>Datum (15 juli), duur (2 weken), tijdstip</td></tr>
+<tr><td>Wat heeft ze al? / Nog niet?</td><td>al / nog niet — negatief vs positief</td></tr>
+<tr><td>Wat gaan ze doen?</td><td>Activiteiten, plannen (wandelen, kanoën, markt)</td></tr>
+<tr><td>Prijs</td><td>Getallen (89 euro, 18 euro per nacht)</td></tr>
+<tr><td>Mening / Gevoel</td><td>Positief/negatief. Wie vindt wat?</td></tr>
+</table>
 """,
-        "grammar_quick": """
-<ul>
-  <li>Na zijn/worden/lijken → <b>NOOIT -e</b></li>
-  <li>de-woord → <b>ALTIJD -e</b> (alle lidwoorden)</li>
-  <li>het-woord + het/dit/dat → <b>WEL -e</b></li>
-  <li>het-woord + een/geen/mijn → <b>GEEN -e</b></li>
-  <li>het-woord zonder lidwoord → <b>GEEN -e</b></li>
-  <li>Meervoud → <b>ALTIJD -e</b></li>
-  <li>Materialen → <b>-en</b>: houten, stenen, gouden</li>
-  <li>roze, oranje, gratis, effen → <b>nooit veranderen</b></li>
-</ul>
-""",
+        "grammar_quick": [
+            "Nathalie: 20 jaar, Gent, studie verpleegkunde, Arteveldehogeschool.",
+            "Vakantie: Ardennen, Durbuy, 15 juli, 2 weken, met vriendin Laura.",
+            "Al gekocht: tent (€89). Nog niet: slaapzak, slaapmat.",
+            "Activiteiten: wandelen, kanoën (Ourthe), avondmarkt Durbuy, kampvuur.",
+            "Prijs camping: €18 per nacht voor 2 personen.",
+            "Thomas leent zijn slaapmat aan Nathalie.",
+        ],
         "exercises": [
             {"type": "choice",
-             "q": "UGent heeft een ___ campus. (groot — campus = de-woord + een)",
-             "options": ["groot campus", "grote campus", "groote campus"],
-             "a": "grote campus",
-             "tip": "campus = de-woord + een → altijd -e: een grote campus."},
+             "q": "Monoloog: Hoe oud is Nathalie?",
+             "options": ["18 jaar", "19 jaar", "20 jaar", "21 jaar"],
+             "a": "20 jaar",
+             "tip": "'Ik ben twintig jaar oud.' Twintig = 20."},
             {"type": "choice",
-             "q": "Mijn kantoor is ___. (klein — na 'is' = predicatief)",
-             "options": ["kleine", "klein", "kleinen"],
-             "a": "klein",
-             "tip": "Predicatief (na 'is') → nooit -e: Mijn kantoor is klein."},
+             "q": "Monoloog: Wanneer vertrekt Nathalie naar de Ardennen?",
+             "options": ["1 juli", "15 juli", "15 augustus", "1 augustus"],
+             "a": "15 juli",
+             "tip": "'We vertrekken op 15 juli.'"},
+            {"type": "tf",
+             "q": "Monoloog: Nathalie heeft eerder al eens gekampeerd.",
+             "a": "Nee",
+             "tip": "'Ik ga voor het EERST in mijn leven gaan kamperen.' = nooit eerder."},
             {"type": "choice",
-             "q": "Hij woont in een ___ huis. (mooi — huis = het-woord + een)",
-             "options": ["mooie huis", "mooi huis", "mooin huis"],
-             "a": "mooi huis",
-             "tip": "huis = het-woord + een → geen -e: een mooi huis."},
+             "q": "Monoloog: Hoeveel kost de tent die Nathalie heeft gekocht?",
+             "options": ["18 euro", "69 euro", "89 euro", "98 euro"],
+             "a": "89 euro",
+             "tip": "'een tweepersoonstent voor 89 euro.'"},
+            {"type": "tf",
+             "q": "Monoloog: Nathalie heeft al een slaapzak gekocht.",
+             "a": "Nee",
+             "tip": "'ik heb nog GEEN slaapzak en ook geen slaapmat.' — nog niet gekocht!"},
             {"type": "choice",
-             "q": "Kijk naar het ___ kind. (klein — kind = het-woord + het)",
-             "options": ["klein kind", "kleine kind", "kleinen kind"],
-             "a": "kleine kind",
-             "tip": "kind = het-woord + het → WEL -e: het kleine kind."},
+             "q": "Monoloog: Wat vindt de moeder van Nathalie van kamperen?",
+             "options": [
+                 "Ze vindt het een geweldig idee.",
+                 "Ze vindt het niet zo comfortabel.",
+                 "Ze gaat ook mee.",
+                 "Ze kent de Ardennen niet.",
+             ],
+             "a": "Ze vindt het niet zo comfortabel.",
+             "tip": "'Mijn moeder maakt zich een beetje zorgen. Ze vindt kamperen niet zo comfortabel.'"},
             {"type": "fill",
-             "q": "Op het examen: Zij heeft ___ haar. (lang — haar = het-woord, geen lidwoord)",
-             "a": "lang",
-             "tip": "haar = het-woord zonder lidwoord → geen -e: lang haar."},
-            {"type": "fill",
-             "q": "In een brief: Ik heb een ___ resultaat behaald. (goed — resultaat = het-woord + een)",
-             "a": "goed",
-             "tip": "resultaat = het-woord + een → geen -e: een goed resultaat."},
-            {"type": "fill",
-             "q": "In de klas: Dat is een ___ stoel. (houten — materiaal!)",
-             "a": "houten",
-             "tip": "Materiaal → altijd -en: houten (niet houte of houte)."},
-            {"type": "fill",
-             "q": "De Leie is ___. (mooi — predicatief, na 'is')",
-             "a": "mooi",
-             "tip": "Predicatief na 'is' → nooit -e: De Leie is mooi."},
-            {"type": "fill",
-             "q": "Gent heeft ___ straten. (smal — plural)",
-             "a": "smalle",
-             "tip": "Meervoud → altijd -e: smalle straten."},
-            {"type": "fill",
-             "q": "Mijn ___ artikel is eindelijk gepubliceerd. (nieuw — artikel = het-woord + mijn)",
-             "a": "nieuw",
-             "tip": "artikel = het-woord + mijn (possessief) → geen -e: mijn nieuw artikel."},
+             "q": "Monoloog: Hoeveel kost de camping per nacht voor twee personen?",
+             "a": "18 euro",
+             "tip": "'De camping kost maar 18 euro per nacht voor twee personen.'"},
+            {"type": "choice",
+             "q": "Dialoog: Wat biedt Thomas aan Nathalie aan?",
+             "options": [
+                 "Zijn tent lenen.",
+                 "Zijn slaapzak lenen.",
+                 "Zijn slaapmat lenen.",
+                 "Met haar mee gaan naar de Ardennen.",
+             ],
+             "a": "Zijn slaapmat lenen.",
+             "tip": "'Ik heb nog een oude slaapmat liggen. Die kun je lenen.'"},
             {"type": "tf",
-             "q": "'Ze draagt een roze jurk' — 'roze' is correct (geen -e).",
-             "a": True,
-             "correction": "Correct! roze verandert nooit: een roze jurk (niet: roze jurk).",
-             "tip": "roze, oranje, gratis, effen → veranderen nooit."},
+             "q": "Dialoog: Nathalie is het meest benieuwd naar kanoën.",
+             "a": "Nee",
+             "tip": "'eigenlijk ben ik het meest benieuwd naar het KAMPVUUR 's avonds.' Niet kanoën!"},
+            {"type": "choice",
+             "q": "Dialoog: Welke activiteit is gepland op woensdag? (monoloog)",
+             "options": ["Wandelen", "Kanoën op de Ourthe", "Avondmarkt in Durbuy", "Kampvuur maken"],
+             "a": "Kanoën op de Ourthe",
+             "tip": "Monoloog: 'Op woensdag is er een kanoëersroute op de rivier de Ourthe.'"},
+            {"type": "fill",
+             "q": "Monoloog: Na de Ardennen gaat Nathalie misschien nog naar ___.",
+             "a": "Brugge",
+             "tip": "'Na de Ardennen ga ik misschien nog een weekendje naar Brugge met mijn ouders.'"},
             {"type": "tf",
-             "q": "'Het is een grote huis' is correct.",
-             "a": False,
-             "correction": "Fout! huis = het-woord + een → geen -e: 'het is een groot huis'.",
-             "tip": "het-woord + een → GEEN -e."},
-            {"type": "tf",
-             "q": "'Hij heeft mijn nieuw boek gepakt' is correct.",
-             "a": True,
-             "correction": "Correct! boek = het-woord + mijn (possessief) → geen -e: mijn nieuw boek.",
-             "tip": "het-woord + mijn/zijn/haar → geen -e."},
+             "q": "Dialoog: De kampeerervaring is goedkoop. Nathalie noemt het een 'voordelige vakantie'.",
+             "a": "Ja",
+             "tip": "Nathalie: 'het wordt een heel voordelige vakantie.' voordelig = affordable/good value. ✓"},
             {"type": "translate",
-             "q": "I live in a beautiful old house.",
-             "a": "Ik woon in een mooi oud huis.",
-             "tip": "huis = het-woord + een → geen -e op beide adjectieven: mooi oud huis."},
+             "q": "How do you say 'I am worried about the weather' in Dutch?",
+             "a": "Ik maak me zorgen over het weer.",
+             "tip": "Zich zorgen maken OVER = to worry about. Reflexief: ik maak ME zorgen."},
             {"type": "translate",
-             "q": "The new colleagues are very friendly.",
-             "a": "De nieuwe collega's zijn erg vriendelijk.",
-             "tip": "Meervoud (collega's) → -e: nieuwe. Predicatief (zijn vriendelijk) → geen -e."},
-            {"type": "translate",
-             "q": "She has a wooden chair and a green desk.",
-             "a": "Ze heeft een houten stoel en een groen bureau.",
-             "tip": "Materiaal: houten (altijd -en). bureau = het-woord + een → geen -e: groen bureau."},
-            {"type": "reorder",
-             "q": "een / groot / huis / hij / heeft / mooi",
-             "a": "Hij heeft een groot mooi huis.",
-             "tip": "huis = het-woord + een → geen -e. Volgorde: groot + mooi + huis."},
-            {"type": "reorder",
-             "q": "de / fiets / is / nieuwe / zijn",
-             "a": "Zijn nieuwe fiets is de ...",
-             "tip": "Trick question — predicatief (fiets IS [adj]) → geen -e. But attributief (zijn nieuwe fiets) → wel -e (de-woord + zijn)."},
+             "q": "That was a bargain! I paid only 89 euros.",
+             "a": "Dat was een koopje! Ik heb maar 89 euro betaald.",
+             "tip": "koopje = bargain. maar = only (in price context). betaald = perfectum van betalen."},
         ],
-        "jouw_beurt": "Schrijf 10 zinnen over je kantoor, fiets, of buurt in Gent.\n\n"
-                      "Gebruik ELKE combinatie minstens één keer:\n"
-                      "1. de-woord + een → -e: 'Ik heb een ___ ___'\n"
-                      "2. het-woord + een → geen -e: 'Ik heb een ___ ___'\n"
-                      "3. predicatief → geen -e: 'Mijn ___ is ___'\n"
-                      "4. het-woord + het → -e: 'Het ___ ___'\n"
-                      "5. meervoud → -e: 'Er zijn ___ ___s'\n"
-                      "6. materiaaladjectief (-en): 'Ik heb een ___ ___'\n\n"
-                      "Voorbeeld: 'Mijn kantoor is klein (predicatief). Er staat een houten bureau (materiaal). "
-                      "Ik heb een goed resultaat (het-woord + een). De nieuwe collega heeft het grote kantoor (het + de).'"
+        "jouw_beurt": "🎧 LUISTERTAAK — Nathalie gaat kamperen\n\n"
+                      "Stap 1: Lees de vragen in het Quiz-tabblad EERST.\n"
+                      "Stap 2: Lees beide teksten hardop (monoloog + dialoog).\n"
+                      "Stap 3: Beantwoord de vragen zonder terug te kijken.\n\n"
+                      "SCHRIJFOPDRACHT — Reageer op Nathalie:\n"
+                      "Schrijf een korte reactie (6-8 zinnen) alsof jij een vriend/vriendin van Nathalie bent.\n\n"
+                      "Gebruik:\n"
+                      "• Vraag naar meer informatie: Ga je ook … ? Heb je al … ?\n"
+                      "• Geef advies: Je zou ook … moeten meenemen. / Vergeet niet …\n"
+                      "• Vertel over jouw vakantieplannen: Ik ga ook … / Ik wil … bezoeken.\n\n"
+                      "SPREEKOPDRACHT (zelfstandig oefenen):\n"
+                      "Vertel in 1 minuut over jouw droomvakantie. Gebruik:\n"
+                      "• Waar ga je naartoe? / Met wie? / Wanneer?\n"
+                      "• Wat ga je doen? / Waarom kies je voor dit type vakantie?\n"
+                      "• Is het goedkoop of duur? Hoe bespaar je?\n\n"
+                      "✅ Zelfcheck:\n"
+                      "☐ Heb je de vragen eerst gelezen?\n"
+                      "☐ Heb je gelet op al/nog niet?\n"
+                      "☐ Heb je getallen en data goed genoteerd?\n"
+                      "☐ Heb je 'niet/geen' (negaties) goed opgemerkt?",
     },
 
     # =====================================================================
-    # SESSION 43 — Staan/Zitten/Liggen/Lopen + te + infinitief (Book p. 66-68)
+    # SESSION 43 — SCHRIJVEN: Blessures beschrijven (gebaseerd op de leskaartjes)
     # =====================================================================
     {
         "id": 43,
-        "title": "Staan/Zitten/Liggen/Lopen + te + infinitief",
-        "chapter": "Examentopics Oefenen",
-        "book_page": "NT2 Drempel 2 p. 66–68 + ER deel 2 / progressieve constructie",
+        "title": "Schrijven: Blessures & klachten beschrijven — wat is er gebeurd?",
+        "chapter": "Examen Extra — Maandag 4 mei notities",
+        "book_page": "CVO GEMT 3.2 — bij de dokter / blessures / perfectum in context",
         "review": [
-            {"q": "Hoe zeg je 'He is reading' (ongoing now, he is sitting)?", "a": "Hij zit te lezen. (zit + te + infinitief)"},
-            {"q": "Wat is het perfectum van 'hij zit te bellen'?", "a": "Hij heeft zitten bellen. (GEEN te in perfectum!)"},
-            {"q": "Wat is het verschil tussen 'Hij leest' en 'Hij zit te lezen'?", "a": "'Hij leest' = simple fact. 'Hij zit te lezen' = emphasis on ongoing activity (he is in the act of reading)."},
+            {"q": "Hoe leg je uit wat er met je is gebeurd bij de dokter?",
+             "a": "Gebruik het perfectum voor de oorzaak: 'Ik ben gevallen / Ik heb mijn arm gebroken.' Dan de huidige situatie: 'Mijn arm zit in het gips / Mijn vinger doet pijn.'"},
+            {"q": "Hoe zeg je 'my finger is swollen'?",
+             "a": "Mijn vinger is gezwollen."},
+            {"q": "Hoe zeg je 'I hurt myself' / 'something happened to me'?",
+             "a": "Ik heb me bezeerd. / Ik heb me pijn gedaan. / Er is iets met me gebeurd."},
         ],
         "vocabulary": [
-            {"nl": "staan te", "en": "to be (standing) doing sth", "ex": "Hij staat te wachten aan de deur."},
-            {"nl": "zitten te", "en": "to be (sitting) doing sth", "ex": "Ze zit te studeren in de bibliotheek."},
-            {"nl": "liggen te", "en": "to be (lying) doing sth", "ex": "De kat ligt te slapen op de bank."},
-            {"nl": "lopen te", "en": "to be (walking around) doing sth", "ex": "Hij loopt te bellen in de gang."},
-            {"nl": "aan het … zijn", "en": "to be in the process of (more formal)", "ex": "Ik ben aan het koken."},
-            {"nl": "bezig zijn met", "en": "to be busy with", "ex": "Ik ben bezig met mijn onderzoek."},
+            {"nl": "gevallen",
+                "en": "fallen (VD van vallen)", "ex": "Ik ben van de trap gevallen."},
+            {"nl": "gebroken",
+                "en": "broken (VD van breken)", "ex": "Ik heb mijn arm gebroken."},
+            {"nl": "het gips", "en": "the plaster cast",
+                "ex": "Mijn arm zit in het gips."},
+            {"nl": "het verband", "en": "the bandage",
+                "ex": "Mijn hand zit in een verband."},
+            {"nl": "gezwollen", "en": "swollen",
+                "ex": "Mijn vinger is gezwollen."},
+            {"nl": "verbrand", "en": "burned", "ex": "Mijn huid is verbrand."},
+            {"nl": "de buil",
+                "en": "the bump (on head)", "ex": "Ik heb een buil op mijn hoofd."},
+            {"nl": "blauw oog", "en": "black eye", "ex": "Ik heb een blauw oog."},
+            {"nl": "de tandpijn", "en": "toothache", "ex": "Ik heb tandpijn."},
+            {"nl": "de rugpijn", "en": "back pain", "ex": "Ik heb rugpijn."},
+            {"nl": "de rolstoel", "en": "the wheelchair",
+                "ex": "Ik zit in een rolstoel."},
+            {"nl": "aanrijden", "en": "to hit (with vehicle)",
+             "ex": "Een vrachtwagen heeft mij aangereden."},
+            {"nl": "botsen (tegen)", "en": "to bump / crash into",
+             "ex": "Ik ben tegen een deur gebotst."},
+            {"nl": "de vrachtwagen", "en": "the truck",
+                "ex": "Een vrachtwagen reed te snel."},
+            {"nl": "ingesmeerd",
+                "en": "applied sunscreen (VD van insmeren)", "ex": "Ik heb me niet ingesmeerd."},
+            {"nl": "de huid", "en": "the skin", "ex": "Mijn huid is verbrand."},
         ],
-        "grammar_title": "Progressieve constructie: staan/zitten/liggen/lopen + te",
+        "grammar_title": "✍️ De 15 leskaartjes — blessures en klachten beschrijven",
         "grammar_html": """
-<h4>1. What is this construction? (Book p. 66)</h4>
-<p>Dutch uses <b>positional verb + te + infinitive</b> to describe an <b>ongoing action</b>.<br>
-It emphasises that someone is in the middle of doing something right now.</p>
-<table>
-  <tr><th>Positional verb</th><th>Meaning</th><th>Example</th></tr>
-  <tr><td><b>staan te</b></td><td>standing doing</td><td>Hij staat aan de deur <b>te wachten</b>.</td></tr>
-  <tr><td><b>zitten te</b></td><td>sitting doing</td><td>Ze zit in de klas <b>te bellen</b>.</td></tr>
-  <tr><td><b>liggen te</b></td><td>lying doing</td><td>De kat ligt <b>te slapen</b> op de bank.</td></tr>
-  <tr><td><b>lopen te</b></td><td>walking around doing</td><td>Hij loopt in de gang <b>te bellen</b>.</td></tr>
-</table>
-<p><em>Note: 'lopen te' suggests movement and often a slightly negative or impatient tone: 'hij loopt te zeuren' = he keeps moaning.</em></p>
-
-<h4>2. Word order</h4>
-<p>The structure is: <b>Subject + positional verb + rest + te + infinitive (at end)</b></p>
-<div class="formula-card">
-  Zij <b>zit</b> nu in haar kantoor <b>te werken</b>.<br>
-  Hij <b>staat</b> aan de deur <b>te wachten</b>.<br>
-  De studenten <b>zitten</b> in de aula <b>te luisteren</b>.
+<div class=\"info-box\">
+<strong>Schrijfstructuur voor een blessure beschrijven:</strong><br>
+<b>Stap 1 — Oorzaak</b> (wat is er gebeurd?): Perfectum → <em>Ik ben gevallen / Ik heb mijn arm gebroken.</em><br>
+<b>Stap 2 — Gevolg</b> (wat is de situatie nu?): Tegenwoordige tijd → <em>Mijn arm zit in het gips. / Ik heb pijn.</em><br>
+<b>Stap 3 — Bij de dokter</b> (optioneel): <em>Ik moet 3 weken rust houden.</em>
 </div>
 
-<h4>3. Perfectum — te DISAPPEARS!</h4>
-<p>In the perfectum, the <b>te vanishes</b> and you get a <b>double infinitive</b>:</p>
+<h4>📋 De 15 kaartjes — oorzaak en gevolg</h4>
 <table>
-  <tr><th>Present</th><th>Perfectum</th></tr>
-  <tr><td>Hij zit te bellen.</td><td>Hij heeft <b>zitten bellen</b>. (geen te!)</td></tr>
-  <tr><td>Ze ligt te slapen.</td><td>Ze heeft <b>liggen slapen</b>. (geen te!)</td></tr>
-  <tr><td>Ik sta te wachten.</td><td>Ik heb <b>staan wachten</b>. (geen te!)</td></tr>
-  <tr><td>Hij loopt te bellen.</td><td>Hij heeft <b>lopen bellen</b>. (geen te!)</td></tr>
+<tr><th>#</th><th>Situatie</th><th>Kernzin</th></tr>
+<tr><td>1</td><td>Te veel snoep gegeten</td><td><em>Ik heb te veel ijsjes en chocolade gegeten. Nu heb ik <b>tandpijn</b>.</em></td></tr>
+<tr><td>2</td><td>Bowlen — bal op voet</td><td><em>Tijdens het bowlen heb ik een bal op mijn voet laten vallen. Mijn voet is <b>gezwollen</b>. Mijn voet doet pijn.</em></td></tr>
+<tr><td>3</td><td>Van een ladder gevallen</td><td><em>Ik ben van een ladder gevallen. Ik heb mijn <b>arm gebroken</b>. Mijn arm moet 3 weken in het <b>gips</b>.</em></td></tr>
+<tr><td>4</td><td>Te lang in de zon gelegen</td><td><em>Ik heb in de zon gelegen. Ik heb me niet <b>ingesmeerd</b>. Mijn <b>huid is verbrand</b>.</em></td></tr>
+<tr><td>5</td><td>Aangereden door vrachtwagen</td><td><em>Een <b>vrachtwagen</b> heeft mij <b>aangereden</b>. Ik moet 2 weken in het ziekenhuis blijven.</em></td></tr>
+<tr><td>6</td><td>Van de trap gevallen</td><td><em>Ik ben van de <b>trap gevallen</b>. Mijn arm zit in het <b>gips</b>.</em></td></tr>
+<tr><td>7</td><td>Te veel vet eten</td><td><em>Ik heb te veel vet gegeten: hamburgers, frieten… Ik heb <b>maagpijn</b> en <b>buikpijn</b>.</em></td></tr>
+<tr><td>8</td><td>Feest — te weinig geslapen</td><td><em>Ik ben naar een feest geweest. Ik heb niet veel geslapen. Ik heb <b>hoofdpijn</b>.</em></td></tr>
+<tr><td>9</td><td>In de regen gelopen</td><td><em>Ik heb in de regen gelopen. Ik had niet veel kleren aan. Nu ben ik <b>verkouden</b>.</em></td></tr>
+<tr><td>10</td><td>Hamer op vinger</td><td><em>Ik heb met een hamer op mijn vinger geklopt. Mijn vinger is <b>gezwollen</b>. Doet pijn!</em></td></tr>
+<tr><td>11</td><td>Zware doos gedragen</td><td><em>Tijdens het verhuizen heb ik een zware doos gedragen. Nu heb ik <b>rugpijn</b>.</em></td></tr>
+<tr><td>12</td><td>Gebotst tegen een deur</td><td><em>Ik ben met mijn gezicht tegen een deur <b>gebotst</b>. Nu heb ik een <b>blauw oog</b>.</em></td></tr>
+<tr><td>13</td><td>Tegen een paal gelopen</td><td><em>Ik ben tegen een <b>paal gelopen</b>. Nu heb ik een <b>buil</b>.</em></td></tr>
+<tr><td>14</td><td>Skiën — gebroken been</td><td><em>Tijdens het skiën ben ik gevallen. Ik heb mijn <b>been gebroken</b>. Ik zit in een <b>rolstoel</b>.</em></td></tr>
+<tr><td>15</td><td>Hand verbrand</td><td><em>Ik heb mijn <b>hand verbrand</b>. Mijn hand zit in een <b>verband</b>.</em></td></tr>
 </table>
 
-<h4>4. Compare with 'aan het … zijn' (alternative)</h4>
+<h4>Grammaticapatronen</h4>
 <table>
-  <tr><th>Construction</th><th>Use</th><th>Example</th></tr>
-  <tr><td>zitten/staan/liggen + te</td><td>Emphasises posture + ongoing action</td><td>Ze zit te lezen.</td></tr>
-  <tr><td>aan het … zijn</td><td>General ongoing action (like English "-ing")</td><td>Ze is aan het lezen.</td></tr>
-  <tr><td>bezig zijn met</td><td>Busy with (more formal)</td><td>Ze is bezig met lezen.</td></tr>
+<tr><th>Patroon</th><th>Voorbeelden</th></tr>
+<tr><td><b>Ik ben + gevallen/gebotst/gelopen</b><br>(beweging → zijn)</td><td>Ik ben van de trap gevallen.<br>Ik ben tegen een paal gelopen.</td></tr>
+<tr><td><b>Ik heb + gebroken/gedragen/gegeten</b><br>(actie → hebben)</td><td>Ik heb mijn arm gebroken.<br>Ik heb een zware doos gedragen.</td></tr>
+<tr><td><b>Mijn [lichaamsdeel] is/zit + toestand</b></td><td>Mijn vinger is gezwollen.<br>Mijn arm zit in het gips.</td></tr>
+<tr><td><b>Ik heb [pijnklacht]</b></td><td>Ik heb tandpijn / hoofdpijn / buikpijn / rugpijn.</td></tr>
+<tr><td><b>Tijdens + het + werkwoord</b></td><td>Tijdens het bowlen … / Tijdens het skiën …</td></tr>
 </table>
-<p><b>All three are correct.</b> On the exam, use the one that fits the context. 'Aan het' is the most neutral.</p>
-
-<h4>5. Tamil comparison</h4>
-<p>Tamil has a similar progressive: படிக்கிறேன் (I am reading — present progressive built into verb form).<br>
-Dutch uses a separate construction with a positional verb — note the PHYSICAL position (sitting, standing, lying).<br>
-The verb at the end of the clause (te + infinitief) is the SAME as with bijzin connectors.</p>
 """,
-        "grammar_letop": """
-<ul>
-  <li>❌ Hij zit te bellend. → ✅ Hij zit <b>te bellen</b>. (infinitief, not -end)</li>
-  <li>❌ Hij heeft zitten te bellen. → ✅ Hij heeft <b>zitten bellen</b>. (te verdwijnt in perfectum!)</li>
-  <li>❌ Ze is liggen slapen. → ✅ Ze <b>ligt</b> te slapen. (present: gebruik liggen niet als hulpwerkwoord)</li>
-  <li>❌ Ik ben aan het zitten te werken. → ✅ Ik <b>zit te werken</b> OR Ik <b>ben aan het werken</b>. (geen combinatie van beide!)</li>
-  <li>⚠️ Separabele werkwoorden: te komt tussen prefix en werkwoord:
-    <br>opbellen → hij zit <b>op te bellen</b>. / Perfectum: hij heeft <b>zitten opbellen</b>.</li>
-</ul>
-""",
+        "grammar_letop": [
+            {"wrong": "Ik ben mijn arm gebroken.",
+             "right": "Ik heb mijn arm gebroken.",
+             "explain": "breken (transitief, met object = mijn arm) → HEBBEN."},
+            {"wrong": "Ik heb van de trap gevallen.",
+             "right": "Ik ben van de trap gevallen.",
+             "explain": "vallen = beweging zonder object → ZIJN."},
+            {"wrong": "Mijn arm is in het gips.",
+             "right": "Mijn arm zit in het gips.",
+             "explain": "Idiomatisch: zitten in = to be in (enclosed/stuck)."},
+            {"wrong": "Tijdens bowlen heb ik …",
+             "right": "Tijdens het bowlen heb ik …",
+             "explain": "Tijdens + het + infinitief als substantief."},
+        ],
         "grammar_extra": """
-<h4>Practical sentences — daily life at UGent</h4>
-<ul>
-  <li>De professor <b>staat</b> aan het bord <b>te schrijven</b>.</li>
-  <li>Mijn collega <b>zit</b> de hele middag <b>te vergaderen</b>.</li>
-  <li>De studenten <b>zitten</b> in de aula <b>te luisteren</b>.</li>
-  <li>Hij <b>ligt</b> thuis <b>te slapen</b> — hij is ziek.</li>
-  <li>Ze <b>loopt</b> al de hele ochtend <b>te klagen</b> over het weer.</li>
-</ul>
-
-<h4>Separabele werkwoorden met te</h4>
+<h4>Zijn of Hebben? — perfectum van de kaartjes</h4>
 <table>
-  <tr><th>Infinitief</th><th>Huidig</th><th>Perfectum</th></tr>
-  <tr><td>opbellen</td><td>hij zit <b>op te bellen</b></td><td>hij heeft <b>zitten opbellen</b></td></tr>
-  <tr><td>uitleggen</td><td>hij staat <b>uit te leggen</b></td><td>hij heeft <b>staan uitleggen</b></td></tr>
-  <tr><td>nadenken</td><td>hij zit <b>na te denken</b></td><td>hij heeft <b>zitten nadenken</b></td></tr>
+<tr><th>Werkwoord</th><th>Perfectum</th><th>Hulpww</th><th>Reden</th></tr>
+<tr><td>vallen</td><td>gevallen</td><td><b>zijn</b></td><td>beweging A→B</td></tr>
+<tr><td>botsen</td><td>gebotst</td><td><b>zijn</b></td><td>beweging</td></tr>
+<tr><td>lopen (tegen)</td><td>gelopen</td><td><b>zijn</b></td><td>beweging</td></tr>
+<tr><td>liggen</td><td>gelegen</td><td><b>hebben</b></td><td>geen verplaatsing</td></tr>
+<tr><td>breken (iets)</td><td>gebroken</td><td><b>hebben</b></td><td>transitief</td></tr>
+<tr><td>eten</td><td>gegeten</td><td><b>hebben</b></td><td>transitief</td></tr>
+<tr><td>dragen</td><td>gedragen</td><td><b>hebben</b></td><td>transitief</td></tr>
+<tr><td>verbranden</td><td>verbrand</td><td><b>hebben</b></td><td>transitief</td></tr>
+<tr><td>aanrijden</td><td>aangereden</td><td><b>hebben</b></td><td>transitief</td></tr>
 </table>
-
-<h4>Er + staan/zitten/liggen (book p. 68)</h4>
-<p>Combined with existential er:</p>
-<ul>
-  <li>Er <b>staat</b> een man <b>te wachten</b>. (There is a man waiting.)</li>
-  <li>Er <b>zitten</b> studenten <b>te studeren</b>. (There are students studying.)</li>
-  <li>Er <b>ligt</b> een kat <b>te slapen</b>. (There is a cat sleeping.)</li>
-</ul>
 """,
-        "grammar_quick": """
-<ul>
-  <li><b>staan/zitten/liggen/lopen + te + infinitief</b> = ongoing action</li>
-  <li>Word order: subject + positional verb + rest + <b>te + infinitief</b> (V-end)</li>
-  <li>Perfectum: <b>te verdwijnt</b> → hebben + staan/zitten/liggen + infinitief</li>
-  <li>Separabele werkwoorden: zit <b>op te bellen</b> → heeft <b>zitten opbellen</b></li>
-  <li>Alternatief: <b>aan het … zijn</b> (meest neutraal)</li>
-  <li>Er + positional: Er staat een man te wachten.</li>
-</ul>
-""",
-        "exercises": [
-            {"type": "fill",
-             "q": "In de bibliotheek: Ze ___ te studeren voor haar examen. (zitten, present)",
-             "a": "zit",
-             "tip": "Ze = enkelvoud → zit (niet zitten). Ze zit te studeren."},
-            {"type": "fill",
-             "q": "Aan de deur: Er ___ iemand te wachten. (staan, present)",
-             "a": "staat",
-             "tip": "Er staat iemand... = existential er + staan te. Enkelvoud: staat."},
-            {"type": "fill",
-             "q": "Thuis ziek: Mijn collega ___ de hele dag thuis te slapen. (liggen)",
-             "a": "ligt",
-             "tip": "Liggen + te + infinitief = lying doing. Enkelvoud: ligt."},
-            {"type": "fill",
-             "q": "Perfectum: Gisteren heeft hij de hele vergadering ___ bellen. (zitten)",
-             "a": "zitten",
-             "tip": "Perfectum: heeft + zitten + bellen. Geen te in perfectum!"},
-            {"type": "fill",
-             "q": "In de gang: Hij heeft de hele ochtend in de gang ___ wachten. (staan)",
-             "a": "staan",
-             "tip": "Perfectum: heeft + staan + wachten. Geen te!"},
-            {"type": "choice",
-             "q": "Welke zin is correct voor 'She is sitting studying in the library'?",
-             "options": [
-                 "Ze zit studeren in de bibliotheek.",
-                 "Ze zit te studeren in de bibliotheek.",
-                 "Ze zit te studerend in de bibliotheek.",
-                 "Ze is zitten te studeren in de bibliotheek."
-             ],
-             "a": "Ze zit te studeren in de bibliotheek.",
-             "tip": "Positieverb + te + infinitief (niet -end, niet zonder te)."},
-            {"type": "choice",
-             "q": "Perfectum van 'Hij zit te bellen':",
-             "options": [
-                 "Hij heeft zitten te bellen.",
-                 "Hij heeft gezeten te bellen.",
-                 "Hij heeft zitten bellen.",
-                 "Hij is zitten bellen."
-             ],
-             "a": "Hij heeft zitten bellen.",
-             "tip": "Perfectum: hebben + zitten + infinitief. Te verdwijnt! Geen ge- prefix."},
-            {"type": "choice",
-             "q": "Welk positief werkwoord past het best? De professor ___ aan het bord te schrijven.",
-             "options": ["zit", "ligt", "staat", "loopt"],
-             "a": "staat",
-             "tip": "Aan het bord schrijven = staande activiteit → staan te schrijven."},
-            {"type": "tf",
-             "q": "'Ze heeft liggen te slapen' is correct perfectum.",
-             "a": False,
-             "correction": "Fout! In perfectum verdwijnt 'te': 'Ze heeft liggen slapen.' (geen te!)",
-             "tip": "Perfectum = hebben + positieverb (infinitief) + infinitief. Geen te!"},
-            {"type": "tf",
-             "q": "'Er zitten studenten te luisteren' is correct.",
-             "a": True,
-             "correction": "Correct! Er + zitten (meervoud) + te + infinitief. Correct gebruik!",
-             "tip": "Er + positieverb + te + infinitief is standaard correct."},
-            {"type": "translate",
-             "q": "My colleague has been sitting talking on the phone all morning.",
-             "a": "Mijn collega heeft de hele ochtend zitten bellen.",
-             "tip": "Perfectum: heeft + zitten + bellen (infinitief). Geen te in perfectum!"},
-            {"type": "translate",
-             "q": "There is a student standing waiting at the door.",
-             "a": "Er staat een student te wachten aan de deur.",
-             "tip": "Er + staat (enkelvoud) + te + infinitief. Existential er + staan te."},
-            {"type": "translate",
-             "q": "The cat is lying sleeping on my chair. (That is annoying!)",
-             "a": "De kat ligt te slapen op mijn stoel.",
-             "tip": "Ligt + te + infinitief. De kat (de-woord, enkelvoud) → ligt."},
-            {"type": "reorder",
-             "q": "te / in / zit / de / ze / studeren / bibliotheek",
-             "a": "Ze zit te studeren in de bibliotheek.",
-             "tip": "Subject + zit + te + infinitief + rest. Of: Ze zit in de bibliotheek te studeren (ook goed)."},
-            {"type": "reorder",
-             "q": "de / heeft / hij / vergadering / zitten / bellen / tijdens",
-             "a": "Hij heeft tijdens de vergadering zitten bellen.",
-             "tip": "Perfectum: heeft + zitten + bellen. Tijdsbepaling in het midden."},
+        "grammar_quick": [
+            "Vallen / botsen / lopen → ZIJN (beweging). Eten / breken / dragen → HEBBEN.",
+            "Mijn arm ZIT in het gips. (zitten in = to be in/stuck)",
+            "Gezwollen = swollen. Verbrand = burned. Gebroken = broken.",
+            "Pijnklachten: tandpijn, hoofdpijn, buikpijn, maagpijn, rugpijn.",
+            "Tijdens HET skiën / bowlen / verhuizen (tijdens + het + inf).",
+            "Oorzaak → perfectum. Gevolg → tegenwoordige tijd.",
         ],
-        "jouw_beurt": "Beschrijf wat de mensen op jouw kantoor of in de klas nu aan het doen zijn.\n\n"
-                      "Schrijf 6 zinnen. Gebruik elke constructie minstens één keer:\n"
-                      "• staan te + infinitief\n"
-                      "• zitten te + infinitief\n"
-                      "• liggen te + infinitief (thuis?)\n"
-                      "• lopen te + infinitief\n"
-                      "• aan het … zijn\n"
-                      "• perfectum: heeft … zitten/staan … (V-infinitief, geen te)\n\n"
-                      "Voorbeeld: 'Mijn collega zit te vergaderen. De secretaresse staat te kopiëren. "
-                      "Er staan twee studenten te wachten voor het kantoor. Gisteren heeft mijn baas "
-                      "de hele vergadering zitten bellen. Ik ben nu aan het schrijven aan mijn artikel.'"
-    },
-
-    # =====================================================================
-    # SESSION 44 — Afspraak maken: bij de dokter / tandarts / kapper (Book p. 24)
-    # =====================================================================
-    {
-        "id": 44,
-        "title": "Afspraak maken — Bij de dokter / tandarts / kapper",
-        "chapter": "Examentopics Oefenen",
-        "book_page": "NT2 Drempel 2 p. 24 — 'Op consultatie' gesprekstaken",
-        "review": [
-            {"q": "Hoe open je een telefoongesprek met een dokter?", "a": "U spreekt met [voornaam achternaam]. / Met [naam], goedemiddag."},
-            {"q": "Hoe vraag je om een afspraak?", "a": "Kan ik een afspraak maken? / Ik zou graag een afspraak willen maken."},
-            {"q": "Hoe zeg je 'I have a sore throat and a fever'?", "a": "Ik heb keelpijn en ik heb koorts."},
-        ],
-        "vocabulary": [
-            {"nl": "een afspraak maken", "en": "to make an appointment", "ex": "Ik wil een afspraak maken voor donderdag."},
-            {"nl": "de huisarts", "en": "the GP / family doctor", "ex": "Ik bel de huisarts."},
-            {"nl": "de tandarts", "en": "the dentist", "ex": "Ik heb tandpijn. Ik ga naar de tandarts."},
-            {"nl": "de kapper", "en": "the hairdresser", "ex": "Ik maak een afspraak bij de kapper."},
-            {"nl": "de spreekkamer", "en": "the consulting room", "ex": "Wacht u in de spreekkamer."},
-            {"nl": "de wachtkamer", "en": "the waiting room", "ex": "Ik zit in de wachtkamer."},
-            {"nl": "het recept / het voorschrift", "en": "the prescription", "ex": "De dokter geeft me een voorschrift."},
-            {"nl": "op consultatie gaan", "en": "to go for a consultation", "ex": "Ik ga op consultatie bij de dokter."},
-            {"nl": "dringend", "en": "urgent", "ex": "Het is dringend — kan ik vandaag komen?"},
-            {"nl": "doorverwijzen", "en": "to refer (to a specialist)", "ex": "De dokter verwijst me door naar een specialist."},
-            {"nl": "de verzekering", "en": "the insurance", "ex": "Ik heb een ziekteverzekering."},
-            {"nl": "terugbetalen", "en": "to reimburse", "ex": "De mutualiteit betaalt de consultatie terug."},
-        ],
-        "grammar_title": "Telefoongesprek structuur — afspraak maken",
-        "grammar_html": """
-<h4>1. Vaste structuur voor een telefoonafspraak (book p. 24)</h4>
-<div class="formula-card">
-<b>Stap 1 — Jezelf voorstellen:</b><br>
-U spreekt met [Naam]. / Met [Naam], goedemorgen.<br><br>
-<b>Stap 2 — Reden noemen:</b><br>
-Ik zou graag een afspraak willen maken. / Ik bel voor een afspraak.<br>
-Ik heb last van … / Ik voel me niet goed want …<br><br>
-<b>Stap 3 — Timing afspreken:</b><br>
-Wanneer kan ik langskomen? / Heeft u nog plaats deze week?<br>
-Kan ik dinsdag of donderdag komen?<br><br>
-<b>Stap 4 — Bevestigen:</b><br>
-Dus op [dag] om [uur]? / Dat is goed voor mij.<br><br>
-<b>Stap 5 — Afsluiten:</b><br>
-Dank u wel. Tot [dag]. / Tot ziens.
-</div>
-
-<h4>2. Volledige modeldialoog — bij de huisarts</h4>
-<table>
-  <tr><th>Receptionist</th><th>Jij (patiënt)</th></tr>
-  <tr><td>Dokterspraktijk Van De Velde, goedemiddag.</td><td>Goedemiddag. U spreekt met Ravi Kumar. Ik zou graag een afspraak willen maken bij dokter Van De Velde.</td></tr>
-  <tr><td>Wat is er aan de hand?</td><td>Ik heb al drie dagen keelpijn en koorts van 38,5 graden. Ik voel me niet goed.</td></tr>
-  <tr><td>Is het dringend?</td><td>Het is niet heel dringend, maar ik zou graag deze week komen als dat mogelijk is.</td></tr>
-  <tr><td>Kan donderdag om 10u15?</td><td>Ja, dat is goed voor mij. Donderdag om 10u15.</td></tr>
-  <tr><td>Uw rijksregisternummer, alstublieft?</td><td>Dat is [nummer].</td></tr>
-  <tr><td>Prima. Tot donderdag, meneer Kumar.</td><td>Dank u wel. Tot donderdag.</td></tr>
-</table>
-
-<h4>3. Bij de tandarts</h4>
-<p>Useful vocabulary and phrases:</p>
-<ul>
-  <li>Ik heb <b>tandpijn</b>. / Mijn kies doet pijn.</li>
-  <li>Ik heb een <b>gat</b> in mijn tand. (I have a cavity.)</li>
-  <li>Mijn <b>tand is gebroken</b>. (My tooth is broken.)</li>
-  <li>Ik heb last van <b>bloedend tandvlees</b>. (bleeding gums)</li>
-  <li>Ik wil een <b>controle</b>. (check-up)</li>
-</ul>
-
-<h4>4. Nuttige taalstructuren voor afspraken</h4>
-<table>
-  <tr><th>Functie</th><th>Formule</th><th>Voorbeeld</th></tr>
-  <tr><td>Afspraak vragen</td><td>Ik zou graag … willen maken.</td><td>Ik zou graag een afspraak willen maken.</td></tr>
-  <tr><td>Klacht noemen</td><td>Ik heb last van … / Ik heb …pijn</td><td>Ik heb last van hoofdpijn.</td></tr>
-  <tr><td>Tijdstip voorstellen</td><td>Kan ik … of … komen?</td><td>Kan ik dinsdag of woensdag komen?</td></tr>
-  <tr><td>Bevestigen</td><td>Dus op … om …?</td><td>Dus op vrijdag om 14u?</td></tr>
-  <tr><td>Dankzeggen</td><td>Dank u wel. Tot …</td><td>Dank u wel. Tot vrijdag.</td></tr>
-</table>
-""",
-        "grammar_letop": """
-<ul>
-  <li>Always use <b>u</b> (formal you) when calling a doctor or receptionist.</li>
-  <li>Say <b>U spreekt met [naam]</b> — not 'Ik ben [naam]' on the phone.</li>
-  <li>Be specific about your complaint: not just 'Ik ben ziek' but 'Ik heb last van keelpijn en koorts van 38 graden.'</li>
-  <li>Confirm the appointment back: 'Dus op donderdag om 10u15?' — this prevents mistakes.</li>
-  <li>'Wat scheelt er?' / 'Wat is er aan de hand?' = Flemish expressions for 'What is wrong?'</li>
-  <li>Days: maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag.</li>
-  <li>Times: om 9u, om half 10 (= 9u30), om kwart over 10 (= 10u15), om kwart voor 11 (= 10u45).</li>
-</ul>
-""",
-        "grammar_extra": """
-<h4>Afspraak annuleren of verzetten (cancel / reschedule)</h4>
-<ul>
-  <li>Ik bel om mijn afspraak <b>te annuleren</b>. (to cancel)</li>
-  <li>Kan ik mijn afspraak <b>verzetten</b>? (to reschedule)</li>
-  <li>Ik kan op [dag] niet komen <b>omdat</b> ik een vergadering heb.</li>
-  <li>Is <b>vrijdag</b> mogelijk in plaats van donderdag?</li>
-  <li>Dank u voor uw begrip.</li>
-</ul>
-
-<h4>Bij de apotheek — extra vocab</h4>
-<table>
-  <tr><th>Dutch</th><th>English</th></tr>
-  <tr><td>het medicijn / het geneesmiddel</td><td>medicine / medication</td></tr>
-  <tr><td>het voorschrift / het recept</td><td>prescription</td></tr>
-  <tr><td>de pijnstiller</td><td>painkiller</td></tr>
-  <tr><td>de antibiotica</td><td>antibiotics</td></tr>
-  <tr><td>de neusdruppels</td><td>nose drops</td></tr>
-  <tr><td>de hoestsiroop</td><td>cough syrup</td></tr>
-  <tr><td>zonder voorschrift</td><td>without prescription (over the counter)</td></tr>
-</table>
-
-<h4>Exam tip: spreekvaardigheid</h4>
-<p>If the exam asks you to roleplay a phone call:</p>
-<ol>
-  <li>Greet + introduce yourself</li>
-  <li>State the reason (naam your symptom clearly)</li>
-  <li>Ask for an appointment + propose a day</li>
-  <li>Confirm the day/time back</li>
-  <li>Thank and close</li>
-</ol>
-""",
-        "grammar_quick": """
-<ul>
-  <li>Open: <b>U spreekt met [naam].</b></li>
-  <li>Reden: <b>Ik zou graag een afspraak willen maken.</b></li>
-  <li>Klacht: <b>Ik heb last van … / Ik voel me niet goed.</b></li>
-  <li>Timing: <b>Kan ik [dag] om [uur] komen?</b></li>
-  <li>Bevestigen: <b>Dus op [dag] om [uur]?</b></li>
-  <li>Afsluiten: <b>Dank u wel. Tot [dag].</b></li>
-  <li>Gebruik altijd <b>u</b> bij dokter/receptionist.</li>
-</ul>
-""",
         "exercises": [
             {"type": "choice",
-             "q": "Hoe begin je een telefoongesprek met de doktersdienst?",
+             "q": "Kaartje 3: 'Ik ___ van een ladder gevallen.'",
+             "options": ["heb", "ben", "had", "was"],
+             "a": "ben",
+             "tip": "vallen = beweging → ZIJN. Ik BEN gevallen."},
+            {"type": "choice",
+             "q": "Kaartje 11: 'Ik ___ een zware doos gedragen.'",
+             "options": ["ben", "was", "heb", "had"],
+             "a": "heb",
+             "tip": "dragen = transitief → HEBBEN."},
+            {"type": "fill",
+             "q": "Kaartje 2: 'Mijn voet doet ___.' (hurts)",
+             "a": "pijn",
+             "tip": "doet pijn = hurts."},
+            {"type": "fill",
+             "q": "Kaartje 3: 'Mijn arm moet 3 weken in het ___.' (plaster cast)",
+             "a": "gips",
+             "tip": "gips = plaster cast."},
+            {"type": "fill",
+             "q": "Kaartje 4: 'Ik heb me niet ___.' (applied sunscreen)",
+             "a": "ingesmeerd",
+             "tip": "insmeren → VD: ingesmeerd."},
+            {"type": "choice",
+             "q": "Kaartje 12: 'Ik ___ met mijn gezicht tegen een deur gebotst.'",
+             "options": ["heb", "ben", "had", "was"],
+             "a": "ben",
+             "tip": "botsen = beweging → ZIJN."},
+            {"type": "fill",
+             "q": "Kaartje 13: 'Ik ben tegen een paal gelopen. Nu heb ik een ___.' (bump)",
+             "a": "buil",
+             "tip": "een buil = a bump."},
+            {"type": "fill",
+             "q": "Kaartje 15: 'Ik heb mijn hand verbrand. Mijn hand zit in een ___.' (bandage)",
+             "a": "verband",
+             "tip": "verband = bandage."},
+            {"type": "choice",
+             "q": "Kaartje 14: Wat is er met haar been?",
              "options": [
-                 "Hallo, ik ben Ravi.",
-                 "U spreekt met Ravi Kumar.",
-                 "Hoi, ik wil een afspraak.",
-                 "Goedemiddag, mijn naam is mijn naam Ravi Kumar."
+                 "Haar been is gezwollen.",
+                 "Haar been zit in het gips en ze zit in een rolstoel.",
+                 "Ze heeft rugpijn.",
+                 "Haar been is verbrand.",
              ],
-             "a": "U spreekt met Ravi Kumar.",
-             "tip": "U spreekt met [naam] = standaard begin voor een formeel telefoongesprek."},
-            {"type": "choice",
-             "q": "Je hebt koorts en keelpijn. Hoe zeg je dit formeel tegen de receptionist?",
-             "options": [
-                 "Ik ben ziek.",
-                 "Ik heb last van keelpijn en ik heb koorts van 38,5 graden.",
-                 "Mijn keel doet pijn en ik ben warm.",
-                 "Ik voel slecht."
-             ],
-             "a": "Ik heb last van keelpijn en ik heb koorts van 38,5 graden.",
-             "tip": "Wees specifiek: 'Ik heb last van [klacht]' + exacte temperatuur geeft de dokter meer info."},
-            {"type": "fill",
-             "q": "Afspraak vragen: 'Ik zou graag een ___ willen maken bij dokter Janssen.'",
-             "a": "afspraak",
-             "tip": "Een afspraak maken = to make an appointment. Standaard zin voor telefoon."},
-            {"type": "fill",
-             "q": "Timing afspreken: 'Heeft u nog ___ op woensdag?' (place / availability)",
-             "a": "plaats",
-             "tip": "Heeft u nog plaats = do you still have a spot/slot available. Common Flemish expression."},
-            {"type": "fill",
-             "q": "Bevestigen: 'Dus op ___ om 10u15?' (dag invullen)",
-             "a": "donderdag",
-             "tip": "Herhaal altijd de dag en het uur om fouten te vermijden: Dus op donderdag om 10u15?"},
-            {"type": "fill",
-             "q": "Afsluiten: 'Dank u wel. Tot ___.' (dag)",
-             "a": "donderdag / vrijdag / [any day]",
-             "tip": "Sluit altijd af met de dag van de afspraak: Tot donderdag!"},
+             "a": "Haar been zit in het gips en ze zit in een rolstoel.",
+             "tip": "Kaartje 14: been gebroken + gips + rolstoel."},
             {"type": "tf",
-             "q": "Op de telefoon met de dokter gebruik je 'je' in plaats van 'u'.",
-             "a": False,
-             "correction": "Fout! Bij de dokter / receptionist gebruik je altijd de formele 'u'.",
-             "tip": "Formele situaties (dokter, apotheek, gemeente) → altijd 'u'."},
+             "q": "'Ik heb van de trap gevallen.' is correct.",
+             "a": "Nee",
+             "tip": "vallen = zijn. Correct: Ik BEN van de trap gevallen."},
             {"type": "tf",
-             "q": "'Wat scheelt er?' is een Vlaamse uitdrukking voor 'What is wrong?'",
-             "a": True,
-             "correction": "Correct! 'Wat scheelt er?' = typisch Vlaams voor 'Wat is er aan de hand?' / 'Wat mankeert u?'",
-             "tip": "In Belgium: Wat scheelt er? In Netherlands: Wat is er?"},
+             "q": "'Tijdens het skiën' is correct.",
+             "a": "Ja",
+             "tip": "Correct! Tijdens + het + infinitief. ✓"},
+            {"type": "tf",
+             "q": "'Mijn arm is in het gips' (met zijn) is de meest idiomatische zin.",
+             "a": "Nee",
+             "tip": "Idiomatisch: Mijn arm ZIT in het gips."},
             {"type": "translate",
-             "q": "Good afternoon. You are speaking with Ravi Kumar. I would like to make an appointment.",
-             "a": "Goedemiddag. U spreekt met Ravi Kumar. Ik zou graag een afspraak willen maken.",
-             "tip": "U spreekt met = formulering voor telefoon. Ik zou graag … willen = formele wens."},
+             "q": "During the move I carried a heavy box. Now I have back pain.",
+             "a": "Tijdens het verhuizen heb ik een zware doos gedragen. Nu heb ik rugpijn.",
+             "tip": "Tijdens HET verhuizen. dragen = hebben."},
             {"type": "translate",
-             "q": "I have had a headache for two days and I feel dizzy.",
-             "a": "Ik heb al twee dagen hoofdpijn en ik heb last van duizeligheid.",
-             "tip": "Al + tijdsduur = for [duration]. Hoofdpijn en duizeligheid = headache and dizziness."},
-            {"type": "translate",
-             "q": "Can I come on Tuesday or Thursday? It is not urgent.",
-             "a": "Kan ik dinsdag of donderdag komen? Het is niet dringend.",
-             "tip": "Dinsdag of donderdag = Tuesday or Thursday. Dringend = urgent."},
-            {"type": "translate",
-             "q": "I would like to cancel my appointment for Friday.",
-             "a": "Ik zou graag mijn afspraak voor vrijdag willen annuleren.",
-             "tip": "annuleren = to cancel. Ik zou graag … willen = polite form."},
+             "q": "I walked into a pole. Now I have a bump.",
+             "a": "Ik ben tegen een paal gelopen. Nu heb ik een buil.",
+             "tip": "lopen (tegen) = zijn. een buil = a bump."},
             {"type": "reorder",
-             "q": "met / u / Kumar / Ravi / spreekt",
-             "a": "U spreekt met Ravi Kumar.",
-             "tip": "Formule: U spreekt met [naam]. Niet: Ik ben / Mijn naam is (voor telefoon)."},
-            {"type": "reorder",
-             "q": "afspraak / willen / graag / een / zou / ik / maken",
-             "a": "Ik zou graag een afspraak willen maken.",
-             "tip": "Ik zou graag [object] willen maken. Modal zou + graag + infinitief op het einde."},
+             "q": "gevallen / ladder / ben / ik / een / van",
+             "a": "Ik ben van een ladder gevallen.",
+             "tip": "Ik BEN + van een ladder + gevallen (VD op einde)."},
         ],
-        "jouw_beurt": "Schrijf een volledig telefoongesprek (10–12 beurten) voor de volgende situatie:\n\n"
-                      "Je belt de doktersdienst in Gent. Je hebt al 2 dagen rugpijn en je kan moeilijk "
-                      "zitten. Je werk aan UGent vereist dat je veel achter een computer zit. "
-                      "Je wil een afspraak deze week.\n\n"
-                      "Structuur:\n"
-                      "R (receptionist): Dokterspraktijk …, goedemiddag.\n"
-                      "J (jij): ...\n"
-                      "R: Wat is er aan de hand?\n"
-                      "J: ...\n"
-                      "R: Is het dringend?\n"
-                      "J: ...\n"
-                      "R: Kan [dag] om [uur]?\n"
-                      "J: ...\n"
-                      "R: Uw rijksregisternummer?\n"
-                      "J: ...\n"
-                      "R: Prima. Tot [dag].\n"
-                      "J: ...\n\n"
-                      "Model antwoord:\n"
-                      "R: Dokterspraktijk Vermeersch, goedemiddag.\n"
-                      "J: Goedemiddag. U spreekt met Ravi Kumar. Ik zou graag een afspraak willen maken.\n"
-                      "R: Wat is er aan de hand?\n"
-                      "J: Ik heb al twee dagen last van rugpijn. Ik kan moeilijk zitten en staan.\n"
-                      "R: Is het dringend?\n"
-                      "J: Het is niet heel dringend, maar ik zou graag zo snel mogelijk langskomen.\n"
-                      "R: Kan woensdag om 14u30?\n"
-                      "J: Ja, woensdag om 14u30 is goed. Dus op woensdag om half drie?\n"
-                      "R: Correct. Uw rijksregisternummer?\n"
-                      "J: Dat is 90.03.15-123.45.\n"
-                      "R: Prima. Tot woensdag, meneer Kumar.\n"
-                      "J: Dank u wel. Tot woensdag.",
-    },
-
-    # =====================================================================
-    # SESSION 45 — Om...te vs Omdat: same/different subject (Book p. 37-39)
-    # =====================================================================
-    {
-        "id": 45,
-        "title": "Om…te vs Omdat — zelfde/ander onderwerp",
-        "chapter": "Examentopics Oefenen",
-        "book_page": "NT2 Drempel 2 p. 37–39 + p. 18 — infinitief constructies",
-        "review": [
-            {"q": "Maak één zin: 'Ik studeer. Ik wil slagen.' (zelfde onderwerp = om...te)", "a": "Ik studeer om te slagen."},
-            {"q": "Maak één zin: 'Ik studeer. Mijn ouders zijn trots.' (ander onderwerp = omdat)", "a": "Ik studeer omdat mijn ouders trots zijn."},
-            {"q": "Waar staat het werkwoord na 'omdat'?", "a": "Op het einde van de bijzin: Ik studeer omdat ik wil slagen."},
-        ],
-        "vocabulary": [
-            {"nl": "het doel", "en": "the goal / purpose", "ex": "Mijn doel is slagen voor het examen."},
-            {"nl": "de reden", "en": "the reason", "ex": "De reden is dat ik in Gent woon."},
-            {"nl": "de oorzaak", "en": "the cause", "ex": "De oorzaak van zijn moeheid is overwerk."},
-            {"nl": "het gevolg", "en": "the consequence / result", "ex": "Het gevolg is dat hij nu ziek is."},
-            {"nl": "slagen voor", "en": "to pass (exam)", "ex": "Ik studeer om te slagen voor mijn examen."},
-            {"nl": "communiceren", "en": "to communicate", "ex": "Ik leer Nederlands om te communiceren."},
-            {"nl": "integreren", "en": "to integrate", "ex": "Ik leer Nederlands om te integreren."},
-            {"nl": "bereiken", "en": "to achieve / reach", "ex": "Ik wil mijn doel bereiken."},
-        ],
-        "grammar_title": "Om…te vs Omdat — het grote onderscheid",
-        "grammar_html": """
-<h4>1. The key rule (book p. 38)</h4>
-<div class="formula-card">
-<b>Same subject in both clauses?</b><br>
-→ Use <b>om … te + infinitief</b><br>
-→ Ik studeer om <b>te slagen</b>. (I study [in order] to pass.)<br><br>
-<b>Different subjects in the two clauses?</b><br>
-→ Use <b>omdat + volledige bijzin</b><br>
-→ Ik studeer omdat mijn <b>ouders trots zijn</b>. (I study because my parents are proud.)
-</div>
-
-<h4>2. Side-by-side comparison</h4>
-<table>
-  <tr><th></th><th>Om … te …</th><th>Omdat …</th></tr>
-  <tr><td><b>Meaning</b></td><td>in order to (purpose)</td><td>because (reason)</td></tr>
-  <tr><td><b>Subject</b></td><td>SAME in both clauses</td><td>Can be DIFFERENT</td></tr>
-  <tr><td><b>After connector</b></td><td>te + infinitief (no conjugated verb)</td><td>full clause (V at end)</td></tr>
-  <tr><td><b>Example</b></td><td>Ik fiets om gezond <b>te blijven</b>.</td><td>Ik fiets omdat het <b>gezond is</b>.</td></tr>
-</table>
-
-<h4>3. Structure details</h4>
-<p><b>Om … te …</b></p>
-<div class="formula-card">
-[Hoofdzin] + <b>om</b> + [extra info] + <b>te</b> + [infinitief]<br><br>
-Ik ga naar de markt <b>om</b> groenten <b>te kopen</b>.<br>
-Ik leer Nederlands <b>om</b> beter <b>te communiceren</b>.<br>
-Ik vind het moeilijk <b>om</b> vroeg <b>op te staan</b>. (separabele: te tussen prefix!)
-</div>
-
-<p><b>Omdat …</b></p>
-<div class="formula-card">
-[Hoofdzin] + <b>omdat</b> + [S] + [rest] + [WW-einde]<br><br>
-Ik ga naar de markt <b>omdat</b> de groenten <b>goedkoop zijn</b>.<br>
-Ik leer Nederlands <b>omdat</b> ik in Gent <b>woon</b>.<br>
-Ik vind het moeilijk <b>omdat</b> ik weinig tijd <b>heb</b>.
-</div>
-
-<h4>4. Extra: om … te with adjectives (book p. 39)</h4>
-<p>Common pattern: <b>Ik vind het [adj] om … te …</b></p>
-<ul>
-  <li>Ik vind het <b>moeilijk</b> om vroeg op te staan.</li>
-  <li>Ik vind het <b>leuk</b> om mensen te ontmoeten.</li>
-  <li>Ik vind het <b>belangrijk</b> om Nederlands te leren.</li>
-  <li>Ik vind het <b>saai</b> om alleen te eten.</li>
-</ul>
-
-<h4>5. Separabele werkwoorden met om … te (book p. 38)</h4>
-<p>The <b>te</b> goes BETWEEN the prefix and the verb:</p>
-<table>
-  <tr><th>Infinitief</th><th>Om … te …</th></tr>
-  <tr><td>opbellen</td><td>om <b>op te bellen</b></td></tr>
-  <tr><td>opstaan</td><td>om vroeg <b>op te staan</b></td></tr>
-  <tr><td>uitleggen</td><td>om het beter <b>uit te leggen</b></td></tr>
-  <tr><td>aankomen</td><td>om op tijd <b>aan te komen</b></td></tr>
-</table>
-""",
-        "grammar_letop": """
-<ul>
-  <li>❌ Ik fiets omdat te blijven gezond. → ✅ Ik fiets <b>om gezond te blijven</b>. (same subject → om…te)</li>
-  <li>❌ Ik leer Nederlands om ik kan spreken. → ✅ Ik leer Nederlands <b>om te spreken</b>. (no conjugated verb after om…te!)</li>
-  <li>❌ Ik leer Nederlands om mijn collega's blij zijn. → ✅ Ik leer Nederlands <b>omdat</b> mijn collega's blij zijn. (different subject → omdat)</li>
-  <li>❌ om opbellen → ✅ om <b>op te bellen</b>. (separabele werkwoorden: te tussen prefix en werkwoord)</li>
-  <li>❌ Ik vind het moeilijk omdat vroeg op te staan. → ✅ Ik vind het moeilijk <b>om</b> vroeg op te staan. (adjective + om…te)</li>
-</ul>
-""",
-        "grammar_extra": """
-<h4>Practice: purpose vs reason</h4>
-<p>These sentence pairs mean slightly different things — both are correct:</p>
-<table>
-  <tr><th>Om … te (PURPOSE)</th><th>Omdat (REASON)</th></tr>
-  <tr><td>Ik eet groenten om gezond te blijven.</td><td>Ik eet groenten omdat ze gezond zijn.</td></tr>
-  <tr><td>Ik ga naar de bibliotheek om te studeren.</td><td>Ik ga naar de bibliotheek omdat het er rustig is.</td></tr>
-  <tr><td>Ik leer Nederlands om bij mijn collega's te horen.</td><td>Ik leer Nederlands omdat ik in Gent woon.</td></tr>
-  <tr><td>Ik bel de dokter om een afspraak te maken.</td><td>Ik bel de dokter omdat ik me niet goed voel.</td></tr>
-</table>
-
-<h4>Combining both in one text (exam style)</h4>
-<p><em>Ik leer Nederlands omdat ik in Gent woon en werk. Ik wil Nederlands leren om beter te communiceren 
-met mijn collega's en buren. Ik ga elke week naar de les om te oefenen. Ik vind het soms moeilijk, 
-omdat de woordvolgorde anders is dan in Tamil of Engels. Maar ik oefen elke dag om vooruit te gaan.</em></p>
-""",
-        "grammar_quick": """
-<ul>
-  <li><b>Same subject</b> → om + [info] + te + infinitief (no verb conjugation)</li>
-  <li><b>Different subject</b> → omdat + volledige bijzin (V at end)</li>
-  <li>Separabele werkwoorden: om <b>op te bellen</b>, om <b>op te staan</b></li>
-  <li>Adj + om…te: Ik vind het <b>leuk/moeilijk/belangrijk</b> om te …</li>
-  <li>Beide kunnen 'because/in order to' betekenen — context bepaalt welke!</li>
-</ul>
-""",
-        "exercises": [
-            {"type": "choice",
-             "q": "Ik ga naar de markt ___ groenten te kopen. (zelfde onderwerp: ik ... ik koop)",
-             "options": ["omdat", "om", "want"],
-             "a": "om",
-             "tip": "Zelfde onderwerp (ik / ik) + doel → om ... te kopen."},
-            {"type": "choice",
-             "q": "Ik ga naar de markt ___ de groenten er goedkoop zijn. (ander onderwerp: ik / groenten)",
-             "options": ["om", "om te", "omdat"],
-             "a": "omdat",
-             "tip": "Ander onderwerp (ik / groenten) → omdat + volledige bijzin (V-einde: zijn)."},
-            {"type": "choice",
-             "q": "Ze studeert hard ___ voor het examen te slagen. (doel, zelfde onderwerp)",
-             "options": ["omdat", "om", "zodat"],
-             "a": "om",
-             "tip": "Doel + zelfde onderwerp (ze / ze) → om ... te slagen."},
-            {"type": "choice",
-             "q": "Ze studeert hard ___ haar familie trots op haar is. (reden, ander onderwerp)",
-             "options": ["om", "om te", "omdat"],
-             "a": "omdat",
-             "tip": "Reden + ander onderwerp (ze / haar familie) → omdat + V-einde: is."},
-            {"type": "fill",
-             "q": "Ik leer Nederlands ___ beter te communiceren met mijn collega's. (doel)",
-             "a": "om",
-             "tip": "Doel + zelfde onderwerp (ik / ik) → om ... te communiceren."},
-            {"type": "fill",
-             "q": "Ik leer Nederlands ___ ik in Gent woon en werk. (reden)",
-             "a": "omdat",
-             "tip": "Reden met zelfde subject maar als full clause → omdat + V-einde."},
-            {"type": "fill",
-             "q": "Ik vind het moeilijk ___ vroeg op ___ staan. (om...te + separabele werkwoord)",
-             "a": "om / te",
-             "tip": "Ik vind het moeilijk om... te... Separabele werkwoord: om vroeg OP TE staan."},
-            {"type": "fill",
-             "q": "Hij belt zijn moeder ___ haar te horen. (doel — om...te)",
-             "a": "om",
-             "tip": "Doel + zelfde onderwerp → om ... te horen."},
-            {"type": "tf",
-             "q": "'Ik leer Nederlands om mijn collega's blij zijn' is correct.",
-             "a": False,
-             "correction": "Fout! Ander onderwerp → omdat: 'Ik leer Nederlands OMDAT mijn collega's blij zijn.'",
-             "tip": "Ander onderwerp → omdat + volledige bijzin."},
-            {"type": "tf",
-             "q": "'Ik ga wandelen om te ontspannen' is correct.",
-             "a": True,
-             "correction": "Correct! Zelfde onderwerp (ik/ik) + doel → om te ontspannen. ✓",
-             "tip": "Zelfde onderwerp + doel → om + te + infinitief."},
-            {"type": "tf",
-             "q": "'Ik ga naar de les om ik meer oefening krijg' is correct.",
-             "a": False,
-             "correction": "Fout! Na om...te komt GEEN geconjugeerd werkwoord. Correct: 'om meer oefening te krijgen.'",
-             "tip": "Na om...te: altijd infinitief, nooit een geconjugeerd werkwoord."},
-            {"type": "translate",
-             "q": "I cycle to UGent in order to stay fit.",
-             "a": "Ik fiets naar UGent om fit te blijven.",
-             "tip": "Doel + zelfde onderwerp (ik / ik) → om ... te blijven."},
-            {"type": "translate",
-             "q": "I go to the doctor because I feel ill.",
-             "a": "Ik ga naar de dokter omdat ik me ziek voel.",
-             "tip": "Reden + zelfde onderwerp maar volledige bijzin → omdat + V-einde: voel. Reflexief: me."},
-            {"type": "translate",
-             "q": "It is important to speak Dutch every day.",
-             "a": "Het is belangrijk om elke dag Nederlands te spreken.",
-             "tip": "het is [adj] om ... te ... Standaard patroon. Nederlands = object vóór infinitief."},
-            {"type": "translate",
-             "q": "She called her friend in order to invite him.",
-             "a": "Ze belde haar vriend om hem uit te nodigen.",
-             "tip": "Doel + zelfde onderwerp → om + separabele: uitnodigen → om uit te nodigen."},
-            {"type": "reorder",
-             "q": "ga / de / ik / om / bibliotheek / naar / studeren / te",
-             "a": "Ik ga naar de bibliotheek om te studeren.",
-             "tip": "om + te + infinitief aan het einde. Ik ga naar de bibliotheek om te studeren."},
-            {"type": "reorder",
-             "q": "het / ik / om / vind / vroeg / moeilijk / op / te / staan",
-             "a": "Ik vind het moeilijk om vroeg op te staan.",
-             "tip": "Ik vind het [adj] om ... te ... Separabele: op te staan."},
-        ],
-        "jouw_beurt": "Schrijf een tekst van 10–12 zinnen over WAAROM jij Nederlands leert.\n\n"
-                      "Gebruik BEIDE constructies:\n"
-                      "• Minstens 4× om … te … (met jouw eigen redenen/doelen)\n"
-                      "• Minstens 4× omdat … (met volledige bijzin, V op einde)\n"
-                      "• Minstens 1× Ik vind het [adj] om … te …\n"
-                      "• Minstens 1× separabele werkwoord met om … te: bv. opbellen, opstaan, uitleggen\n\n"
-                      "Voorbeeld:\n"
-                      "'Ik leer Nederlands omdat ik in Gent woon en werk. Ik wil Nederlands leren om "
-                      "beter te communiceren met mijn collega's en mijn buren. Ik vind het soms moeilijk "
-                      "omdat de woordvolgorde anders is dan in Tamil. Maar ik vind het ook leuk om nieuwe "
-                      "woorden te leren. Ik ga elke week naar de les om te oefenen. Ik oefen ook thuis "
-                      "omdat ik wil vooruitgaan. Als ik Nederlands goed spreek, wil ik mijn Belgische "
-                      "vrienden kunnen opbellen om gewoon bij te praten. Dat is mijn doel.'",
+        "jouw_beurt": "✍️ SCHRIJFTAAK — Beschrijf een blessure (kaartjes-stijl)\n\n"
+                      "Kies 3 kaartjes en schrijf voor elk:\n"
+                      "• De oorzaak (perfectum): Ik ben … / Ik heb …\n"
+                      "• De situatie nu: Mijn … is / doet / zit in …\n"
+                      "• Een kort doktersgesprek (3-4 zinnen).\n\n"
+                      "EXTRA: Schrijf jouw eigen kaartje (echte of verzonnen situatie).\n"
+                      "Gebruik: Tijdens het ___ ben/heb ik ___.\n"
+                      "Mijn ___ is/zit/doet ___.\n\n"
+                      "✅ Zelfcheck:\n"
+                      "☐ vallen/botsen/lopen → BEN?\n"
+                      "☐ eten/breken/dragen/verbranden → HEB?\n"
+                      "☐ Mijn arm ZIT in het gips?\n"
+                      "☐ Tijdens HET bowlen / skiën / verhuizen?",
     },
 ]
+
 
 # ---------------------------------------------------------------------------
 # DATA NORMALISATION — ensure every session has consistent field formats
