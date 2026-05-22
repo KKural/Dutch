@@ -13,7 +13,8 @@
 
 {% for ch in chapters %}
 <section class="chapter-card">
-    <h2>{{ ch.icon }} {{ ch.name }} <small>{{ ch.desc }}</small></h2>
+    <h2>{{ ch.icon }} {{ ch.name }}</h2>
+    <p class="ch-desc">{{ ch.desc }}</p>
     <p class="book-ref">📖 {{ ch.pages }}</p>
     <div class="session-grid">
         {% for sid in ch.sessions %}

@@ -1,17 +1,20 @@
 /* ===== VARIABLES ===== */
 :root {
-    --bg: #f7f8fa;
+    --bg: #f0f2f5;
     --card: #ffffff;
     --primary: #1a5276;
-    --accent: #f39c12;
-    --success: #27ae60;
-    --danger: #e74c3c;
-    --warn: #e67e22;
-    --text: #2c3e50;
-    --muted: #7f8c8d;
-    --border: #dfe6e9;
-    --radius: 10px;
-    --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --primary-light: #2471a3;
+    --accent: #e67e22;
+    --success: #1e8449;
+    --danger: #c0392b;
+    --warn: #d68910;
+    --text: #1c2833;
+    --muted: #6c7a89;
+    --border: #d5dbdb;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --shadow: 0 1px 4px rgba(0,0,0,.07), 0 4px 12px rgba(0,0,0,.06);
+    --shadow-md: 0 2px 8px rgba(0,0,0,.10), 0 6px 20px rgba(0,0,0,.08);
 }
 
 /* ===== RESET ===== */
@@ -27,72 +30,84 @@ body {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     background: var(--bg);
     color: var(--text);
-    line-height: 1.6;
+    line-height: 1.65;
+    font-size: 16px;
 }
 
 /* ===== NAV ===== */
 .topnav {
-    background: var(--primary);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
     color: #fff;
-    padding: .75rem 1.5rem;
+    padding: .85rem 1.75rem;
     display: flex;
     align-items: center;
     gap: 1rem;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .18);
 }
 
 .logo {
     color: #fff;
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
+    letter-spacing: .01em;
 }
 
 .nav-sub {
-    color: rgba(255, 255, 255, .7);
-    font-size: .85rem;
+    color: rgba(255, 255, 255, .75);
+    font-size: .82rem;
+    margin-left: auto;
+    font-style: italic;
 }
 
 /* ===== CONTAINER ===== */
 .container {
-    max-width: 900px;
+    max-width: 960px;
     margin: 0 auto;
-    padding: 1.5rem 1rem;
+    padding: 2rem 1.25rem;
+    min-height: calc(100vh - 56px - 72px);
 }
 
 /* ===== HERO ===== */
 .hero {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 2rem 1.5rem 1.75rem;
+    box-shadow: var(--shadow);
 }
 
 .hero h1 {
-    font-size: 1.8rem;
+    font-size: 1.85rem;
     color: var(--primary);
+    font-weight: 700;
+    letter-spacing: -.01em;
 }
 
 .subtitle {
     color: var(--muted);
-    margin: .5rem 0;
+    margin: .5rem 0 .25rem;
+    font-size: .95rem;
 }
 
 .progress-bar-wrap {
     background: var(--border);
     border-radius: 20px;
-    height: 14px;
-    max-width: 500px;
-    margin: 1rem auto;
+    height: 12px;
+    max-width: 480px;
+    margin: 1rem auto .5rem;
     overflow: hidden;
 }
 
 .progress-bar {
-    background: linear-gradient(90deg, var(--accent), var(--success));
+    background: linear-gradient(90deg, var(--primary-light), var(--success));
     height: 100%;
     border-radius: 20px;
-    transition: width .5s ease;
+    transition: width .6s ease;
 }
 
 .progress-text {
@@ -104,73 +119,88 @@ body {
 .chapter-card {
     background: var(--card);
     border-radius: var(--radius);
-    padding: 1.5rem;
+    padding: 1.5rem 1.75rem;
     margin-bottom: 1.5rem;
     box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary);
+    transition: box-shadow .2s;
+}
+
+.chapter-card:hover {
+    box-shadow: var(--shadow-md);
 }
 
 .chapter-card h2 {
     color: var(--primary);
     font-size: 1.2rem;
-    margin-bottom: .5rem;
+    font-weight: 700;
+    margin-bottom: .3rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
 }
 
-.chapter-card h2 small {
+.ch-desc {
     color: var(--muted);
-    font-weight: 400;
-    font-size: .85rem;
-    margin-left: .5rem;
+    font-size: .875rem;
+    margin-bottom: .5rem;
+    font-style: italic;
 }
 
 .book-ref {
     color: var(--muted);
-    font-size: .8rem;
-    margin-bottom: .75rem;
+    font-size: .78rem;
+    margin-bottom: .9rem;
+    display: flex;
+    align-items: center;
+    gap: .3rem;
 }
 
 /* ===== SESSION GRID ===== */
 .session-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: .75rem;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: .65rem;
 }
 
 .session-tile {
     display: flex;
     align-items: center;
     gap: .75rem;
-    padding: .75rem 1rem;
+    padding: .75rem 2.5rem .75rem 1rem;
     background: var(--bg);
     border: 2px solid var(--border);
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     text-decoration: none;
     color: var(--text);
-    transition: all .2s;
+    transition: all .18s;
     position: relative;
+    min-height: 56px;
 }
 
 .session-tile:hover {
     border-color: var(--accent);
     transform: translateY(-2px);
     box-shadow: var(--shadow);
+    background: #fff;
 }
 
 .session-tile.done {
     border-color: var(--success);
-    background: #eafaf1;
+    background: #edfaf4;
 }
 
 .session-num {
     background: var(--primary);
     color: #fff;
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-size: .85rem;
+    font-size: .82rem;
     flex-shrink: 0;
 }
 
@@ -179,17 +209,19 @@ body {
 }
 
 .session-title {
-    font-size: .9rem;
+    font-size: .875rem;
+    line-height: 1.35;
 }
 
 .badge {
     position: absolute;
-    top: 4px;
-    right: 8px;
-    font-size: .7rem;
-    padding: 2px 6px;
-    border-radius: 10px;
+    top: 5px;
+    right: 6px;
+    font-size: .65rem;
+    padding: 2px 5px;
+    border-radius: 8px;
     font-weight: 700;
+    line-height: 1.4;
 }
 
 .done-badge {
@@ -201,13 +233,15 @@ body {
     background: var(--accent);
     color: #fff;
     top: auto;
-    bottom: 4px;
+    bottom: 5px;
 }
 
 /* ===== RESET BUTTON ===== */
 .reset-wrap {
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    border-top: 1px solid var(--border);
 }
 
 /* ===== BUTTONS ===== */
@@ -282,49 +316,64 @@ body {
 /* ===== SESSION HEADER ===== */
 .session-header {
     margin-bottom: 1.5rem;
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem 1rem;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--accent);
 }
 
 .session-header h1 {
     color: var(--primary);
-    font-size: 1.5rem;
+    font-size: 1.45rem;
+    font-weight: 700;
+    margin-top: .5rem;
+    letter-spacing: -.01em;
 }
 
 .session-nav {
     display: flex;
     gap: .5rem;
-    margin-bottom: 1rem;
+    margin-bottom: .25rem;
+    flex-wrap: wrap;
 }
 
 .meta {
     color: var(--muted);
-    font-size: .9rem;
+    font-size: .85rem;
+    margin-top: .35rem;
 }
 
 /* ===== TABS ===== */
 .tabs {
     display: flex;
     gap: 0;
-    border-bottom: 3px solid var(--border);
+    border-bottom: 2px solid var(--border);
     margin-bottom: 1.5rem;
     overflow-x: auto;
+    background: var(--card);
+    border-radius: var(--radius) var(--radius) 0 0;
+    padding: 0 .5rem;
+    box-shadow: 0 1px 0 var(--border);
 }
 
 .tab {
-    padding: .65rem 1.25rem;
+    padding: .75rem 1.1rem;
     background: none;
     border: none;
     cursor: pointer;
-    font-size: .9rem;
+    font-size: .875rem;
     font-weight: 600;
     color: var(--muted);
     border-bottom: 3px solid transparent;
-    margin-bottom: -3px;
-    transition: all .2s;
+    margin-bottom: -2px;
+    transition: color .15s, border-color .15s;
     white-space: nowrap;
 }
 
 .tab:hover {
     color: var(--primary);
+    background: rgba(26, 82, 118, .05);
 }
 
 .tab.active {
@@ -814,11 +863,13 @@ body {
 /* ===== FOOTER ===== */
 footer {
     text-align: center;
-    padding: 1.5rem;
+    padding: 1.25rem 1.5rem;
     color: var(--muted);
-    font-size: .8rem;
-    border-top: 1px solid var(--border);
-    margin-top: 2rem;
+    font-size: .78rem;
+    background: var(--card);
+    border-top: 2px solid var(--border);
+    margin-top: 2.5rem;
+    letter-spacing: .01em;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -864,15 +915,27 @@ body {
 
 @media (max-width: 600px) {
     .container {
-        padding: 1rem 0.5rem;
+        padding: 1rem 0.625rem;
+    }
+
+    .hero {
+        padding: 1.5rem 1rem 1.25rem;
     }
 
     .hero h1 {
         font-size: 1.3rem;
     }
 
+    .session-header {
+        padding: 1rem;
+    }
+
     .session-header h1 {
         font-size: 1.15rem;
+    }
+
+    .chapter-card {
+        padding: 1.1rem 1rem;
     }
 
     .session-grid {
