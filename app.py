@@ -7,6 +7,7 @@ from flask import Flask, render_template, jsonify, request
 from course_data import CHAPTERS, SESSIONS
 
 app = Flask(__name__)
+app.config["APPLICATION_ROOT"] = os.environ.get("APPLICATION_ROOT", "/")
 
 PROGRESS_FILE = os.path.join(os.path.dirname(
     os.path.abspath(__file__)), "progress.json")
