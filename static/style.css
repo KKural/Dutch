@@ -1583,13 +1583,86 @@ body {
     color: #7b1a1a;
 }
 
-@media (max-width: 600px) {
-    .drill-table {
-        font-size: .8rem;
+@media (max-width: 700px) {
+    /* ── Verb drill: table → stacked cards ── */
+    .drill-table-wrap {
+        overflow-x: visible;
     }
 
+    .drill-table {
+        min-width: 0;
+        width: 100%;
+    }
+
+    /* Hide the table header row */
+    .drill-table thead {
+        display: none;
+    }
+
+    /* Each row becomes a card */
+    .drill-table tbody tr {
+        display: block;
+        background: var(--card);
+        border: 2px solid var(--border);
+        border-radius: var(--radius-sm);
+        margin-bottom: .75rem;
+        padding: .5rem .75rem .25rem;
+        box-shadow: var(--shadow);
+    }
+
+    /* Each cell becomes a labeled row */
+    .drill-table td {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        padding: .45rem 0;
+        border-bottom: 1px solid var(--border);
+        font-size: .88rem;
+    }
+
+    .drill-table td:last-child {
+        border-bottom: none;
+        padding-bottom: .6rem;
+    }
+
+    /* Auto-generated label from data-label attribute */
+    .drill-table td::before {
+        content: attr(data-label);
+        font-size: .72rem;
+        font-weight: 700;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: .04em;
+        min-width: 100px;
+        flex-shrink: 0;
+    }
+
+    /* Verb name cell: show as card header */
+    .drill-table td.drill-inf {
+        background: var(--primary);
+        color: #fff;
+        border-radius: 6px 6px 0 0;
+        margin: -.5rem -.75rem .25rem;
+        padding: .6rem .75rem;
+        font-size: .95rem;
+        border-bottom: none;
+    }
+
+    .drill-table td.drill-inf::before {
+        display: none;
+    }
+
+    .drill-table td.drill-inf .drill-en {
+        color: rgba(255, 255, 255, .75);
+        display: inline;
+        margin-left: .5rem;
+    }
+
+    /* Input fills remaining space */
     .drill-inp {
-        min-width: 70px;
-        font-size: .8rem;
+        flex: 1;
+        min-width: 0;
+        min-height: 40px;
+        font-size: .9rem;
     }
 }
