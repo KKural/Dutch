@@ -25,7 +25,9 @@
                 <span class="sp-label">Overall Progress</span>
                 <span class="sp-nums">{{ nav_done }}/{{ nav_total }}</span>
             </div>
-            <div class="sp-bar"><div class="sp-fill" style="width:{{ nav_pct }}%"></div></div>
+            <div class="sp-bar">
+                <div class="sp-fill" style="width:{{ nav_pct }}%"></div>
+            </div>
         </div>
 
         <a href="{{ url_for('index') }}" class="snav-home {% if not current_sid %}active{% endif %}">
@@ -36,7 +38,8 @@
             {% for ch in nav_chapters %}
             {% set ch_total = ch.sessions | length %}
             {% set ns = namespace(done=0) %}
-            {% for sid in ch.sessions %}{% if sid in nav_progress.completed %}{% set ns.done = ns.done + 1 %}{% endif %}{% endfor %}
+            {% for sid in ch.sessions %}{% if sid in nav_progress.completed %}{% set ns.done = ns.done + 1 %}{% endif
+            %}{% endfor %}
             {% set ch_open = (current_sid is not none) and (current_sid in ch.sessions) %}
             <div class="snav-ch {% if ch_open %}open{% endif %}">
                 <button class="snav-ch-btn" type="button">
@@ -50,7 +53,7 @@
                     {% set ss = nav_sessions[sid] %}
                     {% set is_done = sid in nav_progress.completed %}
                     <a href="{{ url_for('session_view', sid=sid) }}"
-                       class="snav-item{% if is_done %} done{% endif %}{% if current_sid == sid %} active{% endif %}">
+                        class="snav-item{% if is_done %} done{% endif %}{% if current_sid == sid %} active{% endif %}">
                         <span class="snav-n">{{ sid }}</span>
                         <span class="snav-t">{{ ss.title }}</span>
                         {% if is_done %}<span class="snav-ck">✓</span>{% endif %}
@@ -82,40 +85,40 @@
     </div>
 
     <script>
-    (function () {
-        var sidebar   = document.getElementById('sidebar');
-        var overlay   = document.getElementById('sidebarOverlay');
-        var hamburger = document.getElementById('hamburger');
-        var closeBtn  = document.getElementById('sidebarClose');
+        (function () {
+            var sidebar = document.getElementById('sidebar');
+            var overlay = document.getElementById('sidebarOverlay');
+            var hamburger = document.getElementById('hamburger');
+            var closeBtn = document.getElementById('sidebarClose');
 
-        function openSidebar()  {
-            sidebar.classList.add('open');
-            overlay.classList.add('show');
-            document.body.classList.add('sb-open');
-        }
-        function closeSidebar() {
-            sidebar.classList.remove('open');
-            overlay.classList.remove('show');
-            document.body.classList.remove('sb-open');
-        }
+            function openSidebar() {
+                sidebar.classList.add('open');
+                overlay.classList.add('show');
+                document.body.classList.add('sb-open');
+            }
+            function closeSidebar() {
+                sidebar.classList.remove('open');
+                overlay.classList.remove('show');
+                document.body.classList.remove('sb-open');
+            }
 
-        hamburger.addEventListener('click', openSidebar);
-        closeBtn.addEventListener('click', closeSidebar);
-        overlay.addEventListener('click', closeSidebar);
+            hamburger.addEventListener('click', openSidebar);
+            closeBtn.addEventListener('click', closeSidebar);
+            overlay.addEventListener('click', closeSidebar);
 
-        // Chapter collapse / expand
-        document.querySelectorAll('.snav-ch-btn').forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                btn.closest('.snav-ch').classList.toggle('open');
+            // Chapter collapse / expand
+            document.querySelectorAll('.snav-ch-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    btn.closest('.snav-ch').classList.toggle('open');
+                });
             });
-        });
 
-        // Auto-scroll active session into view in sidebar
-        var activeItem = sidebar.querySelector('.snav-item.active');
-        if (activeItem) {
-            activeItem.scrollIntoView({ block: 'nearest' });
-        }
-    })();
+            // Auto-scroll active session into view in sidebar
+            var activeItem = sidebar.querySelector('.snav-item.active');
+            if (activeItem) {
+                activeItem.scrollIntoView({ block: 'nearest' });
+            }
+        })();
     </script>
 
     {% block scripts %}{% endblock %}
