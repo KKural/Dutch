@@ -42,6 +42,26 @@ def save_progress(data):
         json.dump(data, f, indent=2)
 
 
+@app.context_processor
+def inject_nav_data():
+    """Inject sidebar navigation data into every template."""
+    progress = load_progress()
+    sessions_map = {s["id"]: s for s in SESSIONS}
+    total = len(SESSIONS)
+    done = len(progress.get("completed", []))
+    pct = int(done / total * 100) if total else 0
+    current_sid = (request.view_args or {}).get("sid")
+    return dict(
+        nav_chapters=CHAPTERS,
+        nav_sessions=sessions_map,
+        nav_progress=progress,
+        nav_total=total,
+        nav_done=done,
+        nav_pct=pct,
+        current_sid=current_sid,
+    )
+
+
 @app.route("/")
 def index():
     progress = load_progress()
