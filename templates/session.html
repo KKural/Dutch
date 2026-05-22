@@ -262,12 +262,18 @@
             <tbody>
                 {% for v in s.verb_drill_data %}
                 <tr>
-                    <td class="drill-inf" data-label="Werkwoord">{{ v[0] }}<br><small class="drill-en">{{ v[1] }}</small></td>
-                    <td data-label="Stam"><input class="drill-inp" data-answer="{{ v[2] }}" placeholder="…" autocomplete="off"></td>
-                    <td data-label="Hulpww."><input class="drill-inp" data-answer="{{ v[3] }}" placeholder="…" autocomplete="off"></td>
-                    <td data-label="Perfectum"><input class="drill-inp" data-answer="{{ v[4] }}" placeholder="…" autocomplete="off"></td>
-                    <td data-label="Imperf. (enkv.)"><input class="drill-inp" data-answer="{{ v[5] }}" placeholder="…" autocomplete="off"></td>
-                    <td data-label="Imperf. (mv.)"><input class="drill-inp" data-answer="{{ v[6] }}" placeholder="…" autocomplete="off"></td>
+                    <td class="drill-inf" data-label="Werkwoord">{{ v[0] }}<br><small class="drill-en">{{ v[1]
+                            }}</small></td>
+                    <td data-label="Stam"><input class="drill-inp" data-answer="{{ v[2] }}" placeholder="…"
+                            autocomplete="off"></td>
+                    <td data-label="Hulpww."><input class="drill-inp" data-answer="{{ v[3] }}" placeholder="…"
+                            autocomplete="off"></td>
+                    <td data-label="Perfectum"><input class="drill-inp" data-answer="{{ v[4] }}" placeholder="…"
+                            autocomplete="off"></td>
+                    <td data-label="Imperf. (enkv.)"><input class="drill-inp" data-answer="{{ v[5] }}" placeholder="…"
+                            autocomplete="off"></td>
+                    <td data-label="Imperf. (mv.)"><input class="drill-inp" data-answer="{{ v[6] }}" placeholder="…"
+                            autocomplete="off"></td>
                 </tr>
                 {% endfor %}
             </tbody>

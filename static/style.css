@@ -1584,6 +1584,7 @@ body {
 }
 
 @media (max-width: 700px) {
+
     /* ── Verb drill: table → stacked cards ── */
     .drill-table-wrap {
         overflow-x: visible;
