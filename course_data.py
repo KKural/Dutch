@@ -66,6 +66,8 @@ SESSIONS = [
             {"nl": "de kermis", "en": "funfair", "ex": "De kermis is in oktober."},
             {"nl": "uitslapen", "en": "to sleep in",
                 "ex": "Op zaterdag slaap ik uit."},
+            {"nl": "overkop gaan", "en": "to go upside-down",
+                "ex": "De attractie in Walibi gaat overkop."},
         ],
 
         # ── GRAMMAR ──
@@ -195,7 +197,7 @@ SESSIONS = [
     # =====================================================================
     {
         "id": 2,
-        "title": "Social Media & Giving Opinions",
+        "title": "Discussing Social Media & Giving Opinions",
         "chapter": "Vrije Tijd",
         "book_page": "p. 4–7",
         "review": [
@@ -215,12 +217,16 @@ SESSIONS = [
                 "ex": "Volgens mij is dat waar."},
             {"nl": "Ik ga akkoord.", "en": "I agree.",
                 "ex": "Ik ga akkoord met jou."},
+            {"nl": "Ik ga niet akkoord.", "en": "I disagree.",
+                "ex": "Ik ga niet akkoord met jou."},
             {"nl": "Ik ben het (niet) eens.", "en": "I (dis)agree.",
              "ex": "Ik ben het niet met je eens."},
             {"nl": "Ja, da's waar.",
                 "en": "Yes, that's true. (Flemish)", "ex": "Ja, da's waar!"},
             {"nl": "Ik vind van wel.", "en": "I think so.", "ex": "—"},
             {"nl": "Ik vind van niet.", "en": "I don't think so.", "ex": "—"},
+            {"nl": "Da's niet juist.", "en": "That's not correct. (Flemish)",
+                "ex": "Da's niet juist!"},
             {"nl": "Je zou … kunnen", "en": "You could …",
                 "ex": "Je zou je telefoon vaker kunnen uitzetten."},
             {"nl": "Misschien kan je …", "en": "Maybe you can …",
@@ -369,7 +375,7 @@ B: <em>Ja, da's waar. Ik ga akkoord.</em> / <em>Nee, ik ben het er niet mee eens
     # =====================================================================
     {
         "id": 3,
-        "title": "Sequencing & Inversie (V2 Rule)",
+        "title": "Media Profiles + Structuring a Story",
         "chapter": "Vrije Tijd",
         "book_page": "p. 6–8",
         "review": [
@@ -841,7 +847,7 @@ But Dutch spelling is more systematic with the -te/-de distinction.</p>
     # =====================================================================
     {
         "id": 5,
-        "title": "Om … te … Construction",
+        "title": "Story-Writing: Adjectives to \"Spice Up\" a Text",
         "chapter": "Een Verhaal Vertellen",
         "book_page": "p. 13, 18",
         "review": [
@@ -874,6 +880,14 @@ But Dutch spelling is more systematic with the -te/-de distinction.</p>
                 "ex": "Ik beloof om hard te werken."},
             {"nl": "het doel", "en": "goal / purpose",
                 "ex": "Wat is het doel van je reis?"},
+            {"nl": "het monument", "en": "monument",
+                "ex": "Het Gravensteen is een bekend monument."},
+            {"nl": "de kist", "en": "chest / box",
+                "ex": "Er zat goud in de kist."},
+            {"nl": "het magisch voorwerp", "en": "magic object",
+                "ex": "De held vond een magisch voorwerp."},
+            {"nl": "vooraleer", "en": "before (formal)",
+                "ex": "Vooraleer je vertrekt, controleer je koffer."},
         ],
 
         # ── GRAMMAR ──
@@ -1026,7 +1040,7 @@ The main difference is that <em>om</em> and <em>te</em> are split around other w
     # ──────────────────────────────────────────────
     {
         "id": 6,
-        "title": "Omdat, Want & Daarom – Redenen geven",
+        "title": "Food, Health & Omdat vs Want",
         "chapter": "Hoofdstuk 3 – Gezond Leven",
         "book_page": "NT2 Drempel 2, H3 p. 40–48",
 
@@ -1179,7 +1193,7 @@ They mean the same but change the word order! Think of <b>omdat</b> as the stric
     # ──────────────────────────────────────────────
     {
         "id": 7,
-        "title": "Als (if/when) – Condities & Advies geven",
+        "title": "Advice & Conditionals with Als",
         "chapter": "Hoofdstuk 3 – Gezond Leven",
         "book_page": "NT2 Drempel 2, H3 p. 48–55",
 
@@ -1345,7 +1359,7 @@ verb goes to the END of the als-clause. In Tamil, verb position doesn't change f
     # ──────────────────────────────────────────────
     {
         "id": 8,
-        "title": "Bij de Dokter – Lichaamsdelen & Klachten beschrijven",
+        "title": "Health Complaints Vocabulary",
         "chapter": "Hoofdstuk 3 – Gezond Leven",
         "book_page": "NT2 Drempel 2, H3 p. 55–65",
 
@@ -1524,7 +1538,7 @@ Reflexive: Tamil has "-ஐ தான்" for self-reference. Dutch uses separate
     # ──────────────────────────────────────────────
     {
         "id": 9,
-        "title": "Gent – Je stad beschrijven & Vergelijkingen",
+        "title": "Ghent Vocabulary & Comparatives",
         "chapter": "Hoofdstuk 4 – Gent, mijn stad",
         "book_page": "NT2 Drempel 2, H4 p. 66–78",
 
@@ -1702,7 +1716,7 @@ A is [adj]-er dan B.</p>
     # ──────────────────────────────────────────────
     {
         "id": 10,
-        "title": "Inpakken & Wegwezen – Reizen & De Toekomst",
+        "title": "Travel Vocabulary & Om...te for Reasons",
         "chapter": "Hoofdstuk 5 – Inpakken & Wegwezen",
         "book_page": "NT2 Drempel 2, H5 p. 79–92",
 
@@ -1885,7 +1899,7 @@ Dutch <b>zullen</b> is more like a prediction or promise — Tamil equivalent wo
     # ──────────────────────────────────────────────
     {
         "id": 11,
-        "title": "Het Perfectum – Voltooid Tegenwoordige Tijd (hebben/zijn + voltooid deelwoord)",
+        "title": "Perfectum met Infinitieven (p. 43–44)",
         "chapter": "Hoofdstuk 6 – Grammatica Verdieping",
         "book_page": "NT2 Drempel 2, H6 p. 93–105",
 
@@ -2145,7 +2159,7 @@ Dutch has TWO past tenses. The perfectum (heb gegeten) is for <b>conversation</b
     # ──────────────────────────────────────────────
     {
         "id": 12,
-        "title": "Perfectum vs Imperfectum – Wanneer gebruik je welke?",
+        "title": "Het Imperfectum: Theory + Irregular Verbs (p. 45–49)",
         "chapter": "Hoofdstuk 6 – Grammatica Verdieping",
         "book_page": "NT2 Drempel 2, H6 p. 105–115",
 
@@ -2379,7 +2393,7 @@ Perfectum met <b>hebben</b> → Plusquamperfectum ook met <b>hebben</b> (had/had
     # ──────────────────────────────────────────────
     {
         "id": 13,
-        "title": "Als vs Toen – When in the Past & Present",
+        "title": "Als en Toen: Full Theory (p. 50–55)",
         "chapter": "Hoofdstuk 7 – Verbindingswoorden",
         "book_page": "NT2 Drempel 2, H7 p. 116–126",
 
@@ -2554,7 +2568,7 @@ Think: <b>toen</b> = "அப்போது (appōtu)" (at that specific past ti
     # ──────────────────────────────────────────────
     {
         "id": 14,
-        "title": "Verbindingswoorden – Connectors Overzicht",
+        "title": "Omdat, Daarom, Dus, (Maar) Toch (p. 56–62)",
         "chapter": "Hoofdstuk 7 – Verbindingswoorden",
         "book_page": "NT2 Drempel 2, H7 p. 126–138",
 
@@ -2740,7 +2754,7 @@ Memorise the group, and you'll know the word order!</p>
     # ──────────────────────────────────────────────
     {
         "id": 15,
-        "title": "Het woordje ER (1) – Er is/zijn & Er + prepositie",
+        "title": "ER als Plaatsaanduiding (p. 63–65)",
         "chapter": "Hoofdstuk 8 – Het woordje ER",
         "book_page": "NT2 Drempel 2, H8 p. 139–150",
 
@@ -2914,7 +2928,7 @@ For "about it" etc., Tamil uses "அதைப் பற்றி (ataip paṟṟ
     # ──────────────────────────────────────────────
     {
         "id": 16,
-        "title": "Het woordje ER (2) – Hoeveelheid, Plaats & Passief",
+        "title": "ER als Voorlopig Subject (p. 66–68)",
         "chapter": "Hoofdstuk 8 – Het woordje ER",
         "book_page": "NT2 Drempel 2, H8 p. 150–160",
 
@@ -3102,7 +3116,7 @@ No extra word needed. Dutch REQUIRES <b>er</b> with quantities when the noun is 
     # ──────────────────────────────────────────────
     {
         "id": 17,
-        "title": "Voordat & Nadat",
+        "title": "Voordat en Nadat (p. 68\u201370)",
         "chapter": "Hoofdstuk 6 – ER & Tijd",
         "book_page": "p. 110-115",
         "review": "In sessie 14 leerde je connectors. Nu focussen we op twee tijdconnectors: "
@@ -3303,7 +3317,7 @@ Hij ging weg nadat hij <u>gegeten had</u>.
     # ──────────────────────────────────────────────
     {
         "id": 18,
-        "title": "Persoonlijke voornaamwoorden",
+        "title": "Het Pronomen: Overzicht (p. 70\u201373)",
         "chapter": "Hoofdstuk 7 – Voornaamwoorden",
         "book_page": "p. 116-122",
         "review": "Je kent al ik, jij, hij, zij, wij, jullie, zij. Nu leer je het volledige "
@@ -3520,7 +3534,7 @@ Reflexive: Tamil uses தன்னை (thannai, oneself) — similar to zich/zic
     # ──────────────────────────────────────────────
     {
         "id": 19,
-        "title": "Vaste voorzetsels – werkwoorden",
+        "title": "Verba met Vaste Prepositie (p. 73–75)",
         "chapter": "Hoofdstuk 7 – Voorzetsels",
         "book_page": "p. 123-128",
         "review": "In het Nederlands horen sommige werkwoorden bij een <b>vast voorzetsel</b> "
@@ -3735,7 +3749,7 @@ The concept is the same — certain verbs require specific words — but the pos
     # ──────────────────────────────────────────────
     {
         "id": 20,
-        "title": "Vaste voorzetsels – bijvoeglijk & meer",
+        "title": "Adjectieven met Vaste Prepositie & Irreguliere Verba (p. 75–79)",
         "chapter": "Hoofdstuk 7 – Voorzetsels",
         "book_page": "p. 129-135",
         "review": "In sessie 19 leerde je voorzetsels bij werkwoorden. Nu focussen we op voorzetsels "
@@ -3960,7 +3974,7 @@ Same concept: the "preposition" is fixed and must be memorized with the adjectiv
     # ──────────────────────────────────────────────
     {
         "id": 21,
-        "title": "Uiterlijk beschrijven",
+        "title": "Writing Prep: Uiterlijk (Appearance)",
         "chapter": "Hoofdstuk 8 – Examenvoorbereiding",
         "book_page": "p. 136-142",
         "review": "Op het NT2-examen (Spreken & Schrijven) moet je vaak iemands <b>uiterlijk</b> "
@@ -4209,7 +4223,7 @@ The structure is the same: "I am + adj" or "I have + noun". Dutch is very simila
     # ──────────────────────────────────────────────
     {
         "id": 22,
-        "title": "Waarom Nederlands?",
+        "title": "Writing Prep: Waarom Nederlands + Job",
         "chapter": "Hoofdstuk 8 – Examenvoorbereiding",
         "book_page": "p. 143-150",
         "review": "Op het NT2-examen wordt vaak gevraagd: <b>Waarom leer je Nederlands?</b> "
@@ -4452,7 +4466,7 @@ The structure is similar — reason + consequence. Use this session to tell YOUR
     # ──────────────────────────────────────────────
     {
         "id": 23,
-        "title": "Vroeger vertellen",
+        "title": "Writing Prep: Over Vroeger (Imperfectum)",
         "chapter": "Hoofdstuk 8 – Examenvoorbereiding",
         "book_page": "p. 151-158",
         "review": "Op het examen moet je vaak over <b>vroeger</b> vertellen: je jeugd, je land, "
@@ -4676,7 +4690,7 @@ Rule of thumb: for STORIES about the past, imperfectum is your friend. For SINGL
     # ──────────────────────────────────────────────
     {
         "id": 24,
-        "title": "Spreken oefenen",
+        "title": "Speaking Prep: Belgium & Opinions",
         "chapter": "Hoofdstuk 8 – Examenvoorbereiding",
         "book_page": "p. 159-165",
         "review": "Het NT2 spreekexamen test je <b>mondelinge vaardigheden</b>: jezelf voorstellen, "
@@ -4900,7 +4914,7 @@ de nadelen. Daarom vind ik dat iedereen minstens twee keer per week moet sporten
     # ──────────────────────────────────────────────
     {
         "id": 25,
-        "title": "Proefexamen",
+        "title": "Full Mock Exam + Self-Correction",
         "chapter": "Hoofdstuk 8 – Examenvoorbereiding",
         "book_page": "Herhaling",
         "review": "Dit is het <b>proefexamen</b>! Alle grammatica en woordenschat uit 24 sessies "
