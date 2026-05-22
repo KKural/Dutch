@@ -25,14 +25,9 @@ CHAPTERS = [
     {"id": 7, "name": "Grammatica", "icon": "📝", "desc": "Grammar Deep-Dive",
         "pages": "p. 42–79", "sessions": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]},
     {"id": 8, "name": "Examenvoorbereiding", "icon": "🎯",
-        "desc": "Exam Preparation", "pages": "—", "sessions": [21, 22, 23, 24, 25]},
-    {"id": 9, "name": "Examentopics Oefenen", "icon": "📋",
-        "desc": "Net zo Box + NT2 Taalmenu stijl — alle 4 vaardigheden", "pages": "CVO GEMT 3.2", "sessions": [26, 27, 28, 29, 30, 31, 32, 33, 34]},
-    {"id": 10, "name": "Grammatica Referentie", "icon": "📚",
-        "desc": "Modale werkwoorden + volledige werkwoordtabel", "pages": "—", "sessions": [35, 36]},
-    {"id": 11, "name": "Examen Extra — Maandag 4 mei notities", "icon": "✏️",
-        "desc": "Adjectief -e buiging, alle voornaamwoorden, ER-positie + Gent schrijven + goedkoop reizen + kamperen luisteren + blessures beschrijven",
-        "pages": "CVO GEMT 3.2 — examentopics", "sessions": [37, 38, 39, 40, 41, 42, 43]},
+        "desc": "Alle examentopics — 4 vaardigheden · grammatica referentie · extra notities",
+        "pages": "CVO GEMT 3.2",
+        "sessions": [21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43]},
 ]
 
 SESSIONS = [
