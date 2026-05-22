@@ -9,6 +9,7 @@ from course_data import CHAPTERS, SESSIONS
 
 class ReverseProxied:
     """Read X-Script-Name header set by Nginx and inject it as SCRIPT_NAME."""
+
     def __init__(self, app):
         self.app = app
 

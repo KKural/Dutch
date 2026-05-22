@@ -1,24 +1,24 @@
 name: Deploy Dutch Course to VM
 
 on:
-  push:
-    branches: [main]
+    push:
+        branches: [main]
 
 jobs:
-  deploy:
-    # Runs ON the VM itself — no inbound SSH needed, works behind VPN/firewall
-    runs-on: self-hosted
-    steps:
-      - name: Pull latest code
-        run: |
-          cd /var/www/dutch
-          git pull origin main
+    deploy:
+        # Runs ON the VM itself — no inbound SSH needed, works behind VPN/firewall
+        runs-on: self-hosted
+        steps:
+            - name: Pull latest code
+              run: |
+                  cd /var/www/dutch
+                  git pull origin main
 
-      - name: Update dependencies
-        run: |
-          /var/www/dutch/.venv/bin/pip install -r /var/www/dutch/requirements.txt -q
+            - name: Update dependencies
+              run: |
+                  /var/www/dutch/.venv/bin/pip install -r /var/www/dutch/requirements.txt -q
 
-      - name: Restart app
-        run: |
-          sudo systemctl restart dutch-course
-          echo "Deployed at $(date)"
+            - name: Restart app
+              run: |
+                  sudo systemctl restart dutch-course
+                  echo "Deployed at $(date)"
