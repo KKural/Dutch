@@ -3,12 +3,27 @@
 import json
 import os
 from flask import Flask, render_template, jsonify, request
-from werkzeug.middleware.proxy_fix import ProxyFix
 
 from course_data import CHAPTERS, SESSIONS
 
+
+class ReverseProxied:
+    """Read X-Script-Name header set by Nginx and inject it as SCRIPT_NAME."""
+    def __init__(self, app):
+        self.app = app
+
+    def __call__(self, environ, start_response):
+        script_name = environ.get('HTTP_X_SCRIPT_NAME', '')
+        if script_name:
+            environ['SCRIPT_NAME'] = script_name
+            path = environ.get('PATH_INFO', '')
+            if path.startswith(script_name):
+                environ['PATH_INFO'] = path[len(script_name):]
+        return self.app(environ, start_response)
+
+
 app = Flask(__name__)
-app.wsgi_app = ProxyFix(app.wsgi_app, x_prefix=1)
+app.wsgi_app = ReverseProxied(app.wsgi_app)
 
 PROGRESS_FILE = os.path.join(os.path.dirname(
     os.path.abspath(__file__)), "progress.json")
