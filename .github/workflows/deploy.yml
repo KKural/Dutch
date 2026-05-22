@@ -6,17 +6,19 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    # Runs ON the VM itself — no inbound SSH needed, works behind VPN/firewall
+    runs-on: self-hosted
     steps:
-      - name: Deploy to UGent VM
-        uses: appleboy/ssh-action@v1
-        with:
-          host: ${{ secrets.VM_HOST }}
-          username: ${{ secrets.VM_USER }}
-          key: ${{ secrets.VM_SSH_KEY }}
-          script: |
-            cd /var/www/dutch
-            git pull origin main
-            /var/www/dutch/.venv/bin/pip install -r requirements.txt -q
-            sudo systemctl restart dutch-course
-            echo "Deployed at $(date)"
+      - name: Pull latest code
+        run: |
+          cd /var/www/dutch
+          git pull origin main
+
+      - name: Update dependencies
+        run: |
+          /var/www/dutch/.venv/bin/pip install -r /var/www/dutch/requirements.txt -q
+
+      - name: Restart app
+        run: |
+          sudo systemctl restart dutch-course
+          echo "Deployed at $(date)"
