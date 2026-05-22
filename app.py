@@ -3,11 +3,12 @@
 import json
 import os
 from flask import Flask, render_template, jsonify, request
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 from course_data import CHAPTERS, SESSIONS
 
 app = Flask(__name__)
-app.config["APPLICATION_ROOT"] = os.environ.get("APPLICATION_ROOT", "/")
+app.wsgi_app = ProxyFix(app.wsgi_app, x_prefix=1)
 
 PROGRESS_FILE = os.path.join(os.path.dirname(
     os.path.abspath(__file__)), "progress.json")
